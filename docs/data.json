@@ -1,283 +1,289 @@
 {
-  "generated_at": "2026-10-17T08:17:00Z",
-  "run_status": "partial",
-  "status_note": "DADOS DE EXEMPLO: este arquivo será sobrescrito pelo radar real.",
-  "snapshots_count": 0,
-  "disclaimer": "Não é recomendação financeira. Dados estimados e podem estar defasados; faça sua própria análise.",
-  "config": {
-    "max_price": 500,
-    "max_remaining": 100,
-    "fee_multiplier": 1.11,
-    "seller_share": 0.5
+ "generated_at": "2026-10-17T06:27:36Z",
+ "run_status": "ok",
+ "status_note": "",
+ "snapshots_count": 1,
+ "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = RAP × 0,5 − preço × 1,11.",
+ "config": {
+  "max_price": 500,
+  "max_remaining": 100,
+  "fee_multiplier": 1.11,
+  "seller_share": 0.5
+ },
+ "categories": [
+  {
+   "key": "hat",
+   "label": "Chapéu/Coroa",
+   "asset_type_ids": [
+    8
+   ]
   },
-  "categories": [
-    {
-      "key": "hat",
-      "label": "Chapéu/Coroa",
-      "asset_type_ids": [
-        8
-      ]
-    },
-    {
-      "key": "hair",
-      "label": "Cabelo",
-      "asset_type_ids": [
-        41
-      ]
-    },
-    {
-      "key": "face",
-      "label": "Rosto",
-      "asset_type_ids": [
-        42
-      ]
-    },
-    {
-      "key": "neck",
-      "label": "Pescoço",
-      "asset_type_ids": [
-        43
-      ]
-    },
-    {
-      "key": "shoulder",
-      "label": "Ombro",
-      "asset_type_ids": [
-        44
-      ]
-    },
-    {
-      "key": "front",
-      "label": "Frente",
-      "asset_type_ids": [
-        45
-      ]
-    },
-    {
-      "key": "back",
-      "label": "Costas/Asas/Pet",
-      "asset_type_ids": [
-        46
-      ]
-    },
-    {
-      "key": "waist",
-      "label": "Cintura/Squid",
-      "asset_type_ids": [
-        47
-      ]
-    }
-  ],
-  "items": [
-    {
-      "asset_id": 900001,
-      "name": "[EXEMPLO] Coroa Dourada",
-      "creator_name": "CriadorFalso1",
-      "creator_verified": false,
-      "category": "hat",
-      "url": "https://www.roblox.com/catalog/900001",
-      "thumbnail": null,
-      "price": 100,
-      "total_quantity": 500,
-      "units_remaining": 12,
-      "pct_sold": 97.6,
-      "rap": 260,
-      "lowest_resale": 300,
-      "volume_7d": 120,
-      "volume_30d": 400,
-      "last_chart_price": 250,
-      "last_chart_date": "2026-10-16",
-      "rap_consistent": true,
-      "cost": 111.0,
-      "net_profit": 140.5,
-      "net_margin": 0.42,
-      "velocity_per_hour": 2.5,
-      "eta_hours": 5.0,
-      "score": 82,
-      "reasons": [
-        "Exemplo: poucas unidades restantes",
-        "Exemplo: revenda acima do preço"
-      ],
-      "invalidators": [
-        "Exemplo: queda do RAP",
-        "Exemplo: reposição de estoque"
-      ],
-      "data_quality": "ok",
-      "class": "COMPRAR-AGORA"
-    },
-    {
-      "asset_id": 900002,
-      "name": "[EXEMPLO] Cabelo Neon",
-      "creator_name": "CriadorFalso2",
-      "creator_verified": true,
-      "category": "hair",
-      "url": "https://www.roblox.com/catalog/900002",
-      "thumbnail": "https://invalido.example/nao-existe.png",
-      "price": 100,
-      "total_quantity": 500,
-      "units_remaining": 30,
-      "pct_sold": 94.0,
-      "rap": 260,
-      "lowest_resale": 300,
-      "volume_7d": 120,
-      "volume_30d": 400,
-      "last_chart_price": 250,
-      "last_chart_date": "2026-10-16",
-      "rap_consistent": true,
-      "cost": 111.0,
-      "net_profit": 19.0,
-      "net_margin": 0.171,
-      "velocity_per_hour": 2.5,
-      "eta_hours": 72.0,
-      "score": 71,
-      "reasons": [
-        "Exemplo: poucas unidades restantes",
-        "Exemplo: revenda acima do preço"
-      ],
-      "invalidators": [
-        "Exemplo: queda do RAP",
-        "Exemplo: reposição de estoque"
-      ],
-      "data_quality": "ok",
-      "class": "COMPRAR-AGORA"
-    },
-    {
-      "asset_id": 900003,
-      "name": "[EXEMPLO] Máscara Fantasma",
-      "creator_name": "CriadorFalso3",
-      "creator_verified": true,
-      "category": "face",
-      "url": "https://www.roblox.com/catalog/900003",
-      "thumbnail": null,
-      "price": 100,
-      "total_quantity": 500,
-      "units_remaining": 90,
-      "pct_sold": 82.0,
-      "rap": 260,
-      "lowest_resale": 300,
-      "volume_7d": 120,
-      "volume_30d": 400,
-      "last_chart_price": 250,
-      "last_chart_date": "2026-10-16",
-      "rap_consistent": true,
-      "cost": 111.0,
-      "net_profit": 3.0,
-      "net_margin": 0.027,
-      "velocity_per_hour": 2.5,
-      "eta_hours": 240.0,
-      "score": 48,
-      "reasons": [
-        "Exemplo: poucas unidades restantes",
-        "Exemplo: revenda acima do preço"
-      ],
-      "invalidators": [
-        "Exemplo: queda do RAP",
-        "Exemplo: reposição de estoque"
-      ],
-      "data_quality": "ok",
-      "class": "OBSERVAR"
-    },
-    {
-      "asset_id": 900004,
-      "name": "[EXEMPLO] Asas de Cristal",
-      "creator_name": "CriadorFalso4",
-      "creator_verified": true,
-      "category": "back",
-      "url": "https://www.roblox.com/catalog/900004",
-      "thumbnail": null,
-      "price": 100,
-      "total_quantity": 500,
-      "units_remaining": 40,
-      "pct_sold": 92.0,
-      "rap": null,
-      "lowest_resale": null,
-      "volume_7d": null,
-      "volume_30d": null,
-      "last_chart_price": null,
-      "last_chart_date": null,
-      "rap_consistent": null,
-      "cost": 111.0,
-      "net_profit": null,
-      "net_margin": null,
-      "velocity_per_hour": null,
-      "eta_hours": null,
-      "score": 40,
-      "reasons": [
-        "Exemplo: poucas unidades restantes",
-        "Exemplo: revenda acima do preço"
-      ],
-      "invalidators": [
-        "Exemplo: queda do RAP",
-        "Exemplo: reposição de estoque"
-      ],
-      "data_quality": "sem_rap",
-      "class": "OBSERVAR"
-    },
-    {
-      "asset_id": 900005,
-      "name": "[EXEMPLO] Cachecol Pixel",
-      "creator_name": "CriadorFalso5",
-      "creator_verified": false,
-      "category": "neck",
-      "url": "https://www.roblox.com/catalog/900005",
-      "thumbnail": null,
-      "price": 100,
-      "total_quantity": 500,
-      "units_remaining": 400,
-      "pct_sold": 20.0,
-      "rap": 70,
-      "lowest_resale": 65,
-      "volume_7d": 2,
-      "volume_30d": 3,
-      "last_chart_price": 250,
-      "last_chart_date": "2026-10-16",
-      "rap_consistent": false,
-      "cost": 111.0,
-      "net_profit": -45.0,
-      "net_margin": -0.4,
-      "velocity_per_hour": 0.0,
-      "eta_hours": null,
-      "score": 12,
-      "reasons": [
-        "Exemplo: poucas unidades restantes",
-        "Exemplo: revenda acima do preço"
-      ],
-      "invalidators": [
-        "Exemplo: queda do RAP",
-        "Exemplo: reposição de estoque"
-      ],
-      "data_quality": "rap_incoerente",
-      "class": "EVITAR"
-    },
-    {
-      "asset_id": 900006,
-      "name": "[EXEMPLO] Cinto Squid",
-      "creator_name": "CriadorFalso6",
-      "creator_verified": true,
-      "category": "waist",
-      "url": "https://www.roblox.com/catalog/900006",
-      "thumbnail": null,
-      "price": null,
-      "total_quantity": null,
-      "units_remaining": null,
-      "pct_sold": null,
-      "rap": 260,
-      "lowest_resale": 300,
-      "volume_7d": 120,
-      "volume_30d": 400,
-      "last_chart_price": 250,
-      "last_chart_date": "2026-10-16",
-      "rap_consistent": true,
-      "cost": null,
-      "net_profit": null,
-      "net_margin": null,
-      "velocity_per_hour": null,
-      "eta_hours": null,
-      "score": null,
-      "reasons": [],
-      "invalidators": [],
-      "data_quality": "sem_velocidade",
-      "class": "EVITAR"
-    }
-  ]
+  {
+   "key": "hair",
+   "label": "Cabelo",
+   "asset_type_ids": [
+    41
+   ]
+  },
+  {
+   "key": "face",
+   "label": "Rosto",
+   "asset_type_ids": [
+    42
+   ]
+  },
+  {
+   "key": "neck",
+   "label": "Pescoço",
+   "asset_type_ids": [
+    43
+   ]
+  },
+  {
+   "key": "shoulder",
+   "label": "Ombro",
+   "asset_type_ids": [
+    44
+   ]
+  },
+  {
+   "key": "front",
+   "label": "Frente",
+   "asset_type_ids": [
+    45
+   ]
+  },
+  {
+   "key": "back",
+   "label": "Costas/Asas/Pet",
+   "asset_type_ids": [
+    46
+   ]
+  },
+  {
+   "key": "waist",
+   "label": "Cintura/Squid",
+   "asset_type_ids": [
+    47
+   ]
+  }
+ ],
+ "items": [
+  {
+   "asset_id": 79846453984508,
+   "name": "⏳ Sparkle Red Hair + Crown Valk + Clockworks",
+   "creator_name": "Mango fango ugc",
+   "creator_verified": false,
+   "category": "hair",
+   "url": "https://www.roblox.com/catalog/79846453984508",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-0a23c0bf53d4c83afc1c26524ce72990/150/150/HairAccessory/Png/noFilter",
+   "price": 149,
+   "total_quantity": 3000,
+   "units_remaining": 31,
+   "pct_sold": 99.0,
+   "rap": 147.0,
+   "lowest_resale": 498,
+   "volume_7d": 180,
+   "volume_30d": 2623,
+   "last_chart_price": 141,
+   "last_chart_date": "2026-10-16",
+   "chart_median_14d": 119,
+   "rap_consistent": true,
+   "cost": 165.39,
+   "net_profit": -91.89,
+   "net_margin": -0.5556,
+   "velocity_per_hour": null,
+   "velocity_note": "poucos snapshots",
+   "eta_hours": null,
+   "score": 37,
+   "class": "EVITAR",
+   "reasons": [
+    "RAP 147.0 não cobre o custo: lucro líquido -92 (-56%). Equilíbrio exige RAP ≈ 331."
+   ],
+   "invalidators": [
+    "RAP acima de 331 com vendas consistentes."
+   ],
+   "data_quality": "sem_velocidade"
+  },
+  {
+   "asset_id": 107664742122292,
+   "name": "Retro Classic Roblox Aura",
+   "creator_name": "Sinister UGC's",
+   "creator_verified": false,
+   "category": "shoulder",
+   "url": "https://www.roblox.com/catalog/107664742122292",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-e6e08ca39aee093b2bb6729ca2f0c396/150/150/ShoulderAccessory/Png/noFilter",
+   "price": 55,
+   "total_quantity": 1000,
+   "units_remaining": 80,
+   "pct_sold": 92.0,
+   "rap": 55.0,
+   "lowest_resale": 329,
+   "volume_7d": 149,
+   "volume_30d": 539,
+   "last_chart_price": 55,
+   "last_chart_date": "2026-10-16",
+   "chart_median_14d": 55,
+   "rap_consistent": true,
+   "cost": 61.05,
+   "net_profit": -33.55,
+   "net_margin": -0.5495,
+   "velocity_per_hour": null,
+   "velocity_note": "poucos snapshots",
+   "eta_hours": null,
+   "score": 34,
+   "class": "EVITAR",
+   "reasons": [
+    "RAP 55.0 não cobre o custo: lucro líquido -34 (-55%). Equilíbrio exige RAP ≈ 122."
+   ],
+   "invalidators": [
+    "RAP acima de 122 com vendas consistentes."
+   ],
+   "data_quality": "sem_velocidade"
+  },
+  {
+   "asset_id": 82551142168013,
+   "name": "Limited U Pin",
+   "creator_name": "Sinister UGC's",
+   "creator_verified": false,
+   "category": "front",
+   "url": "https://www.roblox.com/catalog/82551142168013",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-94f9d14185737e3f7e4c84ca99e4fc29/150/150/FrontAccessory/Png/noFilter",
+   "price": 195,
+   "total_quantity": 700,
+   "units_remaining": 31,
+   "pct_sold": 95.6,
+   "rap": 172.0,
+   "lowest_resale": 0,
+   "volume_7d": 254,
+   "volume_30d": 662,
+   "last_chart_price": 108,
+   "last_chart_date": "2026-10-16",
+   "chart_median_14d": 55,
+   "rap_consistent": false,
+   "cost": 216.45,
+   "net_profit": -130.45,
+   "net_margin": -0.6027,
+   "velocity_per_hour": null,
+   "velocity_note": "poucos snapshots",
+   "eta_hours": null,
+   "score": 24,
+   "class": "EVITAR",
+   "reasons": [
+    "RAP não confiável: último preço do gráfico (108) abaixo de 50% do RAP (172.0) ou gráfico antigo."
+   ],
+   "invalidators": [
+    "Vendas recentes perto do RAP tornariam o RAP confiável de novo."
+   ],
+   "data_quality": "rap_incoerente"
+  },
+  {
+   "asset_id": 90254996174236,
+   "name": "8-Bit Royal Crown",
+   "creator_name": "What's Cooking UGC",
+   "creator_verified": false,
+   "category": "hat",
+   "url": "https://www.roblox.com/catalog/90254996174236",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-0c71d8e7f8c64636b8e9a40ac912ac45/150/150/Hat/Png/noFilter",
+   "price": 195,
+   "total_quantity": 3000,
+   "units_remaining": 50,
+   "pct_sold": 98.3,
+   "rap": 195.0,
+   "lowest_resale": 348,
+   "volume_7d": 826,
+   "volume_30d": 2244,
+   "last_chart_price": 148,
+   "last_chart_date": "2026-10-16",
+   "chart_median_14d": 95,
+   "rap_consistent": false,
+   "cost": 216.45,
+   "net_profit": -118.95,
+   "net_margin": -0.5495,
+   "velocity_per_hour": null,
+   "velocity_note": "poucos snapshots",
+   "eta_hours": null,
+   "score": 24,
+   "class": "EVITAR",
+   "reasons": [
+    "RAP não confiável: último preço do gráfico (148) abaixo de 50% do RAP (195.0) ou gráfico antigo."
+   ],
+   "invalidators": [
+    "Vendas recentes perto do RAP tornariam o RAP confiável de novo."
+   ],
+   "data_quality": "rap_incoerente"
+  },
+  {
+   "asset_id": 124033240617455,
+   "name": "Crown Spectral",
+   "creator_name": "Mimii UCG Crown’s",
+   "creator_verified": false,
+   "category": "hat",
+   "url": "https://www.roblox.com/catalog/124033240617455",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-acd1e7a171662856797fe12aaf193c30/150/150/Hat/Png/noFilter",
+   "price": 350,
+   "total_quantity": 150,
+   "units_remaining": 94,
+   "pct_sold": 37.3,
+   "rap": 350.0,
+   "lowest_resale": 0,
+   "volume_7d": 53,
+   "volume_30d": 53,
+   "last_chart_price": 350,
+   "last_chart_date": "2026-10-16",
+   "chart_median_14d": 350.0,
+   "rap_consistent": null,
+   "cost": 388.5,
+   "net_profit": -213.5,
+   "net_margin": -0.5495,
+   "velocity_per_hour": null,
+   "velocity_note": "poucos snapshots",
+   "eta_hours": null,
+   "score": 14,
+   "class": "EVITAR",
+   "reasons": [
+    "RAP 350.0 não cobre o custo: lucro líquido -214 (-55%). Equilíbrio exige RAP ≈ 777."
+   ],
+   "invalidators": [
+    "RAP acima de 777 com vendas consistentes."
+   ],
+   "data_quality": "sem_velocidade"
+  },
+  {
+   "asset_id": 138451385145650,
+   "name": "Black Caution Bucket Hat",
+   "creator_name": "Leon's Imaginary",
+   "creator_verified": false,
+   "category": "hat",
+   "url": "https://www.roblox.com/catalog/138451385145650",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-da31c7877b470e3d2448f99224045830/150/150/Hat/Png/noFilter",
+   "price": 250,
+   "total_quantity": 100,
+   "units_remaining": 94,
+   "pct_sold": 6.0,
+   "rap": 250.0,
+   "lowest_resale": 0,
+   "volume_7d": 5,
+   "volume_30d": 5,
+   "last_chart_price": 250,
+   "last_chart_date": "2026-10-16",
+   "chart_median_14d": 250,
+   "rap_consistent": null,
+   "cost": 277.5,
+   "net_profit": -152.5,
+   "net_margin": -0.5495,
+   "velocity_per_hour": null,
+   "velocity_note": "poucos snapshots",
+   "eta_hours": null,
+   "score": 9,
+   "class": "EVITAR",
+   "reasons": [
+    "RAP 250.0 não cobre o custo: lucro líquido -152 (-55%). Equilíbrio exige RAP ≈ 555."
+   ],
+   "invalidators": [
+    "RAP acima de 555 com vendas consistentes."
+   ],
+   "data_quality": "sem_velocidade"
+  }
+ ]
 }
