@@ -1,114 +1,154 @@
 {
- "n_backtest": 54,
- "acertos": 6,
- "taxa_geral": 0.111,
+ "n_backtest": 446,
+ "acertos": 36,
+ "taxa_geral": 0.081,
  "sinais": {
   "faixa_preco": [
    {
-    "faixa": "até 50",
-    "n": 2,
-    "taxa": 1.0,
-    "margem_mediana": 82.221,
-    "lift": 9.0,
-    "confiavel": false
+    "faixa": "51 a 100",
+    "n": 54,
+    "taxa": 0.333,
+    "margem_mediana": -0.473,
+    "lift": 4.13,
+    "confiavel": true
    },
    {
-    "faixa": "51 a 100",
-    "n": 24,
-    "taxa": 0.167,
+    "faixa": "até 50",
+    "n": 46,
+    "taxa": 0.087,
+    "margem_mediana": -0.369,
+    "lift": 1.08,
+    "confiavel": true
+   },
+   {
+    "faixa": "101 a 250",
+    "n": 64,
+    "taxa": 0.047,
     "margem_mediana": -0.549,
-    "lift": 1.5,
+    "lift": 0.58,
     "confiavel": true
    },
    {
     "faixa": "251 a 500",
-    "n": 10,
-    "taxa": 0.0,
-    "margem_mediana": -0.852,
-    "lift": 0.0,
-    "confiavel": false
-   },
-   {
-    "faixa": "101 a 250",
-    "n": 5,
-    "taxa": 0.0,
-    "margem_mediana": -0.775,
-    "lift": 0.0,
-    "confiavel": false
+    "n": 48,
+    "taxa": 0.042,
+    "margem_mediana": -0.263,
+    "lift": 0.52,
+    "confiavel": true
    },
    {
     "faixa": "acima de 500",
-    "n": 13,
-    "taxa": 0.0,
-    "margem_mediana": -0.998,
-    "lift": 0.0,
-    "confiavel": false
+    "n": 234,
+    "taxa": 0.038,
+    "margem_mediana": -0.549,
+    "lift": 0.48,
+    "confiavel": true
    }
   ],
   "estoque": [
    {
-    "faixa": "501 a 2.000 un.",
-    "n": 1,
-    "taxa": 1.0,
-    "margem_mediana": 19.811,
-    "lift": 9.0,
-    "confiavel": false
+    "faixa": "2.001 a 10.000 un.",
+    "n": 54,
+    "taxa": 0.315,
+    "margem_mediana": -0.333,
+    "lift": 3.9,
+    "confiavel": true
    },
    {
-    "faixa": "2.001 a 10.000 un.",
-    "n": 51,
-    "taxa": 0.098,
-    "margem_mediana": -0.586,
-    "lift": 0.88,
+    "faixa": "101 a 500 un.",
+    "n": 25,
+    "taxa": 0.08,
+    "margem_mediana": -0.483,
+    "lift": 0.99,
     "confiavel": true
    },
    {
     "faixa": "até 100 un.",
-    "n": 2,
+    "n": 180,
+    "taxa": 0.067,
+    "margem_mediana": -0.549,
+    "lift": 0.83,
+    "confiavel": true
+   },
+   {
+    "faixa": "acima de 10.000 un.",
+    "n": 177,
+    "taxa": 0.028,
+    "margem_mediana": -0.404,
+    "lift": 0.35,
+    "confiavel": true
+   },
+   {
+    "faixa": "501 a 2.000 un.",
+    "n": 10,
     "taxa": 0.0,
-    "margem_mediana": -0.668,
+    "margem_mediana": -0.49,
     "lift": 0.0,
     "confiavel": false
    }
   ],
   "categoria": [
    {
-    "faixa": "hat",
-    "n": 44,
-    "taxa": 0.136,
-    "margem_mediana": -0.549,
-    "lift": 1.23,
-    "confiavel": true
-   },
-   {
-    "faixa": "hair",
-    "n": 4,
-    "taxa": 0.0,
-    "margem_mediana": -0.549,
-    "lift": 0.0,
+    "faixa": "front",
+    "n": 3,
+    "taxa": 0.333,
+    "margem_mediana": -0.189,
+    "lift": 4.13,
     "confiavel": false
    },
    {
     "faixa": "neck",
-    "n": 1,
-    "taxa": 0.0,
-    "margem_mediana": -0.995,
-    "lift": 0.0,
-    "confiavel": false
+    "n": 22,
+    "taxa": 0.136,
+    "margem_mediana": -0.549,
+    "lift": 1.69,
+    "confiavel": true
    },
    {
     "faixa": "face",
-    "n": 1,
-    "taxa": 0.0,
-    "margem_mediana": -0.998,
-    "lift": 0.0,
-    "confiavel": false
+    "n": 45,
+    "taxa": 0.089,
+    "margem_mediana": -0.44,
+    "lift": 1.1,
+    "confiavel": true
    },
    {
     "faixa": "shoulder",
-    "n": 4,
+    "n": 23,
+    "taxa": 0.087,
+    "margem_mediana": -0.497,
+    "lift": 1.08,
+    "confiavel": true
+   },
+   {
+    "faixa": "back",
+    "n": 60,
+    "taxa": 0.083,
+    "margem_mediana": -0.549,
+    "lift": 1.03,
+    "confiavel": true
+   },
+   {
+    "faixa": "hat",
+    "n": 275,
+    "taxa": 0.073,
+    "margem_mediana": -0.517,
+    "lift": 0.9,
+    "confiavel": true
+   },
+   {
+    "faixa": "hair",
+    "n": 16,
+    "taxa": 0.062,
+    "margem_mediana": -0.549,
+    "lift": 0.77,
+    "confiavel": false
+   },
+   {
+    "faixa": "waist",
+    "n": 2,
     "taxa": 0.0,
-    "margem_mediana": -0.897,
+    "margem_mediana": -0.499,
     "lift": 0.0,
     "confiavel": false
    }
@@ -116,121 +156,155 @@
   "criador_verificado": [
    {
     "faixa": "não",
-    "n": 50,
-    "taxa": 0.12,
-    "margem_mediana": -0.605,
-    "lift": 1.08,
+    "n": 177,
+    "taxa": 0.153,
+    "margem_mediana": -0.549,
+    "lift": 1.89,
     "confiavel": true
    },
    {
     "faixa": "sim",
-    "n": 4,
-    "taxa": 0.0,
-    "margem_mediana": -0.549,
-    "lift": 0.0,
-    "confiavel": false
+    "n": 269,
+    "taxa": 0.033,
+    "margem_mediana": -0.456,
+    "lift": 0.41,
+    "confiavel": true
    }
   ],
   "favoritos_por_un": [
    {
-    "faixa": "1 a 5 favoritos/un.",
-    "n": 4,
-    "taxa": 0.25,
-    "margem_mediana": -0.549,
-    "lift": 2.25,
-    "confiavel": false
+    "faixa": "< 1 favorito/un.",
+    "n": 205,
+    "taxa": 0.102,
+    "margem_mediana": -0.448,
+    "lift": 1.27,
+    "confiavel": true
    },
    {
-    "faixa": "< 1 favorito/un.",
-    "n": 48,
-    "taxa": 0.104,
-    "margem_mediana": -0.605,
-    "lift": 0.94,
+    "faixa": "1 a 5 favoritos/un.",
+    "n": 71,
+    "taxa": 0.085,
+    "margem_mediana": -0.437,
+    "lift": 1.05,
     "confiavel": true
    },
    {
     "faixa": "5+ favoritos/un.",
-    "n": 2,
-    "taxa": 0.0,
-    "margem_mediana": -0.668,
-    "lift": 0.0,
-    "confiavel": false
+    "n": 170,
+    "taxa": 0.053,
+    "margem_mediana": -0.549,
+    "lift": 0.66,
+    "confiavel": true
    }
   ],
   "premio_1a_semana": [
    {
     "faixa": "4x ou mais",
-    "n": 3,
-    "taxa": 0.667,
-    "margem_mediana": 39.541,
-    "lift": 6.0,
+    "n": 14,
+    "taxa": 0.786,
+    "margem_mediana": 1.497,
+    "lift": 9.73,
     "confiavel": false
    },
    {
+    "faixa": "2,5x a 4x",
+    "n": 13,
+    "taxa": 0.308,
+    "margem_mediana": -0.311,
+    "lift": 3.81,
+    "confiavel": false
+   },
+   {
+    "faixa": "1,5x a 2,5x",
+    "n": 31,
+    "taxa": 0.29,
+    "margem_mediana": -0.099,
+    "lift": 3.6,
+    "confiavel": true
+   },
+   {
     "faixa": "< 1,5x o preço",
-    "n": 51,
-    "taxa": 0.078,
-    "margem_mediana": -0.625,
-    "lift": 0.71,
+    "n": 263,
+    "taxa": 0.038,
+    "margem_mediana": -0.53,
+    "lift": 0.47,
     "confiavel": true
    }
   ],
   "volume_1a_semana": [
    {
-    "faixa": "500+ vendas",
-    "n": 2,
-    "taxa": 0.5,
-    "margem_mediana": 3.38,
-    "lift": 4.5,
-    "confiavel": false
+    "faixa": "100 a 499 vendas",
+    "n": 65,
+    "taxa": 0.123,
+    "margem_mediana": -0.263,
+    "lift": 1.52,
+    "confiavel": true
    },
    {
-    "faixa": "100 a 499 vendas",
-    "n": 28,
-    "taxa": 0.179,
-    "margem_mediana": -0.776,
-    "lift": 1.61,
+    "faixa": "500+ vendas",
+    "n": 115,
+    "taxa": 0.104,
+    "margem_mediana": -0.46,
+    "lift": 1.29,
     "confiavel": true
    },
    {
     "faixa": "20 a 99 vendas",
-    "n": 21,
-    "taxa": 0.0,
-    "margem_mediana": -0.549,
-    "lift": 0.0,
+    "n": 49,
+    "taxa": 0.061,
+    "margem_mediana": -0.43,
+    "lift": 0.76,
     "confiavel": true
    },
    {
     "faixa": "< 20 vendas",
-    "n": 3,
-    "taxa": 0.0,
+    "n": 217,
+    "taxa": 0.06,
     "margem_mediana": -0.549,
-    "lift": 0.0,
-    "confiavel": false
+    "lift": 0.74,
+    "confiavel": true
    }
   ],
   "estoque_grande_barato": [
    {
     "faixa": "sim",
-    "n": 29,
-    "taxa": 0.172,
-    "margem_mediana": -0.549,
-    "lift": 1.55,
+    "n": 133,
+    "taxa": 0.158,
+    "margem_mediana": -0.446,
+    "lift": 1.96,
     "confiavel": true
    },
    {
     "faixa": "não",
-    "n": 25,
-    "taxa": 0.04,
-    "margem_mediana": -0.945,
-    "lift": 0.36,
+    "n": 313,
+    "taxa": 0.048,
+    "margem_mediana": -0.549,
+    "lift": 0.59,
+    "confiavel": true
+   }
+  ],
+  "estoque_muito_grande": [
+   {
+    "faixa": "não",
+    "n": 269,
+    "taxa": 0.115,
+    "margem_mediana": -0.549,
+    "lift": 1.43,
+    "confiavel": true
+   },
+   {
+    "faixa": "sim",
+    "n": 177,
+    "taxa": 0.028,
+    "margem_mediana": -0.404,
+    "lift": 0.35,
     "confiavel": true
    }
   ]
  },
- "generated_at": "2026-10-17T20:00:32Z",
- "registros": 900,
- "sem_desfecho": 7,
+ "generated_at": "2026-10-17T20:10:15Z",
+ "registros": 1200,
+ "sem_desfecho": 78,
  "min_itens_faixa": 20,
  "alvo_margem": 0.3,
  "esgotando_agora": [],
@@ -238,216 +312,234 @@
   "geral": {
    "todos": {
     "+1d": {
-     "mediana": 0.77,
-     "n": 55
+     "mediana": 1.01,
+     "n": 301
     },
     "+7d": {
-     "mediana": 0.8,
-     "n": 52
+     "mediana": 1.23,
+     "n": 230
     },
     "+30d": {
-     "mediana": 1.0,
-     "n": 52
+     "mediana": 1.19,
+     "n": 262
     }
    }
   },
   "faixa_preco": {
-   "251 a 500": {
+   "51 a 100": {
     "+1d": {
-     "mediana": 0.28,
-     "n": 11
+     "mediana": 2.28,
+     "n": 95
     },
     "+7d": {
-     "mediana": 0.28,
-     "n": 10
+     "mediana": 3.47,
+     "n": 81
     },
     "+30d": {
-     "mediana": 0.33,
-     "n": 9
-    }
-   },
-   "101 a 250": {
-    "+1d": {
-     "mediana": 0.5,
-     "n": 5
-    },
-    "+7d": {
-     "mediana": 0.5,
-     "n": 5
-    },
-    "+30d": {
-     "mediana": 0.5,
-     "n": 5
+     "mediana": 1.74,
+     "n": 51
     }
    },
    "acima de 500": {
     "+1d": {
-     "mediana": 0.01,
-     "n": 13
+     "mediana": 1.0,
+     "n": 97
     },
     "+7d": {
-     "mediana": 0.01,
-     "n": 12
+     "mediana": 1.14,
+     "n": 67
     },
     "+30d": {
-     "mediana": 0.01,
-     "n": 12
+     "mediana": 1.36,
+     "n": 84
     }
    },
-   "51 a 100": {
+   "251 a 500": {
     "+1d": {
-     "mediana": 1.0,
-     "n": 24
+     "mediana": 1.01,
+     "n": 36
     },
     "+7d": {
-     "mediana": 1.0,
-     "n": 23
+     "mediana": 1.26,
+     "n": 30
     },
     "+30d": {
+     "mediana": 1.83,
+     "n": 33
+    }
+   },
+   "101 a 250": {
+    "+1d": {
      "mediana": 1.0,
-     "n": 24
+     "n": 50
+    },
+    "+7d": {
+     "mediana": 0.97,
+     "n": 45
+    },
+    "+30d": {
+     "mediana": 0.99,
+     "n": 49
     }
    },
    "até 50": {
+    "+30d": {
+     "mediana": 1.09,
+     "n": 45
+    },
     "+1d": {
-     "mediana": 92.5,
-     "n": 2
+     "mediana": 0.0,
+     "n": 23
     },
     "+7d": {
-     "mediana": 92.5,
-     "n": 2
-    },
-    "+30d": {
-     "mediana": 339.5,
-     "n": 2
+     "mediana": 1.0,
+     "n": 7
     }
    }
   },
   "estoque": {
    "2.001 a 10.000 un.": {
     "+1d": {
-     "mediana": 0.77,
-     "n": 51
+     "mediana": 2.0,
+     "n": 106
     },
     "+7d": {
-     "mediana": 0.77,
-     "n": 49
+     "mediana": 2.95,
+     "n": 91
     },
     "+30d": {
-     "mediana": 0.92,
-     "n": 50
+     "mediana": 1.65,
+     "n": 59
+    }
+   },
+   "acima de 10.000 un.": {
+    "+1d": {
+     "mediana": 1.0,
+     "n": 150
+    },
+    "+7d": {
+     "mediana": 1.09,
+     "n": 122
+    },
+    "+30d": {
+     "mediana": 1.15,
+     "n": 176
     }
    },
    "101 a 500 un.": {
+    "+30d": {
+     "mediana": 1.07,
+     "n": 4
+    },
     "+1d": {
-     "mediana": 0.29,
-     "n": 2
+     "mediana": 1.04,
+     "n": 3
     },
     "+7d": {
-     "mediana": 0.21,
-     "n": 1
+     "mediana": 1.73,
+     "n": 3
     }
    },
    "até 100 un.": {
     "+1d": {
-     "mediana": 5.0,
-     "n": 1
+     "mediana": 0.0,
+     "n": 32
     },
     "+7d": {
-     "mediana": 3.23,
-     "n": 1
+     "mediana": 1.31,
+     "n": 6
     },
     "+30d": {
-     "mediana": 1.48,
-     "n": 1
+     "mediana": 1.0,
+     "n": 16
     }
    },
    "501 a 2.000 un.": {
     "+1d": {
-     "mediana": 1.0,
-     "n": 1
+     "mediana": 1.12,
+     "n": 10
     },
     "+7d": {
-     "mediana": 1.0,
-     "n": 1
+     "mediana": 1.35,
+     "n": 8
     },
     "+30d": {
-     "mediana": 59.65,
-     "n": 1
+     "mediana": 1.03,
+     "n": 7
     }
    }
   }
  },
  "melhores": [
   {
-   "asset_id": 98618689100069,
-   "name": "Black Iron Horns",
-   "original_price": 1,
-   "venda_dia30": 279.5,
-   "margem": 124.9009
+   "asset_id": 13832615792,
+   "name": "Nuke Chain",
+   "original_price": 200,
+   "venda_dia30": 5000,
+   "margem": 10.2613
   },
   {
-   "asset_id": 73658808162473,
-   "name": "Rainbow Pumpkin S1",
-   "original_price": 1,
-   "venda_dia30": 90.0,
-   "margem": 39.5405
-  },
-  {
-   "asset_id": 81719600978540,
-   "name": "Blue Sparkle Time Dominus",
-   "original_price": 95,
-   "venda_dia30": 4389,
-   "margem": 19.8108
-  },
-  {
-   "asset_id": 82418337983259,
-   "name": "Evil Fedora",
-   "original_price": 95,
-   "venda_dia30": 2466,
-   "margem": 10.6927
+   "asset_id": 13850956216,
+   "name": "Pepper",
+   "original_price": 5000,
+   "venda_dia30": 100069,
+   "margem": 8.0152
   },
   {
    "asset_id": 121976686814942,
    "name": "⌛ Stormbreaker Horns",
    "original_price": 95,
-   "venda_dia30": 1842,
-   "margem": 7.734
+   "venda_dia30": 1558,
+   "margem": 6.3874
   },
   {
-   "asset_id": 139154492488080,
-   "name": "Green Poisonous Dominus",
+   "asset_id": 83446680555913,
+   "name": "[⏳LIMITED Classic] White Sparkle Time Fedora",
    "original_price": 95,
-   "venda_dia30": 1374,
-   "margem": 5.5149
+   "venda_dia30": 1476,
+   "margem": 5.9986
   },
   {
-   "asset_id": 76091599166889,
-   "name": "Void Overlord Horned Locks",
-   "original_price": 200,
-   "venda_dia30": 295,
-   "margem": -0.3356
-  },
-  {
-   "asset_id": 107251616170241,
-   "name": "Ice Cream Crown",
+   "asset_id": 124270180080726,
+   "name": "Blue Valk",
    "original_price": 95,
-   "venda_dia30": 95.0,
-   "margem": -0.5495
+   "venda_dia30": 1461,
+   "margem": 5.9275
   },
   {
-   "asset_id": 112631852652536,
-   "name": "Black Sparkle Squid",
-   "original_price": 95,
-   "venda_dia30": 95.0,
-   "margem": -0.5495
+   "asset_id": 13742588059,
+   "name": "Emperor Top Hat",
+   "original_price": 3333,
+   "venda_dia30": 50000,
+   "margem": 5.7574
   },
   {
-   "asset_id": 120022832170930,
-   "name": "Valk",
+   "asset_id": 75260672285911,
+   "name": "[ANIMATED] Twinkling Star Aura",
+   "original_price": 55,
+   "venda_dia30": 753,
+   "margem": 5.1671
+  },
+  {
+   "asset_id": 14010092071,
+   "name": "Rainbow Electric Face Mask",
+   "original_price": 35,
+   "venda_dia30": 455,
+   "margem": 4.8559
+  },
+  {
+   "asset_id": 102708321894339,
+   "name": "Stellar Dominus",
    "original_price": 95,
-   "venda_dia30": 95,
-   "margem": -0.5495
+   "venda_dia30": 1022,
+   "margem": 3.8459
+  },
+  {
+   "asset_id": 15905629786,
+   "name": "Black Neck Ribbon",
+   "original_price": 3000,
+   "venda_dia30": 30000,
+   "margem": 3.5045
   }
  ]
 }
