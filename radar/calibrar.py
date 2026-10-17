@@ -2,11 +2,12 @@
 
 Para cada item com histórico (data/amplo/revenda/*.json):
   compra   = preço original × 1,11 (quem comprou antes de esgotar)
-  início   = primeiro dia do gráfico de revenda (≈ quando esgotou e a revenda abriu)
+  início   = primeiro dia em que o preço sai de ±15% do preço de loja (≈ quando esgotou)
   venda    = mediana do preço nos dias 30 a 37 depois do início (passou a trava de até 30 dias)
   margem   = (venda × 0,5 − compra) / compra ; acerto = margem ≥ 30%
-Itens com menos de 37 dias de revenda ainda não têm desfecho e ficam fora do backtest.
-Itens cujo gráfico começa no limite de 180 dias da API ficam fora (o início foi cortado).
+Itens com menos de 37 dias depois de esgotar ainda não têm desfecho e ficam fora do backtest.
+Preço de loja = mediana dos 3 primeiros dias do gráfico; esgotou = 1º dia fora de ±15% dele.
+Itens grátis (preço 0) ficam fora: não há custo para comparar.
 
 Para cada sinal (faixa de preço, estoque, categoria, criador verificado, favoritos por unidade,
 prêmio e volume da 1ª semana de revenda) o relatório mostra quantos itens, a taxa de acerto,
@@ -19,7 +20,6 @@ from datetime import datetime, timedelta, timezone
 
 LOCK_DAYS = 30
 WINDOW_DAYS = 7
-MAX_CHART_DAYS = 180
 TARGET = 0.30
 
 PRICE_BANDS = [(0, 50, "até 50"), (51, 100, "51 a 100"), (101, 250, "101 a 250"),
@@ -91,42 +91,64 @@ def item_features(rec):
     }
 
 
+def list_price(rec, prices):
+    """Preço de loja. A API nova não manda originalPrice e o "price" do catálogo de um item
+    esgotado é o menor anúncio, então usamos a mediana dos 3 primeiros dias do gráfico (as vendas
+    da própria loja entram no gráfico enquanto ele está à venda)."""
+    if rec.get("original_price"):
+        return rec["original_price"]
+    first = [v for _, v in prices[:3] if v > 0]
+    return _median(first) if first else None
+
+
+def sellout_date(prices, lst, tol=0.15):
+    """Primeiro dia em que o preço sai da faixa do preço de loja (± tol): fim da venda da loja.
+    Sem desvio: último dia perto do preço de loja (revenda nunca se afastou dele)."""
+    for d, v in prices:
+        if abs(v / lst - 1) > tol:
+            return d, True
+    return prices[-1][0], False
+
+
 def evaluate(rec, now, cfg):
-    """Desfecho de um item. Devolve dict com features e margem, ou None (sem dado/sem desfecho)."""
+    """Desfecho de um item. Devolve dict com features e margem, ou None (sem dado/sem desfecho).
+
+    Compra no preço de loja logo antes de esgotar; venda = mediana do gráfico 30 a 37 dias depois.
+    """
     t = cfg["taxas"]
-    orig = rec.get("original_price") or (rec.get("item") or {}).get("price")
     prices = _series(rec.get("prices"))
-    if not orig or orig <= 0 or not prices:
+    if not prices:
         return None
-    start = prices[0][0]
-    if start <= now - timedelta(days=MAX_CHART_DAYS - 5):
-        return None  # gráfico cortado pela API: não sabemos quando esgotou
-    feats = item_features(rec)
+    orig = list_price(rec, prices)
+    if not orig or orig <= 0:
+        return None  # item grátis ou sem preço de loja: sem base de custo
+    start, moved = sellout_date(prices, orig)
+    feats = item_features(dict(rec, original_price=orig))
     curve = {}
     for label, d0 in (("+1d", 1), ("+7d", 7), ("+30d", 30)):
         if now >= start + timedelta(days=d0 + 3):
             win = [v for d, v in prices if start + timedelta(days=d0) <= d < start + timedelta(days=d0 + 3)]
             if win:
                 curve[label] = round(_median(win) / orig, 3)
-    w1 = [v for d, v in prices if d < start + timedelta(days=WINDOW_DAYS)]
+    w1 = [v for d, v in prices if start <= d < start + timedelta(days=WINDOW_DAYS)]
     vols = _series(rec.get("volumes"))
-    v1 = sum(v for d, v in vols if d < start + timedelta(days=WINDOW_DAYS))
+    v1 = sum(v for d, v in vols if start <= d < start + timedelta(days=WINDOW_DAYS))
     med1 = _median(w1)
     feats["premio_1a_semana"] = band(med1 / orig, PREMIUM_BANDS) if med1 else None
     feats["volume_1a_semana"] = band(v1, VOLUME_BANDS) if vols else None
     out = {"asset_id": (rec.get("item") or {}).get("asset_id"), "name": (rec.get("item") or {}).get("name"),
            "original_price": orig, "features": feats, "dias_revenda": (now - start).days,
-           "curva": curve}
+           "curva": curve, "saiu_do_preco_de_loja": moved}
     if now < start + timedelta(days=LOCK_DAYS + WINDOW_DAYS):
         out["margem"] = None  # ainda sem desfecho
         return out
     lo, hi = start + timedelta(days=LOCK_DAYS), start + timedelta(days=LOCK_DAYS + WINDOW_DAYS)
     after = [v for d, v in prices if lo <= d < hi]
     if not after:
-        # Sem venda na janela: usa o primeiro preço depois dela (venda demorou); sem nada = prejuízo total.
+        # Sem venda na janela: primeiro preço depois dela; sem nada, o último preço conhecido.
         later = [v for d, v in prices if d >= hi]
-        after = later[:1]
-    sell = _median(after) if after else 0
+        after = later[:1] or [prices[-1][1]]
+    sell = _median(after)
     cost = orig * t["fee_multiplier"]
     out["venda_dia30"] = sell
     out["margem"] = round((sell * t["seller_share"] - cost) / cost, 4)
@@ -244,10 +266,10 @@ def pct(v):
 def render_md(s):
     L = [f"# Calibração do radar ({s['generated_at']})", "",
          "Backtest: quem comprou no preço original e vendeu depois da trava de 30 dias "
-         "(mediana do gráfico nos dias 30 a 37 da revenda), com as taxas do radar "
+         "(mediana do gráfico 30 a 37 dias depois de esgotar), com as taxas do radar "
          "(recebe 50%, custo ×1,11). Acerto = margem líquida ≥ 30%.", "",
          f"- Itens com histórico coletado: **{s['registros']}**",
-         f"- Com desfecho (37+ dias de revenda, gráfico não cortado): **{s['n_backtest']}**",
+         f"- Com desfecho (37+ dias depois de esgotar, item pago): **{s['n_backtest']}**",
          f"- Ainda sem desfecho: {s['sem_desfecho']}",
          f"- **Taxa geral de acerto: {pct(s['taxa_geral'])}** ({s['acertos']} de {s['n_backtest']})", "",
          f"Faixas com menos de {s['min_itens_faixa']} itens aparecem com ⚠ (amostra pequena, não use para decidir).", ""]
@@ -264,7 +286,7 @@ def render_md(s):
     curve = s.get("curva_pos_esgote") or {}
     if curve.get("geral"):
         L += ["## Curva depois de esgotar (preço mediano ÷ preço original)", "",
-              "Início = primeiro dia do gráfico de revenda (≈ quando esgotou). Inclui itens ainda sem desfecho.", "",
+              "Início = 1º dia em que o preço saiu de ±15% do preço de loja (≈ quando esgotou). Inclui itens ainda sem desfecho.", "",
               "| Grupo | +1 dia | +7 dias | +30 dias |", "|---|---|---|---|"]
         def cell(c, lab):
             v = c.get(lab)
