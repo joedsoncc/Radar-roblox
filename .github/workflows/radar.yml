@@ -3,17 +3,31 @@ name: Radar UGC
 on:
   schedule:
     - cron: "17 */2 * * *"   # a cada 2 h (o GitHub pode atrasar alguns minutos)
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "normal = radar de sempre; amplo = coleta ampla para calibração (sem alertas)"
+        default: normal
+        type: choice
+        options: [normal, amplo]
+      ate:
+        description: "Só no modo amplo: coletar até este horário UTC (ex.: 2026-10-17T21:00Z)"
+        default: ""
+        type: string
+      intervalo_min:
+        description: "Só no modo amplo: minutos entre rodadas"
+        default: "10"
+        type: string
 
 permissions:
   contents: write
 
-concurrency:
-  group: radar
-  cancel-in-progress: false
-
 jobs:
   radar:
+    if: ${{ inputs.modo != 'amplo' }}
+    concurrency:
+      group: radar
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 25
     env:
@@ -66,3 +80,63 @@ jobs:
       - name: Avisar falha pelo ntfy
         if: failure()
         run: python radar.py notice "O workflow do radar falhou. Veja a aba Actions do repositório."
+
+  amplo:
+    # Coleta ampla: rodadas até o horário pedido, commit a cada rodada, calibração no fim. Nunca manda alerta.
+    if: ${{ inputs.modo == 'amplo' }}
+    concurrency:
+      group: radar-amplo-${{ github.ref_name }}
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Testes (dados falsos, sem internet)
+        run: python -m unittest discover -s tests -q
+
+      - name: Rodadas de coleta ampla
+        env:
+          ATE: ${{ inputs.ate }}
+          INTERVALO_MIN: ${{ inputs.intervalo_min }}
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          fim=$(date -u -d "${ATE:-+90 minutes}" +%s 2>/dev/null || date -u -d "+90 minutes" +%s)
+          limite=$(( $(date -u +%s) + 330*60 ))
+          [ "$fim" -gt "$limite" ] && fim=$limite
+          intervalo=$(( ${INTERVALO_MIN:-10} * 60 ))
+          salvar() {
+            git add data/amplo data/calibracao.md data/calibracao.json 2>/dev/null || true
+            git diff --cached --quiet && return 0
+            git commit -q -m "amplo: $1 $(date -u +%Y-%m-%dT%H:%MZ)"
+            for i in 1 2 3 4; do
+              if git pull -q --rebase origin "${GITHUB_REF_NAME}"; then
+                git push -q origin "HEAD:${GITHUB_REF_NAME}" && return 0
+              else
+                git rebase --abort || true
+              fi
+              sleep $((2 ** i))
+            done
+            echo "::warning::Não consegui salvar a rodada; sigo coletando."
+          }
+          while [ "$(date -u +%s)" -lt "$fim" ]; do
+            inicio=$(date -u +%s)
+            git pull -q --rebase origin "${GITHUB_REF_NAME}" || true   # pega código novo entre rodadas
+            python radar.py amplo || echo "::warning::rodada falhou"
+            python radar.py calibrar || echo "::warning::calibração falhou"
+            salvar rodada
+            espera=$(( intervalo - ($(date -u +%s) - inicio) ))
+            agora=$(date -u +%s)
+            [ $(( agora + espera )) -ge "$fim" ] && break
+            [ "$espera" -gt 0 ] && sleep "$espera"
+          done
+          git pull -q --rebase origin "${GITHUB_REF_NAME}" || true
+          python radar.py calibrar
+          salvar calibracao

@@ -11,6 +11,8 @@ Uso:
   python radar.py launches            # vigia lançamentos de limiteds da Roblox oficial
   python radar.py send --outbox launch_outbox.json
   python radar.py notice "texto"      # aviso de falha do workflow pelo ntfy
+  python radar.py amplo               # uma rodada da coleta ampla (calibração); aceita --fake --root
+  python radar.py calibrar            # backtest: quais sinais previram margem >= 30% (data/calibracao.md)
 """
 import argparse
 import logging
@@ -41,6 +43,11 @@ def main(argv=None):
     sd = sub.add_parser("send")
     sd.add_argument("--outbox", default="outbox.json")
     sub.add_parser("launches")
+    am = sub.add_parser("amplo")
+    am.add_argument("--fake", action="store_true")
+    am.add_argument("--root", default=HERE)
+    cb = sub.add_parser("calibrar")
+    cb.add_argument("--root", default=HERE)
     nt = sub.add_parser("notice")
     nt.add_argument("text")
     args = ap.parse_args(argv)
@@ -65,6 +72,10 @@ def main(argv=None):
 
     if args.cmd == "cadastrar":
         return cadastrar(args.mensagem)
+    if args.cmd == "calibrar":
+        from radar import calibrar
+        calibrar.run(args.root, load_config(args.root), datetime.now(timezone.utc).replace(microsecond=0))
+        return 0
 
     client = None
     if args.fake:
@@ -77,6 +88,17 @@ def main(argv=None):
             shutil.copy(os.path.join(HERE, "carteira.json"), dest)
         from radar.fake import FakeClient
         client = FakeClient(datetime.now(timezone.utc), days=90)
+
+    if args.cmd == "amplo":
+        from radar import amplo
+        from radar.http import Client
+        cfg = load_config(args.root)
+        col = cfg["coleta"]
+        client = client or Client(col["request_delay_s"], col["max_retries"], col["timeout_s"])
+        res = amplo.rodada(args.root, client, datetime.now(timezone.utc).replace(microsecond=0), cfg)
+        if res["erros"]:
+            print(f"::warning title=Coleta ampla::{'; '.join(res['erros'])}")
+        return 0
 
     if args.cmd == "carteira":
         from radar import carteira
