@@ -14,6 +14,7 @@ PUBLIC_FIELDS = [
     "reasons", "invalidators", "data_quality",
     "creator_track", "retention", "change_7d", "trend", "spark",
     "tipo", "fator_trava",
+    "rap_primary", "copy_risk", "price_raised_from", "break_even", "hold_days",
 ]
 
 

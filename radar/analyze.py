@@ -8,7 +8,14 @@ Contas (UGC Limited):
   margem líquida  = lucro líquido / custo efetivo
 Exemplo: preço 100, RAP 260, média dos anúncios 300 -> vale 260, recebe 130, custo 111, lucro 19 (+17%).
 Com média dos anúncios 230 -> vale 230, recebe 115, lucro 4 (+4%).
+
+Fase de venda (pesquisa de 2026-10-17, ver /mnt/project-files/pesquisa-ugc/relatorio.md):
+  enquanto o criador ainda vende, as vendas primárias entram no RAP, então RAP ≈ preço de loja
+  e o RAP não diz nada sobre o preço depois de esgotar. Nesse caso ("RAP de venda primária")
+  a referência de venda passa a ser preço × retenção mediana da loja (só itens já esgotados
+  dela); sem histórico da loja, não estimamos lucro.
 """
+import re
 from datetime import date, datetime, timedelta
 
 CLASS_RANK = {"EVITAR": 0, "OBSERVAR": 1, "COMPRAR-AGORA": 2}
@@ -38,7 +45,54 @@ def sale_reference(rap, avg_low):
     return rap, "rap"
 
 
+def rap_is_primary(rap, price, remaining, cfg):
+    """True quando o item ainda está à venda e o RAP está colado no preço de loja."""
+    tol = cfg.get("risco", {}).get("rap_primario_tolerancia", 0.15)
+    if not rap or not price or not remaining or remaining <= 0:
+        return False
+    return abs(rap / price - 1) <= tol
+
+
+def projected_reference(price, track, cfg):
+    """Preço × retenção mediana dos limiteds já esgotados da loja; None sem amostra suficiente."""
+    lj = cfg.get("lojas", {})
+    if not price or not track or (track.get("with_resale") or 0) < lj.get("min_com_revenda", 3):
+        return None
+    ret = track.get("median_retention")
+    if ret is None:
+        return None
+    return round(price * ret, 2)
+
+
+def copy_risk(name, cfg):
+    """Termo de item clássico famoso no nome (ex.: Valkyrie, Dominus): cópia pode ser removida."""
+    terms = cfg.get("risco", {}).get("nomes_copia", [])
+    low = (name or "").lower()
+    for t in terms:
+        if re.search(r"\b" + re.escape(t.lower()), low):
+            return t
+    return None
+
+
+def big_cheap_supply(item, cfg):
+    """Estoque enorme (> 10.000 un.). Backtest do PR #3 (17/10, 202 itens com desfecho): acima de
+    10.000 un. só 2% deram margem ≥ 30%. Só vira EVITAR sem histórico da loja; com 3+ esgotados
+    dela, a projeção pela loja decide."""
+    total = item.get("total_quantity")
+    return total is not None and total > cfg.get("risco", {}).get("estoque_grande", 10000)
+
+
+def price_raise(asset_id, price, history):
+    """Menor preço de loja visto antes, se o criador subiu o preço durante a venda."""
+    prev = [r.get("price") for r in history
+            if r.get("asset_id") == asset_id and isinstance(r.get("price"), (int, float))]
+    low = min(prev) if prev else None
+    return low if low is not None and price is not None and price > low else None
+
+
 def ref_label(item):
+    if item.get("sale_ref_source") == "historico_loja":
+        return f"Projeção pela loja ({item['sale_ref']:.0f} = preço × {item['creator_track']['median_retention']:.2f})"
     if item.get("sale_ref_source") == "anuncios":
         return f"Média dos {item.get('resale_avg_n')} menores anúncios ({item['sale_ref']:.0f})"
     return f"RAP {item['rap']}"
@@ -247,10 +301,21 @@ def score(item, cfg):
     s_store = store_score(item.get("creator_track"), cfg)
     cal = item.get("calibracao")
     s_cal = cal["score"] if cal else 0.5
+    total_q = item.get("total_quantity")
+    if total_q is None:
+        s_supply = 0.3
+    elif total_q > 10000:
+        s_supply = 0.0  # backtest: 2% com margem ≥ 30%
+    elif total_q > 2000:
+        s_supply = 1.0  # backtest: 41%
+    else:
+        s_supply = 0.6
     total = (w["margem"] * s_margin + w["liquidez"] * s_liq + w["consistencia"] * s_cons
              + w["velocidade"] * s_vel + w["criador"] * s_creator + w.get("historico_loja", 0) * s_store
-             + w.get("calibracao", 0) * s_cal)
-    return int(round(total))
+             + w.get("oferta", 0) * s_supply + w.get("calibracao", 0) * s_cal)
+    if item.get("copy_risk"):
+        total -= cfg.get("risco", {}).get("penalidade_copia", 10)
+    return max(0, int(round(total)))
 
 
 def fmt_eta(h):
@@ -271,6 +336,12 @@ def classify(item, cfg):
         inval.append("Quando o RAP aparecer, a classe será recalculada.")
         return "OBSERVAR", reasons, inval
 
+    if big_cheap_supply(item, cfg) and item.get("sale_ref_source") != "historico_loja":
+        reasons.append(f"Estoque enorme ({item['total_quantity']} un.): no backtest, só 2% dos itens acima de "
+                       "10.000 un. deram margem de 30% depois de esgotar.")
+        inval.append("Histórico da loja com 3+ itens esgotados revendendo bem permitiria projetar o lucro.")
+        return "EVITAR", reasons, inval
+
     if rc is False:
         reasons.append(f"RAP não confiável: último preço do gráfico ({item['last_chart_price']}) "
                        f"abaixo de {cfg['classes']['rap_consistency_ratio']:.0%} do RAP ({item['rap']}) ou gráfico antigo.")
@@ -281,6 +352,14 @@ def classify(item, cfg):
         reasons.append(f"Liquidez baixa: só {v7} vendas em 7 dias; difícil revender.")
         inval.append(f"Volume 7d acima de {ev['min_volume_7d']} mudaria a avaliação.")
         return "EVITAR", reasons, inval
+
+    if item.get("rap_primary") and item.get("sale_ref_source") != "historico_loja":
+        reasons.append(f"Ainda à venda: o RAP ({item['rap']}) é das vendas da própria loja, não da revenda. "
+                       "Sem histórico de itens esgotados desta loja, não há base para estimar o preço depois de esgotar.")
+        if eta is not None and eta <= 24:
+            reasons.append(f"Está esgotando rápido ({fmt_eta(eta)}); acompanhe o preço depois do esgote.")
+        inval.append("Histórico da loja com 3+ itens esgotados com revenda permitiria projetar o lucro.")
+        return "OBSERVAR", reasons, inval
 
     if m is not None and m <= ev["max_net_margin"]:
         be = round(item["cost"] / cfg["taxas"]["seller_share"]) if item["cost"] else None
@@ -298,6 +377,11 @@ def classify(item, cfg):
           and (rc is True or not ca["require_rap_consistent"])
           and (vel is not None or not ca["require_velocity"])
           and (eta is not None and eta <= ca["max_eta_hours"] if ca["require_velocity"] else True))
+    if ok and item.get("copy_risk"):
+        reasons.append(f"Cumpre os critérios de compra, mas o nome lembra um item clássico ({item['copy_risk']}): "
+                       "a Roblox remove cópias e reembolsa só o preço pago.")
+        inval.append("Confirmar que o item é original (malha e textura próprias) o promoveria.")
+        return "OBSERVAR", reasons, inval
     if ok:
         reasons.append(f"Margem líquida {m:+.0%} (lucro ≈ {item['net_profit']:.0f} Robux, base: {ref_label(item)}) "
                        "com RAP coerente com o gráfico.")
@@ -335,7 +419,13 @@ def analyze(current, history, now, cfg, tracks=None, lifts=None, holds=None):
     tracks = tracks or {}
     items = []
     for it in current:
-        ref, ref_src = sale_reference(it.get("rap"), it.get("resale_avg_low"))
+        track = tracks.get(str(it.get("creator_id")))
+        primary = rap_is_primary(it.get("rap"), it.get("price"), it.get("units_remaining"), cfg)
+        if primary:
+            ref = projected_reference(it.get("price"), track, cfg)
+            ref_src = "historico_loja" if ref is not None else None
+        else:
+            ref, ref_src = sale_reference(it.get("rap"), it.get("resale_avg_low"))
         if ref is not None and hold != 1.0:
             ref = round(ref * hold, 2)  # o que deve valer quando a trava de 30 dias acabar
         cost, profit, margin = economics(it.get("price"), ref, cfg)
@@ -351,7 +441,11 @@ def analyze(current, history, now, cfg, tracks=None, lifts=None, holds=None):
         ch7 = window_change(series, now, 7)
         rap, price = it.get("rap"), it.get("price")
         row.update({
-            "creator_track": tracks.get(str(it.get("creator_id"))),
+            "creator_track": track, "rap_primary": primary,
+            "copy_risk": copy_risk(it.get("name"), cfg),
+            "price_raised_from": price_raise(it["asset_id"], it.get("price"), history),
+            "break_even": round(cost / cfg["taxas"]["seller_share"]) if cost else None,
+            "hold_days": cfg.get("risco", {}).get("trava_dias", 30),
             "retention": round(rap / price, 3) if rap and price else None,
             "change_7d": ch7, "trend": trend_for(series, ch7, now), "spark": spark_from(series),
             "url": f"https://www.roblox.com/catalog/{it['asset_id']}",
@@ -371,6 +465,11 @@ def analyze(current, history, now, cfg, tracks=None, lifts=None, holds=None):
         if row["fator_trava"] and hold != 1.0:
             reasons.append(f"Lucro calculado no fim da trava de 30 dias: valor de hoje × {hold:.2f} "
                            "(mudança mediana do preço em 30 dias nos itens já esgotados).")
+        if row["price_raised_from"] is not None:
+            reasons.append(f"O criador subiu o preço de {row['price_raised_from']} para {row['price']} durante a venda; "
+                           "o RAP sobe junto e não indica revenda.")
+        if row["copy_risk"] and cls != "OBSERVAR":
+            reasons.append(f"Nome lembra um item clássico ({row['copy_risk']}): risco de remoção como cópia.")
         cal_txt = calibration_reason(row["calibracao"])
         if cal_txt:
             reasons.append(cal_txt)
@@ -378,6 +477,8 @@ def analyze(current, history, now, cfg, tracks=None, lifts=None, holds=None):
         row["score"] = score(row, cfg)
         if row.get("rap") is None:
             row["data_quality"] = "sem_rap"
+        elif primary:
+            row["data_quality"] = "rap_primario"
         elif rc is False:
             row["data_quality"] = "rap_incoerente"
         elif vel is None:
@@ -396,4 +497,6 @@ def alert_eligible(item, cfg):
             and item["net_margin"] is not None and item["net_margin"] >= a["min_net_margin"]
             and item["volume_7d"] is not None and item["volume_7d"] >= a["min_volume_7d"]
             and (item["rap_consistent"] is True or not a["require_rap_consistent"])
-            and ((item["velocity_per_hour"] or 0) > 0 or not a["require_velocity"]))
+            and ((item["velocity_per_hour"] or 0) > 0 or not a["require_velocity"])
+            and (item.get("sale_ref_source") != "historico_loja"
+                 or ((item.get("creator_track") or {}).get("with_resale") or 0) >= a.get("min_loja_esgotados", 5)))

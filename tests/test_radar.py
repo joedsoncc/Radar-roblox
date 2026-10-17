@@ -181,6 +181,75 @@ class MediaDosAnuncios(unittest.TestCase):
         self.assertIn("média de 3 menores anúncios 520", sends[0]["message"])
 
 
+def _row(**kw):
+    base = {"asset_id": 1, "name": "Chapéu", "creator_id": 9, "price": 200, "total_quantity": 300,
+            "units_remaining": 40, "rap": 205, "volume_7d": 120, "last_chart_price": 200,
+            "last_chart_date": "2026-10-16", "chart_median_14d": 200, "chart_points_14d": 10}
+    base.update(kw)
+    return base
+
+
+def _hist(asset_id=1, price=200):
+    return [{"asset_id": asset_id, "price": price, "units_remaining": u, "_ts": NOW - timedelta(hours=h)}
+            for h, u in [(6, 70), (3, 55)]]
+
+
+class FaseDeVenda(unittest.TestCase):
+    """Pesquisa 2026-10-17: antes de esgotar, RAP ≈ preço de loja e não mede a revenda."""
+
+    def test_rap_primario_sem_loja_vira_observar(self):
+        it = analyze.analyze([_row()], _hist(), NOW, CFG)[0]
+        self.assertTrue(it["rap_primary"])
+        self.assertIsNone(it["net_margin"])
+        self.assertEqual(it["class"], "OBSERVAR")
+        self.assertEqual(it["data_quality"], "rap_primario")
+
+    def test_projecao_pela_loja(self):
+        track = {"with_resale": 6, "median_retention": 4.0, "pct_above_price": 0.8}
+        it = analyze.analyze([_row()], _hist(), NOW, CFG, tracks={"9": track})[0]
+        self.assertEqual(it["sale_ref_source"], "historico_loja")
+        self.assertEqual(it["sale_ref"], 800)  # 200 × 4,0
+        self.assertEqual(it["class"], "COMPRAR-AGORA")
+        self.assertTrue(analyze.alert_eligible(it, CFG))
+
+    def test_alerta_por_projecao_exige_amostra_maior(self):
+        track = {"with_resale": 3, "median_retention": 4.0, "pct_above_price": 0.8}
+        it = analyze.analyze([_row()], _hist(), NOW, CFG, tracks={"9": track})[0]
+        self.assertEqual(it["class"], "COMPRAR-AGORA")
+        self.assertFalse(analyze.alert_eligible(it, CFG))
+
+    def test_rap_longe_do_preco_nao_eh_primario(self):
+        it = analyze.analyze([_row(rap=520, last_chart_price=520, chart_median_14d=520)], _hist(), NOW, CFG)[0]
+        self.assertFalse(it["rap_primary"])
+        self.assertEqual(it["sale_ref_source"], "rap")
+
+    def test_estoque_enorme_evita(self):
+        it = analyze.analyze([_row(total_quantity=30000, price=149, rap=147)], _hist(price=149), NOW, CFG)[0]
+        self.assertEqual(it["class"], "EVITAR")
+        self.assertIn("Estoque enorme", it["reasons"][0])
+        it = analyze.analyze([_row(total_quantity=3000, price=149, rap=147)], _hist(price=149), NOW, CFG)[0]
+        self.assertNotEqual(it["class"], "EVITAR")
+
+    def test_estoque_grande_com_loja_boa_usa_projecao(self):
+        track = {"with_resale": 4, "median_retention": 5.0, "pct_above_price": 0.75}
+        it = analyze.analyze([_row(total_quantity=30000, price=55, rap=55, last_chart_price=55, chart_median_14d=55)],
+                             _hist(price=55), NOW, CFG, tracks={"9": track})[0]
+        self.assertEqual(it["sale_ref_source"], "historico_loja")
+        self.assertNotEqual(it["class"], "EVITAR")
+
+    def test_nome_de_classico_nao_vira_compra(self):
+        track = {"with_resale": 6, "median_retention": 4.0, "pct_above_price": 0.8}
+        it = analyze.analyze([_row(name="Emerald Valk")], _hist(), NOW, CFG, tracks={"9": track})[0]
+        self.assertEqual(it["copy_risk"], "valk")
+        self.assertEqual(it["class"], "OBSERVAR")
+        self.assertIsNone(analyze.copy_risk("Valkyrian Sword", {"risco": {"nomes_copia": ["fedora"]}}))
+
+    def test_preco_subiu_durante_a_venda(self):
+        it = analyze.analyze([_row(price=295, rap=290)], _hist(price=195), NOW, CFG)[0]
+        self.assertEqual(it["price_raised_from"], 195)
+        self.assertTrue(any("subiu o preço de 195 para 295" in r for r in it["reasons"]))
+
+
 class Velocidade(unittest.TestCase):
     def test_snapshots_muito_proximos(self):
         v, note = analyze.velocity(1, hist(1, [(0.05, 99), (0, 97)]), NOW, CFG)
