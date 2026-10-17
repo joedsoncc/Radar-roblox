@@ -1,4 +1,4 @@
-# Calibração do radar (2026-10-17T20:54:13Z)
+# Calibração do radar (2026-10-17T20:54:18Z)
 
 Backtest: quem comprou no preço original e vendeu depois da trava de 30 dias (mediana do gráfico 30 a 37 dias depois de esgotar), com as taxas do radar (recebe 50%, custo ×1,11). Acerto = margem líquida ≥ 30%.
 
