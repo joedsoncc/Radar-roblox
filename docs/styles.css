@@ -129,11 +129,14 @@ main[hidden] { display: none; }
 @media (min-width: 640px) { .cart-summary { grid-template-columns: repeat(4, 1fr); } }
 .cart-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
 .cart-actions .count { margin: 0; }
-.add-form { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin-bottom: 14px; display: grid; gap: 10px; max-width: 520px; box-shadow: var(--shadow); }
+.add-form { scroll-margin-top: 150px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin-bottom: 14px; display: grid; gap: 10px; max-width: 520px; box-shadow: var(--shadow); }
 .add-form[hidden] { display: none; }
 .add-form h2 { margin: 0; font-size: 1.05rem; }
 .field input { min-height: 44px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font: inherit; padding: 0 10px; width: 100%; }
 .form-hint { margin: 0; font-size: .85rem; color: var(--muted); }
+.form-found { margin: -4px 0 0; font-size: .9rem; font-weight: 600; }
+.form-found[hidden] { display: none; }
+.launch-list .btn.small { min-height: 44px; padding: 0 14px; margin-left: auto; }
 .form-error { margin: 0; color: var(--neg); font-weight: 600; }
 .form-error[hidden] { display: none; }
 .form-btns { display: flex; gap: 8px; flex-wrap: wrap; }

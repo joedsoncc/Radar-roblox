@@ -230,6 +230,7 @@
     var cu = catalogUrl(i);
     if (cu) {
       var act = el('div', 'card-actions');
+      act.appendChild(buyBtn(i, 'primary'));
       act.appendChild(linkBtn('Acompanhar', issueUrl({ acao: 'Adicionar', item: cu, nome: i.name, preco: null, qtd: 1 })));
       c.appendChild(act);
     }
@@ -280,6 +281,7 @@
       var when = found && !isNaN(found) ? found.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) : NA;
       li.appendChild(el('span', 'launch-meta', [labels[i.category] || i.category || NA, robux(i.price), stock,
         i.off_sale ? 'fora de venda' : 'à venda', 'visto em ' + when].join(' · ')));
+      if (catalogUrl(i)) li.appendChild(buyBtn(i, 'small'));
       ul.appendChild(li);
     });
     sec.hidden = false;
@@ -288,7 +290,7 @@
   function loadLaunches() {
     return fetch('launches.json', { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(renderLaunches)
+      .then(function (d) { state.launches = d; renderLaunches(d); })
       .catch(function () {});
   }
 
@@ -399,18 +401,69 @@
 
   function parseItem(v) {
     v = String(v || '').trim();
-    var m = /^(\d{3,})$/.exec(v) || /roblox\.com\/(?:[a-z-]+\/)?catalog\/(\d+)/i.exec(v) || /roblox\.com\/bundles\/(\d+)/i.exec(v);
+    var m = /^(\d{3,})$/.exec(v) || /roblox\.com\/(?:[a-z-]+\/)?(?:catalog|library)\/(\d+)/i.exec(v) || /roblox\.com\/bundles\/(\d+)/i.exec(v);
     return m ? m[1] : null;
+  }
+
+  function todayLocal() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  /* Procura o item nos dados já carregados (radar, lançamentos, carteira) para preencher nome e preço de loja. */
+  function knownItem(id) {
+    var lists = [state.data && state.data.items, state.launches && state.launches.items, state.cart && state.cart.items];
+    for (var k = 0; k < lists.length; k++) {
+      var arr = Array.isArray(lists[k]) ? lists[k] : [];
+      for (var j = 0; j < arr.length; j++) if (arr[j] && String(arr[j].asset_id) === String(id)) return arr[j];
+    }
+    return null;
+  }
+  function showItemHint(i) {
+    var h = $('af-found');
+    if (!i) { h.hidden = true; h.textContent = ''; return; }
+    h.textContent = (i.name || 'Item ' + i.asset_id) + (isNum(i.price) ? ' · preço de loja ' + robux(i.price) : '');
+    h.hidden = false;
+  }
+  /* Botão "Comprei": abre o formulário da carteira já preenchido com o item e o preço de loja. */
+  function openBuy(i) {
+    var f = $('add-form');
+    setView('carteira', true);
+    f.hidden = false;
+    $('af-error').hidden = true;
+    $('af-item').value = catalogUrl(i);
+    $('af-price').value = isNum(i.price) ? String(i.price) : '';
+    $('af-qty').value = '1';
+    $('af-date').value = todayLocal();
+    showItemHint(i);
+    f.scrollIntoView({ block: 'start' });
+    var p = $('af-price');
+    p.focus();
+    try { p.select(); } catch (e) {}
+  }
+  function buyBtn(i, cls) {
+    var b = el('button', 'btn ' + (cls || ''), 'Comprei');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Comprei ' + (i.name || 'este item') + ': cadastrar na carteira');
+    b.addEventListener('click', function () { openBuy(i); });
+    return b;
   }
 
   function initForm() {
     var f = $('add-form'), err = $('af-error');
     function open(show) {
       f.hidden = !show;
-      if (show) { $('af-item').focus(); }
+      if (show) {
+        if (!$('af-date').value) $('af-date').value = todayLocal();
+        $('af-item').focus();
+      }
     }
     $('cart-add').addEventListener('click', function () { open(f.hidden); });
     $('af-cancel').addEventListener('click', function () { open(false); });
+    $('af-item').addEventListener('input', function () {
+      var id = parseItem(this.value), i = id ? knownItem(id) : null;
+      showItemHint(i);
+      if (i && isNum(i.price) && $('af-price').value.trim() === '') $('af-price').value = String(i.price);
+    });
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var id = parseItem($('af-item').value);
@@ -423,7 +476,8 @@
       var q = parseInt($('af-qty').value, 10);
       if (!isFinite(q) || q < 1) { err.textContent = 'A quantidade precisa ser 1 ou mais.'; err.hidden = false; return; }
       err.hidden = true;
-      var href = issueUrl({ acao: 'Adicionar', item: 'https://www.roblox.com/catalog/' + id, nome: id, preco: price, qtd: q, data: $('af-date').value });
+      var known = knownItem(id);
+      var href = issueUrl({ acao: 'Adicionar', item: 'https://www.roblox.com/catalog/' + id, nome: (known && known.name) || id, preco: price, qtd: q, data: $('af-date').value });
       window.open(href, '_blank', 'noopener,noreferrer');
     });
   }
