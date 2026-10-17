@@ -193,6 +193,35 @@ def velocity(asset_id, history, now, cfg):
     return round(sold / hours, 3), None
 
 
+def calibration_for(item, lifts):
+    """Como itens parecidos se saíram no backtest (radar.calibrar). None sem dado confiável.
+
+    score 0 a 1: média de 0,5 × lift das faixas do item (lift 1 = 0,5 neutro; lift 2+ = 1).
+    """
+    from .calibrar import item_features
+    if not lifts:
+        return None
+    feats = item_features({"item": item, "original_price": item.get("price"),
+                           "asset_stock": item.get("total_quantity")})
+    hits = [(k, feats[k], lifts[k][feats[k]]) for k in lifts if feats.get(k) in lifts[k]]
+    if not hits:
+        return None
+    s = sum(max(0.0, min(0.5 * h[2]["lift"], 1.0)) for h in hits) / len(hits)
+    best = max(hits, key=lambda h: h[2]["n"])
+    return {"score": round(s, 3), "sinais": [{"sinal": k, "faixa": f, **v} for k, f, v in hits],
+            "exemplo": f"{best[1]}: {best[2]['taxa']:.0%} deram margem ≥ 30% ({best[2]['n']} itens)"}
+
+
+def calibration_reason(cal):
+    if not cal:
+        return None
+    if cal["score"] >= 0.7:
+        return f"Histórico parecido favorável: {cal['exemplo']}."
+    if cal["score"] <= 0.3:
+        return f"Histórico parecido fraco: {cal['exemplo']}."
+    return None
+
+
 def score(item, cfg):
     w = cfg["score_pesos"]
     m = item["net_margin"]
@@ -216,8 +245,11 @@ def score(item, cfg):
         s_vel = 0.1
     s_creator = 1.0 if item.get("creator_verified") else 0.4
     s_store = store_score(item.get("creator_track"), cfg)
+    cal = item.get("calibracao")
+    s_cal = cal["score"] if cal else 0.5
     total = (w["margem"] * s_margin + w["liquidez"] * s_liq + w["consistencia"] * s_cons
-             + w["velocidade"] * s_vel + w["criador"] * s_creator + w.get("historico_loja", 0) * s_store)
+             + w["velocidade"] * s_vel + w["criador"] * s_creator + w.get("historico_loja", 0) * s_store
+             + w.get("calibracao", 0) * s_cal)
     return int(round(total))
 
 
@@ -292,12 +324,20 @@ def classify(item, cfg):
     return "OBSERVAR", [r.strip() for r in reasons if r.strip()], inval
 
 
-def analyze(current, history, now, cfg, tracks=None):
-    """tracks: {"<creator_id>": histórico da loja} (radar.lojas); sem dado o peso fica neutro."""
+def analyze(current, history, now, cfg, tracks=None, lifts=None, holds=None):
+    """tracks: {"<creator_id>": histórico da loja} (radar.lojas); sem dado o peso fica neutro.
+
+    lifts: resultado de radar.calibrar.load_lifts; sem calibração o peso fica neutro.
+    holds: {"loja": fator} de radar.calibrar.load_hold_factors. O valor de venda vira o preço esperado
+    no fim da trava de 30 dias (valor de hoje × fator mediano do histórico); sem dado, fator 1.
+    """
+    hold = (holds or {}).get("loja") or 1.0
     tracks = tracks or {}
     items = []
     for it in current:
         ref, ref_src = sale_reference(it.get("rap"), it.get("resale_avg_low"))
+        if ref is not None and hold != 1.0:
+            ref = round(ref * hold, 2)  # o que deve valer quando a trava de 30 dias acabar
         cost, profit, margin = economics(it.get("price"), ref, cfg)
         vel, vel_note = velocity(it["asset_id"], history, now, cfg)
         rem = it.get("units_remaining")
@@ -319,6 +359,8 @@ def analyze(current, history, now, cfg, tracks=None):
             "cost": cost, "net_profit": profit, "net_margin": margin,
             "velocity_per_hour": vel, "eta_hours": eta, "pct_sold": pct,
             "rap_consistent": rc, "velocity_note": vel_note,
+            "calibracao": calibration_for(it, lifts),
+            "fator_trava": hold if ref is not None else None, "tipo": "loja",
         })
         cls, reasons, inval = classify(row, cfg)
         row["class"] = cls
@@ -326,6 +368,12 @@ def analyze(current, history, now, cfg, tracks=None):
         loja = store_reason(row["creator_track"], cfg)
         if loja:
             reasons.append(loja)
+        if row["fator_trava"] and hold != 1.0:
+            reasons.append(f"Lucro calculado no fim da trava de 30 dias: valor de hoje × {hold:.2f} "
+                           "(mudança mediana do preço em 30 dias nos itens já esgotados).")
+        cal_txt = calibration_reason(row["calibracao"])
+        if cal_txt:
+            reasons.append(cal_txt)
         row["invalidators"] = inval
         row["score"] = score(row, cfg)
         if row.get("rap") is None:

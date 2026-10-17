@@ -5,8 +5,8 @@ import os
 import time
 from datetime import datetime, timezone
 
-from . import carteira, collect, lojas
-from .analyze import analyze
+from . import calibrar, carteira, collect, lojas, oportunidades, revenda
+from .analyze import CLASS_RANK, analyze
 from .http import Client
 from .notify import process_alerts, send_outbox, system_notice, write_outbox
 from .site import build_payload, write_site
@@ -110,7 +110,17 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
     except Exception:  # noqa: BLE001
         log.exception("histórico das lojas falhou; seguindo sem ele")
 
-    items = analyze(current, history, now, cfg, tracks=tracks)
+    lifts, holds = calibrar.load_lifts(root), calibrar.load_hold_factors(root)
+    analyzed = analyze(current, history, now, cfg, tracks=tracks, lifts=lifts, holds=holds)
+    # Compra na revenda (esgotados, trava de 7 dias); se falhar, o radar segue sem ela.
+    try:
+        analyzed += revenda.run(client, cfg, now, holds.get("revenda") or 1.0, lifts, errors,
+                                 use_listings=not listings_stop)
+    except Exception:  # noqa: BLE001
+        log.exception("compra na revenda falhou; seguindo sem ela")
+    analyzed.sort(key=lambda r: (-CLASS_RANK[r["class"]], -r["score"]))
+    # Site, lista e alertas só com o que pode dar lucro; o resto vai para data/descartados.md.
+    items, discarded = oportunidades.split(analyzed, cfg)
 
     # Status da execução
     if not found and errors:
@@ -135,6 +145,9 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
 
     snaps = len({r["ts"] for r in history})
     payload = build_payload(items, cfg, iso(now), run_status, note, snaps)
+    payload["descartados"] = len(discarded)
+    if run_status != "error":
+        oportunidades.write_descartados(root, discarded, iso(now))
     if run_status == "error":
         # Mantém os itens anteriores no site e só atualiza o aviso.
         prev_path = os.path.join(root, "docs", "data.json")
@@ -176,5 +189,6 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
             log.exception("não consegui anotar o erro da carteira")
 
     log.info("status=%s itens=%d alertas=%d chamadas=%d", run_status, len(items), len(sent), client.calls)
-    return {"status": run_status, "note": note, "items": items, "alerts": sent, "statuses": statuses,
-            "listings": listings_status, "carteira": cart}
+    return {"status": run_status, "note": note, "items": analyzed, "oportunidades": items, "alerts": sent, "statuses": statuses,
+            "listings": listings_status, "carteira": cart,
+            "descartados": discarded}

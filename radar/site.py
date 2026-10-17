@@ -13,6 +13,7 @@ PUBLIC_FIELDS = [
     "cost", "net_profit", "net_margin", "velocity_per_hour", "velocity_note", "eta_hours", "score", "class",
     "reasons", "invalidators", "data_quality",
     "creator_track", "retention", "change_7d", "trend", "spark",
+    "tipo", "fator_trava",
 ]
 
 
@@ -49,12 +50,15 @@ def buy_list_md(payload):
     lines = [f"# Lista de compra — {payload['generated_at']}", "",
              f"Status da coleta: **{payload['run_status']}**. {payload['status_note'] or ''}".strip(), "",
              f"> {payload['disclaimer']}", ""]
+    if not payload["items"]:
+        lines += ["**Nenhuma oportunidade agora.** Itens sem lucro projetado ficam em `data/descartados.md`.", ""]
+        return "\n".join(lines)
     for cat in payload["categories"]:
         rows = [i for i in payload["items"] if i["category"] == cat["key"]]
         lines.append(f"## {cat['label']} ({len(rows)})")
         lines.append("")
         if not rows:
-            lines += ["Nenhum item dentro dos filtros nesta coleta.", ""]
+            lines += ["Nenhuma oportunidade nesta categoria.", ""]
             continue
         lines.append("| Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |")
         lines.append("|---|---|---|---|---|---|---|---|---|---|")

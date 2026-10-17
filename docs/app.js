@@ -164,6 +164,7 @@
     var bw = el('div');
     var bd = el('span', 'badge ' + (CLS_LABEL[i['class']] ? i['class'] : 'none'), CLS_LABEL[i['class']] || NA);
     bw.appendChild(bd);
+    if (i.tipo === 'revenda') bw.appendChild(el('span', 'badge tipo-revenda', 'Compra na revenda · trava 7 dias'));
     bw.appendChild(el('span', 'score', 'Score ' + num(i.score)));
     info.appendChild(bw);
     head.appendChild(info);

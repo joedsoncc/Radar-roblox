@@ -1,0 +1,759 @@
+{
+ "n_backtest": 813,
+ "acertos": 59,
+ "taxa_geral": 0.073,
+ "sinais": {
+  "faixa_preco": [
+   {
+    "faixa": "51 a 100",
+    "n": 82,
+    "taxa": 0.244,
+    "margem_mediana": -0.549,
+    "lift": 3.36,
+    "confiavel": true
+   },
+   {
+    "faixa": "até 50",
+    "n": 48,
+    "taxa": 0.083,
+    "margem_mediana": -0.372,
+    "lift": 1.15,
+    "confiavel": true
+   },
+   {
+    "faixa": "acima de 500",
+    "n": 525,
+    "taxa": 0.053,
+    "margem_mediana": -0.549,
+    "lift": 0.73,
+    "confiavel": true
+   },
+   {
+    "faixa": "101 a 250",
+    "n": 89,
+    "taxa": 0.045,
+    "margem_mediana": -0.549,
+    "lift": 0.62,
+    "confiavel": true
+   },
+   {
+    "faixa": "251 a 500",
+    "n": 69,
+    "taxa": 0.043,
+    "margem_mediana": -0.356,
+    "lift": 0.6,
+    "confiavel": true
+   }
+  ],
+  "estoque": [
+   {
+    "faixa": "2.001 a 10.000 un.",
+    "n": 66,
+    "taxa": 0.258,
+    "margem_mediana": -0.434,
+    "lift": 3.55,
+    "confiavel": true
+   },
+   {
+    "faixa": "até 100 un.",
+    "n": 457,
+    "taxa": 0.066,
+    "margem_mediana": -0.549,
+    "lift": 0.9,
+    "confiavel": true
+   },
+   {
+    "faixa": "101 a 500 un.",
+    "n": 92,
+    "taxa": 0.065,
+    "margem_mediana": -0.549,
+    "lift": 0.9,
+    "confiavel": true
+   },
+   {
+    "faixa": "acima de 10.000 un.",
+    "n": 186,
+    "taxa": 0.032,
+    "margem_mediana": -0.42,
+    "lift": 0.44,
+    "confiavel": true
+   },
+   {
+    "faixa": "501 a 2.000 un.",
+    "n": 12,
+    "taxa": 0.0,
+    "margem_mediana": -0.5,
+    "lift": 0.0,
+    "confiavel": false
+   }
+  ],
+  "categoria": [
+   {
+    "faixa": "front",
+    "n": 10,
+    "taxa": 0.3,
+    "margem_mediana": -0.369,
+    "lift": 4.13,
+    "confiavel": false
+   },
+   {
+    "faixa": "shoulder",
+    "n": 34,
+    "taxa": 0.118,
+    "margem_mediana": -0.534,
+    "lift": 1.62,
+    "confiavel": true
+   },
+   {
+    "faixa": "back",
+    "n": 111,
+    "taxa": 0.099,
+    "margem_mediana": -0.549,
+    "lift": 1.37,
+    "confiavel": true
+   },
+   {
+    "faixa": "neck",
+    "n": 53,
+    "taxa": 0.075,
+    "margem_mediana": -0.549,
+    "lift": 1.04,
+    "confiavel": true
+   },
+   {
+    "faixa": "hair",
+    "n": 31,
+    "taxa": 0.065,
+    "margem_mediana": -0.549,
+    "lift": 0.89,
+    "confiavel": true
+   },
+   {
+    "faixa": "hat",
+    "n": 497,
+    "taxa": 0.062,
+    "margem_mediana": -0.549,
+    "lift": 0.86,
+    "confiavel": true
+   },
+   {
+    "faixa": "face",
+    "n": 70,
+    "taxa": 0.057,
+    "margem_mediana": -0.496,
+    "lift": 0.79,
+    "confiavel": true
+   },
+   {
+    "faixa": "waist",
+    "n": 7,
+    "taxa": 0.0,
+    "margem_mediana": -0.549,
+    "lift": 0.0,
+    "confiavel": false
+   }
+  ],
+  "criador_verificado": [
+   {
+    "faixa": "não",
+    "n": 389,
+    "taxa": 0.103,
+    "margem_mediana": -0.549,
+    "lift": 1.42,
+    "confiavel": true
+   },
+   {
+    "faixa": "sim",
+    "n": 424,
+    "taxa": 0.045,
+    "margem_mediana": -0.511,
+    "lift": 0.62,
+    "confiavel": true
+   }
+  ],
+  "favoritos_por_un": [
+   {
+    "faixa": "< 1 favorito/un.",
+    "n": 265,
+    "taxa": 0.087,
+    "margem_mediana": -0.52,
+    "lift": 1.2,
+    "confiavel": true
+   },
+   {
+    "faixa": "1 a 5 favoritos/un.",
+    "n": 174,
+    "taxa": 0.08,
+    "margem_mediana": -0.549,
+    "lift": 1.11,
+    "confiavel": true
+   },
+   {
+    "faixa": "5+ favoritos/un.",
+    "n": 374,
+    "taxa": 0.059,
+    "margem_mediana": -0.549,
+    "lift": 0.81,
+    "confiavel": true
+   }
+  ],
+  "premio_1a_semana": [
+   {
+    "faixa": "4x ou mais",
+    "n": 29,
+    "taxa": 0.655,
+    "margem_mediana": 1.251,
+    "lift": 9.03,
+    "confiavel": true
+   },
+   {
+    "faixa": "2,5x a 4x",
+    "n": 25,
+    "taxa": 0.28,
+    "margem_mediana": -0.356,
+    "lift": 3.86,
+    "confiavel": true
+   },
+   {
+    "faixa": "1,5x a 2,5x",
+    "n": 73,
+    "taxa": 0.192,
+    "margem_mediana": -0.222,
+    "lift": 2.64,
+    "confiavel": true
+   },
+   {
+    "faixa": "< 1,5x o preço",
+    "n": 466,
+    "taxa": 0.036,
+    "margem_mediana": -0.549,
+    "lift": 0.5,
+    "confiavel": true
+   }
+  ],
+  "volume_1a_semana": [
+   {
+    "faixa": "500+ vendas",
+    "n": 121,
+    "taxa": 0.107,
+    "margem_mediana": -0.487,
+    "lift": 1.48,
+    "confiavel": true
+   },
+   {
+    "faixa": "100 a 499 vendas",
+    "n": 76,
+    "taxa": 0.105,
+    "margem_mediana": -0.3,
+    "lift": 1.45,
+    "confiavel": true
+   },
+   {
+    "faixa": "< 20 vendas",
+    "n": 531,
+    "taxa": 0.064,
+    "margem_mediana": -0.549,
+    "lift": 0.88,
+    "confiavel": true
+   },
+   {
+    "faixa": "20 a 99 vendas",
+    "n": 85,
+    "taxa": 0.047,
+    "margem_mediana": -0.517,
+    "lift": 0.65,
+    "confiavel": true
+   }
+  ],
+  "estoque_grande_barato": [
+   {
+    "faixa": "sim",
+    "n": 151,
+    "taxa": 0.139,
+    "margem_mediana": -0.488,
+    "lift": 1.92,
+    "confiavel": true
+   },
+   {
+    "faixa": "não",
+    "n": 662,
+    "taxa": 0.057,
+    "margem_mediana": -0.549,
+    "lift": 0.79,
+    "confiavel": true
+   }
+  ],
+  "estoque_muito_grande": [
+   {
+    "faixa": "não",
+    "n": 627,
+    "taxa": 0.085,
+    "margem_mediana": -0.549,
+    "lift": 1.16,
+    "confiavel": true
+   },
+   {
+    "faixa": "sim",
+    "n": 186,
+    "taxa": 0.032,
+    "margem_mediana": -0.42,
+    "lift": 0.44,
+    "confiavel": true
+   }
+  ]
+ },
+ "generated_at": "2026-10-17T21:19:22Z",
+ "registros": 2275,
+ "sem_desfecho": 130,
+ "min_itens_faixa": 20,
+ "alvo_margem": 0.3,
+ "esgotando_agora": [
+  {
+   "asset_id": 79846453984508,
+   "name": "⏳ Sparkle Red Hair + Crown Valk + Clockworks",
+   "price": 149,
+   "restantes": 7,
+   "vendas_por_hora": 2.25,
+   "esgota_em_h": 3.1
+  },
+  {
+   "asset_id": 95006433998697,
+   "name": "NIGHT DEMON 👹 | exclusive ",
+   "price": 900,
+   "restantes": 123,
+   "vendas_por_hora": 15.0,
+   "esgota_em_h": 8.2
+  },
+  {
+   "asset_id": 118306309849671,
+   "name": "[ANIMATED] Nyan Cat HP Bar ",
+   "price": 95,
+   "restantes": 180,
+   "vendas_por_hora": 15.0,
+   "esgota_em_h": 12.0
+  },
+  {
+   "asset_id": 103264888144153,
+   "name": "Blue Valkyrie",
+   "price": 145,
+   "restantes": 76,
+   "vendas_por_hora": 3.75,
+   "esgota_em_h": 20.3
+  },
+  {
+   "asset_id": 98276569007154,
+   "name": "[⏳LIMITED] Traffic Cone+Clockwork+Hair+Antlers ",
+   "price": 199,
+   "restantes": 95,
+   "vendas_por_hora": 4.5,
+   "esgota_em_h": 21.1
+  },
+  {
+   "asset_id": 70913805587976,
+   "name": "Red Valkyrie",
+   "price": 95,
+   "restantes": 69,
+   "vendas_por_hora": 3.0,
+   "esgota_em_h": 23.0
+  },
+  {
+   "asset_id": 117646930298113,
+   "name": "Crimson Dominus",
+   "price": 95,
+   "restantes": 155,
+   "vendas_por_hora": 6.0,
+   "esgota_em_h": 25.8
+  },
+  {
+   "asset_id": 107664742122292,
+   "name": "Retro Classic Roblox Aura",
+   "price": 55,
+   "restantes": 60,
+   "vendas_por_hora": 2.25,
+   "esgota_em_h": 26.7
+  },
+  {
+   "asset_id": 120742637861171,
+   "name": "[ADD-ON] Sakura Pink Chained Spiky 8-Bit Crown",
+   "price": 150,
+   "restantes": 199,
+   "vendas_por_hora": 6.75,
+   "esgota_em_h": 29.5
+  },
+  {
+   "asset_id": 86477847897595,
+   "name": "[⏳] Emissive White Angel Star Crown (Glowing)",
+   "price": 550,
+   "restantes": 347,
+   "vendas_por_hora": 9.75,
+   "esgota_em_h": 35.6
+  },
+  {
+   "asset_id": 91039087796915,
+   "name": "[🎃HALLOWEEN] Orange Hair+Crown+Clockwork+Horns",
+   "price": 105,
+   "restantes": 708,
+   "vendas_por_hora": 19.5,
+   "esgota_em_h": 36.3
+  },
+  {
+   "asset_id": 106921786708223,
+   "name": "Gold Trim Black Valkyrie Hood of Dominion",
+   "price": 115,
+   "restantes": 334,
+   "vendas_por_hora": 9.0,
+   "esgota_em_h": 37.1
+  },
+  {
+   "asset_id": 98429339305128,
+   "name": "[⏳LiMITED SPARKLE] Black Valk + Fedora + Clockwork",
+   "price": 199,
+   "restantes": 487,
+   "vendas_por_hora": 12.75,
+   "esgota_em_h": 38.2
+  },
+  {
+   "asset_id": 140555190593821,
+   "name": "[⏳LIMITED SPARKLE] Black Hair+Crown+Horn+Clockwork",
+   "price": 65,
+   "restantes": 842,
+   "vendas_por_hora": 21.75,
+   "esgota_em_h": 38.7
+  },
+  {
+   "asset_id": 100665389571471,
+   "name": "Chicken Hood",
+   "price": 95,
+   "restantes": 616,
+   "vendas_por_hora": 15.75,
+   "esgota_em_h": 39.1
+  },
+  {
+   "asset_id": 104954096567108,
+   "name": "Halloween Retro Classic Roblox Pin",
+   "price": 55,
+   "restantes": 237,
+   "vendas_por_hora": 5.25,
+   "esgota_em_h": 45.1
+  },
+  {
+   "asset_id": 79773457512100,
+   "name": "NRV Orange Horns",
+   "price": 95,
+   "restantes": 849,
+   "vendas_por_hora": 17.25,
+   "esgota_em_h": 49.2
+  },
+  {
+   "asset_id": 120803233063988,
+   "name": "Pink Sigil Star Crown",
+   "price": 95,
+   "restantes": 319,
+   "vendas_por_hora": 6.0,
+   "esgota_em_h": 53.2
+  },
+  {
+   "asset_id": 77922338512745,
+   "name": "[⏳LIMITED] Sparkle-Time ORANGE Valk",
+   "price": 95,
+   "restantes": 162,
+   "vendas_por_hora": 3.0,
+   "esgota_em_h": 54.0
+  },
+  {
+   "asset_id": 79750279455412,
+   "name": "Red and Black Cape",
+   "price": 140,
+   "restantes": 297,
+   "vendas_por_hora": 5.25,
+   "esgota_em_h": 56.6
+  },
+  {
+   "asset_id": 82494808469526,
+   "name": "White Fedora ✅ ",
+   "price": 95,
+   "restantes": 713,
+   "vendas_por_hora": 11.25,
+   "esgota_em_h": 63.4
+  },
+  {
+   "asset_id": 76077501090719,
+   "name": "✅White Sparkle Hair + Horns + Headphones + Shades",
+   "price": 99,
+   "restantes": 484,
+   "vendas_por_hora": 7.5,
+   "esgota_em_h": 64.5
+  },
+  {
+   "asset_id": 132760536106506,
+   "name": "[ADD-ON] Onyx Black 8-Bit HP Bar",
+   "price": 95,
+   "restantes": 391,
+   "vendas_por_hora": 6.0,
+   "esgota_em_h": 65.2
+  },
+  {
+   "asset_id": 111608715869016,
+   "name": "Halloween Dominus Infernum",
+   "price": 95,
+   "restantes": 1658,
+   "vendas_por_hora": 24.76,
+   "esgota_em_h": 67.0
+  },
+  {
+   "asset_id": 71424286269597,
+   "name": "👁️ ANIMATED Red Black Hair + Crown + Hat + Horns",
+   "price": 99,
+   "restantes": 450,
+   "vendas_por_hora": 6.0,
+   "esgota_em_h": 75.0
+  }
+ ],
+ "curva_pos_esgote": {
+  "geral": {
+   "todos": {
+    "+1d": {
+     "mediana": 1.0,
+     "n": 397
+    },
+    "+7d": {
+     "mediana": 1.23,
+     "n": 283
+    },
+    "+30d": {
+     "mediana": 1.17,
+     "n": 315
+    }
+   }
+  },
+  "faixa_preco": {
+   "51 a 100": {
+    "+1d": {
+     "mediana": 1.86,
+     "n": 127
+    },
+    "+7d": {
+     "mediana": 2.62,
+     "n": 107
+    },
+    "+30d": {
+     "mediana": 1.54,
+     "n": 67
+    }
+   },
+   "acima de 500": {
+    "+1d": {
+     "mediana": 0.99,
+     "n": 141
+    },
+    "+7d": {
+     "mediana": 1.15,
+     "n": 82
+    },
+    "+30d": {
+     "mediana": 1.34,
+     "n": 105
+    }
+   },
+   "251 a 500": {
+    "+1d": {
+     "mediana": 1.0,
+     "n": 41
+    },
+    "+7d": {
+     "mediana": 1.22,
+     "n": 33
+    },
+    "+30d": {
+     "mediana": 1.77,
+     "n": 39
+    }
+   },
+   "101 a 250": {
+    "+1d": {
+     "mediana": 1.0,
+     "n": 63
+    },
+    "+7d": {
+     "mediana": 1.0,
+     "n": 54
+    },
+    "+30d": {
+     "mediana": 0.99,
+     "n": 57
+    }
+   },
+   "até 50": {
+    "+30d": {
+     "mediana": 1.08,
+     "n": 47
+    },
+    "+1d": {
+     "mediana": 0.0,
+     "n": 25
+    },
+    "+7d": {
+     "mediana": 1.0,
+     "n": 7
+    }
+   }
+  },
+  "estoque": {
+   "2.001 a 10.000 un.": {
+    "+1d": {
+     "mediana": 1.76,
+     "n": 135
+    },
+    "+7d": {
+     "mediana": 2.2,
+     "n": 117
+    },
+    "+30d": {
+     "mediana": 1.47,
+     "n": 71
+    }
+   },
+   "até 100 un.": {
+    "+1d": {
+     "mediana": 0.0,
+     "n": 76
+    },
+    "+7d": {
+     "mediana": 1.0,
+     "n": 21
+    },
+    "+30d": {
+     "mediana": 1.26,
+     "n": 40
+    }
+   },
+   "acima de 10.000 un.": {
+    "+1d": {
+     "mediana": 1.0,
+     "n": 158
+    },
+    "+7d": {
+     "mediana": 1.09,
+     "n": 126
+    },
+    "+30d": {
+     "mediana": 1.13,
+     "n": 184
+    }
+   },
+   "101 a 500 un.": {
+    "+30d": {
+     "mediana": 1.07,
+     "n": 12
+    },
+    "+1d": {
+     "mediana": 1.04,
+     "n": 17
+    },
+    "+7d": {
+     "mediana": 1.0,
+     "n": 10
+    }
+   },
+   "501 a 2.000 un.": {
+    "+1d": {
+     "mediana": 1.19,
+     "n": 11
+    },
+    "+7d": {
+     "mediana": 1.65,
+     "n": 9
+    },
+    "+30d": {
+     "mediana": 1.02,
+     "n": 8
+    }
+   }
+  }
+ },
+ "fator_trava": {
+  "loja": {
+   "dias": 30,
+   "fator_mediano": 1.01,
+   "n": 348
+  },
+  "revenda": {
+   "dias": 7,
+   "fator_mediano": 1.011,
+   "n": 398,
+   "acerto_30pct": 0.025
+  }
+ },
+ "melhores": [
+  {
+   "asset_id": 13062988718,
+   "name": "Diamond W Chain",
+   "original_price": 100,
+   "venda_dia30": 29999.0,
+   "margem": 134.1306
+  },
+  {
+   "asset_id": 13832615792,
+   "name": "Nuke Chain",
+   "original_price": 200,
+   "venda_dia30": 5000,
+   "margem": 10.2613
+  },
+  {
+   "asset_id": 13850956216,
+   "name": "Pepper",
+   "original_price": 5000,
+   "venda_dia30": 100069,
+   "margem": 8.0152
+  },
+  {
+   "asset_id": 121976686814942,
+   "name": "⌛ Stormbreaker Horns",
+   "original_price": 95,
+   "venda_dia30": 1558,
+   "margem": 6.3874
+  },
+  {
+   "asset_id": 83446680555913,
+   "name": "[⏳LIMITED Classic] White Sparkle Time Fedora",
+   "original_price": 95,
+   "venda_dia30": 1476,
+   "margem": 5.9986
+  },
+  {
+   "asset_id": 124270180080726,
+   "name": "Blue Valk",
+   "original_price": 95,
+   "venda_dia30": 1461,
+   "margem": 5.9275
+  },
+  {
+   "asset_id": 13742588059,
+   "name": "Emperor Top Hat",
+   "original_price": 3333,
+   "venda_dia30": 50000,
+   "margem": 5.7574
+  },
+  {
+   "asset_id": 75260672285911,
+   "name": "[ANIMATED] Twinkling Star Aura",
+   "original_price": 55,
+   "venda_dia30": 753,
+   "margem": 5.1671
+  },
+  {
+   "asset_id": 13609645958,
+   "name": "QT Bandana",
+   "original_price": 100000,
+   "venda_dia30": 1333337,
+   "margem": 5.006
+  },
+  {
+   "asset_id": 14010092071,
+   "name": "Rainbow Electric Face Mask",
+   "original_price": 35,
+   "venda_dia30": 455,
+   "margem": 4.8559
+  }
+ ]
+}
