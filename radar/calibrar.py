@@ -36,7 +36,8 @@ SIGNAL_LABELS = {
     "criador_verificado": "Criador verificado", "favoritos_por_un": "Favoritos por unidade",
     "premio_1a_semana": "Preço da 1ª semana de revenda ÷ preço original (sinal pós-esgotar)",
     "volume_1a_semana": "Vendas na 1ª semana de revenda (sinal pós-esgotar)",
-    "estoque_grande_barato": "Estoque ≥ 1.000 e preço ≤ 250 (regra EVITAR do PR #4)",
+    "estoque_grande_barato": "Estoque ≥ 1.000 e preço ≤ 250 (regra antiga do PR #4)",
+    "estoque_muito_grande": "Estoque acima de 10.000 (regra EVITAR do PR #4)",
 }
 # Sinais que existem ANTES de comprar no preço original (os que o score pode usar).
 PRE_BUY = ["faixa_preco", "estoque", "categoria", "criador_verificado", "favoritos_por_un"]
@@ -83,6 +84,7 @@ def item_features(rec):
     return {
         "estoque_grande_barato": None if stock is None or price is None else
         ("sim" if stock >= 1000 and price <= 250 else "não"),
+        "estoque_muito_grande": None if stock is None else ("sim" if stock > 10000 else "não"),
         "faixa_preco": band(rec.get("original_price") or it.get("price"), PRICE_BANDS),
         "estoque": band(stock, STOCK_BANDS),
         "categoria": it.get("category"),
@@ -228,7 +230,7 @@ def velocity_watch(root, now):
             continue
         (t0, (u0, _)), (t1, (u1, r)) = seq[0], seq[-1]
         hours = (_date(t1) - _date(t0)).total_seconds() / 3600
-        if hours < 0.5 or u1 > u0 or u0 - u1 < 2 or u1 == 0:
+        if hours < 0.5 or u1 > u0 or u0 - u1 < 2 or u1 == 0 or not r.get("price"):  # grátis não interessa
             continue
         vel = (u0 - u1) / hours
         out.append({"asset_id": aid, "name": r.get("name"), "price": r.get("price"), "restantes": u1,
