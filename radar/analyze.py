@@ -75,6 +75,8 @@ def copy_risk(name, cfg):
 
 
 def big_cheap_supply(item, cfg):
+    """Estoque grande e barato. Só vira EVITAR sem histórico da loja: com 3+ esgotados dela,
+    a projeção pela loja decide (amostra de 17/10: pins de 55 com 1.000 un. revendem acima de 1x)."""
     r = cfg.get("risco", {})
     total, price = item.get("total_quantity"), item.get("price")
     return (total is not None and price is not None
@@ -337,7 +339,7 @@ def classify(item, cfg):
         inval.append("Quando o RAP aparecer, a classe será recalculada.")
         return "OBSERVAR", reasons, inval
 
-    if big_cheap_supply(item, cfg):
+    if big_cheap_supply(item, cfg) and item.get("sale_ref_source") != "historico_loja":
         r = cfg.get("risco", {})
         reasons.append(f"Estoque grande e barato ({item['total_quantity']} un. a {item['price']}): itens assim "
                        "costumam revender abaixo do preço de loja depois de esgotar.")

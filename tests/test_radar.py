@@ -227,6 +227,13 @@ class FaseDeVenda(unittest.TestCase):
         self.assertEqual(it["class"], "EVITAR")
         self.assertIn("Estoque grande", it["reasons"][0])
 
+    def test_estoque_grande_com_loja_boa_usa_projecao(self):
+        track = {"with_resale": 4, "median_retention": 5.0, "pct_above_price": 0.75}
+        it = analyze.analyze([_row(total_quantity=1000, price=55, rap=55, last_chart_price=55, chart_median_14d=55)],
+                             _hist(price=55), NOW, CFG, tracks={"9": track})[0]
+        self.assertEqual(it["sale_ref_source"], "historico_loja")
+        self.assertNotEqual(it["class"], "EVITAR")
+
     def test_nome_de_classico_nao_vira_compra(self):
         track = {"with_resale": 6, "median_retention": 4.0, "pct_above_price": 0.8}
         it = analyze.analyze([_row(name="Emerald Valk")], _hist(), NOW, CFG, tracks={"9": track})[0]
