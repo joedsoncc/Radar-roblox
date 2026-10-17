@@ -1,7 +1,7 @@
 {
- "n_backtest": 50,
+ "n_backtest": 54,
  "acertos": 6,
- "taxa_geral": 0.12,
+ "taxa_geral": 0.111,
  "sinais": {
   "faixa_preco": [
    {
@@ -9,22 +9,22 @@
     "n": 2,
     "taxa": 1.0,
     "margem_mediana": 82.221,
-    "lift": 8.33,
+    "lift": 9.0,
     "confiavel": false
    },
    {
     "faixa": "51 a 100",
-    "n": 22,
-    "taxa": 0.182,
+    "n": 24,
+    "taxa": 0.167,
     "margem_mediana": -0.549,
-    "lift": 1.52,
+    "lift": 1.5,
     "confiavel": true
    },
    {
     "faixa": "251 a 500",
-    "n": 9,
+    "n": 10,
     "taxa": 0.0,
-    "margem_mediana": -0.85,
+    "margem_mediana": -0.852,
     "lift": 0.0,
     "confiavel": false
    },
@@ -38,9 +38,9 @@
    },
    {
     "faixa": "acima de 500",
-    "n": 12,
+    "n": 13,
     "taxa": 0.0,
-    "margem_mediana": -0.996,
+    "margem_mediana": -0.998,
     "lift": 0.0,
     "confiavel": false
    }
@@ -51,15 +51,15 @@
     "n": 1,
     "taxa": 1.0,
     "margem_mediana": 19.811,
-    "lift": 8.33,
+    "lift": 9.0,
     "confiavel": false
    },
    {
     "faixa": "2.001 a 10.000 un.",
-    "n": 47,
-    "taxa": 0.106,
+    "n": 51,
+    "taxa": 0.098,
     "margem_mediana": -0.586,
-    "lift": 0.89,
+    "lift": 0.88,
     "confiavel": true
    },
    {
@@ -74,10 +74,10 @@
   "categoria": [
    {
     "faixa": "hat",
-    "n": 41,
-    "taxa": 0.146,
+    "n": 44,
+    "taxa": 0.136,
     "margem_mediana": -0.549,
-    "lift": 1.22,
+    "lift": 1.23,
     "confiavel": true
    },
    {
@@ -106,9 +106,9 @@
    },
    {
     "faixa": "shoulder",
-    "n": 3,
+    "n": 4,
     "taxa": 0.0,
-    "margem_mediana": -0.85,
+    "margem_mediana": -0.897,
     "lift": 0.0,
     "confiavel": false
    }
@@ -116,10 +116,10 @@
   "criador_verificado": [
    {
     "faixa": "não",
-    "n": 46,
-    "taxa": 0.13,
+    "n": 50,
+    "taxa": 0.12,
     "margem_mediana": -0.605,
-    "lift": 1.09,
+    "lift": 1.08,
     "confiavel": true
    },
    {
@@ -137,15 +137,15 @@
     "n": 4,
     "taxa": 0.25,
     "margem_mediana": -0.549,
-    "lift": 2.08,
+    "lift": 2.25,
     "confiavel": false
    },
    {
     "faixa": "< 1 favorito/un.",
-    "n": 44,
-    "taxa": 0.114,
+    "n": 48,
+    "taxa": 0.104,
     "margem_mediana": -0.605,
-    "lift": 0.95,
+    "lift": 0.94,
     "confiavel": true
    },
    {
@@ -163,13 +163,13 @@
     "n": 3,
     "taxa": 0.667,
     "margem_mediana": 39.541,
-    "lift": 5.56,
+    "lift": 6.0,
     "confiavel": false
    },
    {
     "faixa": "< 1,5x o preço",
-    "n": 47,
-    "taxa": 0.085,
+    "n": 51,
+    "taxa": 0.078,
     "margem_mediana": -0.625,
     "lift": 0.71,
     "confiavel": true
@@ -181,24 +181,24 @@
     "n": 2,
     "taxa": 0.5,
     "margem_mediana": 3.38,
-    "lift": 4.17,
+    "lift": 4.5,
     "confiavel": false
    },
    {
     "faixa": "100 a 499 vendas",
-    "n": 26,
-    "taxa": 0.192,
+    "n": 28,
+    "taxa": 0.179,
     "margem_mediana": -0.776,
-    "lift": 1.6,
+    "lift": 1.61,
     "confiavel": true
    },
    {
     "faixa": "20 a 99 vendas",
-    "n": 19,
+    "n": 21,
     "taxa": 0.0,
     "margem_mediana": -0.549,
     "lift": 0.0,
-    "confiavel": false
+    "confiavel": true
    },
    {
     "faixa": "< 20 vendas",
@@ -212,24 +212,24 @@
   "estoque_grande_barato": [
    {
     "faixa": "sim",
-    "n": 27,
-    "taxa": 0.185,
+    "n": 29,
+    "taxa": 0.172,
     "margem_mediana": -0.549,
-    "lift": 1.54,
+    "lift": 1.55,
     "confiavel": true
    },
    {
     "faixa": "não",
-    "n": 23,
-    "taxa": 0.043,
-    "margem_mediana": -0.889,
+    "n": 25,
+    "taxa": 0.04,
+    "margem_mediana": -0.945,
     "lift": 0.36,
     "confiavel": true
    }
   ]
  },
- "generated_at": "2026-10-17T19:50:13Z",
- "registros": 600,
+ "generated_at": "2026-10-17T20:00:32Z",
+ "registros": 900,
  "sem_desfecho": 7,
  "min_itens_faixa": 20,
  "alvo_margem": 0.3,
@@ -239,31 +239,31 @@
    "todos": {
     "+1d": {
      "mediana": 0.77,
-     "n": 51
+     "n": 55
     },
     "+7d": {
-     "mediana": 0.83,
-     "n": 49
+     "mediana": 0.8,
+     "n": 52
     },
     "+30d": {
      "mediana": 1.0,
-     "n": 48
+     "n": 52
     }
    }
   },
   "faixa_preco": {
    "251 a 500": {
     "+1d": {
-     "mediana": 0.3,
-     "n": 10
+     "mediana": 0.28,
+     "n": 11
     },
     "+7d": {
      "mediana": 0.28,
-     "n": 9
+     "n": 10
     },
     "+30d": {
      "mediana": 0.33,
-     "n": 8
+     "n": 9
     }
    },
    "101 a 250": {
@@ -283,29 +283,29 @@
    "acima de 500": {
     "+1d": {
      "mediana": 0.01,
-     "n": 12
+     "n": 13
     },
     "+7d": {
      "mediana": 0.01,
-     "n": 11
+     "n": 12
     },
     "+30d": {
      "mediana": 0.01,
-     "n": 11
+     "n": 12
     }
    },
    "51 a 100": {
     "+1d": {
      "mediana": 1.0,
-     "n": 22
+     "n": 24
     },
     "+7d": {
      "mediana": 1.0,
-     "n": 22
+     "n": 23
     },
     "+30d": {
      "mediana": 1.0,
-     "n": 22
+     "n": 24
     }
    },
    "até 50": {
@@ -327,15 +327,15 @@
    "2.001 a 10.000 un.": {
     "+1d": {
      "mediana": 0.77,
-     "n": 47
+     "n": 51
     },
     "+7d": {
-     "mediana": 0.8,
-     "n": 46
+     "mediana": 0.77,
+     "n": 49
     },
     "+30d": {
      "mediana": 0.92,
-     "n": 46
+     "n": 50
     }
    },
    "101 a 500 un.": {
