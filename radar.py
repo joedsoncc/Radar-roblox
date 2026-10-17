@@ -6,6 +6,8 @@ Uso:
   python radar.py run --no-notify     # sem alertas
   python radar.py run --fake --root /tmp/teste   # dados falsos, sem internet
   python radar.py send                # envia os alertas guardados em data/outbox.json (depois do commit)
+  python radar.py launches            # vigia lançamentos de limiteds da Roblox oficial
+  python radar.py send --outbox launch_outbox.json
   python radar.py notice "texto"      # aviso de falha do workflow pelo ntfy
 """
 import argparse
@@ -28,14 +30,23 @@ def main(argv=None):
     r.add_argument("--no-notify", action="store_true")
     r.add_argument("--fake", action="store_true", help="usa dados falsos (não acessa a internet)")
     r.add_argument("--root", default=HERE, help="pasta do projeto (config.json, data/, docs/)")
-    sub.add_parser("send")
+    sd = sub.add_parser("send")
+    sd.add_argument("--outbox", default="outbox.json")
+    sub.add_parser("launches")
     nt = sub.add_parser("notice")
     nt.add_argument("text")
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 
     if args.cmd == "send":
-        send_outbox(HERE)
+        send_outbox(HERE, name=args.outbox)
+        return 0
+    if args.cmd == "launches":
+        from radar import launches
+        from radar.http import Client
+        cfg = load_config(HERE)
+        col = cfg["coleta"]
+        launches.run(HERE, Client(col["request_delay_s"], 2, col["timeout_s"]), cfg)
         return 0
     if args.cmd == "notice":
         topic = os.environ.get("NTFY_TOPIC", "").strip()

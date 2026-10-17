@@ -1,0 +1,58 @@
+name: Lançamentos Roblox
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # a cada 10 min (o GitHub pode atrasar alguns minutos)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lancamentos
+  cancel-in-progress: false
+
+jobs:
+  vigiar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Procurar limiteds novos da Roblox
+        run: python radar.py launches
+
+      - name: Salvar (só se apareceu algo novo)
+        id: salvar
+        run: |
+          git add data/launches.json data/launch_outbox.json docs/launches.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nada novo."
+            echo "novo=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "lançamentos: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}"; then
+              git push origin "HEAD:${GITHUB_REF_NAME}" && echo "novo=1" >> "$GITHUB_OUTPUT" && exit 0
+            else
+              git rebase --abort || true
+            fi
+            sleep $((2 ** i))
+          done
+          echo "::error::Não consegui salvar; aviso de lançamento NÃO enviado."
+          exit 1
+
+      - name: Avisar no celular
+        if: steps.salvar.outputs.novo == '1'
+        run: python radar.py send --outbox launch_outbox.json

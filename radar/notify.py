@@ -95,21 +95,21 @@ def system_notice(state, now, status, note, cfg, send=None, topic=None):
     return ok
 
 
-def _outbox_path(root):
-    return os.path.join(root, "data", "outbox.json")
+def _outbox_path(root, name="outbox.json"):
+    return os.path.join(root, "data", name)
 
 
-def write_outbox(root, messages, now):
+def write_outbox(root, messages, now, name="outbox.json"):
     """Mensagens a enviar depois do commit. Não contém o tópico."""
     os.makedirs(os.path.join(root, "data"), exist_ok=True)
-    with open(_outbox_path(root), "w", encoding="utf-8") as f:
+    with open(_outbox_path(root, name), "w", encoding="utf-8") as f:
         json.dump({"generated_at": iso(now), "messages": messages}, f, ensure_ascii=False, indent=1)
 
 
-def send_outbox(root, send=None, topic=None, now=None, max_age_min=60):
+def send_outbox(root, send=None, topic=None, now=None, max_age_min=60, name="outbox.json"):
     """Envia o que a última execução deixou no outbox. Ignora outbox antigo."""
     try:
-        with open(_outbox_path(root), encoding="utf-8") as f:
+        with open(_outbox_path(root, name), encoding="utf-8") as f:
             box = json.load(f)
     except (OSError, ValueError):
         return 0

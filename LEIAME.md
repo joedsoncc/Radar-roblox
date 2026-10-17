@@ -36,6 +36,14 @@ Exemplo: preço 100, RAP 260 → recebe 130, custo 111, lucro **+19 (+17%)**. Co
 
 Velocidade de venda só conta com snapshots separados por pelo menos 1,5 h e 2+ unidades vendidas; se o estoque aumentar (reposição), a velocidade não é medida. O RAP só é considerado coerente se o último preço do gráfico **e** a mediana de 14 dias forem pelo menos metade do RAP, com 3+ dias de venda.
 
+## Lançamentos da Roblox (a cada 10 min)
+
+Um segundo workflow (`.github/workflows/lancamentos.yml`) procura **limiteds de acessórios publicados pela conta oficial da Roblox**, de qualquer preço. Quando aparece um item novo, ele salva no repositório e manda um alerta urgente no ntfy com nome, preço, estoque e link. O item também aparece no topo do site, na seção "Lançamentos da Roblox".
+
+- Na primeira execução, ele só registra o que já existe, sem avisar.
+- Itens criados há mais de 7 dias que reaparecem na lista são ignorados. Se a data de criação não puder ser confirmada, o alerta avisa isso.
+- Só gera commit quando acha algo novo. O GitHub pode atrasar o agendamento alguns minutos, e lançamentos costumam esgotar rápido.
+
 ## O que você precisa fazer (uma vez)
 
 1. **Repositório**: crie um repositório **público** vazio no GitHub. GitHub Pages em repositório privado exige plano pago; no grátis o site fica público (os segredos não).

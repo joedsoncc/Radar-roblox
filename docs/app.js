@@ -202,7 +202,39 @@
     $('count').textContent = items.length + (items.length === 1 ? ' item' : ' itens');
   }
 
+  function renderLaunches(d) {
+    var items = (d && d.items) || [];
+    var sec = $('launches'), ul = $('launch-list');
+    if (!items.length) { sec.hidden = true; return; }
+    var labels = {};
+    ((state.data && state.data.categories) || []).forEach(function (c) { labels[c.key] = c.label; });
+    ul.textContent = '';
+    items.slice(0, 5).forEach(function (i) {
+      var li = el('li');
+      var found = i.found_at ? new Date(i.found_at) : null;
+      if (found && !isNaN(found) && Date.now() - found.getTime() < 864e5) li.className = 'fresh';
+      var href = safeUrl(i.url);
+      var a = el(href ? 'a' : 'span', null, i.name || 'Item sem nome');
+      if (href) { a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+      li.appendChild(a);
+      var stock = isNum(i.total_quantity) ? num(i.units_remaining) + '/' + num(i.total_quantity) + ' restantes' : 'estoque ' + NA;
+      var when = found && !isNaN(found) ? found.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) : NA;
+      li.appendChild(el('span', 'launch-meta', [labels[i.category] || i.category || NA, robux(i.price), stock,
+        i.off_sale ? 'fora de venda' : 'à venda', 'visto em ' + when].join(' · ')));
+      ul.appendChild(li);
+    });
+    sec.hidden = false;
+  }
+
+  function loadLaunches() {
+    return fetch('launches.json', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(renderLaunches)
+      .catch(function () {});
+  }
+
   function refresh(first) {
+    loadLaunches();
     return load().then(function (d) {
       var changed = !state.data || state.data.generated_at !== d.generated_at || state.data.run_status !== d.run_status;
       state.data = d;
