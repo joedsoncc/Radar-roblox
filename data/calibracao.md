@@ -1,4 +1,4 @@
-# Calibração do radar (2026-10-17T20:47:42Z)
+# Calibração do radar (2026-10-17T20:54:13Z)
 
 Backtest: quem comprou no preço original e vendeu depois da trava de 30 dias (mediana do gráfico 30 a 37 dias depois de esgotar), com as taxas do radar (recebe 50%, custo ×1,11). Acerto = margem líquida ≥ 30%.
 
@@ -126,30 +126,30 @@ Início = 1º dia em que o preço saiu de ±15% do preço de loja (≈ quando es
 
 | Item | Preço | Restam | Vendas/h | Esgota em |
 |---|---|---|---|---|
-| [Birthday Cake Axolu](https://www.roblox.com/catalog/110467381278652) | 0 | 3 | 84.88 | ~0.0 h |
-| [HUGE Hugging Halloween Cat on your Back](https://www.roblox.com/catalog/103418642515401) | 0 | 8 | 18.0 | ~0.4 h |
-| [Betrayers Crown](https://www.roblox.com/catalog/121229291644581) | 0 | 9 | 13.72 | ~0.7 h |
-| [Asta](https://www.roblox.com/catalog/111579290317799) | 0 | 3 | 2.57 | ~1.2 h |
-| [Gráinneog](https://www.roblox.com/catalog/106355599246932) | 0 | 8 | 5.14 | ~1.6 h |
-| [[PBR] Gold Horse King Axe [CODE: BHKA]](https://www.roblox.com/catalog/76153937986723) | 0 | 7 | 3.43 | ~2.0 h |
-| [Neon Venom Gradient Spiked Horns](https://www.roblox.com/catalog/73350250089587) | 0 | 4 | 1.71 | ~2.3 h |
-| [⏳ Sparkle Red Hair + Crown Valk + Clockworks](https://www.roblox.com/catalog/79846453984508) | 149 | 7 | 2.57 | ~2.7 h |
-| [Diego](https://www.roblox.com/catalog/110126764663521) | 0 | 6 | 1.71 | ~3.5 h |
-| [Fries Shoulder Pal](https://www.roblox.com/catalog/92059852230172) | 0 | 292 | 71.16 | ~4.1 h |
-| [Flying Squirrel Hugger](https://www.roblox.com/catalog/107550244108021) | 0 | 10 | 1.71 | ~5.8 h |
-| [The Shumpkin](https://www.roblox.com/catalog/86553542522636) | 0 | 24 | 3.43 | ~7.0 h |
-| [Cute White Angel Wings](https://www.roblox.com/catalog/95651415246994) | 0 | 55 | 7.72 | ~7.1 h |
-| [NIGHT DEMON 👹 | exclusive ](https://www.roblox.com/catalog/95006433998697) | 900 | 124 | 16.29 | ~7.6 h |
-| [Black Hair w Goggles](https://www.roblox.com/catalog/105612037282720) | 0 | 77 | 8.57 | ~9.0 h |
-| [Keith_crowned’s sparkle time traffic birthday cake](https://www.roblox.com/catalog/90498366287453) | 0 | 40 | 4.29 | ~9.3 h |
-| [[ANIMATED] Nyan Cat HP Bar ](https://www.roblox.com/catalog/118306309849671) | 95 | 182 | 15.43 | ~11.8 h |
-| [Black Messy Hair](https://www.roblox.com/catalog/91863676683138) | 0 | 82 | 6.86 | ~12.0 h |
-| [Emilia](https://www.roblox.com/catalog/130782686627629) | 0 | 31 | 2.57 | ~12.1 h |
-| [Blue Dress](https://www.roblox.com/catalog/114508257602750) | 0 | 34 | 2.57 | ~13.2 h |
-| [♪ 〜 Free Pink Witch Cotton Candy Hair](https://www.roblox.com/catalog/107037340881521) | 0 | 88 | 6.0 | ~14.7 h |
-| [Blue Valkyrie](https://www.roblox.com/catalog/103264888144153) | 145 | 76 | 4.29 | ~17.7 h |
-| [Armour Shoulder Left](https://www.roblox.com/catalog/100309523892085) | 0 | 31 | 1.71 | ~18.1 h |
-| [Christmas Aura with Snowflakes and Gingerbread](https://www.roblox.com/catalog/126938298102120) | 0 | 36 | 1.71 | ~21.0 h |
-| [Halloween Wings](https://www.roblox.com/catalog/124865321156751) | 0 | 57 | 2.57 | ~22.2 h |
+| [Birthday Cake Axolu](https://www.roblox.com/catalog/110467381278652) | 0 | 2 | 75.02 | ~0.0 h |
+| [Betrayers Crown](https://www.roblox.com/catalog/121229291644581) | 0 | 7 | 13.5 | ~0.5 h |
+| [HUGE Hugging Halloween Cat on your Back](https://www.roblox.com/catalog/103418642515401) | 0 | 8 | 14.4 | ~0.6 h |
+| [Gráinneog](https://www.roblox.com/catalog/106355599246932) | 0 | 7 | 5.25 | ~1.3 h |
+| [Asta](https://www.roblox.com/catalog/111579290317799) | 0 | 3 | 2.25 | ~1.3 h |
+| [Neon Venom Gradient Spiked Horns](https://www.roblox.com/catalog/73350250089587) | 0 | 3 | 2.25 | ~1.3 h |
+| [[PBR] Gold Horse King Axe [CODE: BHKA]](https://www.roblox.com/catalog/76153937986723) | 0 | 7 | 3.0 | ~2.3 h |
+| [⏳ Sparkle Red Hair + Crown Valk + Clockworks](https://www.roblox.com/catalog/79846453984508) | 149 | 7 | 2.25 | ~3.1 h |
+| [Fries Shoulder Pal](https://www.roblox.com/catalog/92059852230172) | 0 | 281 | 70.51 | ~4.0 h |
+| [Diego](https://www.roblox.com/catalog/110126764663521) | 0 | 6 | 1.5 | ~4.0 h |
+| [♡ : cute diary of a princess in black](https://www.roblox.com/catalog/100993500063118) | 0 | 9 | 1.5 | ~6.0 h |
+| [Flying Squirrel Hugger](https://www.roblox.com/catalog/107550244108021) | 0 | 10 | 1.5 | ~6.7 h |
+| [Cute White Angel Wings](https://www.roblox.com/catalog/95651415246994) | 0 | 54 | 7.5 | ~7.2 h |
+| [The Shumpkin](https://www.roblox.com/catalog/86553542522636) | 0 | 24 | 3.0 | ~8.0 h |
+| [NIGHT DEMON 👹 | exclusive ](https://www.roblox.com/catalog/95006433998697) | 900 | 123 | 15.0 | ~8.2 h |
+| [Black Hair w Goggles](https://www.roblox.com/catalog/105612037282720) | 0 | 77 | 7.5 | ~10.3 h |
+| [Keith_crowned’s sparkle time traffic birthday cake](https://www.roblox.com/catalog/90498366287453) | 0 | 40 | 3.75 | ~10.7 h |
+| [[ANIMATED] Nyan Cat HP Bar ](https://www.roblox.com/catalog/118306309849671) | 95 | 180 | 15.0 | ~12.0 h |
+| [Black Messy Hair](https://www.roblox.com/catalog/91863676683138) | 0 | 82 | 6.0 | ~13.7 h |
+| [Emilia](https://www.roblox.com/catalog/130782686627629) | 0 | 31 | 2.25 | ~13.8 h |
+| [Blue Dress](https://www.roblox.com/catalog/114508257602750) | 0 | 34 | 2.25 | ~15.1 h |
+| [Christmas Aura with Snowflakes and Gingerbread](https://www.roblox.com/catalog/126938298102120) | 0 | 35 | 2.25 | ~15.6 h |
+| [♪ 〜 Free Pink Witch Cotton Candy Hair](https://www.roblox.com/catalog/107037340881521) | 0 | 88 | 4.5 | ~19.6 h |
+| [Blue Valkyrie](https://www.roblox.com/catalog/103264888144153) | 145 | 76 | 3.75 | ~20.3 h |
+| [Armour Shoulder Left](https://www.roblox.com/catalog/100309523892085) | 0 | 31 | 1.5 | ~20.7 h |
 
 > Passado não garante futuro. Lift só vale com amostra grande; um dia de coleta é ponto de partida.
