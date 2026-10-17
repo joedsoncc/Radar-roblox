@@ -12,6 +12,7 @@ PUBLIC_FIELDS = [
     "volume_7d", "volume_30d", "last_chart_price", "last_chart_date", "chart_median_14d", "rap_consistent",
     "cost", "net_profit", "net_margin", "velocity_per_hour", "velocity_note", "eta_hours", "score", "class",
     "reasons", "invalidators", "data_quality",
+    "creator_track", "retention", "change_7d", "trend", "spark",
 ]
 
 

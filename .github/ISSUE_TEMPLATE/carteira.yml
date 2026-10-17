@@ -1,0 +1,55 @@
+name: Carteira (adicionar ou remover item)
+description: Cadastra um item comprado (ou só para acompanhar) na carteira do radar.
+title: "[carteira] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Só o dono do repositório consegue cadastrar: o workflow ignora issues de outras pessoas.
+        Em poucos minutos o item aparece na aba Carteira do site e esta issue é fechada com o resultado.
+  - type: input
+    id: acao
+    attributes:
+      label: Ação
+      description: Escreva Adicionar ou Remover. (Campo de texto para o botão "Remover" do site já vir preenchido.)
+      value: Adicionar
+    validations:
+      required: true
+  - type: input
+    id: item
+    attributes:
+      label: Item (link do catálogo ou ID)
+      description: "Ex.: https://www.roblox.com/catalog/90254996174236/8-Bit-Royal-Crown ou só 90254996174236"
+    validations:
+      required: true
+  - type: input
+    id: preco_pago
+    attributes:
+      label: Preço pago (Robux por unidade)
+      description: Número inteiro. Deixe vazio para só acompanhar (fica fora dos totais). Ignorado em "Remover".
+      placeholder: "195"
+    validations:
+      required: false
+  - type: input
+    id: quantidade
+    attributes:
+      label: Quantidade
+      description: De 1 a 100.
+      value: "1"
+    validations:
+      required: false
+  - type: input
+    id: comprado_em
+    attributes:
+      label: Comprado em (AAAA-MM-DD)
+      description: Deixe vazio para usar hoje.
+      placeholder: "2026-10-17"
+    validations:
+      required: false
+  - type: textarea
+    id: nota
+    attributes:
+      label: Nota
+      description: Texto livre curto (opcional).
+    validations:
+      required: false

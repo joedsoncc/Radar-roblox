@@ -36,14 +36,20 @@ def category_for(asset_type_id, categories):
     return None
 
 
-def normalize_catalog_item(raw, categories):
-    """Converte um item do catálogo no nosso formato. Devolve None se não for acessório collectible."""
+def normalize_catalog_item(raw, categories, any_collectible=False):
+    """Converte um item do catálogo no nosso formato. Devolve None se não for acessório collectible.
+
+    any_collectible=True (carteira, lojas): aceita qualquer collectible, mesmo fora das categorias
+    do radar; a categoria vira "outro".
+    """
     if (raw.get("itemType") or "Asset") != "Asset":
         return None
     asset_type = raw.get("assetType")
     cat = category_for(asset_type, categories)
     if cat is None:
-        return None
+        if not any_collectible:
+            return None
+        cat = "outro"
     restrictions = raw.get("itemRestrictions") or []
     if "Collectible" not in restrictions and not raw.get("collectibleItemId"):
         return None
@@ -102,7 +108,7 @@ def search_catalog(client, cfg, errors):
     return found
 
 
-def fetch_details(client, asset_ids, cfg, errors):
+def fetch_details(client, asset_ids, cfg, errors, any_collectible=False):
     out = {}
     ids = list(asset_ids)
     for i in range(0, len(ids), 30):  # lotes de 30, como a comunidade relata
@@ -115,7 +121,7 @@ def fetch_details(client, asset_ids, cfg, errors):
             log.warning("detalhes falharam: %s", e)
             continue
         for raw in (resp or {}).get("data") or []:
-            item = normalize_catalog_item(raw, cfg["categorias"])
+            item = normalize_catalog_item(raw, cfg["categorias"], any_collectible)
             if item:
                 out[item["asset_id"]] = item
     return out
@@ -128,6 +134,17 @@ def _parse_date(s):
         return datetime.fromisoformat(str(s).replace("Z", "+00:00")).astimezone(timezone.utc)
     except ValueError:
         return None
+
+
+def build_chart_series(prices, vols, now, max_days=180):
+    """Junta preço e volume por dia: [["AAAA-MM-DD", preço, volume], ...] em ordem de data, até max_days."""
+    cut = (now - timedelta(days=max_days)).date()
+    by_day = {}
+    for d, v in prices:
+        by_day.setdefault(d.date(), [None, None])[0] = v
+    for d, v in vols:
+        by_day.setdefault(d.date(), [None, None])[1] = v
+    return [[day.isoformat(), pv[0], pv[1]] for day, pv in sorted(by_day.items()) if day >= cut]
 
 
 def summarize_resale(data, now):
@@ -171,6 +188,7 @@ def summarize_resale(data, now):
         "last_chart_date": last[0].date().isoformat() if last else None,
         "chart_median_14d": median,
         "chart_points_14d": len(recent),
+        "chart_series": build_chart_series(prices, vols, now),
     }
 
 

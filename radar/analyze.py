@@ -70,6 +70,95 @@ def rap_consistency(rap, last_price, last_date, now, cfg, median_14d=None, point
     return True
 
 
+def _median(vals):
+    vals = sorted(vals)
+    if not vals:
+        return None
+    m = len(vals) // 2
+    return vals[m] if len(vals) % 2 else (vals[m - 1] + vals[m]) / 2
+
+
+def window_change(series, now, days):
+    """Variação da mediana de preço: últimos `days` dias × `days` dias anteriores.
+
+    series: [["AAAA-MM-DD", preço, volume], ...]. Devolve None se faltar dado em qualquer janela.
+    """
+    today = now.date()
+    cur, prev = [], []
+    for row in series or []:
+        try:
+            age = (today - date.fromisoformat(row[0])).days
+        except (ValueError, TypeError, IndexError):
+            continue
+        price = row[1] if len(row) > 1 else None
+        if not isinstance(price, (int, float)) or isinstance(price, bool):
+            continue
+        if 0 <= age < days:
+            cur.append(price)
+        elif days <= age < 2 * days:
+            prev.append(price)
+    m_cur, m_prev = _median(cur), _median(prev)
+    if m_cur is None or not m_prev:
+        return None
+    return round(m_cur / m_prev - 1, 4)
+
+
+def trend_for(series, change_7d, now, min_days=3):
+    """subindo | estável | caindo | sem dados (menos de 3 dias de venda nos últimos 14 dias)."""
+    today = now.date()
+    days = 0
+    for row in series or []:
+        try:
+            age = (today - date.fromisoformat(row[0])).days
+        except (ValueError, TypeError, IndexError):
+            continue
+        if 0 <= age < 14 and len(row) > 1 and isinstance(row[1], (int, float)):
+            days += 1
+    if change_7d is None or days < min_days:
+        return "sem dados"
+    if change_7d >= 0.05:
+        return "subindo"
+    if change_7d <= -0.05:
+        return "caindo"
+    return "estável"
+
+
+def spark_from(series, n=30):
+    """Até n pares [data, preço] mais recentes do gráfico de revenda."""
+    pts = [[r[0], r[1]] for r in series or [] if len(r) > 1 and isinstance(r[1], (int, float))]
+    return pts[-n:]
+
+
+def store_score(track, cfg):
+    """0 a 1 pelo histórico da loja; 0,5 (neutro) sem dado ou com amostra pequena."""
+    lj = cfg.get("lojas", {})
+    if not track or (track.get("with_resale") or 0) < lj.get("min_com_revenda", 3):
+        return 0.5
+    ret, above = track.get("median_retention"), track.get("pct_above_price")
+    if ret is None or above is None:
+        return 0.5
+    s_ret = max(0.0, min((ret - 0.8) / 0.7, 1.0))  # 0,8 -> 0 ; 1,5 -> 1
+    return round(0.6 * s_ret + 0.4 * max(0.0, min(above, 1.0)), 3)
+
+
+def store_reason(track, cfg):
+    """Frase curta quando a loja tem histórico forte ou fraco; None no resto."""
+    lj = cfg.get("lojas", {})
+    if not track or (track.get("with_resale") or 0) < lj.get("min_com_revenda", 3):
+        return None
+    ret, above = track.get("median_retention"), track.get("pct_above_price")
+    if ret is None or above is None:
+        return None
+    n = track["with_resale"]
+    if ret >= lj.get("forte_retencao", 1.3) and above >= lj.get("forte_pct_acima", 0.6):
+        return (f"Loja com bom histórico: {above:.0%} dos limiteds dela revendem acima do preço "
+                f"(mediana {ret:.2f}x, {n} itens).")
+    if ret < lj.get("fraca_retencao", 1.0) and above < lj.get("fraca_pct_acima", 0.4):
+        return (f"Loja com histórico fraco: só {above:.0%} dos limiteds dela revendem acima do preço "
+                f"(mediana {ret:.2f}x, {n} itens).")
+    return None
+
+
 def velocity(asset_id, history, now, cfg):
     """Unidades vendidas por hora entre snapshots (inclui o atual).
 
@@ -126,8 +215,9 @@ def score(item, cfg):
     else:
         s_vel = 0.1
     s_creator = 1.0 if item.get("creator_verified") else 0.4
+    s_store = store_score(item.get("creator_track"), cfg)
     total = (w["margem"] * s_margin + w["liquidez"] * s_liq + w["consistencia"] * s_cons
-             + w["velocidade"] * s_vel + w["criador"] * s_creator)
+             + w["velocidade"] * s_vel + w["criador"] * s_creator + w.get("historico_loja", 0) * s_store)
     return int(round(total))
 
 
@@ -202,7 +292,9 @@ def classify(item, cfg):
     return "OBSERVAR", [r.strip() for r in reasons if r.strip()], inval
 
 
-def analyze(current, history, now, cfg):
+def analyze(current, history, now, cfg, tracks=None):
+    """tracks: {"<creator_id>": histórico da loja} (radar.lojas); sem dado o peso fica neutro."""
+    tracks = tracks or {}
     items = []
     for it in current:
         ref, ref_src = sale_reference(it.get("rap"), it.get("resale_avg_low"))
@@ -215,7 +307,13 @@ def analyze(current, history, now, cfg):
         rc = rap_consistency(it.get("rap"), it.get("last_chart_price"), it.get("last_chart_date"), now, cfg,
                              it.get("chart_median_14d"), it.get("chart_points_14d"))
         row = dict(it)
+        series = it.get("chart_series") or []
+        ch7 = window_change(series, now, 7)
+        rap, price = it.get("rap"), it.get("price")
         row.update({
+            "creator_track": tracks.get(str(it.get("creator_id"))),
+            "retention": round(rap / price, 3) if rap and price else None,
+            "change_7d": ch7, "trend": trend_for(series, ch7, now), "spark": spark_from(series),
             "url": f"https://www.roblox.com/catalog/{it['asset_id']}",
             "sale_ref": ref, "sale_ref_source": ref_src,
             "cost": cost, "net_profit": profit, "net_margin": margin,
@@ -225,6 +323,9 @@ def analyze(current, history, now, cfg):
         cls, reasons, inval = classify(row, cfg)
         row["class"] = cls
         row["reasons"] = reasons
+        loja = store_reason(row["creator_track"], cfg)
+        if loja:
+            reasons.append(loja)
         row["invalidators"] = inval
         row["score"] = score(row, cfg)
         if row.get("rap") is None:
