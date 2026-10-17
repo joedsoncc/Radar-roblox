@@ -6,11 +6,15 @@ from .http import ApiError, AuthRequired
 
 
 class FakeClient:
-    def __init__(self, now, seed=7, n=40, resale_mode="ok", fail_catalog=False):
+    def __init__(self, now, seed=7, n=40, resale_mode="ok", fail_catalog=False,
+                 listings_mode="ok", listings=None):
         self.now = now
         self.rng = random.Random(seed)
         self.resale_mode = resale_mode  # ok | auth | error
         self.fail_catalog = fail_catalog
+        self.listings_mode = listings_mode  # ok | auth | error
+        self.listings = listings  # preços fixos dos anúncios; None = gera em volta do RAP
+        self.listing_calls = 0
         self.calls = 0
         types = [8, 41, 42, 43, 44, 45, 46, 47, 61, 11]  # 61 emote e 11 camisa devem ser filtrados
         self.items = []
@@ -36,6 +40,17 @@ class FakeClient:
             if self.fail_catalog:
                 raise ApiError(url, 503, "falso")
             return {"data": self.items, "nextPageCursor": None}
+        if "/resellers" in url:
+            self.listing_calls += 1
+            if self.listings_mode == "auth":
+                raise AuthRequired(url, 401, "falso")
+            if self.listings_mode == "error":
+                raise ApiError(url, 500, "falso")
+            cid = url.split("/item/")[1].split("/")[0]
+            prices = self.listings if self.listings is not None else sorted(
+                int(self.rap.get(cid, 100) * self.rng.uniform(0.9, 1.6)) for _ in range(12))
+            return {"data": [{"price": p, "seller": {"name": "falso"}} for p in prices[:10]],
+                    "nextPageCursor": None}
         if "resale-data" in url:
             if self.resale_mode == "auth":
                 raise AuthRequired(url, 401, "falso")

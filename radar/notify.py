@@ -12,12 +12,18 @@ log = logging.getLogger("radar.notify")
 DISCLAIMER = "Não é recomendação financeira. Preços de itens virtuais variam muito."
 
 
+def avg_text(item):
+    avg, n = item.get("resale_avg_low"), item.get("resale_avg_n")
+    return "sem anúncios" if avg is None else f"média de {n} menores anúncios {avg:.0f}"
+
+
 def build_message(item, cat_labels):
     title = f"Oportunidade UGC: {item['name']}"[:120]
     lines = [
         f"{cat_labels.get(item['category'], item['category'])} · preço {item['price']} Robux",
         f"Restantes: {item['units_remaining']}/{item['total_quantity'] or '—'}",
-        f"RAP {item['rap']} · lucro líquido est. {item['net_profit']:+.0f} ({item['net_margin']:+.0%})",
+        f"RAP {item['rap']} · {avg_text(item)}",
+        f"Lucro líquido est. {item['net_profit']:+.0f} ({item['net_margin']:+.0%}), base {'anúncios' if item.get('sale_ref_source') == 'anuncios' else 'RAP'}",
         f"Esgota em {fmt_eta(item['eta_hours'])} · vol. 7d {item['volume_7d']}",
         item["url"],
         DISCLAIMER,

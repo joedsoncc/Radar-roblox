@@ -61,8 +61,8 @@ class Series(unittest.TestCase):
 
 
 class FluxoCompleto(unittest.TestCase):
-    def _two_runs(self, root, sends, rap_mult=4):
-        c1 = FakeClient(NOW - timedelta(hours=2), seed=1, n=20)
+    def _two_runs(self, root, sends, rap_mult=4, **fake_kw):
+        c1 = FakeClient(NOW - timedelta(hours=2), seed=1, n=20, **fake_kw)
         for it in c1.items:
             it["assetType"] = 8
             it["price"] = 100
@@ -137,6 +137,47 @@ class FluxoCompleto(unittest.TestCase):
 
 def hist(asset_id, pts):
     return [{"asset_id": asset_id, "units_remaining": u, "_ts": NOW - timedelta(hours=h)} for h, u in pts]
+
+
+class MediaDosAnuncios(unittest.TestCase):
+    def test_pega_so_os_10_menores(self):
+        prices = [500, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 900]
+        self.assertEqual(collect.avg_lowest(prices, 10), (145.0, 10))  # 500 e 900 ficam de fora
+
+    def test_menos_de_10_usa_os_que_existem(self):
+        self.assertEqual(collect.avg_lowest([100, 105, 0, None, "x", 115], 10), (106.67, 3))
+        self.assertEqual(collect.avg_lowest([], 10), (None, 0))
+
+    def test_valor_de_venda_eh_o_menor(self):
+        self.assertEqual(analyze.sale_reference(260, 300), (260, "rap"))
+        self.assertEqual(analyze.sale_reference(260, 230), (230, "anuncios"))
+        self.assertEqual(analyze.sale_reference(260, None), (260, "rap"))
+        self.assertEqual(analyze.sale_reference(None, 230), (None, None))  # anúncio sem venda não é preço
+
+    def test_anuncios_baratos_derrubam_o_lucro(self):
+        root, sends = tmp_root(), []
+        res = FluxoCompleto()._two_runs(root, sends, listings=[150] * 10)  # RAP 400, anúncios a 150
+        it = res["items"][0]
+        self.assertEqual((it["resale_avg_low"], it["resale_avg_n"], it["sale_ref_source"]), (150, 10, "anuncios"))
+        self.assertEqual(it["net_profit"], 150 * 0.5 - 111)
+        self.assertFalse([i for i in res["items"] if i["class"] == "COMPRAR-AGORA"])
+        self.assertEqual(sends, [])  # sem alerta
+
+    def test_anuncios_pedem_login_usa_menor_do_catalogo(self):
+        root = tmp_root()
+        client = FakeClient(NOW, seed=3, listings_mode="auth")
+        res = run(root, client=client, now=NOW, notify=False)
+        self.assertNotEqual(res["status"], "auth_required")  # histórico continua valendo
+        self.assertEqual(client.listing_calls, 1)  # parou na primeira recusa
+        self.assertIn("pediu login", res["note"])
+        com_rap = [i for i in res["items"] if i.get("lowest_resale")]
+        self.assertTrue(com_rap)
+        self.assertTrue(all(i["resale_avg_n"] == 1 and i["resale_avg_low"] == i["lowest_resale"] for i in com_rap))
+
+    def test_alerta_mostra_a_media(self):
+        root, sends = tmp_root(), []
+        FluxoCompleto()._two_runs(root, sends, listings=[500, 520, 540])
+        self.assertIn("média de 3 menores anúncios 520", sends[0]["message"])
 
 
 class Velocidade(unittest.TestCase):

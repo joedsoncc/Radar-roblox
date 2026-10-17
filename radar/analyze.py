@@ -1,11 +1,13 @@
 """Score e classes COMPRAR-AGORA / OBSERVAR / EVITAR.
 
 Contas (UGC Limited):
+  valor de venda  = menor entre RAP e média dos 10 anúncios mais baratos (sem anúncio: RAP)
   custo efetivo   = preço × fee_multiplier (1,11)
-  valor recebido  = RAP × seller_share (0,5)
-  lucro líquido   = RAP × 0,5 − preço × 1,11
+  valor recebido  = valor de venda × seller_share (0,5)
+  lucro líquido   = valor de venda × 0,5 − preço × 1,11
   margem líquida  = lucro líquido / custo efetivo
-Exemplo: preço 100, RAP 260 -> recebe 130, custo 111, lucro 19 (+17%).
+Exemplo: preço 100, RAP 260, média dos anúncios 300 -> vale 260, recebe 130, custo 111, lucro 19 (+17%).
+Com média dos anúncios 230 -> vale 230, recebe 115, lucro 4 (+4%).
 """
 from datetime import date, datetime, timedelta
 
@@ -21,6 +23,25 @@ def economics(price, rap, cfg):
         return cost, None, None
     profit = round(rap * t["seller_share"] - cost, 2)
     return cost, profit, round(profit / cost, 4)
+
+
+def sale_reference(rap, avg_low):
+    """Valor de venda usado no lucro: o menor entre RAP e média dos anúncios mais baratos.
+
+    Para vender, é preciso competir com os anúncios: se eles estão abaixo do RAP, o RAP
+    é otimista. Sem RAP não estimamos nada (anúncio sem venda não é preço). Devolve (valor, fonte).
+    """
+    if rap is None:
+        return None, None
+    if avg_low is not None and avg_low < rap:
+        return avg_low, "anuncios"
+    return rap, "rap"
+
+
+def ref_label(item):
+    if item.get("sale_ref_source") == "anuncios":
+        return f"Média dos {item.get('resale_avg_n')} menores anúncios ({item['sale_ref']:.0f})"
+    return f"RAP {item['rap']}"
 
 
 def rap_consistency(rap, last_price, last_date, now, cfg, median_14d=None, points_14d=None):
@@ -141,13 +162,13 @@ def classify(item, cfg):
 
     if m is not None and m <= ev["max_net_margin"]:
         be = round(item["cost"] / cfg["taxas"]["seller_share"]) if item["cost"] else None
-        reasons.append(f"RAP {item['rap']} não cobre o custo: lucro líquido {item['net_profit']:+.0f} "
-                       f"({m:+.0%}). Equilíbrio exige RAP ≈ {be}.")
+        reasons.append(f"{ref_label(item)} não cobre o custo: lucro líquido {item['net_profit']:+.0f} "
+                       f"({m:+.0%}). Equilíbrio exige RAP e anúncios ≈ {be}.")
         if eta is not None and eta <= 24:
             reasons.append(f"Mas está esgotando rápido ({fmt_eta(eta)}): o RAP pode subir depois, sem garantia.")
             inval.append(f"RAP acima de {be} depois de esgotar viraria oportunidade; RAP parado perto do preço confirma o prejuízo.")
             return "OBSERVAR", reasons, inval
-        inval.append(f"RAP acima de {be} com vendas consistentes.")
+        inval.append(f"RAP e média dos anúncios acima de {be} com vendas consistentes.")
         return "EVITAR", reasons, inval
 
     ok = (m is not None and m >= ca["min_net_margin"]
@@ -156,9 +177,10 @@ def classify(item, cfg):
           and (vel is not None or not ca["require_velocity"])
           and (eta is not None and eta <= ca["max_eta_hours"] if ca["require_velocity"] else True))
     if ok:
-        reasons.append(f"Margem líquida {m:+.0%} (lucro ≈ {item['net_profit']:.0f} Robux) com RAP coerente com o gráfico.")
+        reasons.append(f"Margem líquida {m:+.0%} (lucro ≈ {item['net_profit']:.0f} Robux, base: {ref_label(item)}) "
+                       "com RAP coerente com o gráfico.")
         reasons.append(f"Liquidez: {v7} vendas em 7 dias. Esgota em {fmt_eta(eta)}.")
-        inval.append(f"RAP cair abaixo de {round(item['cost'] * (1 + ca['min_net_margin']) / cfg['taxas']['seller_share'])} (margem < {ca['min_net_margin']:.0%}).")
+        inval.append(f"RAP ou média dos anúncios cair abaixo de {round(item['cost'] * (1 + ca['min_net_margin']) / cfg['taxas']['seller_share'])} (margem < {ca['min_net_margin']:.0%}).")
         inval.append("Último preço do gráfico cair abaixo de metade do RAP.")
         inval.append("Venda parar (estoque sem mudar entre snapshots) ou trava de 30 dias impedir a revenda a tempo.")
         return "COMPRAR-AGORA", reasons, inval
@@ -183,7 +205,8 @@ def classify(item, cfg):
 def analyze(current, history, now, cfg):
     items = []
     for it in current:
-        cost, profit, margin = economics(it.get("price"), it.get("rap"), cfg)
+        ref, ref_src = sale_reference(it.get("rap"), it.get("resale_avg_low"))
+        cost, profit, margin = economics(it.get("price"), ref, cfg)
         vel, vel_note = velocity(it["asset_id"], history, now, cfg)
         rem = it.get("units_remaining")
         eta = round(rem / vel, 1) if vel and rem is not None and vel > 0 else None
@@ -194,6 +217,7 @@ def analyze(current, history, now, cfg):
         row = dict(it)
         row.update({
             "url": f"https://www.roblox.com/catalog/{it['asset_id']}",
+            "sale_ref": ref, "sale_ref_source": ref_src,
             "cost": cost, "net_profit": profit, "net_margin": margin,
             "velocity_per_hour": vel, "eta_hours": eta, "pct_sold": pct,
             "rap_consistent": rc, "velocity_note": vel_note,

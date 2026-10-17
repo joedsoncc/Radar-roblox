@@ -154,7 +154,9 @@
     var dl = el('dl', 'stats');
     stat(dl, 'Preço', robux(i.price));
     stat(dl, 'RAP', robux(i.rap));
-    stat(dl, 'Menor revenda', robux(i.lowest_resale));
+    if (isNum(i.resale_avg_low)) stat(dl, 'Média ' + i.resale_avg_n + ' menores anúncios', robux(i.resale_avg_low));
+    else if ('resale_avg_n' in i) stat(dl, 'Média dos anúncios', robux(null));
+    else stat(dl, 'Menor revenda', robux(i.lowest_resale)); // dados antigos
     stat(dl, 'Lucro líquido', robux(i.net_profit));
     stat(dl, 'Margem', margin(i.net_margin));
     stat(dl, 'ETA p/ esgotar', eta(i.eta_hours));

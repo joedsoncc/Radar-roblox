@@ -101,6 +101,7 @@
     "page_limit": 120,
     "watch_days": 7,
     "max_resale_lookups": 150,
+    "anuncios_media": 10,
     "request_delay_s": 1.2,
     "max_retries": 4,
     "timeout_s": 20,
