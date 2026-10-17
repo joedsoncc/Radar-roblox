@@ -113,7 +113,7 @@ jobs:
           [ "$fim" -gt "$limite" ] && fim=$limite
           intervalo=$(( ${INTERVALO_MIN:-10} * 60 ))
           salvar() {
-            git add data/amplo data/calibracao.md data/calibracao.json 2>/dev/null || true
+            for f in data/amplo data/calibracao.md data/calibracao.json; do [ -e "$f" ] && git add "$f"; done
             git diff --cached --quiet && return 0
             git commit -q -m "amplo: $1 $(date -u +%Y-%m-%dT%H:%MZ)"
             for i in 1 2 3 4; do
