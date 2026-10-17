@@ -222,14 +222,16 @@ class FaseDeVenda(unittest.TestCase):
         self.assertFalse(it["rap_primary"])
         self.assertEqual(it["sale_ref_source"], "rap")
 
-    def test_estoque_grande_e_barato_evita(self):
-        it = analyze.analyze([_row(total_quantity=3000, price=149, rap=147)], _hist(price=149), NOW, CFG)[0]
+    def test_estoque_enorme_evita(self):
+        it = analyze.analyze([_row(total_quantity=30000, price=149, rap=147)], _hist(price=149), NOW, CFG)[0]
         self.assertEqual(it["class"], "EVITAR")
-        self.assertIn("Estoque grande", it["reasons"][0])
+        self.assertIn("Estoque enorme", it["reasons"][0])
+        it = analyze.analyze([_row(total_quantity=3000, price=149, rap=147)], _hist(price=149), NOW, CFG)[0]
+        self.assertNotEqual(it["class"], "EVITAR")
 
     def test_estoque_grande_com_loja_boa_usa_projecao(self):
         track = {"with_resale": 4, "median_retention": 5.0, "pct_above_price": 0.75}
-        it = analyze.analyze([_row(total_quantity=1000, price=55, rap=55, last_chart_price=55, chart_median_14d=55)],
+        it = analyze.analyze([_row(total_quantity=30000, price=55, rap=55, last_chart_price=55, chart_median_14d=55)],
                              _hist(price=55), NOW, CFG, tracks={"9": track})[0]
         self.assertEqual(it["sale_ref_source"], "historico_loja")
         self.assertNotEqual(it["class"], "EVITAR")

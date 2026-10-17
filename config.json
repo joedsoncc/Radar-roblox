@@ -172,8 +172,7 @@
   },
   "risco": {
     "rap_primario_tolerancia": 0.15,
-    "estoque_grande": 1000,
-    "preco_barato": 250,
+    "estoque_grande": 10000,
     "nomes_copia": [
       "valk",
       "valkyrie",

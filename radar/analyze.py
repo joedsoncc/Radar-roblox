@@ -75,12 +75,11 @@ def copy_risk(name, cfg):
 
 
 def big_cheap_supply(item, cfg):
-    """Estoque grande e barato. Só vira EVITAR sem histórico da loja: com 3+ esgotados dela,
-    a projeção pela loja decide (amostra de 17/10: pins de 55 com 1.000 un. revendem acima de 1x)."""
-    r = cfg.get("risco", {})
-    total, price = item.get("total_quantity"), item.get("price")
-    return (total is not None and price is not None
-            and total >= r.get("estoque_grande", 1000) and price <= r.get("preco_barato", 250))
+    """Estoque enorme (> 10.000 un.). Backtest do PR #3 (17/10, 202 itens com desfecho): acima de
+    10.000 un. só 2% deram margem ≥ 30%. Só vira EVITAR sem histórico da loja; com 3+ esgotados
+    dela, a projeção pela loja decide."""
+    total = item.get("total_quantity")
+    return total is not None and total > cfg.get("risco", {}).get("estoque_grande", 10000)
 
 
 def price_raise(asset_id, price, history):
@@ -305,14 +304,12 @@ def score(item, cfg):
     total_q = item.get("total_quantity")
     if total_q is None:
         s_supply = 0.3
-    elif total_q <= 150:
-        s_supply = 1.0
-    elif total_q <= 500:
-        s_supply = 0.6
-    elif total_q < 1000:
-        s_supply = 0.3
+    elif total_q > 10000:
+        s_supply = 0.0  # backtest: 2% com margem ≥ 30%
+    elif total_q > 2000:
+        s_supply = 1.0  # backtest: 41%
     else:
-        s_supply = 0.0
+        s_supply = 0.6
     total = (w["margem"] * s_margin + w["liquidez"] * s_liq + w["consistencia"] * s_cons
              + w["velocidade"] * s_vel + w["criador"] * s_creator + w.get("historico_loja", 0) * s_store
              + w.get("oferta", 0) * s_supply + w.get("calibracao", 0) * s_cal)
@@ -340,10 +337,9 @@ def classify(item, cfg):
         return "OBSERVAR", reasons, inval
 
     if big_cheap_supply(item, cfg) and item.get("sale_ref_source") != "historico_loja":
-        r = cfg.get("risco", {})
-        reasons.append(f"Estoque grande e barato ({item['total_quantity']} un. a {item['price']}): itens assim "
-                       "costumam revender abaixo do preço de loja depois de esgotar.")
-        inval.append(f"Estoque total abaixo de {r.get('estoque_grande', 1000)} ou preço acima de {r.get('preco_barato', 250)}.")
+        reasons.append(f"Estoque enorme ({item['total_quantity']} un.): no backtest, só 2% dos itens acima de "
+                       "10.000 un. deram margem de 30% depois de esgotar.")
+        inval.append("Histórico da loja com 3+ itens esgotados revendendo bem permitiria projetar o lucro.")
         return "EVITAR", reasons, inval
 
     if rc is False:

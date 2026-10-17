@@ -32,7 +32,7 @@ A média usa os 10 anúncios mais baratos para que um único anúncio barato nã
 | Classe | Quando |
 |---|---|
 | COMPRAR-AGORA | margem ≥ 30%, volume 7d ≥ 50, RAP coerente com o gráfico, velocidade medida e esgota em até 72 h |
-| EVITAR | estoque total ≥ 1.000 com preço ≤ 250, RAP incoerente (último preço do gráfico < 50% do RAP ou gráfico com mais de 14 dias), volume 7d < 5, ou margem ≤ 0 |
+| EVITAR | estoque total acima de 10.000 (sem histórico da loja), RAP incoerente (último preço do gráfico < 50% do RAP ou gráfico com mais de 14 dias), volume 7d < 5, ou margem ≤ 0 |
 | OBSERVAR | o resto (inclui itens sem RAP, itens com prejuízo hoje mas esgotando em menos de 24 h, e itens com nome de clássico como Valkyrie/Dominus) |
 
 **Ainda à venda (RAP ≈ preço):** enquanto a loja vende, as vendas dela formam o RAP, então RAP ≈ preço de loja e isso não diz nada sobre a revenda. Nesses itens o lucro é projetado como preço × retenção mediana dos limiteds **já esgotados** da mesma loja (3+ itens; 5+ para alerta). Sem esse histórico, o item fica em OBSERVAR sem lucro estimado. Exemplo: preço 200, loja com retenção 4,0 → venda estimada 800, recebe 400, custo 222, lucro +178 (+80%).
