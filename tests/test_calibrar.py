@@ -49,13 +49,22 @@ class Backtest(unittest.TestCase):
         r = calibrar.evaluate(rec(100, 20, 300), NOW, CFG)
         self.assertIsNone(r["margem"])
 
-    def test_grafico_cortado_fica_fora(self):
-        self.assertIsNone(calibrar.evaluate(rec(100, 179, 300), NOW, CFG))
+    def test_preco_de_loja_e_esgote_vem_do_grafico(self):
+        # API nova sem originalPrice: 10 dias vendendo a 100 na loja, depois revenda a 300.
+        start = NOW - timedelta(days=60)
+        prices = [[(start + timedelta(days=d)).isoformat(), 100 if d < 10 else 300] for d in range(60)]
+        r = calibrar.evaluate({"prices": prices, "item": {"price": 6777, "total_quantity": 3000}}, NOW, CFG)
+        self.assertEqual(r["original_price"], 100)       # não usa o "price" do catálogo (menor anúncio)
+        self.assertEqual(r["dias_revenda"], 50)          # esgotou no dia 10
+        self.assertAlmostEqual(r["margem"], (150 - 111) / 111, places=3)
 
-    def test_sem_preco_original_fica_fora(self):
-        r = rec(0, 60, 300)
-        r["item"]["price"] = None
-        self.assertIsNone(calibrar.evaluate(r, NOW, CFG))
+    def test_nunca_saiu_do_preco_de_loja_e_prejuizo(self):
+        r = calibrar.evaluate(rec(None, 60, 100) | {"original_price": None}, NOW, CFG)
+        self.assertFalse(r["saiu_do_preco_de_loja"])
+        self.assertIsNone(r["margem"])  # esgote = último dia perto do preço: ainda sem 37 dias
+
+    def test_item_gratis_fica_fora(self):
+        self.assertIsNone(calibrar.evaluate(rec(0, 60, 0) | {"original_price": None}, NOW, CFG))
 
     def test_premio_da_primeira_semana(self):
         r = calibrar.evaluate(rec(100, 60, 300, first_week=500), NOW, CFG)
