@@ -1,0 +1,141 @@
+{
+  "perfil": {
+    "capital_robux": 1000,
+    "max_price": 500,
+    "max_remaining": 100,
+    "min_remaining": 1
+  },
+  "taxas": {
+    "fee_multiplier": 1.11,
+    "seller_share": 0.5
+  },
+  "categorias": [
+    {
+      "key": "hat",
+      "label": "Chapéu/Coroa",
+      "asset_type_ids": [
+        8
+      ]
+    },
+    {
+      "key": "hair",
+      "label": "Cabelo",
+      "asset_type_ids": [
+        41
+      ]
+    },
+    {
+      "key": "face",
+      "label": "Rosto",
+      "asset_type_ids": [
+        42
+      ]
+    },
+    {
+      "key": "neck",
+      "label": "Pescoço",
+      "asset_type_ids": [
+        43
+      ]
+    },
+    {
+      "key": "shoulder",
+      "label": "Ombro",
+      "asset_type_ids": [
+        44
+      ]
+    },
+    {
+      "key": "front",
+      "label": "Frente",
+      "asset_type_ids": [
+        45
+      ]
+    },
+    {
+      "key": "back",
+      "label": "Costas/Asas/Pet",
+      "asset_type_ids": [
+        46
+      ]
+    },
+    {
+      "key": "waist",
+      "label": "Cintura/Squid",
+      "asset_type_ids": [
+        47
+      ]
+    }
+  ],
+  "coleta": {
+    "catalog_queries": [
+      {
+        "nome": "mais vendidos do dia",
+        "params": {
+          "SortType": 2,
+          "SortAggregation": 1
+        }
+      },
+      {
+        "nome": "mais vendidos da semana",
+        "params": {
+          "SortType": 2,
+          "SortAggregation": 3
+        }
+      },
+      {
+        "nome": "atualizados recentemente",
+        "params": {
+          "SortType": 3
+        }
+      }
+    ],
+    "max_pages_per_query": 4,
+    "page_limit": 120,
+    "watch_days": 7,
+    "max_resale_lookups": 150,
+    "request_delay_s": 1.2,
+    "max_retries": 4,
+    "timeout_s": 20,
+    "max_consecutive_errors": 5,
+    "resale_time_budget_s": 780
+  },
+  "classes": {
+    "comprar_agora": {
+      "min_net_margin": 0.3,
+      "min_volume_7d": 50,
+      "require_rap_consistent": true,
+      "require_velocity": true,
+      "max_eta_hours": 72
+    },
+    "evitar": {
+      "max_net_margin": 0.0,
+      "min_volume_7d": 5
+    },
+    "rap_consistency_ratio": 0.5,
+    "max_chart_age_days": 14,
+    "velocity_window_hours": 24,
+    "min_snapshots_velocity": 2,
+    "min_velocity_span_hours": 1.5,
+    "min_units_sold_velocity": 2,
+    "min_chart_points": 3
+  },
+  "score_pesos": {
+    "margem": 40,
+    "liquidez": 20,
+    "consistencia": 15,
+    "velocidade": 15,
+    "criador": 10
+  },
+  "alertas": {
+    "ativo": true,
+    "min_net_margin": 0.5,
+    "min_volume_7d": 100,
+    "max_remaining": 100,
+    "require_rap_consistent": true,
+    "require_velocity": true,
+    "max_alerts_per_day": 3,
+    "ntfy_server": "https://ntfy.sh",
+    "avisar_falhas": true
+  }
+}

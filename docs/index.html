@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar UGC</title>
+<meta name="description" content="Radar de UGC Limiteds do Roblox: preço, estoque, revenda e lucro estimado.">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-row">
+    <div class="brand">
+      <h1>Radar UGC</h1>
+      <p class="updated" id="updated">Carregando…</p>
+    </div>
+    <button type="button" id="theme-btn" class="icon-btn" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+      <span id="theme-icon" aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<main>
+  <nav class="tabs" id="tabs" aria-label="Categorias" role="tablist"></nav>
+
+  <section class="controls" aria-label="Filtros e ordenação">
+    <label class="field">
+      <span>Classe</span>
+      <select id="class-filter">
+        <option value="">Todas as classes</option>
+        <option value="COMPRAR-AGORA">Comprar agora</option>
+        <option value="OBSERVAR">Observar</option>
+        <option value="EVITAR">Evitar</option>
+      </select>
+    </label>
+    <label class="field">
+      <span>Ordenar por</span>
+      <select id="sort">
+        <option value="score">Score</option>
+        <option value="net_profit">Lucro líquido</option>
+        <option value="units_remaining">Restantes (menos primeiro)</option>
+        <option value="eta_hours">ETA para esgotar</option>
+      </select>
+    </label>
+    <p class="count" id="count" aria-live="polite"></p>
+  </section>
+
+  <section id="grid" class="grid" aria-live="polite"></section>
+  <p id="empty" class="empty" hidden>Nenhum item para este filtro.</p>
+</main>
+
+<footer class="footer" id="footer"><p id="disclaimer">Não é recomendação financeira.</p></footer>
+
+<noscript><p class="empty">Este site precisa de JavaScript para exibir os dados.</p></noscript>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+{
+  "generated_at": "2026-10-17T08:17:00Z",
+  "run_status": "partial",
+  "status_note": "DADOS DE EXEMPLO: este arquivo será sobrescrito pelo radar real.",
+  "snapshots_count": 0,
+  "disclaimer": "Não é recomendação financeira. Dados estimados e podem estar defasados; faça sua própria análise.",
+  "config": {
+    "max_price": 500,
+    "max_remaining": 100,
+    "fee_multiplier": 1.11,
+    "seller_share": 0.5
+  },
+  "categories": [
+    {
+      "key": "hat",
+      "label": "Chapéu/Coroa",
+      "asset_type_ids": [
+        8
+      ]
+    },
+    {
+      "key": "hair",
+      "label": "Cabelo",
+      "asset_type_ids": [
+        41
+      ]
+    },
+    {
+      "key": "face",
+      "label": "Rosto",
+      "asset_type_ids": [
+        42
+      ]
+    },
+    {
+      "key": "neck",
+      "label": "Pescoço",
+      "asset_type_ids": [
+        43
+      ]
+    },
+    {
+      "key": "shoulder",
+      "label": "Ombro",
+      "asset_type_ids": [
+        44
+      ]
+    },
+    {
+      "key": "front",
+      "label": "Frente",
+      "asset_type_ids": [
+        45
+      ]
+    },
+    {
+      "key": "back",
+      "label": "Costas/Asas/Pet",
+      "asset_type_ids": [
+        46
+      ]
+    },
+    {
+      "key": "waist",
+      "label": "Cintura/Squid",
+      "asset_type_ids": [
+        47
+      ]
+    }
+  ],
+  "items": [
+    {
+      "asset_id": 900001,
+      "name": "[EXEMPLO] Coroa Dourada",
+      "creator_name": "CriadorFalso1",
+      "creator_verified": false,
+      "category": "hat",
+      "url": "https://www.roblox.com/catalog/900001",
+      "thumbnail": null,
+      "price": 100,
+      "total_quantity": 500,
+      "units_remaining": 12,
+      "pct_sold": 97.6,
+      "rap": 260,
+      "lowest_resale": 300,
+      "volume_7d": 120,
+      "volume_30d": 400,
+      "last_chart_price": 250,
+      "last_chart_date": "2026-10-16",
+      "rap_consistent": true,
+      "cost": 111.0,
+      "net_profit": 140.5,
+      "net_margin": 0.42,
+      "velocity_per_hour": 2.5,
+      "eta_hours": 5.0,
+      "score": 82,
+      "reasons": [
+        "Exemplo: poucas unidades restantes",
+        "Exemplo: revenda acima do preço"
+      ],
+      "invalidators": [
+        "Exemplo: queda do RAP",
+        "Exemplo: reposição de estoque"
+      ],
+      "data_quality": "ok",
+      "class": "COMPRAR-AGORA"
+    },
+    {
+      "asset_id": 900002,
+      "name": "[EXEMPLO] Cabelo Neon",
+      "creator_name": "CriadorFalso2",
+      "creator_verified": true,
+      "category": "hair",
+      "url": "https://www.roblox.com/catalog/900002",
+      "thumbnail": "https://invalido.example/nao-existe.png",
+      "price": 100,
+      "total_quantity": 500,
+      "units_remaining": 30,
+      "pct_sold": 94.0,
+      "rap": 260,
+      "lowest_resale": 300,
+      "volume_7d": 120,
+      "volume_30d": 400,
+      "last_chart_price": 250,
+      "last_chart_date": "2026-10-16",
+      "rap_consistent": true,
+      "cost": 111.0,
+      "net_profit": 19.0,
+      "net_margin": 0.171,
+      "velocity_per_hour": 2.5,
+      "eta_hours": 72.0,
+      "score": 71,
+      "reasons": [
+        "Exemplo: poucas unidades restantes",
+        "Exemplo: revenda acima do preço"
+      ],
+      "invalidators": [
+        "Exemplo: queda do RAP",
+        "Exemplo: reposição de estoque"
+      ],
+      "data_quality": "ok",
+      "class": "COMPRAR-AGORA"
+    },
+    {
+      "asset_id": 900003,
+      "name": "[EXEMPLO] Máscara Fantasma",
+      "creator_name": "CriadorFalso3",
+      "creator_verified": true,
+      "category": "face",
+      "url": "https://www.roblox.com/catalog/900003",
+      "thumbnail": null,
+      "price": 100,
+      "total_quantity": 500,
+      "units_remaining": 90,
+      "pct_sold": 82.0,
+      "rap": 260,
+      "lowest_resale": 300,
+      "volume_7d": 120,
+      "volume_30d": 400,
+      "last_chart_price": 250,
+      "last_chart_date": "2026-10-16",
+      "rap_consistent": true,
+      "cost": 111.0,
+      "net_profit": 3.0,
+      "net_margin": 0.027,
+      "velocity_per_hour": 2.5,
+      "eta_hours": 240.0,
+      "score": 48,
+      "reasons": [
+        "Exemplo: poucas unidades restantes",
+        "Exemplo: revenda acima do preço"
+      ],
+      "invalidators": [
+        "Exemplo: queda do RAP",
+        "Exemplo: reposição de estoque"
+      ],
+      "data_quality": "ok",
+      "class": "OBSERVAR"
+    },
+    {
+      "asset_id": 900004,
+      "name": "[EXEMPLO] Asas de Cristal",
+      "creator_name": "CriadorFalso4",
+      "creator_verified": true,
+      "category": "back",
+      "url": "https://www.roblox.com/catalog/900004",
+      "thumbnail": null,
+      "price": 100,
+      "total_quantity": 500,
+      "units_remaining": 40,
+      "pct_sold": 92.0,
+      "rap": null,
+      "lowest_resale": null,
+      "volume_7d": null,
+      "volume_30d": null,
+      "last_chart_price": null,
+      "last_chart_date": null,
+      "rap_consistent": null,
+      "cost": 111.0,
+      "net_profit": null,
+      "net_margin": null,
+      "velocity_per_hour": null,
+      "eta_hours": null,
+      "score": 40,
+      "reasons": [
+        "Exemplo: poucas unidades restantes",
+        "Exemplo: revenda acima do preço"
+      ],
+      "invalidators": [
+        "Exemplo: queda do RAP",
+        "Exemplo: reposição de estoque"
+      ],
+      "data_quality": "sem_rap",
+      "class": "OBSERVAR"
+    },
+    {
+      "asset_id": 900005,
+      "name": "[EXEMPLO] Cachecol Pixel",
+      "creator_name": "CriadorFalso5",
+      "creator_verified": false,
+      "category": "neck",
+      "url": "https://www.roblox.com/catalog/900005",
+      "thumbnail": null,
+      "price": 100,
+      "total_quantity": 500,
+      "units_remaining": 400,
+      "pct_sold": 20.0,
+      "rap": 70,
+      "lowest_resale": 65,
+      "volume_7d": 2,
+      "volume_30d": 3,
+      "last_chart_price": 250,
+      "last_chart_date": "2026-10-16",
+      "rap_consistent": false,
+      "cost": 111.0,
+      "net_profit": -45.0,
+      "net_margin": -0.4,
+      "velocity_per_hour": 0.0,
+      "eta_hours": null,
+      "score": 12,
+      "reasons": [
+        "Exemplo: poucas unidades restantes",
+        "Exemplo: revenda acima do preço"
+      ],
+      "invalidators": [
+        "Exemplo: queda do RAP",
+        "Exemplo: reposição de estoque"
+      ],
+      "data_quality": "rap_incoerente",
+      "class": "EVITAR"
+    },
+    {
+      "asset_id": 900006,
+      "name": "[EXEMPLO] Cinto Squid",
+      "creator_name": "CriadorFalso6",
+      "creator_verified": true,
+      "category": "waist",
+      "url": "https://www.roblox.com/catalog/900006",
+      "thumbnail": null,
+      "price": null,
+      "total_quantity": null,
+      "units_remaining": null,
+      "pct_sold": null,
+      "rap": 260,
+      "lowest_resale": 300,
+      "volume_7d": 120,
+      "volume_30d": 400,
+      "last_chart_price": 250,
+      "last_chart_date": "2026-10-16",
+      "rap_consistent": true,
+      "cost": null,
+      "net_profit": null,
+      "net_margin": null,
+      "velocity_per_hour": null,
+      "eta_hours": null,
+      "score": null,
+      "reasons": [],
+      "invalidators": [],
+      "data_quality": "sem_velocidade",
+      "class": "EVITAR"
+    }
+  ]
+}
