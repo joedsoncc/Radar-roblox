@@ -129,12 +129,13 @@
     "min_chart_points": 3
   },
   "score_pesos": {
-    "margem": 35,
+    "margem": 30,
     "liquidez": 20,
     "consistencia": 15,
     "velocidade": 15,
     "criador": 5,
-    "historico_loja": 10
+    "historico_loja": 10,
+    "calibracao": 5
   },
   "alertas": {
     "ativo": true,
@@ -156,5 +157,15 @@
     "forte_pct_acima": 0.6,
     "fraca_retencao": 1.0,
     "fraca_pct_acima": 0.4
+  },
+  "calibracao": {
+    "min_itens_faixa": 20
+  },
+  "amplo": {
+    "max_pages_per_query": 10,
+    "max_resale_lookups": 300,
+    "resale_time_budget_s": 420,
+    "quase_esgotado_un": 100,
+    "quase_esgotado_frac": 0.2
   }
 }

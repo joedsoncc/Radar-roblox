@@ -5,7 +5,7 @@ import os
 import time
 from datetime import datetime, timezone
 
-from . import carteira, collect, lojas
+from . import calibrar, carteira, collect, lojas
 from .analyze import analyze
 from .http import Client
 from .notify import process_alerts, send_outbox, system_notice, write_outbox
@@ -110,7 +110,7 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
     except Exception:  # noqa: BLE001
         log.exception("histórico das lojas falhou; seguindo sem ele")
 
-    items = analyze(current, history, now, cfg, tracks=tracks)
+    items = analyze(current, history, now, cfg, tracks=tracks, lifts=calibrar.load_lifts(root))
 
     # Status da execução
     if not found and errors:
