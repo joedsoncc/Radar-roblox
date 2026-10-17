@@ -28,6 +28,10 @@ Gerado por `radar.py` a cada execução. O site só lê este arquivo (nada de ch
       "pct_sold": 92.0,
       "rap": 260,
       "lowest_resale": 300,
+      "resale_avg_low": 318.5,
+      "resale_avg_n": 10,
+      "sale_ref": 260,
+      "sale_ref_source": "rap | anuncios | null",
       "volume_7d": 120,
       "volume_30d": 400,
       "last_chart_price": 250,
@@ -61,5 +65,7 @@ Histórico da loja e tendência (campos novos):
 - `trend`: `subindo` (≥ +5%), `caindo` (≤ −5%), `estável`, ou `sem dados` (menos de 3 dias de venda em 14 dias).
 - `spark`: até 30 pares `[data, preço médio do dia]` do gráfico de revenda, do mais antigo ao mais novo (lista vazia sem gráfico).
 - O score ganhou o peso `historico_loja` (config `score_pesos`); sem dado da loja vale 0,5 (neutro). `reasons` pode trazer uma frase sobre loja com histórico forte ou fraco.
+
+Anúncios: `lowest_resale` é o menor anúncio do catálogo; `resale_avg_low` é a média dos `resale_avg_n` anúncios mais baratos (até 10; `resale_avg_n` = 1 quando só havia o menor anúncio do catálogo, 0 sem anúncio). `sale_ref` é o valor de venda usado no lucro (menor entre `rap` e `resale_avg_low`) e `sale_ref_source` diz de onde veio.
 
 Regras: qualquer campo numérico pode ser `null` quando a API falhou ou ainda não há snapshots suficientes. O site deve mostrar "—" e nunca inventar valor.

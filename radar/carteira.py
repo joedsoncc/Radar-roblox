@@ -9,7 +9,7 @@ import os
 from datetime import date
 
 from . import collect
-from .analyze import trend_for, window_change
+from .analyze import sale_reference, trend_for, window_change
 from .site import write_json
 from .storage import iso
 
@@ -112,10 +112,17 @@ def compute_item(aid, lots, detail, summary, history, thumb, now, cfg):
     avg_paid = _r(paid_sum / priced_qty, 2) if priced_qty else None
     rap = summary.get("rap")
     original = detail.get("price")
+    if "resale_avg_n" in summary:
+        avg_low, avg_n = summary.get("resale_avg_low"), summary["resale_avg_n"]
+    else:  # sem a lista de anúncios: o menor anúncio do catálogo vira "média de 1"
+        low = detail.get("lowest_resale")
+        avg_low, avg_n = (low, 1) if low else (None, 0)
+    ref, ref_src = sale_reference(rap, avg_low)
 
-    # Vendendo tudo pelo RAP. Com lotes mistos, só os lotes com preço entram na conta.
+    # Vendendo tudo pelo menor entre RAP e média dos anúncios mais baratos.
+    # Com lotes mistos, só os lotes com preço entram na conta.
     held = priced_qty if priced_qty else quantity
-    value_now = _r(rap * share * held, 2) if rap is not None else None
+    value_now = _r(ref * share * held, 2) if ref is not None else None
     cost_total = _r(paid_sum, 2) if priced_qty else None
     pnl = _r(value_now - cost_total, 2) if value_now is not None and cost_total is not None else None
     pnl_pct = round(pnl / cost_total, 4) if pnl is not None and cost_total else None
@@ -130,7 +137,7 @@ def compute_item(aid, lots, detail, summary, history, thumb, now, cfg):
 
     chart = summary.get("chart_series") or []
     ch7 = window_change(chart, now, 7)
-    tracked = [[r.get("ts"), r.get("rap"), r.get("lowest_resale"), r.get("units_remaining")]
+    tracked = [[r.get("ts"), r.get("rap"), r.get("resale_avg_low", r.get("lowest_resale")), r.get("units_remaining")]
                for r in history][-TRACKED_MAX:]
     return {
         "asset_id": aid,
@@ -142,6 +149,7 @@ def compute_item(aid, lots, detail, summary, history, thumb, now, cfg):
         "units_remaining": detail.get("units_remaining"), "total_quantity": detail.get("total_quantity"),
         "is_off_sale": detail.get("is_off_sale") if detail else None,
         "rap": rap, "lowest_resale": detail.get("lowest_resale"), "volume_7d": summary.get("volume_7d"),
+        "resale_avg_low": avg_low, "resale_avg_n": avg_n, "sale_ref": ref, "sale_ref_source": ref_src,
         "value_now": value_now, "cost_total": cost_total, "pnl": pnl, "pnl_pct": pnl_pct,
         "breakeven_rap": _r(avg_paid / share, 2) if avg_paid is not None else None,
         "retention": round(rap / original, 4) if rap and original else None,
@@ -174,6 +182,8 @@ def run(root, client, now, cfg):
     items = []
     auth = False
     failed_resale = 0
+    n_listings = cfg["coleta"].get("anuncios_media", 10)
+    listings_auth = False
     for aid, lots in lots_by_id.items():
         detail = details.get(aid)
         summary = None
@@ -185,12 +195,18 @@ def run(root, client, now, cfg):
                 auth = True
             elif st != "ok":
                 failed_resale += 1
+            elif n_listings and not listings_auth and detail:
+                lst, lst_st = collect.fetch_listings(client, detail, n_listings)
+                if lst:
+                    summary.update(lst)
+                listings_auth = lst_st == "auth_required"
         if detail or summary:
             append_history(root, aid, {
                 "ts": iso(now), "price": (detail or {}).get("price"),
                 "units_remaining": (detail or {}).get("units_remaining"),
                 "total_quantity": (detail or {}).get("total_quantity"),
                 "rap": (summary or {}).get("rap"), "lowest_resale": (detail or {}).get("lowest_resale"),
+                "resale_avg_low": (summary or {}).get("resale_avg_low"),
                 "volume_7d": (summary or {}).get("volume_7d"),
                 "is_off_sale": (detail or {}).get("is_off_sale"),
             })
@@ -210,6 +226,8 @@ def run(root, client, now, cfg):
     elif errors:
         status = "partial" if status == "ok" else status
         notes.append("Erros: " + "; ".join(sorted(set(errors))) + ".")
+    if listings_auth:
+        notes.append("A lista de anúncios pediu login; o valor usa só o menor anúncio do catálogo.")
     no_price = sum(1 for i in items if i["avg_paid"] is None)
     if no_price:
         notes.append(f"{no_price} item(ns) só acompanhando (sem preço pago): fora dos totais.")

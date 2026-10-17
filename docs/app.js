@@ -200,7 +200,9 @@
     var dl = el('dl', 'stats');
     stat(dl, 'Preço', robux(i.price));
     stat(dl, 'RAP', robux(i.rap));
-    stat(dl, 'Menor revenda', robux(i.lowest_resale));
+    if (isNum(i.resale_avg_low)) stat(dl, 'Média ' + i.resale_avg_n + ' menores anúncios', robux(i.resale_avg_low));
+    else if ('resale_avg_n' in i) stat(dl, 'Média dos anúncios', robux(null));
+    else stat(dl, 'Menor revenda', robux(i.lowest_resale)); // dados antigos
     stat(dl, 'Lucro líquido', robux(i.net_profit));
     stat(dl, 'Margem', margin(i.net_margin));
     stat(dl, 'ETA p/ esgotar', eta(i.eta_hours));
@@ -346,7 +348,9 @@
     stat(dl, 'Preço de loja', robux(i.original_price));
     stat(dl, 'Preço médio pago', tracking ? NA : robux(i.avg_paid));
     stat(dl, 'RAP', robux(i.rap));
-    stat(dl, 'Menor revenda', robux(i.lowest_resale));
+    if (isNum(i.resale_avg_low)) stat(dl, 'Média ' + i.resale_avg_n + ' menores anúncios', robux(i.resale_avg_low));
+    else if ('resale_avg_n' in i) stat(dl, 'Média dos anúncios', robux(null));
+    else stat(dl, 'Menor revenda', robux(i.lowest_resale)); // dados antigos
     stat(dl, 'Restantes', stockTxt);
     stat(dl, 'Quantidade', isNum(i.quantity) ? num(i.quantity) : NA);
     stat(dl, 'Valor hoje', robux(i.value_now));
@@ -386,7 +390,7 @@
     if (!items.length) return;
     var t = d.totals || {};
     sum.appendChild(sumBox('Custo total', robux(t.cost)));
-    sum.appendChild(sumBox('Valor hoje (vendendo pelo RAP)', robux(t.value_now)));
+    sum.appendChild(sumBox('Valor hoje (menor entre RAP e média dos anúncios)', robux(t.value_now)));
     sum.appendChild(sumBox('Lucro/prejuízo', signed(t.pnl, robux), sgnClass(t.pnl)));
     sum.appendChild(sumBox('Lucro/prejuízo %', sgnPct(t.pnl_pct), sgnClass(t.pnl_pct)));
     items.forEach(function (i) { grid.appendChild(cartCard(i)); });

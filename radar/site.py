@@ -8,6 +8,7 @@ from .notify import DISCLAIMER
 PUBLIC_FIELDS = [
     "asset_id", "name", "creator_name", "creator_verified", "category", "url", "thumbnail",
     "price", "total_quantity", "units_remaining", "pct_sold", "rap", "lowest_resale",
+    "resale_avg_low", "resale_avg_n", "sale_ref", "sale_ref_source",
     "volume_7d", "volume_30d", "last_chart_price", "last_chart_date", "chart_median_14d", "rap_consistent",
     "cost", "net_profit", "net_margin", "velocity_per_hour", "velocity_note", "eta_hours", "score", "class",
     "reasons", "invalidators", "data_quality",
@@ -22,7 +23,8 @@ def build_payload(items, cfg, generated_at, run_status, status_note, snapshots_c
         "run_status": run_status,
         "status_note": status_note,
         "snapshots_count": snapshots_count,
-        "disclaimer": DISCLAIMER + " Lucro líquido = RAP × 0,5 − preço × 1,11.",
+        "disclaimer": DISCLAIMER + (" Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = menor entre RAP"
+                       " e média dos 10 anúncios mais baratos."),
         "config": {"max_price": p["max_price"], "max_remaining": p["max_remaining"],
                    "fee_multiplier": t["fee_multiplier"], "seller_share": t["seller_share"]},
         "categories": [{"key": c["key"], "label": c["label"], "asset_type_ids": c["asset_type_ids"]}
@@ -54,13 +56,14 @@ def buy_list_md(payload):
         if not rows:
             lines += ["Nenhum item dentro dos filtros nesta coleta.", ""]
             continue
-        lines.append("| Classe | Item | Preço | Restantes | RAP | Lucro líq. | ETA | Motivo | O que invalidaria |")
-        lines.append("|---|---|---|---|---|---|---|---|---|")
+        lines.append("| Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|")
         for i in rows:
             name = (i["name"] or "").replace("|", "/")
             lines.append(
                 f"| {i['class']} | [{name}]({i['url']}) | {_n(i['price'])} | "
                 f"{_n(i['units_remaining'])}/{_n(i['total_quantity'])} | {_n(i['rap'])} | "
+                f"{_n(i.get('resale_avg_low'))}{' (de ' + str(i['resale_avg_n']) + ')' if i.get('resale_avg_low') is not None else ''} | "
                 f"{_n(i['net_profit'], '{:+.0f}')} ({_n(i['net_margin'] * 100 if i['net_margin'] is not None else None, '{:+.0f}%')}) | "
                 f"{fmt_eta(i['eta_hours']) if i['eta_hours'] is not None else '—'} | "
                 f"{' '.join(i['reasons']).replace('|', '/')} | {' '.join(i['invalidators']).replace('|', '/')} |")

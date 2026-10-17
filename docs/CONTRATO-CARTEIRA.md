@@ -25,7 +25,7 @@ Regras: `asset_id` é o número da URL `roblox.com/catalog/<asset_id>`. Itens re
 ## Histórico por item: `data/carteira/<asset_id>.jsonl`
 
 Uma linha por execução para cada item da carteira (mesmo que esteja fora dos filtros do radar):
-`{"ts", "price", "units_remaining", "total_quantity", "rap", "lowest_resale", "volume_7d", "is_off_sale"}`.
+`{"ts", "price", "units_remaining", "total_quantity", "rap", "lowest_resale", "resale_avg_low", "volume_7d", "is_off_sale"}`.
 
 ## Saída: `docs/carteira.json`
 
@@ -45,7 +45,9 @@ Uma linha por execução para cada item da carteira (mesmo que esteja fora dos f
       "avg_paid": 195,             // média ponderada dos lotes com preço; null se só acompanha
       "units_remaining": 50, "total_quantity": 3000, "is_off_sale": false,
       "rap": 195, "lowest_resale": 210, "volume_7d": 40,
-      "value_now": 97.5,           // quanto receberia vendendo tudo pelo RAP: RAP × 0,5 × quantidade
+      "resale_avg_low": 230, "resale_avg_n": 10, // média dos N anúncios mais baratos (até 10; 1 = só o menor do catálogo)
+      "sale_ref": 195, "sale_ref_source": "rap", // menor entre RAP e resale_avg_low ("rap" | "anuncios")
+      "value_now": 97.5,           // quanto receberia vendendo tudo: sale_ref × 0,5 × quantidade
       "cost_total": 195,           // avg_paid × quantidade (sem margem 1,11: é o que já foi pago)
       "pnl": -97.5, "pnl_pct": -0.5,
       "breakeven_rap": 390,        // RAP necessário para empatar: avg_paid / 0,5
@@ -56,7 +58,7 @@ Uma linha por execução para cada item da carteira (mesmo que esteja fora dos f
       "days_held": 0,
       "series": {
         "chart":   [["2026-10-01", 180, 12]],            // data, preço médio do dia, volume (até 180 dias, da revenda)
-        "tracked": [["2026-10-17T06:00:00Z", 195, 210, 50]] // ts, RAP, menor revenda, restantes (nossas coletas)
+        "tracked": [["2026-10-17T06:00:00Z", 195, 210, 50]] // ts, RAP, média dos menores anúncios, restantes (nossas coletas)
       }
     }
   ]

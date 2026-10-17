@@ -18,11 +18,14 @@ A cada 2 h o GitHub Actions roda `python radar.py run`:
 ### As contas
 
 ```
+valor de venda = menor entre RAP e média dos 10 anúncios mais baratos (sem anúncio: RAP)
 custo efetivo  = preço × 1,11      (1,11 é margem de segurança; a Roblox não cobra taxa na compra)
-você recebe    = RAP × 0,5         (10% criador, 10% afiliado, 30% Roblox)
-lucro líquido  = RAP × 0,5 − preço × 1,11
+você recebe    = valor de venda × 0,5   (10% criador, 10% afiliado, 30% Roblox)
+lucro líquido  = valor de venda × 0,5 − preço × 1,11
 ```
-Exemplo: preço 100, RAP 260 → recebe 130, custo 111, lucro **+19 (+17%)**. Com RAP 200 → recebe 100, **prejuízo de 11**.
+Exemplo: preço 100, RAP 260, média dos anúncios 300 → vale 260, recebe 130, custo 111, lucro **+19 (+17%)**. Se os 10 anúncios mais baratos forem de 100, 105, 110 … até 150 (média ≈ 118) → vale 118, recebe 59, **prejuízo de 52**.
+
+A média usa os 10 anúncios mais baratos para que um único anúncio barato não distorça a conta. Com menos de 10 anúncios, usa a média dos que existem e mostra "média de N" (o número muda em `coleta.anuncios_media` no `config.json`). Se a lista de anúncios pedir login, o radar usa o menor anúncio do catálogo ("média de 1") e avisa na nota da coleta. O card, a lista de compra, o score, o alerta do ntfy e o "valor hoje" da carteira usam esse valor de venda.
 
 ### Classes (mude os números em `config.json`)
 

@@ -5,6 +5,7 @@ Endpoints (somente leitura, sem login):
 - catalog.roblox.com/v1/catalog/items/details -> detalhes de itens já acompanhados (POST + CSRF)
 - apis.roblox.com/marketplace-sales/v1/item/{collectibleItemId}/resale-data -> RAP e séries
 - economy.roblox.com/v1/assets/{assetId}/resale-data -> alternativa para o mesmo dado
+- apis.roblox.com/marketplace-sales/v1/item/{collectibleItemId}/resellers -> anúncios de revenda (mais baratos primeiro)
 - thumbnails.roblox.com/v1/assets -> fotos
 """
 import logging
@@ -19,6 +20,7 @@ CATALOG_SEARCH = "https://catalog.roblox.com/v2/search/items/details"
 CATALOG_DETAILS = "https://catalog.roblox.com/v1/catalog/items/details"
 RESALE_NEW = "https://apis.roblox.com/marketplace-sales/v1/item/{cid}/resale-data"
 RESALE_OLD = "https://economy.roblox.com/v1/assets/{aid}/resale-data"
+RESELLERS = "https://apis.roblox.com/marketplace-sales/v1/item/{cid}/resellers?limit={n}"
 THUMBS = "https://thumbnails.roblox.com/v1/assets"
 
 
@@ -212,6 +214,36 @@ def fetch_resale(client, item, now):
             return summarize_resale(data, now), "ok"
         log.info("resale-data sem RAP (%s)", item["asset_id"])
     return None, "error"
+
+
+def avg_lowest(prices, n):
+    """Média dos n menores preços (> 0). Devolve (média, quantos entraram) ou (None, 0)."""
+    vals = sorted(v for v in (num(p) for p in prices) if v is not None and v > 0)[:n]
+    if not vals:
+        return None, 0
+    return round(sum(vals) / len(vals), 2), len(vals)
+
+
+def fetch_listings(client, item, n):
+    """Média dos n anúncios de revenda mais baratos. Devolve ({média, qtd}, status).
+
+    status: ok | auth_required | error. Com menos de n anúncios, usa a média dos que existem.
+    """
+    cid = item.get("collectible_item_id")
+    if not cid:
+        return None, "error"
+    url = RESELLERS.format(cid=cid, n=n)
+    try:
+        data = client.get_json(url)
+    except AuthRequired:
+        return None, "auth_required"
+    except ApiError as e:
+        log.info("anúncios falharam (%s): %s", item["asset_id"], e.status)
+        return None, "error"
+    if not isinstance(data, dict) or not isinstance(data.get("data"), list):
+        return None, "error"
+    avg, count = avg_lowest([r.get("price") for r in data["data"] if isinstance(r, dict)], n)
+    return {"resale_avg_low": avg, "resale_avg_n": count}, "ok"
 
 
 def fetch_thumbnails(client, asset_ids, errors):

@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 SNAPSHOT_FIELDS = [
     "ts", "asset_id", "collectible_item_id", "name", "creator_name", "creator_id",
     "creator_verified", "category", "asset_type_id", "price", "total_quantity",
-    "units_remaining", "rap", "lowest_resale", "volume_7d", "volume_30d",
+    "units_remaining", "rap", "lowest_resale", "resale_avg_low", "resale_avg_n", "volume_7d", "volume_30d",
     "last_chart_price", "last_chart_date", "chart_median_14d", "chart_points_14d", "resale_status",
 ]
 

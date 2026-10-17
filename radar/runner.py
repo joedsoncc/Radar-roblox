@@ -52,6 +52,9 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
     started = time.monotonic()
     consecutive_errors = 0
     stop_reason = None
+    n_listings = col.get("anuncios_media", 10)
+    listings_status = {"ok": 0, "auth_required": 0, "error": 0}
+    listings_stop = False
     for n, item in enumerate(current):
         if stop_reason or n >= col["max_resale_lookups"]:
             item["resale_status"] = "auth_required" if stop_reason == "auth" else "skipped"
@@ -70,6 +73,13 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
         if st == "auth_required":
             # A API passou a exigir login: paramos todas as chamadas de histórico (sem contorno).
             stop_reason = "auth"
+        if st == "ok" and n_listings and not listings_stop:
+            lst, lst_st = collect.fetch_listings(client, item, n_listings)
+            listings_status[lst_st] += 1
+            if lst:
+                item.update(lst)
+            if lst_st == "auth_required":
+                listings_stop = True  # anúncios pedem login: usamos só o menor anúncio do catálogo
         consecutive_errors = consecutive_errors + 1 if st == "error" else 0
         if consecutive_errors >= col.get("max_consecutive_errors", 5):
             stop_reason = "erros"
@@ -77,6 +87,10 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
     for item in current:
         for k in ("rap", "volume_7d", "volume_30d", "last_chart_price", "last_chart_date"):
             item.setdefault(k, None)
+        if "resale_avg_n" not in item:
+            # Sem a lista de anúncios: o menor anúncio do catálogo vira "média de 1".
+            low = item.get("lowest_resale")
+            item["resale_avg_low"], item["resale_avg_n"] = (low, 1) if low else (None, 0)
 
     thumbs = collect.fetch_thumbnails(client, [i["asset_id"] for i in current], errors) if current else {}
     for item in current:
@@ -114,6 +128,8 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
     else:
         run_status = "ok"
         note = ""
+    if listings_status["auth_required"]:
+        note = (note + " A lista de anúncios pediu login; a média usa só o menor anúncio do catálogo.").strip()
     if statuses["skipped"]:
         note = (note + f" {statuses['skipped']} itens ficaram sem histórico por limite de chamadas.").strip()
 
@@ -161,4 +177,4 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
 
     log.info("status=%s itens=%d alertas=%d chamadas=%d", run_status, len(items), len(sent), client.calls)
     return {"status": run_status, "note": note, "items": items, "alerts": sent, "statuses": statuses,
-            "carteira": cart}
+            "listings": listings_status, "carteira": cart}

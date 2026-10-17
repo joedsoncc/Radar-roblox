@@ -35,10 +35,12 @@ class ContasDaCarteira(unittest.TestCase):
     def lot(self, paid, qty=1, day="2026-10-17"):
         return {"preco_pago": paid, "quantidade": qty, "comprado_em": day, "nota": ""}
 
-    def item(self, lots, rap, price=195, series=None):
+    def item(self, lots, rap, price=195, series=None, low=210, listings=None):
         detail = {"name": "X", "creator_name": "C", "category": "hat", "price": price,
-                  "units_remaining": 50, "total_quantity": 3000, "is_off_sale": False, "lowest_resale": 210}
+                  "units_remaining": 50, "total_quantity": 3000, "is_off_sale": False, "lowest_resale": low}
         summary = {"rap": rap, "volume_7d": 40, "chart_series": series or []}
+        if listings is not None:
+            summary["resale_avg_low"], summary["resale_avg_n"] = collect.avg_lowest(listings, 10)
         return carteira.compute_item(1, lots, detail, summary, [], None, NOW, CFG)
 
     def test_exemplo_pago_195_rap_195(self):
@@ -51,8 +53,19 @@ class ContasDaCarteira(unittest.TestCase):
         self.assertEqual(it["retention"], 1.0)
         self.assertEqual(it["days_held"], 0)
 
+    def test_anuncios_abaixo_do_rap_baixam_o_valor(self):
+        it = self.item([self.lot(100, 2)], 400, listings=[300] * 9 + [200, 900])  # média dos 10 menores = 290
+        self.assertEqual((it["resale_avg_low"], it["resale_avg_n"], it["sale_ref_source"]), (290, 10, "anuncios"))
+        self.assertEqual(it["value_now"], 290)  # 290 × 0,5 × 2
+        self.assertEqual(it["pnl"], 90)
+
+    def test_sem_lista_de_anuncios_usa_menor_do_catalogo(self):
+        it = self.item([self.lot(100)], 400, low=210)
+        self.assertEqual((it["resale_avg_low"], it["resale_avg_n"]), (210, 1))
+        self.assertEqual(it["value_now"], 105)
+
     def test_lotes_somados_com_media_ponderada(self):
-        it = self.item([self.lot(100, 1, "2026-10-10"), self.lot(200, 3, "2026-10-15")], 400)
+        it = self.item([self.lot(100, 1, "2026-10-10"), self.lot(200, 3, "2026-10-15")], 400, low=None)
         self.assertEqual(it["quantity"], 4)
         self.assertEqual(it["avg_paid"], 175)
         self.assertEqual(it["cost_total"], 700)
@@ -63,7 +76,7 @@ class ContasDaCarteira(unittest.TestCase):
 
     def test_so_acompanhar_fica_fora_dos_totais(self):
         a = self.item([self.lot(195)], 195)
-        b = self.item([self.lot(None, 2)], 400)
+        b = self.item([self.lot(None, 2)], 400, low=None)
         self.assertIsNone(b["avg_paid"])
         self.assertIsNone(b["pnl"])
         self.assertEqual(b["value_now"], 400)
