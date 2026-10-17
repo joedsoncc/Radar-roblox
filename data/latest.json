@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-17T15:41:15Z",
+ "generated_at": "2026-10-17T18:32:05Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429.",
- "snapshots_count": 3,
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (mais vendidos da semana): 429.",
+ "snapshots_count": 4,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = RAP × 0,5 − preço × 1,11.",
  "config": {
   "max_price": 500,
@@ -70,43 +70,6 @@
  ],
  "items": [
   {
-   "asset_id": 109004403129076,
-   "name": "[⏳] Angelic Heaven Wings Hair",
-   "creator_name": "Tenshi\" UGC",
-   "creator_verified": false,
-   "category": "hair",
-   "url": "https://www.roblox.com/catalog/109004403129076",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-a7bcc48273a7b879c85146dda23f70e5/150/150/HairAccessory/Png/noFilter",
-   "price": 85,
-   "total_quantity": 2500,
-   "units_remaining": 1,
-   "pct_sold": 100.0,
-   "rap": 85.0,
-   "lowest_resale": 499,
-   "volume_7d": 1351,
-   "volume_30d": 2275,
-   "last_chart_price": 85,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 65,
-   "rap_consistent": true,
-   "cost": 94.35,
-   "net_profit": -51.85,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 16.465,
-   "velocity_note": null,
-   "eta_hours": 0.1,
-   "score": 54,
-   "class": "OBSERVAR",
-   "reasons": [
-    "RAP 85.0 não cobre o custo: lucro líquido -52 (-55%). Equilíbrio exige RAP ≈ 189.",
-    "Mas está esgotando rápido (~0 h): o RAP pode subir depois, sem garantia."
-   ],
-   "invalidators": [
-    "RAP acima de 189 depois de esgotar viraria oportunidade; RAP parado perto do preço confirma o prejuízo."
-   ],
-   "data_quality": "ok"
-  },
-  {
    "asset_id": 79846453984508,
    "name": "⏳ Sparkle Red Hair + Crown Valk + Clockworks",
    "creator_name": "Mango fango ugc",
@@ -116,9 +79,9 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-0a23c0bf53d4c83afc1c26524ce72990/150/150/HairAccessory/Png/noFilter",
    "price": 149,
    "total_quantity": 3000,
-   "units_remaining": 19,
-   "pct_sold": 99.4,
-   "rap": 146.0,
+   "units_remaining": 13,
+   "pct_sold": 99.6,
+   "rap": 147.0,
    "lowest_resale": 498,
    "volume_7d": 180,
    "volume_30d": 2623,
@@ -127,16 +90,16 @@
    "chart_median_14d": 119,
    "rap_consistent": true,
    "cost": 165.39,
-   "net_profit": -92.39,
-   "net_margin": -0.5586,
-   "velocity_per_hour": 1.3,
+   "net_profit": -91.89,
+   "net_margin": -0.5556,
+   "velocity_per_hour": 1.491,
    "velocity_note": null,
-   "eta_hours": 14.6,
+   "eta_hours": 8.7,
    "score": 52,
    "class": "OBSERVAR",
    "reasons": [
-    "RAP 146.0 não cobre o custo: lucro líquido -92 (-56%). Equilíbrio exige RAP ≈ 331.",
-    "Mas está esgotando rápido (~15 h): o RAP pode subir depois, sem garantia."
+    "RAP 147.0 não cobre o custo: lucro líquido -92 (-56%). Equilíbrio exige RAP ≈ 331.",
+    "Mas está esgotando rápido (~9 h): o RAP pode subir depois, sem garantia."
    ],
    "invalidators": [
     "RAP acima de 331 depois de esgotar viraria oportunidade; RAP parado perto do preço confirma o prejuízo."
@@ -153,8 +116,8 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-a8118f8555b6f741b704fcdc403b5d0c/150/150/Hat/Png/noFilter",
    "price": 95,
    "total_quantity": 3000,
-   "units_remaining": 84,
-   "pct_sold": 97.2,
+   "units_remaining": 77,
+   "pct_sold": 97.4,
    "rap": 95.0,
    "lowest_resale": 95,
    "volume_7d": 324,
@@ -166,9 +129,9 @@
    "cost": 105.45,
    "net_profit": -57.95,
    "net_margin": -0.5495,
-   "velocity_per_hour": 1.444,
+   "velocity_per_hour": 1.902,
    "velocity_note": null,
-   "eta_hours": 58.2,
+   "eta_hours": 40.5,
    "score": 54,
    "class": "EVITAR",
    "reasons": [
@@ -189,8 +152,8 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-e6e08ca39aee093b2bb6729ca2f0c396/150/150/ShoulderAccessory/Png/noFilter",
    "price": 55,
    "total_quantity": 1000,
-   "units_remaining": 67,
-   "pct_sold": 93.3,
+   "units_remaining": 64,
+   "pct_sold": 93.6,
    "rap": 55.0,
    "lowest_resale": 329,
    "volume_7d": 149,
@@ -202,9 +165,9 @@
    "cost": 61.05,
    "net_profit": -33.55,
    "net_margin": -0.5495,
-   "velocity_per_hour": 1.409,
+   "velocity_per_hour": 1.325,
    "velocity_note": null,
-   "eta_hours": 47.6,
+   "eta_hours": 48.3,
    "score": 43,
    "class": "EVITAR",
    "reasons": [
@@ -223,11 +186,11 @@
    "category": "hat",
    "url": "https://www.roblox.com/catalog/90254996174236",
    "thumbnail": "https://tr.rbxcdn.com/180DAY-0c71d8e7f8c64636b8e9a40ac912ac45/150/150/Hat/Png/noFilter",
-   "price": 195,
+   "price": 245,
    "total_quantity": 3000,
-   "units_remaining": 17,
-   "pct_sold": 99.4,
-   "rap": 195.0,
+   "units_remaining": 2,
+   "pct_sold": 99.9,
+   "rap": 218.0,
    "lowest_resale": 348,
    "volume_7d": 826,
    "volume_30d": 2244,
@@ -235,16 +198,16 @@
    "last_chart_date": "2026-10-16",
    "chart_median_14d": 95,
    "rap_consistent": false,
-   "cost": 216.45,
-   "net_profit": -118.95,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 3.576,
+   "cost": 271.95,
+   "net_profit": -162.95,
+   "net_margin": -0.5992,
+   "velocity_per_hour": 3.975,
    "velocity_note": null,
-   "eta_hours": 4.8,
+   "eta_hours": 0.5,
    "score": 39,
    "class": "EVITAR",
    "reasons": [
-    "RAP não confiável: último preço do gráfico (148) abaixo de 50% do RAP (195.0) ou gráfico antigo."
+    "RAP não confiável: último preço do gráfico (148) abaixo de 50% do RAP (218.0) ou gráfico antigo."
    ],
    "invalidators": [
     "Vendas recentes perto do RAP tornariam o RAP confiável de novo."
@@ -259,11 +222,11 @@
    "category": "front",
    "url": "https://www.roblox.com/catalog/82551142168013",
    "thumbnail": "https://tr.rbxcdn.com/180DAY-94f9d14185737e3f7e4c84ca99e4fc29/150/150/FrontAccessory/Png/noFilter",
-   "price": 195,
+   "price": 295,
    "total_quantity": 700,
-   "units_remaining": 25,
-   "pct_sold": 96.4,
-   "rap": 184.0,
+   "units_remaining": 20,
+   "pct_sold": 97.1,
+   "rap": 188.0,
    "lowest_resale": null,
    "volume_7d": 254,
    "volume_30d": 662,
@@ -271,16 +234,16 @@
    "last_chart_date": "2026-10-16",
    "chart_median_14d": 55,
    "rap_consistent": false,
-   "cost": 216.45,
-   "net_profit": -124.45,
-   "net_margin": -0.575,
-   "velocity_per_hour": 0.65,
+   "cost": 327.45,
+   "net_profit": -233.45,
+   "net_margin": -0.7129,
+   "velocity_per_hour": 0.911,
    "velocity_note": null,
-   "eta_hours": 38.5,
-   "score": 33,
+   "eta_hours": 22.0,
+   "score": 39,
    "class": "EVITAR",
    "reasons": [
-    "RAP não confiável: último preço do gráfico (108) abaixo de 50% do RAP (184.0) ou gráfico antigo."
+    "RAP não confiável: último preço do gráfico (108) abaixo de 50% do RAP (188.0) ou gráfico antigo."
    ],
    "invalidators": [
     "Vendas recentes perto do RAP tornariam o RAP confiável de novo."
@@ -288,38 +251,74 @@
    "data_quality": "rap_incoerente"
   },
   {
-   "asset_id": 118238179983357,
-   "name": "✧ [Increasing Price] ✧ Duality Horns & Halo",
-   "creator_name": "Olivetreeteam UGC",
+   "asset_id": 103264888144153,
+   "name": "Blue Valkyrie",
+   "creator_name": "Lynn's Home",
    "creator_verified": false,
-   "category": "hair",
-   "url": "https://www.roblox.com/catalog/118238179983357",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-f152939ef62565d4455d32d10a92ad05/150/150/HairAccessory/Png/noFilter",
-   "price": 79,
-   "total_quantity": 299,
-   "units_remaining": 53,
-   "pct_sold": 82.3,
-   "rap": 78.0,
-   "lowest_resale": 598,
-   "volume_7d": 45,
-   "volume_30d": 136,
-   "last_chart_price": 79,
+   "category": "hat",
+   "url": "https://www.roblox.com/catalog/103264888144153",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-64c81205ab8bcbd555509abda25c3256/150/150/Hat/Png/noFilter",
+   "price": 145,
+   "total_quantity": 3000,
+   "units_remaining": 92,
+   "pct_sold": 96.9,
+   "rap": 145.0,
+   "lowest_resale": 994,
+   "volume_7d": 378,
+   "volume_30d": 2181,
+   "last_chart_price": 145,
    "last_chart_date": "2026-10-16",
-   "chart_median_14d": 65,
+   "chart_median_14d": 145,
    "rap_consistent": true,
-   "cost": 87.69,
-   "net_profit": -48.69,
-   "net_margin": -0.5553,
-   "velocity_per_hour": 0.578,
-   "velocity_note": null,
-   "eta_hours": 91.7,
-   "score": 28,
+   "cost": 160.95,
+   "net_profit": -88.45,
+   "net_margin": -0.5495,
+   "velocity_per_hour": null,
+   "velocity_note": "poucos snapshots",
+   "eta_hours": null,
+   "score": 39,
    "class": "EVITAR",
    "reasons": [
-    "RAP 78.0 não cobre o custo: lucro líquido -49 (-56%). Equilíbrio exige RAP ≈ 175."
+    "RAP 145.0 não cobre o custo: lucro líquido -88 (-55%). Equilíbrio exige RAP ≈ 322."
    ],
    "invalidators": [
-    "RAP acima de 175 com vendas consistentes."
+    "RAP acima de 322 com vendas consistentes."
+   ],
+   "data_quality": "sem_velocidade"
+  },
+  {
+   "asset_id": 100759010024872,
+   "name": "Emerald Valk",
+   "creator_name": "Lynn's Home",
+   "creator_verified": false,
+   "category": "hat",
+   "url": "https://www.roblox.com/catalog/100759010024872",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-6a1d8d9c2a11709d3e0bd752619ca374/150/150/Hat/Png/noFilter",
+   "price": 95,
+   "total_quantity": 3000,
+   "units_remaining": 37,
+   "pct_sold": 98.8,
+   "rap": 95.0,
+   "lowest_resale": 95,
+   "volume_7d": 51,
+   "volume_30d": 247,
+   "last_chart_price": 95,
+   "last_chart_date": "2026-10-16",
+   "chart_median_14d": 95,
+   "rap_consistent": true,
+   "cost": 105.45,
+   "net_profit": -57.95,
+   "net_margin": -0.5495,
+   "velocity_per_hour": 0.792,
+   "velocity_note": null,
+   "eta_hours": 46.7,
+   "score": 33,
+   "class": "EVITAR",
+   "reasons": [
+    "RAP 95.0 não cobre o custo: lucro líquido -58 (-55%). Equilíbrio exige RAP ≈ 211."
+   ],
+   "invalidators": [
+    "RAP acima de 211 com vendas consistentes."
    ],
    "data_quality": "ok"
   },
@@ -335,7 +334,7 @@
    "total_quantity": 3000,
    "units_remaining": 60,
    "pct_sold": 98.0,
-   "rap": 214.0,
+   "rap": 209.0,
    "lowest_resale": 195,
    "volume_7d": 28,
    "volume_30d": 309,
@@ -344,20 +343,20 @@
    "chart_median_14d": 211.5,
    "rap_consistent": true,
    "cost": 271.95,
-   "net_profit": -164.95,
-   "net_margin": -0.6065,
-   "velocity_per_hour": null,
-   "velocity_note": "poucos snapshots",
+   "net_profit": -167.45,
+   "net_margin": -0.6157,
+   "velocity_per_hour": 0.0,
+   "velocity_note": "sem vendas no último intervalo",
    "eta_hours": null,
-   "score": 28,
+   "score": 29,
    "class": "EVITAR",
    "reasons": [
-    "RAP 214.0 não cobre o custo: lucro líquido -165 (-61%). Equilíbrio exige RAP ≈ 544."
+    "RAP 209.0 não cobre o custo: lucro líquido -167 (-62%). Equilíbrio exige RAP ≈ 544."
    ],
    "invalidators": [
     "RAP acima de 544 com vendas consistentes."
    ],
-   "data_quality": "sem_velocidade"
+   "data_quality": "ok"
   },
   {
    "asset_id": 136693538924679,
@@ -396,42 +395,6 @@
    "data_quality": "ok"
   },
   {
-   "asset_id": 100759010024872,
-   "name": "Emerald Valk",
-   "creator_name": "Lynn's Home",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/100759010024872",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-6a1d8d9c2a11709d3e0bd752619ca374/150/150/Hat/Png/noFilter",
-   "price": 95,
-   "total_quantity": 3000,
-   "units_remaining": 41,
-   "pct_sold": 98.6,
-   "rap": 95.0,
-   "lowest_resale": 95,
-   "volume_7d": 51,
-   "volume_30d": 247,
-   "last_chart_price": 95,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 95,
-   "rap_consistent": true,
-   "cost": 105.45,
-   "net_profit": -57.95,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "vendas insuficientes para medir",
-   "eta_hours": null,
-   "score": 25,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 95.0 não cobre o custo: lucro líquido -58 (-55%). Equilíbrio exige RAP ≈ 211."
-   ],
-   "invalidators": [
-    "RAP acima de 211 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
    "asset_id": 106116338649386,
    "name": "⏳LIMITED SPARKLE Black Hair+Fedora+Clockwork+Horns",
    "creator_name": "Spadez UGC",
@@ -441,7 +404,7 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-94fd83353950323ab6720ca566d365a6/150/150/HairAccessory/Png/noFilter",
    "price": 165,
    "total_quantity": 3000,
-   "units_remaining": 16,
+   "units_remaining": 15,
    "pct_sold": 99.5,
    "rap": 164.0,
    "lowest_resale": 194,
@@ -455,7 +418,7 @@
    "net_profit": -101.15,
    "net_margin": -0.5523,
    "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
+   "velocity_note": "vendas insuficientes para medir",
    "eta_hours": null,
    "score": 24,
    "class": "EVITAR",
@@ -464,6 +427,42 @@
    ],
    "invalidators": [
     "RAP acima de 366 com vendas consistentes."
+   ],
+   "data_quality": "ok"
+  },
+  {
+   "asset_id": 118238179983357,
+   "name": "✧ [Increasing Price] ✧ Duality Horns & Halo",
+   "creator_name": "Olivetreeteam UGC",
+   "creator_verified": false,
+   "category": "hair",
+   "url": "https://www.roblox.com/catalog/118238179983357",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-f152939ef62565d4455d32d10a92ad05/150/150/HairAccessory/Png/noFilter",
+   "price": 79,
+   "total_quantity": 299,
+   "units_remaining": 53,
+   "pct_sold": 82.3,
+   "rap": 78.0,
+   "lowest_resale": 598,
+   "volume_7d": 45,
+   "volume_30d": 136,
+   "last_chart_price": 79,
+   "last_chart_date": "2026-10-16",
+   "chart_median_14d": 65,
+   "rap_consistent": true,
+   "cost": 87.69,
+   "net_profit": -48.69,
+   "net_margin": -0.5553,
+   "velocity_per_hour": 0.0,
+   "velocity_note": "sem vendas no último intervalo",
+   "eta_hours": null,
+   "score": 24,
+   "class": "EVITAR",
+   "reasons": [
+    "RAP 78.0 não cobre o custo: lucro líquido -49 (-56%). Equilíbrio exige RAP ≈ 175."
+   ],
+   "invalidators": [
+    "RAP acima de 175 com vendas consistentes."
    ],
    "data_quality": "ok"
   },
@@ -480,7 +479,7 @@
    "units_remaining": 56,
    "pct_sold": 98.1,
    "rap": 169.0,
-   "lowest_resale": null,
+   "lowest_resale": 135,
    "volume_7d": 42,
    "volume_30d": 255,
    "last_chart_price": 170,
@@ -513,8 +512,8 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-a20e10797e5ad71a51f722404416e482/150/150/BackAccessory/Png/noFilter",
    "price": 150,
    "total_quantity": 3000,
-   "units_remaining": 85,
-   "pct_sold": 97.2,
+   "units_remaining": 82,
+   "pct_sold": 97.3,
    "rap": 150.0,
    "lowest_resale": 150,
    "volume_7d": 26,
@@ -526,10 +525,10 @@
    "cost": 166.5,
    "net_profit": -91.5,
    "net_margin": -0.5495,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 22,
+   "velocity_per_hour": 0.475,
+   "velocity_note": null,
+   "eta_hours": 172.6,
+   "score": 23,
    "class": "EVITAR",
    "reasons": [
     "RAP 150.0 não cobre o custo: lucro líquido -92 (-55%). Equilíbrio exige RAP ≈ 333."
@@ -549,9 +548,9 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-cb70e528d7d0a511455ed70af76391d0/150/150/Hat/Png/noFilter",
    "price": 199,
    "total_quantity": 499,
-   "units_remaining": 89,
-   "pct_sold": 82.2,
-   "rap": 182.0,
+   "units_remaining": 88,
+   "pct_sold": 82.4,
+   "rap": 183.0,
    "lowest_resale": 438,
    "volume_7d": 21,
    "volume_30d": 100,
@@ -560,15 +559,15 @@
    "chart_median_14d": 149,
    "rap_consistent": true,
    "cost": 220.89,
-   "net_profit": -129.89,
-   "net_margin": -0.588,
+   "net_profit": -129.39,
+   "net_margin": -0.5858,
    "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
+   "velocity_note": "vendas insuficientes para medir",
    "eta_hours": null,
    "score": 22,
    "class": "EVITAR",
    "reasons": [
-    "RAP 182.0 não cobre o custo: lucro líquido -130 (-59%). Equilíbrio exige RAP ≈ 442."
+    "RAP 183.0 não cobre o custo: lucro líquido -129 (-59%). Equilíbrio exige RAP ≈ 442."
    ],
    "invalidators": [
     "RAP acima de 442 com vendas consistentes."
@@ -670,10 +669,10 @@
    "cost": 277.5,
    "net_profit": -152.5,
    "net_margin": -0.5495,
-   "velocity_per_hour": null,
-   "velocity_note": "poucos snapshots",
+   "velocity_per_hour": 0.0,
+   "velocity_note": "sem vendas no último intervalo",
    "eta_hours": null,
-   "score": 20,
+   "score": 21,
    "class": "EVITAR",
    "reasons": [
     "RAP 250.0 não cobre o custo: lucro líquido -152 (-55%). Equilíbrio exige RAP ≈ 555."
@@ -681,7 +680,7 @@
    "invalidators": [
     "RAP acima de 555 com vendas consistentes."
    ],
-   "data_quality": "sem_velocidade"
+   "data_quality": "ok"
   },
   {
    "asset_id": 124033240617455,
@@ -706,9 +705,9 @@
    "cost": 388.5,
    "net_profit": -213.5,
    "net_margin": -0.5495,
-   "velocity_per_hour": 0.217,
-   "velocity_note": null,
-   "eta_hours": 424.0,
+   "velocity_per_hour": 0.0,
+   "velocity_note": "sem vendas no último intervalo",
+   "eta_hours": null,
    "score": 15,
    "class": "EVITAR",
    "reasons": [
@@ -754,6 +753,42 @@
     "RAP acima de 555 com vendas consistentes."
    ],
    "data_quality": "ok"
+  },
+  {
+   "asset_id": 130883412919351,
+   "name": "Large Glowing Rainbow Horns",
+   "creator_name": "UGC.Studios",
+   "creator_verified": false,
+   "category": "hat",
+   "url": "https://www.roblox.com/catalog/130883412919351",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-8c3bc85b2b4c1f5f6c2cb544e4e5d963/150/150/Hat/Png/noFilter",
+   "price": 500,
+   "total_quantity": 99,
+   "units_remaining": 96,
+   "pct_sold": 3.0,
+   "rap": 905.0,
+   "lowest_resale": null,
+   "volume_7d": 2,
+   "volume_30d": 2,
+   "last_chart_price": 750,
+   "last_chart_date": "2026-10-11",
+   "chart_median_14d": 750,
+   "rap_consistent": null,
+   "cost": 555.0,
+   "net_profit": -102.5,
+   "net_margin": -0.1847,
+   "velocity_per_hour": null,
+   "velocity_note": "poucos snapshots",
+   "eta_hours": null,
+   "score": 9,
+   "class": "EVITAR",
+   "reasons": [
+    "Liquidez baixa: só 2 vendas em 7 dias; difícil revender."
+   ],
+   "invalidators": [
+    "Volume 7d acima de 5 mudaria a avaliação."
+   ],
+   "data_quality": "sem_velocidade"
   }
  ]
 }
