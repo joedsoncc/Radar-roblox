@@ -6,7 +6,8 @@ from .http import ApiError, AuthRequired
 
 
 class FakeClient:
-    def __init__(self, now, seed=7, n=40, resale_mode="ok", fail_catalog=False):
+    def __init__(self, now, seed=7, n=40, resale_mode="ok", fail_catalog=False, days=30):
+        self.days = days
         self.now = now
         self.rng = random.Random(seed)
         self.resale_mode = resale_mode  # ok | auth | error
@@ -35,6 +36,10 @@ class FakeClient:
         if "catalog.roblox.com/v2/search" in url:
             if self.fail_catalog:
                 raise ApiError(url, 503, "falso")
+            if "CreatorTargetId=" in url:  # busca por criador (histórico das lojas): todos os tipos de limited
+                self.creator_calls = getattr(self, "creator_calls", 0) + 1
+                cid = int(url.split("CreatorTargetId=")[1].split("&")[0])
+                return {"data": [it for it in self.items if it["creatorTargetId"] == cid], "nextPageCursor": None}
             return {"data": self.items, "nextPageCursor": None}
         if "resale-data" in url:
             if self.resale_mode == "auth":
@@ -45,7 +50,7 @@ class FakeClient:
             rap = self.rap.get(cid, 100)
             # Série da mais nova para a mais antiga, só dias com venda.
             pts, vols = [], []
-            for d in range(0, 30, 2):
+            for d in range(0, self.days, 2):
                 day = (self.now - timedelta(days=d)).strftime("%Y-%m-%dT00:00:00Z")
                 pts.append({"value": int(rap * self.rng.uniform(0.8, 1.2)), "date": day})
                 vols.append({"value": self.rng.randint(5, 40), "date": day})

@@ -2,7 +2,8 @@
   'use strict';
   var NA = '—';
   var CUR = '⏣';
-  var state = { data: null, cat: 'all', cls: '', sort: 'score' };
+  var FALLBACK_REPO = 'joedsoncc/Radar-roblox';
+  var state = { data: null, cart: undefined, cartKey: null, cat: 'all', cls: '', sort: 'score', view: 'radar' };
   var $ = function (id) { return document.getElementById(id); };
 
   var nf = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 2 });
@@ -23,7 +24,39 @@
     if (text != null) e.textContent = text;
     return e;
   }
+  function signed(v, f) { return isNum(v) ? (v > 0 ? '+' : '') + f(v) : NA; }
+  function sgnClass(v) { return isNum(v) ? (v > 0 ? 'pos' : v < 0 ? 'neg' : '') : ''; }
+  function sgnPct(v) { return signed(v, margin); }
+  function trendInfo(t, c7) {
+    var m = { 'subindo': ['▲', 'up', 'Subindo'], 'caindo': ['▼', 'down', 'Caindo'], 'estável': ['▬', 'flat', 'Estável'] }[t];
+    if (!m) return { arrow: '', cls: 'flat', text: NA };
+    return { arrow: m[0], cls: m[1], text: m[0] + ' ' + m[2] + (isNum(c7) ? ' (' + sgnPct(c7) + ')' : '') };
+  }
   function safeUrl(u) { return typeof u === 'string' && /^https?:\/\//i.test(u) ? u : null; }
+
+  /* Cadastro via issue do GitHub */
+  function repoSlug() {
+    var m = /^([a-z0-9-]+)\.github\.io$/i.exec(location.hostname || '');
+    if (m) {
+      var seg = (location.pathname || '/').split('/')[1];
+      if (seg) return m[1] + '/' + seg;
+    }
+    return FALLBACK_REPO;
+  }
+  function issueUrl(o) {
+    var q = [['template', 'carteira.yml'], ['title', '[carteira] ' + (o.nome || o.item)], ['acao', o.acao || 'Adicionar'],
+      ['item', o.item], ['preco_pago', o.preco == null ? '' : String(o.preco)], ['quantidade', String(o.qtd || 1)]];
+    if (o.data) q.push(['comprado_em', o.data]);
+    return 'https://github.com/' + repoSlug() + '/issues/new?' + q.map(function (p) {
+      return encodeURIComponent(p[0]) + '=' + encodeURIComponent(p[1]);
+    }).join('&');
+  }
+  function catalogUrl(i) { return safeUrl(i.url) || (i.asset_id != null ? 'https://www.roblox.com/catalog/' + i.asset_id : ''); }
+  function linkBtn(label, href, cls) {
+    var a = el('a', 'btn ' + (cls || ''), label);
+    a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer';
+    return a;
+  }
 
   /* Tema */
   function getSaved() { try { return localStorage.getItem('radar-theme'); } catch (e) { return null; } }
@@ -136,6 +169,19 @@
     head.appendChild(info);
     c.appendChild(head);
 
+    var sp = window.RadarCharts && RadarCharts.sparkline(i.spark);
+    var spRow = el('div', 'spark-row');
+    if (sp) { spRow.appendChild(sp); spRow.appendChild(el('span', 'spark-cap', 'preço de revenda (30 dias)')); }
+    else spRow.appendChild(el('span', 'spark-cap', 'Sem histórico de vendas'));
+    c.appendChild(spRow);
+    var ct = i.creator_track;
+    var storeTxt = 'Loja sem histórico';
+    if (ct && typeof ct === 'object' && isNum(ct.with_resale) && isNum(ct.pct_above_price)) {
+      storeTxt = 'Loja: ' + num(Math.round(ct.with_resale * ct.pct_above_price)) + ' de ' + num(ct.with_resale) +
+        ' limiteds acima do preço · retenção mediana ' + (isNum(ct.median_retention) ? margin(ct.median_retention) : NA);
+    }
+    c.appendChild(el('p', 'store-line', storeTxt));
+
     var stock = el('div', 'stock');
     var rem = isNum(i.units_remaining) ? num(i.units_remaining) : NA;
     var tot = isNum(i.total_quantity) ? num(i.total_quantity) : NA;
@@ -160,6 +206,10 @@
     stat(dl, 'ETA p/ esgotar', eta(i.eta_hours));
     stat(dl, 'Volume 7d', num(i.volume_7d));
     stat(dl, 'Volume 30d', num(i.volume_30d));
+    stat(dl, 'Retenção', isNum(i.retention) ? margin(i.retention) : NA);
+    var tr = trendInfo(i.trend, i.change_7d);
+    stat(dl, 'Tendência', tr.text);
+    dl.lastChild.lastChild.className = 'trend ' + tr.cls;
     c.appendChild(dl);
 
     var det = el('details');
@@ -174,6 +224,12 @@
     list('Motivos', i.reasons);
     list('O que invalidaria', i.invalidators);
     c.appendChild(det);
+    var cu = catalogUrl(i);
+    if (cu) {
+      var act = el('div', 'card-actions');
+      act.appendChild(linkBtn('Acompanhar', issueUrl({ acao: 'Adicionar', item: cu, nome: i.name, preco: null, qtd: 1 })));
+      c.appendChild(act);
+    }
     return c;
   }
 
@@ -233,8 +289,179 @@
       .catch(function () {});
   }
 
+
+  /* Carteira */
+  function loadCart() {
+    return fetch('carteira.json', { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) return null;
+      return r.json();
+    }).catch(function () { return null; });
+  }
+
+  function sumBox(label, value, cls) {
+    var b = el('div', 'sum');
+    b.appendChild(el('div', 'k', label));
+    b.appendChild(el('div', 'v' + (cls ? ' ' + cls : ''), value));
+    return b;
+  }
+
+  function cartCard(i) {
+    var c = el('article', 'card');
+    var head = el('div', 'card-head');
+    var url = safeUrl(i.thumbnail), th;
+    function fb() { return el('div', 'thumb', 'Sem foto'); }
+    if (url) {
+      th = el('img', 'thumb'); th.alt = ''; th.loading = 'lazy'; th.referrerPolicy = 'no-referrer'; th.src = url;
+      th.addEventListener('error', function () { if (th.parentNode) th.parentNode.replaceChild(fb(), th); });
+    } else th = fb();
+    head.appendChild(th);
+    var info = el('div', 'head-info');
+    var link = safeUrl(i.url), name = i.name || 'Sem nome';
+    if (link) { var a = el('a', 'name', name); a.href = link; a.target = '_blank'; a.rel = 'noopener noreferrer'; info.appendChild(a); }
+    else info.appendChild(el('span', 'name', name));
+    info.appendChild(el('div', 'creator', 'por ' + (i.creator_name || NA)));
+    var tracking = !isNum(i.avg_paid);
+    if (tracking) info.appendChild(el('span', 'tag', 'Só acompanhando'));
+    head.appendChild(info);
+    c.appendChild(head);
+
+    var lots = Array.isArray(i.lots) ? i.lots : [];
+    if (lots.length) {
+      var ul = el('ul', 'lots');
+      lots.forEach(function (l) {
+        var t = num(l.quantidade) + ' un. a ' + (isNum(l.preco_pago) ? robux(l.preco_pago) : 'sem preço (só acompanhando)');
+        if (l.comprado_em) t += ' · ' + l.comprado_em;
+        if (l.nota) t += ' · ' + l.nota;
+        ul.appendChild(el('li', null, t));
+      });
+      c.appendChild(ul);
+    }
+
+    var stockTxt = i.is_off_sale === true && isNum(i.units_remaining) && i.units_remaining === 0 ? 'esgotado'
+      : (isNum(i.units_remaining) ? num(i.units_remaining) : NA) + '/' + (isNum(i.total_quantity) ? num(i.total_quantity) : NA);
+    if (isNum(i.units_remaining) && i.units_remaining === 0) stockTxt = 'esgotado';
+
+    var tr = trendInfo(i.trend, i.change_7d);
+    var dl = el('dl', 'stats');
+    stat(dl, 'Preço de loja', robux(i.original_price));
+    stat(dl, 'Preço médio pago', tracking ? NA : robux(i.avg_paid));
+    stat(dl, 'RAP', robux(i.rap));
+    stat(dl, 'Menor revenda', robux(i.lowest_resale));
+    stat(dl, 'Restantes', stockTxt);
+    stat(dl, 'Quantidade', isNum(i.quantity) ? num(i.quantity) : NA);
+    stat(dl, 'Valor hoje', robux(i.value_now));
+    if (!tracking) {
+      stat(dl, 'Lucro/prejuízo', robux(i.pnl) + ' (' + sgnPct(i.pnl_pct) + ')');
+      dl.lastChild.lastChild.className = sgnClass(i.pnl);
+      dl.lastChild.lastChild.textContent = isNum(i.pnl) ? signed(i.pnl, robux) + (isNum(i.pnl_pct) ? ' (' + sgnPct(i.pnl_pct) + ')' : '') : NA;
+      stat(dl, 'Empata com RAP', robux(i.breakeven_rap));
+    }
+    stat(dl, 'Retenção', isNum(i.retention) ? margin(i.retention) : NA);
+    stat(dl, 'Tendência', tr.text);
+    dl.lastChild.lastChild.className = 'trend ' + tr.cls;
+    stat(dl, 'Variação 7d / 30d', sgnPct(i.change_7d) + ' / ' + sgnPct(i.change_30d));
+    stat(dl, 'Dias com o item', isNum(i.days_held) ? num(i.days_held) : NA);
+    c.appendChild(dl);
+
+    c.appendChild(window.RadarCharts ? RadarCharts.itemChart(i) : el('p', 'chart-empty', 'Ainda sem histórico de vendas'));
+
+    var cu = catalogUrl(i);
+    if (cu) {
+      var act = el('div', 'card-actions');
+      act.appendChild(linkBtn('Remover', issueUrl({ acao: 'Remover', item: cu, nome: i.name, preco: null, qtd: 1 }), 'danger'));
+      c.appendChild(act);
+    }
+    return c;
+  }
+
+  function renderCart() {
+    var d = state.cart;
+    var items = d && Array.isArray(d.items) ? d.items : [];
+    var sum = $('cart-summary'), grid = $('cart-grid');
+    grid.textContent = '';
+    sum.textContent = '';
+    $('cart-empty').hidden = items.length > 0;
+    sum.hidden = !items.length;
+    $('cart-count').textContent = items.length ? items.length + (items.length === 1 ? ' item' : ' itens') : '';
+    if (!items.length) return;
+    var t = d.totals || {};
+    sum.appendChild(sumBox('Custo total', robux(t.cost)));
+    sum.appendChild(sumBox('Valor hoje (vendendo pelo RAP)', robux(t.value_now)));
+    sum.appendChild(sumBox('Lucro/prejuízo', signed(t.pnl, robux), sgnClass(t.pnl)));
+    sum.appendChild(sumBox('Lucro/prejuízo %', sgnPct(t.pnl_pct), sgnClass(t.pnl_pct)));
+    items.forEach(function (i) { grid.appendChild(cartCard(i)); });
+  }
+
+  function parseItem(v) {
+    v = String(v || '').trim();
+    var m = /^(\d{3,})$/.exec(v) || /roblox\.com\/(?:[a-z-]+\/)?catalog\/(\d+)/i.exec(v) || /roblox\.com\/bundles\/(\d+)/i.exec(v);
+    return m ? m[1] : null;
+  }
+
+  function initForm() {
+    var f = $('add-form'), err = $('af-error');
+    function open(show) {
+      f.hidden = !show;
+      if (show) { $('af-item').focus(); }
+    }
+    $('cart-add').addEventListener('click', function () { open(f.hidden); });
+    $('af-cancel').addEventListener('click', function () { open(false); });
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var id = parseItem($('af-item').value);
+      if (!id) { err.textContent = 'Informe o link do catálogo (roblox.com/catalog/…) ou apenas o número do item.'; err.hidden = false; return; }
+      var pv = $('af-price').value.trim(), price = null;
+      if (pv !== '') {
+        price = Number(pv.replace(',', '.'));
+        if (!isFinite(price) || price < 0) { err.textContent = 'Preço pago inválido.'; err.hidden = false; return; }
+      }
+      var q = parseInt($('af-qty').value, 10);
+      if (!isFinite(q) || q < 1) { err.textContent = 'A quantidade precisa ser 1 ou mais.'; err.hidden = false; return; }
+      err.hidden = true;
+      var href = issueUrl({ acao: 'Adicionar', item: 'https://www.roblox.com/catalog/' + id, nome: id, preco: price, qtd: q, data: $('af-date').value });
+      window.open(href, '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  /* Visões */
+  function setView(v, persist) {
+    if (v !== 'carteira') v = 'radar';
+    state.view = v;
+    $('view-radar').hidden = v !== 'radar';
+    $('view-carteira').hidden = v !== 'carteira';
+    ['radar', 'carteira'].forEach(function (k) {
+      var b = $('vt-' + k);
+      b.setAttribute('aria-selected', String(k === v));
+      b.tabIndex = k === v ? 0 : -1;
+    });
+    if (persist) {
+      try { localStorage.setItem('radar-view', v); } catch (e) {}
+      try { history.replaceState(null, '', v === 'carteira' ? '#carteira' : location.pathname + location.search); } catch (e) {}
+    }
+  }
+  function initViews() {
+    var saved = null;
+    try { saved = localStorage.getItem('radar-view'); } catch (e) {}
+    setView(location.hash === '#carteira' ? 'carteira' : (location.hash === '#radar' ? 'radar' : saved), false);
+    ['radar', 'carteira'].forEach(function (k) {
+      $('vt-' + k).addEventListener('click', function () { setView(k, true); });
+    });
+    $('views').addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { var k = state.view === 'radar' ? 'carteira' : 'radar'; setView(k, true); $('vt-' + k).focus(); }
+    });
+    window.addEventListener('hashchange', function () {
+      if (location.hash === '#carteira') setView('carteira', false); else if (location.hash === '#radar') setView('radar', false);
+    });
+  }
+
   function refresh(first) {
     loadLaunches();
+    loadCart().then(function (c) {
+      var key = c && Array.isArray(c.items) ? (c.generated_at || '') + '|' + c.items.length : 'vazio';
+      if (state.cart !== undefined && key === state.cartKey) return;
+      state.cart = c; state.cartKey = key;
+      renderCart();
+    });
     return load().then(function (d) {
       var changed = !state.data || state.data.generated_at !== d.generated_at || state.data.run_status !== d.run_status;
       state.data = d;
@@ -251,6 +478,8 @@
 
   function init() {
     initTheme();
+    initViews();
+    initForm();
     $('class-filter').addEventListener('change', function (e) { state.cls = e.target.value; renderGrid(); });
     $('sort').addEventListener('change', function (e) { state.sort = e.target.value; renderGrid(); });
     refresh(true);

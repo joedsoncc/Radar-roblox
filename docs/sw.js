@@ -1,5 +1,5 @@
-const CACHE_VERSION = 'radar-ugc-v4';
-const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.webmanifest',
+const CACHE_VERSION = 'radar-ugc-v5';
+const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'charts.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-192.png', 'icons/maskable-512.png'];
 
 self.addEventListener('install', (e) => {
@@ -13,7 +13,7 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
-  if (url.pathname.endsWith('/data.json') || url.pathname.endsWith('/launches.json')) {
+  if (url.pathname.endsWith('/data.json') || url.pathname.endsWith('/carteira.json') || url.pathname.endsWith('/launches.json')) {
     e.respondWith(fetch(req).then((res) => {
       if (res.ok) { const copy = res.clone(); caches.open(CACHE_VERSION).then((c) => c.put(req, copy)); }
       return res;

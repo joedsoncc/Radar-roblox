@@ -5,6 +5,8 @@ Uso:
   python radar.py run                 # coleta real + site + alertas (NTFY_TOPIC no ambiente)
   python radar.py run --no-notify     # sem alertas
   python radar.py run --fake --root /tmp/teste   # dados falsos, sem internet
+  python radar.py carteira            # só a carteira (workflow de cadastro); aceita --fake --root
+  python radar.py cadastrar           # lê o corpo da issue em ISSUE_BODY e atualiza carteira.json
   python radar.py send                # envia os alertas guardados em data/outbox.json (depois do commit)
   python radar.py launches            # vigia lançamentos de limiteds da Roblox oficial
   python radar.py send --outbox launch_outbox.json
@@ -28,8 +30,14 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("run")
     r.add_argument("--no-notify", action="store_true")
-    r.add_argument("--fake", action="store_true", help="usa dados falsos (não acessa a internet)")
-    r.add_argument("--root", default=HERE, help="pasta do projeto (config.json, data/, docs/)")
+    for p in (r, sub.add_parser("carteira")):
+        p.add_argument("--fake", action="store_true", help="usa dados falsos (não acessa a internet)")
+        p.add_argument("--root", default=HERE, help="pasta do projeto (config.json, data/, docs/)")
+    cart = sub.choices["carteira"]
+    cart.add_argument("--asset", type=int, help="item a resumir em --anexar")
+    cart.add_argument("--anexar", help="arquivo de texto onde acrescentar uma linha sobre --asset")
+    cd = sub.add_parser("cadastrar")
+    cd.add_argument("--mensagem", default="cadastro_resultado.md", help="arquivo onde gravar a resposta para a issue")
     sd = sub.add_parser("send")
     sd.add_argument("--outbox", default="outbox.json")
     sub.add_parser("launches")
@@ -55,14 +63,34 @@ def main(argv=None):
                       message=args.text[:500], tags=["warning"], priority=3)
         return 0
 
+    if args.cmd == "cadastrar":
+        return cadastrar(args.mensagem)
+
     client = None
     if args.fake:
         if os.path.abspath(args.root) == HERE:
             sys.exit("--fake precisa de --root em outra pasta para não sujar o histórico real.")
         os.makedirs(args.root, exist_ok=True)
         shutil.copy(os.path.join(HERE, "config.json"), os.path.join(args.root, "config.json"))
+        dest = os.path.join(args.root, "carteira.json")
+        if not os.path.exists(dest) and os.path.exists(os.path.join(HERE, "carteira.json")):
+            shutil.copy(os.path.join(HERE, "carteira.json"), dest)
         from radar.fake import FakeClient
-        client = FakeClient(datetime.now(timezone.utc))
+        client = FakeClient(datetime.now(timezone.utc), days=90)
+
+    if args.cmd == "carteira":
+        from radar import carteira
+        from radar.http import Client
+        cfg = load_config(args.root)
+        col = cfg["coleta"]
+        client = client or Client(col["request_delay_s"], col["max_retries"], col["timeout_s"])
+        res = carteira.run(args.root, client, datetime.now(timezone.utc).replace(microsecond=0), cfg)
+        if res["status"] != "ok":
+            print(f"::warning title=Carteira ({res['status']})::{res['note']}")
+        if args.anexar and args.asset:
+            with open(args.anexar, "a", encoding="utf-8") as f:
+                f.write("\n" + carteira.summary_line(res, args.asset) + "\n")
+        return 0
 
     try:
         res = run(args.root, client=client, notify=not args.no_notify and not args.fake)
@@ -73,6 +101,23 @@ def main(argv=None):
     if res["status"] in ("auth_required", "error"):
         # Anotação visível na página do GitHub Actions.
         print(f"::warning title=Radar UGC ({res['status']})::{res['note']}")
+    return 0
+
+
+def cadastrar(msg_path):
+    """Cadastro por issue. O corpo vem de ISSUE_BODY (variável de ambiente, nunca da linha de comando).
+
+    Sempre sai com 0; o resultado vai para o arquivo de mensagem e para `ok=true|false` em GITHUB_OUTPUT.
+    """
+    from radar import cadastro
+    ok, msg, aid = cadastro.cadastrar(HERE, os.environ.get("ISSUE_BODY", ""))
+    with open(msg_path, "w", encoding="utf-8") as f:
+        f.write(msg + "\n")
+    print(msg)
+    out = os.environ.get("GITHUB_OUTPUT")
+    if out:
+        with open(out, "a", encoding="utf-8") as f:
+            f.write(f"ok={'true' if ok else 'false'}\nasset_id={aid or ''}\n")
     return 0
 
 
