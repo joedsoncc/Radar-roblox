@@ -110,10 +110,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           fim=$(date -u -d "${ATE:-+90 minutes}" +%s 2>/dev/null || date -u -d "+90 minutes" +%s)
           limite=$(( $(date -u +%s) + 330*60 ))
-          [ "$fim" -gt "$limite" ] && fim=$limite
+          if [ "$fim" -gt "$limite" ]; then fim=$limite; fi
           intervalo=$(( ${INTERVALO_MIN:-10} * 60 ))
           salvar() {
-            for f in data/amplo data/calibracao.md data/calibracao.json; do [ -e "$f" ] && git add "$f"; done
+            for f in data/amplo data/calibracao.md data/calibracao.json; do if [ -e "$f" ]; then git add "$f"; fi; done
             git diff --cached --quiet && return 0
             git commit -q -m "amplo: $1 $(date -u +%Y-%m-%dT%H:%MZ)"
             for i in 1 2 3 4; do
@@ -134,8 +134,8 @@ jobs:
             salvar rodada
             espera=$(( intervalo - ($(date -u +%s) - inicio) ))
             agora=$(date -u +%s)
-            [ $(( agora + espera )) -ge "$fim" ] && break
-            [ "$espera" -gt 0 ] && sleep "$espera"
+            if [ $(( agora + espera )) -ge "$fim" ]; then break; fi
+            if [ "$espera" -gt 0 ]; then sleep "$espera"; fi
           done
           git pull -q --rebase origin "${GITHUB_REF_NAME}" || true
           python radar.py calibrar
