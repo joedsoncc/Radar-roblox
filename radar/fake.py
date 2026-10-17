@@ -28,7 +28,7 @@ class FakeClient:
                 "creatorTargetId": 50 + i % 5, "creatorType": "User",
                 "creatorHasVerifiedBadge": i % 3 == 0, "price": price,
                 "totalQuantity": total,
-                "unitsAvailableForConsumption": self.rng.randint(0, min(total, 150)),
+                "unitsAvailableForConsumption": 0 if i % 13 == 5 else self.rng.randint(0, min(total, 150)),  # alguns esgotados
                 "lowestResalePrice": int(price * self.rng.uniform(0.9, 4)),
                 "itemRestrictions": ["Collectible"], "collectibleItemId": f"c-{i}",
                 "favoriteCount": self.rng.randint(0, 5000),

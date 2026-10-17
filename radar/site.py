@@ -13,6 +13,7 @@ PUBLIC_FIELDS = [
     "cost", "net_profit", "net_margin", "velocity_per_hour", "velocity_note", "eta_hours", "score", "class",
     "reasons", "invalidators", "data_quality",
     "creator_track", "retention", "change_7d", "trend", "spark",
+    "tipo", "fator_trava",
 ]
 
 

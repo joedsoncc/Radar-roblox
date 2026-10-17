@@ -172,5 +172,10 @@
     "min_net_margin": 0.0,
     "excluir_calibracao_fraca": true,
     "calibracao_fraca": 0.3
+  },
+  "revenda": {
+    "ativo": true,
+    "max_itens": 30,
+    "max_pages_per_query": 3
   }
 }
