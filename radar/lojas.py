@@ -42,11 +42,20 @@ def _median(vals):
     return vals[m] if len(vals) % 2 else (vals[m - 1] + vals[m]) / 2
 
 
+METODO = 2  # 2: retenção só de itens esgotados (antes contava anúncios de itens ainda à venda)
+
+
 def compute_stats(items):
-    """items: collectibles normalizados do criador. Devolve as métricas do contrato."""
+    """items: collectibles normalizados do criador. Devolve as métricas do contrato.
+
+    Retenção só conta itens já esgotados: enquanto a loja ainda vende, ninguém paga mais que o
+    preço de loja, então o menor anúncio nessa fase é pedido, não preço (ex.: 498 num item de 149).
+    """
     rets = []
     for it in items:
         price, low = it.get("price"), it.get("lowest_resale")
+        if it.get("units_remaining") != 0:
+            continue
         if price and price > 0 and low:
             rets.append(low / price)
     return {
@@ -59,7 +68,7 @@ def compute_stats(items):
 
 
 def is_stale(rec, now, days):
-    if not rec or not rec.get("updated_at"):
+    if not rec or not rec.get("updated_at") or rec.get("metodo") != METODO:
         return True
     try:
         updated = datetime.fromisoformat(rec["updated_at"].replace("Z", "+00:00"))
@@ -117,7 +126,7 @@ def update(root, client, creators, now, cfg, errors):
                 break
             continue
         consecutive = 0
-        rec = {"updated_at": iso(now), "name": info.get("name")}
+        rec = {"updated_at": iso(now), "name": info.get("name"), "metodo": METODO}
         rec.update(compute_stats(items))
         cache[str(cid)] = rec
         changed = True
