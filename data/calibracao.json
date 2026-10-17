@@ -302,68 +302,12 @@
    }
   ]
  },
- "generated_at": "2026-10-17T20:54:18Z",
+ "generated_at": "2026-10-17T20:55:10Z",
  "registros": 2275,
  "sem_desfecho": 130,
  "min_itens_faixa": 20,
  "alvo_margem": 0.3,
  "esgotando_agora": [
-  {
-   "asset_id": 110467381278652,
-   "name": "Birthday Cake Axolu",
-   "price": 0,
-   "restantes": 2,
-   "vendas_por_hora": 75.02,
-   "esgota_em_h": 0.0
-  },
-  {
-   "asset_id": 121229291644581,
-   "name": "Betrayers Crown",
-   "price": 0,
-   "restantes": 7,
-   "vendas_por_hora": 13.5,
-   "esgota_em_h": 0.5
-  },
-  {
-   "asset_id": 103418642515401,
-   "name": "HUGE Hugging Halloween Cat on your Back",
-   "price": 0,
-   "restantes": 8,
-   "vendas_por_hora": 14.4,
-   "esgota_em_h": 0.6
-  },
-  {
-   "asset_id": 106355599246932,
-   "name": "Gráinneog",
-   "price": 0,
-   "restantes": 7,
-   "vendas_por_hora": 5.25,
-   "esgota_em_h": 1.3
-  },
-  {
-   "asset_id": 111579290317799,
-   "name": "Asta",
-   "price": 0,
-   "restantes": 3,
-   "vendas_por_hora": 2.25,
-   "esgota_em_h": 1.3
-  },
-  {
-   "asset_id": 73350250089587,
-   "name": "Neon Venom Gradient Spiked Horns",
-   "price": 0,
-   "restantes": 3,
-   "vendas_por_hora": 2.25,
-   "esgota_em_h": 1.3
-  },
-  {
-   "asset_id": 76153937986723,
-   "name": "[PBR] Gold Horse King Axe [CODE: BHKA]",
-   "price": 0,
-   "restantes": 7,
-   "vendas_por_hora": 3.0,
-   "esgota_em_h": 2.3
-  },
   {
    "asset_id": 79846453984508,
    "name": "⏳ Sparkle Red Hair + Crown Valk + Clockworks",
@@ -371,54 +315,6 @@
    "restantes": 7,
    "vendas_por_hora": 2.25,
    "esgota_em_h": 3.1
-  },
-  {
-   "asset_id": 92059852230172,
-   "name": "Fries Shoulder Pal",
-   "price": 0,
-   "restantes": 281,
-   "vendas_por_hora": 70.51,
-   "esgota_em_h": 4.0
-  },
-  {
-   "asset_id": 110126764663521,
-   "name": "Diego",
-   "price": 0,
-   "restantes": 6,
-   "vendas_por_hora": 1.5,
-   "esgota_em_h": 4.0
-  },
-  {
-   "asset_id": 100993500063118,
-   "name": "♡ : cute diary of a princess in black",
-   "price": 0,
-   "restantes": 9,
-   "vendas_por_hora": 1.5,
-   "esgota_em_h": 6.0
-  },
-  {
-   "asset_id": 107550244108021,
-   "name": "Flying Squirrel Hugger",
-   "price": 0,
-   "restantes": 10,
-   "vendas_por_hora": 1.5,
-   "esgota_em_h": 6.7
-  },
-  {
-   "asset_id": 95651415246994,
-   "name": "Cute White Angel Wings",
-   "price": 0,
-   "restantes": 54,
-   "vendas_por_hora": 7.5,
-   "esgota_em_h": 7.2
-  },
-  {
-   "asset_id": 86553542522636,
-   "name": "The Shumpkin",
-   "price": 0,
-   "restantes": 24,
-   "vendas_por_hora": 3.0,
-   "esgota_em_h": 8.0
   },
   {
    "asset_id": 95006433998697,
@@ -429,68 +325,12 @@
    "esgota_em_h": 8.2
   },
   {
-   "asset_id": 105612037282720,
-   "name": "Black Hair w Goggles",
-   "price": 0,
-   "restantes": 77,
-   "vendas_por_hora": 7.5,
-   "esgota_em_h": 10.3
-  },
-  {
-   "asset_id": 90498366287453,
-   "name": "Keith_crowned’s sparkle time traffic birthday cake",
-   "price": 0,
-   "restantes": 40,
-   "vendas_por_hora": 3.75,
-   "esgota_em_h": 10.7
-  },
-  {
    "asset_id": 118306309849671,
    "name": "[ANIMATED] Nyan Cat HP Bar ",
    "price": 95,
    "restantes": 180,
    "vendas_por_hora": 15.0,
    "esgota_em_h": 12.0
-  },
-  {
-   "asset_id": 91863676683138,
-   "name": "Black Messy Hair",
-   "price": 0,
-   "restantes": 82,
-   "vendas_por_hora": 6.0,
-   "esgota_em_h": 13.7
-  },
-  {
-   "asset_id": 130782686627629,
-   "name": "Emilia",
-   "price": 0,
-   "restantes": 31,
-   "vendas_por_hora": 2.25,
-   "esgota_em_h": 13.8
-  },
-  {
-   "asset_id": 114508257602750,
-   "name": "Blue Dress",
-   "price": 0,
-   "restantes": 34,
-   "vendas_por_hora": 2.25,
-   "esgota_em_h": 15.1
-  },
-  {
-   "asset_id": 126938298102120,
-   "name": "Christmas Aura with Snowflakes and Gingerbread",
-   "price": 0,
-   "restantes": 35,
-   "vendas_por_hora": 2.25,
-   "esgota_em_h": 15.6
-  },
-  {
-   "asset_id": 107037340881521,
-   "name": "♪ 〜 Free Pink Witch Cotton Candy Hair",
-   "price": 0,
-   "restantes": 88,
-   "vendas_por_hora": 4.5,
-   "esgota_em_h": 19.6
   },
   {
    "asset_id": 103264888144153,
@@ -501,12 +341,172 @@
    "esgota_em_h": 20.3
   },
   {
-   "asset_id": 100309523892085,
-   "name": "Armour Shoulder Left",
-   "price": 0,
-   "restantes": 31,
-   "vendas_por_hora": 1.5,
-   "esgota_em_h": 20.7
+   "asset_id": 98276569007154,
+   "name": "[⏳LIMITED] Traffic Cone+Clockwork+Hair+Antlers ",
+   "price": 199,
+   "restantes": 95,
+   "vendas_por_hora": 4.5,
+   "esgota_em_h": 21.1
+  },
+  {
+   "asset_id": 70913805587976,
+   "name": "Red Valkyrie",
+   "price": 95,
+   "restantes": 69,
+   "vendas_por_hora": 3.0,
+   "esgota_em_h": 23.0
+  },
+  {
+   "asset_id": 117646930298113,
+   "name": "Crimson Dominus",
+   "price": 95,
+   "restantes": 155,
+   "vendas_por_hora": 6.0,
+   "esgota_em_h": 25.8
+  },
+  {
+   "asset_id": 107664742122292,
+   "name": "Retro Classic Roblox Aura",
+   "price": 55,
+   "restantes": 60,
+   "vendas_por_hora": 2.25,
+   "esgota_em_h": 26.7
+  },
+  {
+   "asset_id": 120742637861171,
+   "name": "[ADD-ON] Sakura Pink Chained Spiky 8-Bit Crown",
+   "price": 150,
+   "restantes": 199,
+   "vendas_por_hora": 6.75,
+   "esgota_em_h": 29.5
+  },
+  {
+   "asset_id": 86477847897595,
+   "name": "[⏳] Emissive White Angel Star Crown (Glowing)",
+   "price": 550,
+   "restantes": 347,
+   "vendas_por_hora": 9.75,
+   "esgota_em_h": 35.6
+  },
+  {
+   "asset_id": 91039087796915,
+   "name": "[🎃HALLOWEEN] Orange Hair+Crown+Clockwork+Horns",
+   "price": 105,
+   "restantes": 708,
+   "vendas_por_hora": 19.5,
+   "esgota_em_h": 36.3
+  },
+  {
+   "asset_id": 106921786708223,
+   "name": "Gold Trim Black Valkyrie Hood of Dominion",
+   "price": 115,
+   "restantes": 334,
+   "vendas_por_hora": 9.0,
+   "esgota_em_h": 37.1
+  },
+  {
+   "asset_id": 98429339305128,
+   "name": "[⏳LiMITED SPARKLE] Black Valk + Fedora + Clockwork",
+   "price": 199,
+   "restantes": 487,
+   "vendas_por_hora": 12.75,
+   "esgota_em_h": 38.2
+  },
+  {
+   "asset_id": 140555190593821,
+   "name": "[⏳LIMITED SPARKLE] Black Hair+Crown+Horn+Clockwork",
+   "price": 65,
+   "restantes": 842,
+   "vendas_por_hora": 21.75,
+   "esgota_em_h": 38.7
+  },
+  {
+   "asset_id": 100665389571471,
+   "name": "Chicken Hood",
+   "price": 95,
+   "restantes": 616,
+   "vendas_por_hora": 15.75,
+   "esgota_em_h": 39.1
+  },
+  {
+   "asset_id": 104954096567108,
+   "name": "Halloween Retro Classic Roblox Pin",
+   "price": 55,
+   "restantes": 237,
+   "vendas_por_hora": 5.25,
+   "esgota_em_h": 45.1
+  },
+  {
+   "asset_id": 79773457512100,
+   "name": "NRV Orange Horns",
+   "price": 95,
+   "restantes": 849,
+   "vendas_por_hora": 17.25,
+   "esgota_em_h": 49.2
+  },
+  {
+   "asset_id": 120803233063988,
+   "name": "Pink Sigil Star Crown",
+   "price": 95,
+   "restantes": 319,
+   "vendas_por_hora": 6.0,
+   "esgota_em_h": 53.2
+  },
+  {
+   "asset_id": 77922338512745,
+   "name": "[⏳LIMITED] Sparkle-Time ORANGE Valk",
+   "price": 95,
+   "restantes": 162,
+   "vendas_por_hora": 3.0,
+   "esgota_em_h": 54.0
+  },
+  {
+   "asset_id": 79750279455412,
+   "name": "Red and Black Cape",
+   "price": 140,
+   "restantes": 297,
+   "vendas_por_hora": 5.25,
+   "esgota_em_h": 56.6
+  },
+  {
+   "asset_id": 82494808469526,
+   "name": "White Fedora ✅ ",
+   "price": 95,
+   "restantes": 713,
+   "vendas_por_hora": 11.25,
+   "esgota_em_h": 63.4
+  },
+  {
+   "asset_id": 76077501090719,
+   "name": "✅White Sparkle Hair + Horns + Headphones + Shades",
+   "price": 99,
+   "restantes": 484,
+   "vendas_por_hora": 7.5,
+   "esgota_em_h": 64.5
+  },
+  {
+   "asset_id": 132760536106506,
+   "name": "[ADD-ON] Onyx Black 8-Bit HP Bar",
+   "price": 95,
+   "restantes": 391,
+   "vendas_por_hora": 6.0,
+   "esgota_em_h": 65.2
+  },
+  {
+   "asset_id": 111608715869016,
+   "name": "Halloween Dominus Infernum",
+   "price": 95,
+   "restantes": 1658,
+   "vendas_por_hora": 24.76,
+   "esgota_em_h": 67.0
+  },
+  {
+   "asset_id": 71424286269597,
+   "name": "👁️ ANIMATED Red Black Hair + Crown + Hat + Horns",
+   "price": 99,
+   "restantes": 450,
+   "vendas_por_hora": 6.0,
+   "esgota_em_h": 75.0
   }
  ],
  "curva_pos_esgote": {

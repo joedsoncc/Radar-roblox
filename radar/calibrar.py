@@ -230,7 +230,7 @@ def velocity_watch(root, now):
             continue
         (t0, (u0, _)), (t1, (u1, r)) = seq[0], seq[-1]
         hours = (_date(t1) - _date(t0)).total_seconds() / 3600
-        if hours < 0.5 or u1 > u0 or u0 - u1 < 2 or u1 == 0:
+        if hours < 0.5 or u1 > u0 or u0 - u1 < 2 or u1 == 0 or not r.get("price"):  # grátis não interessa
             continue
         vel = (u0 - u1) / hours
         out.append({"asset_id": aid, "name": r.get("name"), "price": r.get("price"), "restantes": u1,

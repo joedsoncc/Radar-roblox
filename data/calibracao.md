@@ -1,4 +1,4 @@
-# Calibração do radar (2026-10-17T20:54:18Z)
+# Calibração do radar (2026-10-17T20:55:10Z)
 
 Backtest: quem comprou no preço original e vendeu depois da trava de 30 dias (mediana do gráfico 30 a 37 dias depois de esgotar), com as taxas do radar (recebe 50%, custo ×1,11). Acerto = margem líquida ≥ 30%.
 
@@ -126,30 +126,30 @@ Início = 1º dia em que o preço saiu de ±15% do preço de loja (≈ quando es
 
 | Item | Preço | Restam | Vendas/h | Esgota em |
 |---|---|---|---|---|
-| [Birthday Cake Axolu](https://www.roblox.com/catalog/110467381278652) | 0 | 2 | 75.02 | ~0.0 h |
-| [Betrayers Crown](https://www.roblox.com/catalog/121229291644581) | 0 | 7 | 13.5 | ~0.5 h |
-| [HUGE Hugging Halloween Cat on your Back](https://www.roblox.com/catalog/103418642515401) | 0 | 8 | 14.4 | ~0.6 h |
-| [Gráinneog](https://www.roblox.com/catalog/106355599246932) | 0 | 7 | 5.25 | ~1.3 h |
-| [Asta](https://www.roblox.com/catalog/111579290317799) | 0 | 3 | 2.25 | ~1.3 h |
-| [Neon Venom Gradient Spiked Horns](https://www.roblox.com/catalog/73350250089587) | 0 | 3 | 2.25 | ~1.3 h |
-| [[PBR] Gold Horse King Axe [CODE: BHKA]](https://www.roblox.com/catalog/76153937986723) | 0 | 7 | 3.0 | ~2.3 h |
 | [⏳ Sparkle Red Hair + Crown Valk + Clockworks](https://www.roblox.com/catalog/79846453984508) | 149 | 7 | 2.25 | ~3.1 h |
-| [Fries Shoulder Pal](https://www.roblox.com/catalog/92059852230172) | 0 | 281 | 70.51 | ~4.0 h |
-| [Diego](https://www.roblox.com/catalog/110126764663521) | 0 | 6 | 1.5 | ~4.0 h |
-| [♡ : cute diary of a princess in black](https://www.roblox.com/catalog/100993500063118) | 0 | 9 | 1.5 | ~6.0 h |
-| [Flying Squirrel Hugger](https://www.roblox.com/catalog/107550244108021) | 0 | 10 | 1.5 | ~6.7 h |
-| [Cute White Angel Wings](https://www.roblox.com/catalog/95651415246994) | 0 | 54 | 7.5 | ~7.2 h |
-| [The Shumpkin](https://www.roblox.com/catalog/86553542522636) | 0 | 24 | 3.0 | ~8.0 h |
 | [NIGHT DEMON 👹 | exclusive ](https://www.roblox.com/catalog/95006433998697) | 900 | 123 | 15.0 | ~8.2 h |
-| [Black Hair w Goggles](https://www.roblox.com/catalog/105612037282720) | 0 | 77 | 7.5 | ~10.3 h |
-| [Keith_crowned’s sparkle time traffic birthday cake](https://www.roblox.com/catalog/90498366287453) | 0 | 40 | 3.75 | ~10.7 h |
 | [[ANIMATED] Nyan Cat HP Bar ](https://www.roblox.com/catalog/118306309849671) | 95 | 180 | 15.0 | ~12.0 h |
-| [Black Messy Hair](https://www.roblox.com/catalog/91863676683138) | 0 | 82 | 6.0 | ~13.7 h |
-| [Emilia](https://www.roblox.com/catalog/130782686627629) | 0 | 31 | 2.25 | ~13.8 h |
-| [Blue Dress](https://www.roblox.com/catalog/114508257602750) | 0 | 34 | 2.25 | ~15.1 h |
-| [Christmas Aura with Snowflakes and Gingerbread](https://www.roblox.com/catalog/126938298102120) | 0 | 35 | 2.25 | ~15.6 h |
-| [♪ 〜 Free Pink Witch Cotton Candy Hair](https://www.roblox.com/catalog/107037340881521) | 0 | 88 | 4.5 | ~19.6 h |
 | [Blue Valkyrie](https://www.roblox.com/catalog/103264888144153) | 145 | 76 | 3.75 | ~20.3 h |
-| [Armour Shoulder Left](https://www.roblox.com/catalog/100309523892085) | 0 | 31 | 1.5 | ~20.7 h |
+| [[⏳LIMITED] Traffic Cone+Clockwork+Hair+Antlers ](https://www.roblox.com/catalog/98276569007154) | 199 | 95 | 4.5 | ~21.1 h |
+| [Red Valkyrie](https://www.roblox.com/catalog/70913805587976) | 95 | 69 | 3.0 | ~23.0 h |
+| [Crimson Dominus](https://www.roblox.com/catalog/117646930298113) | 95 | 155 | 6.0 | ~25.8 h |
+| [Retro Classic Roblox Aura](https://www.roblox.com/catalog/107664742122292) | 55 | 60 | 2.25 | ~26.7 h |
+| [[ADD-ON] Sakura Pink Chained Spiky 8-Bit Crown](https://www.roblox.com/catalog/120742637861171) | 150 | 199 | 6.75 | ~29.5 h |
+| [[⏳] Emissive White Angel Star Crown (Glowing)](https://www.roblox.com/catalog/86477847897595) | 550 | 347 | 9.75 | ~35.6 h |
+| [[🎃HALLOWEEN] Orange Hair+Crown+Clockwork+Horns](https://www.roblox.com/catalog/91039087796915) | 105 | 708 | 19.5 | ~36.3 h |
+| [Gold Trim Black Valkyrie Hood of Dominion](https://www.roblox.com/catalog/106921786708223) | 115 | 334 | 9.0 | ~37.1 h |
+| [[⏳LiMITED SPARKLE] Black Valk + Fedora + Clockwork](https://www.roblox.com/catalog/98429339305128) | 199 | 487 | 12.75 | ~38.2 h |
+| [[⏳LIMITED SPARKLE] Black Hair+Crown+Horn+Clockwork](https://www.roblox.com/catalog/140555190593821) | 65 | 842 | 21.75 | ~38.7 h |
+| [Chicken Hood](https://www.roblox.com/catalog/100665389571471) | 95 | 616 | 15.75 | ~39.1 h |
+| [Halloween Retro Classic Roblox Pin](https://www.roblox.com/catalog/104954096567108) | 55 | 237 | 5.25 | ~45.1 h |
+| [NRV Orange Horns](https://www.roblox.com/catalog/79773457512100) | 95 | 849 | 17.25 | ~49.2 h |
+| [Pink Sigil Star Crown](https://www.roblox.com/catalog/120803233063988) | 95 | 319 | 6.0 | ~53.2 h |
+| [[⏳LIMITED] Sparkle-Time ORANGE Valk](https://www.roblox.com/catalog/77922338512745) | 95 | 162 | 3.0 | ~54.0 h |
+| [Red and Black Cape](https://www.roblox.com/catalog/79750279455412) | 140 | 297 | 5.25 | ~56.6 h |
+| [White Fedora ✅ ](https://www.roblox.com/catalog/82494808469526) | 95 | 713 | 11.25 | ~63.4 h |
+| [✅White Sparkle Hair + Horns + Headphones + Shades](https://www.roblox.com/catalog/76077501090719) | 99 | 484 | 7.5 | ~64.5 h |
+| [[ADD-ON] Onyx Black 8-Bit HP Bar](https://www.roblox.com/catalog/132760536106506) | 95 | 391 | 6.0 | ~65.2 h |
+| [Halloween Dominus Infernum](https://www.roblox.com/catalog/111608715869016) | 95 | 1658 | 24.76 | ~67.0 h |
+| [👁️ ANIMATED Red Black Hair + Crown + Hat + Horns](https://www.roblox.com/catalog/71424286269597) | 99 | 450 | 6.0 | ~75.0 h |
 
 > Passado não garante futuro. Lift só vale com amostra grande; um dia de coleta é ponto de partida.
