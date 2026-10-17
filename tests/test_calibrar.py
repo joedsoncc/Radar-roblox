@@ -39,6 +39,12 @@ class Backtest(unittest.TestCase):
         self.assertEqual(r["features"]["faixa_preco"], "51 a 100")
         self.assertEqual(r["features"]["favoritos_por_un"], "1 a 5 favoritos/un.")
 
+    def test_curva_pos_esgote(self):
+        r = calibrar.evaluate(rec(100, 60, 300, first_week=200), NOW, CFG)
+        self.assertEqual(r["curva"], {"+1d": 2.0, "+7d": 3.0, "+30d": 3.0})
+        c = calibrar.post_sellout_curve([r])
+        self.assertEqual(c["geral"]["todos"]["+7d"], {"mediana": 3.0, "n": 1})
+
     def test_sem_desfecho_antes_de_37_dias(self):
         r = calibrar.evaluate(rec(100, 20, 300), NOW, CFG)
         self.assertIsNone(r["margem"])

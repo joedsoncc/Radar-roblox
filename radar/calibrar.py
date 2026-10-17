@@ -98,6 +98,12 @@ def evaluate(rec, now, cfg):
     if start <= now - timedelta(days=MAX_CHART_DAYS - 5):
         return None  # gráfico cortado pela API: não sabemos quando esgotou
     feats = item_features(rec)
+    curve = {}
+    for label, d0 in (("+1d", 1), ("+7d", 7), ("+30d", 30)):
+        if now >= start + timedelta(days=d0 + 3):
+            win = [v for d, v in prices if start + timedelta(days=d0) <= d < start + timedelta(days=d0 + 3)]
+            if win:
+                curve[label] = round(_median(win) / orig, 3)
     w1 = [v for d, v in prices if d < start + timedelta(days=WINDOW_DAYS)]
     vols = _series(rec.get("volumes"))
     v1 = sum(v for d, v in vols if d < start + timedelta(days=WINDOW_DAYS))
@@ -105,7 +111,8 @@ def evaluate(rec, now, cfg):
     feats["premio_1a_semana"] = band(med1 / orig, PREMIUM_BANDS) if med1 else None
     feats["volume_1a_semana"] = band(v1, VOLUME_BANDS) if vols else None
     out = {"asset_id": (rec.get("item") or {}).get("asset_id"), "name": (rec.get("item") or {}).get("name"),
-           "original_price": orig, "features": feats, "dias_revenda": (now - start).days}
+           "original_price": orig, "features": feats, "dias_revenda": (now - start).days,
+           "curva": curve}
     if now < start + timedelta(days=LOCK_DAYS + WINDOW_DAYS):
         out["margem"] = None  # ainda sem desfecho
         return out
@@ -119,6 +126,22 @@ def evaluate(rec, now, cfg):
     cost = orig * t["fee_multiplier"]
     out["venda_dia30"] = sell
     out["margem"] = round((sell * t["seller_share"] - cost) / cost, 4)
+    return out
+
+
+def post_sellout_curve(results):
+    """Preço mediano ÷ preço original em +1d/+7d/+30d da revenda, geral e por faixa de preço e estoque."""
+    out = {}
+    for key in (None, "faixa_preco", "estoque"):
+        groups = {}
+        for r in results:
+            g = "todos" if key is None else r["features"].get(key)
+            if g is None:
+                continue
+            for label, v in (r.get("curva") or {}).items():
+                groups.setdefault(g, {}).setdefault(label, []).append(v)
+        out[key or "geral"] = {g: {lab: {"mediana": round(_median(vs), 2), "n": len(vs)} for lab, vs in labs.items()}
+                               for g, labs in groups.items()}
     return out
 
 
@@ -196,7 +219,8 @@ def run(root, cfg, now):
     summary.update({"generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "registros": len(recs),
                     "sem_desfecho": sum(1 for r in results if r.get("margem") is None),
                     "min_itens_faixa": min_n, "alvo_margem": TARGET,
-                    "esgotando_agora": velocity_watch(root, now)})
+                    "esgotando_agora": velocity_watch(root, now),
+                    "curva_pos_esgote": post_sellout_curve(results)})
     best = sorted((r for r in results if r.get("margem") is not None), key=lambda r: -r["margem"])
     summary["melhores"] = [{k: r[k] for k in ("asset_id", "name", "original_price", "venda_dia30", "margem")}
                            for r in best[:10]]
@@ -232,6 +256,18 @@ def render_md(s):
             warn = "" if r["confiavel"] else " ⚠"
             L.append(f"| {r['faixa']}{warn} | {r['n']} | {pct(r['taxa'])} | {r['margem_mediana'] * 100:+.0f}% | "
                      f"{'—' if r['lift'] is None else r['lift']} |")
+        L.append("")
+    curve = s.get("curva_pos_esgote") or {}
+    if curve.get("geral"):
+        L += ["## Curva depois de esgotar (preço mediano ÷ preço original)", "",
+              "Início = primeiro dia do gráfico de revenda (≈ quando esgotou). Inclui itens ainda sem desfecho.", "",
+              "| Grupo | +1 dia | +7 dias | +30 dias |", "|---|---|---|---|"]
+        def cell(c, lab):
+            v = c.get(lab)
+            return "—" if not v else f"{v['mediana']:.2f}x (n={v['n']})"
+        for key in ("geral", "faixa_preco", "estoque"):
+            for g, c in sorted((curve.get(key) or {}).items()):
+                L.append(f"| {g} | {cell(c, '+1d')} | {cell(c, '+7d')} | {cell(c, '+30d')} |")
         L.append("")
     if s.get("melhores"):
         L += ["## Melhores desfechos", "", "| Item | Preço | Venda dia 30 | Margem |", "|---|---|---|---|"]
