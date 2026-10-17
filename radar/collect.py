@@ -58,7 +58,7 @@ def normalize_catalog_item(raw, categories):
         "price": num(raw.get("price")),
         "total_quantity": num(raw.get("totalQuantity")),
         "units_remaining": num(raw.get("unitsAvailableForConsumption")),
-        "lowest_resale": num(raw.get("lowestResalePrice")),
+        "lowest_resale": num(raw.get("lowestResalePrice")) or None,  # 0 = sem anúncio
         "is_off_sale": bool(raw.get("isOffSale")) or raw.get("priceStatus") == "Off Sale",
         "favorite_count": num(raw.get("favoriteCount")),
     }

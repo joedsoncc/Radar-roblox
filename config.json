@@ -88,9 +88,16 @@
         "params": {
           "SortType": 3
         }
+      },
+      {
+        "nome": "favoritos da semana",
+        "params": {
+          "SortType": 1,
+          "SortAggregation": 3
+        }
       }
     ],
-    "max_pages_per_query": 4,
+    "max_pages_per_query": 10,
     "page_limit": 120,
     "watch_days": 7,
     "max_resale_lookups": 150,
