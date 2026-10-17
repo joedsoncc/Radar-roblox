@@ -1,0 +1,93 @@
+name: Carteira (cadastro por issue)
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+# Grupo próprio: no grupo do radar um cadastro pendente poderia ser descartado pela fila.
+# Commits simultâneos já são tratados pelo pull --rebase com retry.
+concurrency:
+  group: carteira
+  cancel-in-progress: false
+
+jobs:
+  cadastro:
+    # Só o dono do repositório, e só issues criadas pelo formulário "[carteira] ...".
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, '[carteira]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      BRANCH: ${{ github.event.repository.default_branch }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Atualizar para o último estado salvo
+        run: git pull --ff-only origin "$BRANCH"
+
+      - name: Ler e validar o pedido
+        id: cad
+        env:
+          # O corpo da issue é texto não confiável: vai só por variável de ambiente, nunca dentro de `run:`.
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python radar.py cadastrar --mensagem "$RUNNER_TEMP/resposta.md"
+
+      - name: Atualizar a carteira
+        if: steps.cad.outputs.ok == 'true'
+        env:
+          ASSET_ID: ${{ steps.cad.outputs.asset_id }}
+        run: python radar.py carteira --asset "$ASSET_ID" --anexar "$RUNNER_TEMP/resposta.md"
+
+      - name: Commit da carteira
+        if: steps.cad.outputs.ok == 'true'
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add carteira.json data docs/carteira.json
+          if git diff --cached --quiet; then
+            echo "Nada novo para salvar."
+            exit 0
+          fi
+          git commit -m "carteira: issue #${ISSUE_NUMBER}"
+          for i in 1 2 3 4; do
+            if git pull --rebase origin "$BRANCH"; then
+              git push origin "HEAD:$BRANCH" && exit 0
+            else
+              git rebase --abort || true
+            fi
+            sleep $((2 ** i))
+          done
+          echo "::error::Não consegui salvar o commit da carteira."
+          exit 1
+
+      - name: Comentar o resultado e fechar a issue
+        if: always() && steps.cad.outputs.ok != ''
+        env:
+          CAD_OK: ${{ steps.cad.outputs.ok }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          if [ "$CAD_OK" = "true" ] && [ "$JOB_STATUS" != "success" ]; then
+            printf '\nAtenção: o cadastro não foi salvo no repositório (falha ao atualizar ou ao commitar). Veja a aba Actions e tente de novo.\n' >> "$RUNNER_TEMP/resposta.md"
+          fi
+          gh issue comment "$ISSUE_NUMBER" --body-file "$RUNNER_TEMP/resposta.md"
+          if [ "$CAD_OK" = "true" ] && [ "$JOB_STATUS" = "success" ]; then
+            gh issue close "$ISSUE_NUMBER" --reason completed
+          else
+            gh issue close "$ISSUE_NUMBER" --reason "not planned"
+          fi
+
+      - name: Avisar falha inesperada
+        if: failure() && steps.cad.outputs.ok == ''
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --body "O cadastro falhou antes de ler o pedido. Veja a aba Actions do repositório."

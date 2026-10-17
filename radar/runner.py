@@ -5,7 +5,7 @@ import os
 import time
 from datetime import datetime, timezone
 
-from . import collect
+from . import carteira, collect, lojas
 from .analyze import analyze
 from .http import Client
 from .notify import process_alerts, send_outbox, system_notice, write_outbox
@@ -87,7 +87,16 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
         store.append_snapshots(current, now)
         history = store.load_recent(now, max(col["watch_days"], 2))
 
-    items = analyze(current, history, now, cfg)
+    # Histórico das lojas: se falhar, o radar segue com o peso neutro (sem dado).
+    tracks = {}
+    try:
+        creators = {i["creator_id"]: {"type": i.get("creator_type"), "name": i.get("creator_name")}
+                    for i in current if i.get("creator_id") is not None}
+        tracks = lojas.update(root, client, creators, now, cfg, [])
+    except Exception:  # noqa: BLE001
+        log.exception("histórico das lojas falhou; seguindo sem ele")
+
+    items = analyze(current, history, now, cfg, tracks=tracks)
 
     # Status da execução
     if not found and errors:
@@ -138,5 +147,18 @@ def run(root, client=None, now=None, notify=True, send=None, topic=None):
     if send is not None:
         send_outbox(root, send=send, now=now)
 
+    # Carteira depois do radar: uma falha aqui nunca derruba o radar.
+    cart = {"status": "error", "note": ""}
+    try:
+        cart = carteira.run(root, client, now, cfg)
+    except Exception as e:  # noqa: BLE001
+        log.exception("carteira falhou")
+        cart = {"status": "error", "note": f"A carteira não foi atualizada ({type(e).__name__}); valores são da coleta anterior."}
+        try:
+            carteira.mark_error(root, cart["note"])
+        except Exception:  # noqa: BLE001
+            log.exception("não consegui anotar o erro da carteira")
+
     log.info("status=%s itens=%d alertas=%d chamadas=%d", run_status, len(items), len(sent), client.calls)
-    return {"status": run_status, "note": note, "items": items, "alerts": sent, "statuses": statuses}
+    return {"status": run_status, "note": note, "items": items, "alerts": sent, "statuses": statuses,
+            "carteira": cart}

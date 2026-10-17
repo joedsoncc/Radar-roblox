@@ -44,6 +44,19 @@ Um segundo workflow (`.github/workflows/lancamentos.yml`) procura **limiteds de 
 - Itens criados há mais de 7 dias que reaparecem na lista são ignorados. Se a data de criação não puder ser confirmada, o alerta avisa isso.
 - Só gera commit quando acha algo novo. O GitHub pode atrasar o agendamento alguns minutos, e lançamentos costumam esgotar rápido.
 
+## Carteira: cadastrar e acompanhar
+
+A carteira (`carteira.json`) guarda os itens que você comprou ou quer só acompanhar. A cada execução do radar (e a cada cadastro) o programa lê o RAP e o gráfico de revenda de cada item, grava uma linha em `data/carteira/<asset_id>.jsonl` e escreve `docs/carteira.json` (contrato em `docs/CONTRATO-CARTEIRA.md`).
+
+- **Cadastrar pelo celular**: no repositório, *Issues → New issue → Carteira*. Escolha *Adicionar* ou *Remover*, cole o link do catálogo (ou o ID), o preço pago, a quantidade e a data (vazios = só acompanhar / 1 / hoje). Em poucos minutos o workflow `carteira.yml` atualiza `carteira.json`, comenta o resultado na issue e a fecha. Só issues do dono do repositório e com título `[carteira] ...` são processadas; o texto da issue nunca é executado, só lido e validado (preço inteiro ≥ 0, quantidade 1 a 100, data AAAA-MM-DD). *Remover* tira todos os lotes daquele item. Se algo for inválido, nada muda e o comentário explica o motivo.
+- **Editar à mão**: `{"itens": [{"asset_id": 123, "preco_pago": 195, "quantidade": 1, "comprado_em": "2026-10-17", "nota": ""}]}`. `preco_pago: null` = só acompanhar (fica fora dos totais). O mesmo `asset_id` repetido vira lotes separados.
+- **Contas**: valor atual = RAP × 0,5 × quantidade; lucro = valor atual − o que você pagou (sem a margem de 1,11); empate = pago ÷ 0,5. Se a API de revenda pedir login, esses campos ficam vazios e `status_note` explica; nada é estimado.
+- Só a carteira, sem rodar o radar: `python radar.py carteira` (aceita `--fake --root PASTA`).
+
+## Histórico das lojas
+
+Para cada criador dos itens do radar, o programa olha os outros limiteds dele no catálogo e guarda em `data/criadores.json` (renovado a cada 7 dias, no máximo 15 criadores novos por execução, configurável em `lojas` no `config.json`): quantos itens, quantos esgotaram, e a **retenção** (menor revenda ÷ preço original, mediana) e a fração que revende acima do preço. Cada item do radar ganha `creator_track`, `retention` (RAP ÷ preço), `change_7d`, `trend` e `spark` (mini-gráfico). O score tem um peso `historico_loja` (10 pontos; sem dado vale neutro) e o motivo do item cita lojas com histórico forte ou fraco. É um indício, não garantia: criador bom pode lançar item ruim.
+
 ## O que você precisa fazer (uma vez)
 
 1. **Repositório**: crie um repositório **público** vazio no GitHub. GitHub Pages em repositório privado exige plano pago; no grátis o site fica público (os segredos não).
@@ -66,12 +79,14 @@ Um segundo workflow (`.github/workflows/lancamentos.yml`) procura **limiteds de 
 
 | Caminho | O que é |
 |---|---|
-| `radar.py` | ponto de entrada (`run`, `--no-notify`, `--fake --root PASTA`) |
-| `radar/` | coleta (`collect.py`), análise (`analyze.py`), alertas (`notify.py`), site (`site.py`), histórico (`storage.py`) |
+| `radar.py` | ponto de entrada (`run`, `carteira`, `cadastrar`, `--no-notify`, `--fake --root PASTA`) |
+| `radar/` | coleta (`collect.py`), análise (`analyze.py`), alertas (`notify.py`), site (`site.py`), histórico (`storage.py`), carteira (`carteira.py`, `cadastro.py`), lojas (`lojas.py`) |
+| `carteira.json` | itens da carteira (editado à mão ou pela issue de cadastro) |
+| `.github/ISSUE_TEMPLATE/carteira.yml`, `.github/workflows/carteira.yml` | formulário e workflow de cadastro por issue |
 | `config.json` | limites, categorias, pesos do score e gatilho do alerta |
 | `.github/workflows/radar.yml` | agendamento a cada 2 h |
-| `docs/` | site + PWA (`index.html`, `app.js`, `sw.js`, `manifest.webmanifest`, `data.json`) |
-| `data/` | snapshots, `latest.json`, `state.json` (alertas enviados) e `lista-de-compra.md` |
+| `docs/` | site + PWA (`index.html`, `app.js`, `sw.js`, `manifest.webmanifest`, `data.json`, `carteira.json`) |
+| `data/` | snapshots, `latest.json`, `state.json` (alertas enviados), `lista-de-compra.md`, `carteira/` (histórico por item) e `criadores.json` (histórico das lojas) |
 | `PESQUISA.md` | regras do mercado conferidas com fontes |
 | `tests/` | testes com dados falsos: `python -m unittest discover -s tests` |
 

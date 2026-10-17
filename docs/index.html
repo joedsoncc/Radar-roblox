@@ -22,11 +22,15 @@
       <span id="theme-icon" aria-hidden="true">◐</span>
     </button>
   </div>
+  <nav class="views" id="views" aria-label="Visões" role="tablist">
+    <button type="button" class="view-tab" id="vt-radar" role="tab" data-view="radar" aria-controls="view-radar">Radar</button>
+    <button type="button" class="view-tab" id="vt-carteira" role="tab" data-view="carteira" aria-controls="view-carteira">Carteira</button>
+  </nav>
 </header>
 
 <div id="banner" class="banner" role="status" hidden></div>
 
-<main>
+<main id="view-radar" role="tabpanel" aria-labelledby="vt-radar">
   <section id="launches" class="launches" aria-labelledby="launches-title" hidden>
     <h2 id="launches-title">Lançamentos da Roblox</h2>
     <p class="launches-sub">Limiteds de acessórios da conta oficial. Checado a cada 10 min; o aviso chega pelo ntfy.</p>
@@ -52,6 +56,8 @@
         <option value="net_profit">Lucro líquido</option>
         <option value="units_remaining">Restantes (menos primeiro)</option>
         <option value="eta_hours">ETA para esgotar</option>
+        <option value="retention">Retenção</option>
+        <option value="change_7d">Tendência 7d</option>
       </select>
     </label>
     <p class="count" id="count" aria-live="polite"></p>
@@ -61,9 +67,40 @@
   <p id="empty" class="empty" hidden>Nenhum item para este filtro.</p>
 </main>
 
+<main id="view-carteira" role="tabpanel" aria-labelledby="vt-carteira" hidden>
+  <section id="cart-summary" class="cart-summary" aria-label="Resumo da carteira" hidden></section>
+  <div class="cart-actions">
+    <button type="button" class="btn primary" id="cart-add">Cadastrar item</button>
+    <p class="count" id="cart-count" aria-live="polite"></p>
+  </div>
+  <form id="add-form" class="add-form" hidden novalidate>
+    <h2>Cadastrar item</h2>
+    <label class="field"><span>Link do catálogo ou ID do item</span>
+      <input type="text" id="af-item" inputmode="text" autocomplete="off" placeholder="https://www.roblox.com/catalog/123 ou 123"></label>
+    <label class="field"><span>Preço pago por unidade (opcional)</span>
+      <input type="number" id="af-price" min="0" step="any" inputmode="decimal" placeholder="vazio = só acompanhar"></label>
+    <label class="field"><span>Quantidade</span>
+      <input type="number" id="af-qty" min="1" step="1" value="1" inputmode="numeric"></label>
+    <label class="field"><span>Data da compra</span>
+      <input type="date" id="af-date"></label>
+    <p class="form-hint">O GitHub vai pedir para você confirmar o envio da issue; depois disso o robô adiciona o item em instantes.</p>
+    <p class="form-error" id="af-error" role="alert" hidden></p>
+    <div class="form-btns">
+      <button type="submit" class="btn primary">Abrir no GitHub</button>
+      <button type="button" class="btn" id="af-cancel">Cancelar</button>
+    </div>
+  </form>
+  <section id="cart-grid" class="grid cart-grid" aria-live="polite"></section>
+  <div id="cart-empty" class="empty" hidden>
+    <p>Sua carteira está vazia.</p>
+    <p>Cadastre um item que você comprou (informe o preço pago) ou que só quer acompanhar (deixe o preço em branco). Você também pode tocar em “Acompanhar” em qualquer card do Radar.</p>
+  </div>
+</main>
+
 <footer class="footer" id="footer"><p id="disclaimer">Não é recomendação financeira.</p></footer>
 
 <noscript><p class="empty">Este site precisa de JavaScript para exibir os dados.</p></noscript>
+<script src="charts.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
