@@ -130,11 +130,12 @@
   },
   "score_pesos": {
     "margem": 35,
-    "liquidez": 20,
-    "consistencia": 15,
+    "liquidez": 15,
+    "consistencia": 10,
     "velocidade": 15,
-    "criador": 5,
-    "historico_loja": 10
+    "criador": 0,
+    "historico_loja": 15,
+    "oferta": 10
   },
   "alertas": {
     "ativo": true,
@@ -145,7 +146,8 @@
     "require_velocity": true,
     "max_alerts_per_day": 3,
     "ntfy_server": "https://ntfy.sh",
-    "avisar_falhas": true
+    "avisar_falhas": true,
+    "min_loja_esgotados": 5
   },
   "lojas": {
     "cache_dias": 7,
@@ -156,5 +158,26 @@
     "forte_pct_acima": 0.6,
     "fraca_retencao": 1.0,
     "fraca_pct_acima": 0.4
+  },
+  "risco": {
+    "rap_primario_tolerancia": 0.15,
+    "estoque_grande": 1000,
+    "preco_barato": 250,
+    "nomes_copia": [
+      "valk",
+      "valkyrie",
+      "dominus",
+      "fedora",
+      "korblox",
+      "headless",
+      "clockwork",
+      "domino crown",
+      "sparkle time",
+      "federation",
+      "bighead"
+    ],
+    "penalidade_copia": 10,
+    "trava_dias": 30,
+    "trava_dias_revenda": 7
   }
 }

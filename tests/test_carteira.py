@@ -235,10 +235,11 @@ class Lojas(unittest.TestCase):
         return [{"price": p, "lowest_resale": l, "units_remaining": r} for p, l, r in pairs]
 
     def test_estatisticas(self):
-        st = lojas.compute_stats(self.items([(100, 200, 0), (100, 50, 10), (100, None, 5), (100, 150, 0)]))
-        self.assertEqual(st["items_seen"], 4)
-        self.assertEqual(st["sold_out"], 2)
-        self.assertEqual(st["with_resale"], 3)
+        st = lojas.compute_stats(self.items([(100, 200, 0), (100, 50, 0), (100, 400, 10), (100, None, 5),
+                                             (100, 150, 0)]))
+        self.assertEqual(st["items_seen"], 5)
+        self.assertEqual(st["sold_out"], 3)
+        self.assertEqual(st["with_resale"], 3)  # o anúncio de 400 num item ainda à venda não conta
         self.assertEqual(st["median_retention"], 1.5)  # mediana de 2,0 / 0,5 / 1,5
         self.assertAlmostEqual(st["pct_above_price"], 0.667, places=3)
 

@@ -32,8 +32,10 @@ A média usa os 10 anúncios mais baratos para que um único anúncio barato nã
 | Classe | Quando |
 |---|---|
 | COMPRAR-AGORA | margem ≥ 30%, volume 7d ≥ 50, RAP coerente com o gráfico, velocidade medida e esgota em até 72 h |
-| EVITAR | RAP incoerente (último preço do gráfico < 50% do RAP ou gráfico com mais de 14 dias), volume 7d < 5, ou margem ≤ 0 |
-| OBSERVAR | o resto (inclui itens sem RAP e itens com prejuízo hoje mas esgotando em menos de 24 h) |
+| EVITAR | estoque total ≥ 1.000 com preço ≤ 250, RAP incoerente (último preço do gráfico < 50% do RAP ou gráfico com mais de 14 dias), volume 7d < 5, ou margem ≤ 0 |
+| OBSERVAR | o resto (inclui itens sem RAP, itens com prejuízo hoje mas esgotando em menos de 24 h, e itens com nome de clássico como Valkyrie/Dominus) |
+
+**Ainda à venda (RAP ≈ preço):** enquanto a loja vende, as vendas dela formam o RAP, então RAP ≈ preço de loja e isso não diz nada sobre a revenda. Nesses itens o lucro é projetado como preço × retenção mediana dos limiteds **já esgotados** da mesma loja (3+ itens; 5+ para alerta). Sem esse histórico, o item fica em OBSERVAR sem lucro estimado. Exemplo: preço 200, loja com retenção 4,0 → venda estimada 800, recebe 400, custo 222, lucro +178 (+80%).
 
 **Alerta no celular** (bem mais exigente): COMPRAR-AGORA **e** margem ≥ 50%, volume 7d ≥ 100, menos de 100 un., RAP coerente e velocidade medida (2+ snapshots). Uma vez por item; novo alerta só se a classe melhorar. Máximo de 3 por dia. Se a API pedir login ou o workflow falhar, chega um aviso de sistema (no máximo 1 por dia por tipo).
 
