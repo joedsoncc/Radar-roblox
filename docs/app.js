@@ -202,19 +202,29 @@
     $('count').textContent = items.length + (items.length === 1 ? ' item' : ' itens');
   }
 
-  function init() {
-    initTheme();
-    $('class-filter').addEventListener('change', function (e) { state.cls = e.target.value; renderGrid(); });
-    $('sort').addEventListener('change', function (e) { state.sort = e.target.value; renderGrid(); });
-    load().then(function (d) {
+  function refresh(first) {
+    return load().then(function (d) {
+      var changed = !state.data || state.data.generated_at !== d.generated_at || state.data.run_status !== d.run_status;
       state.data = d;
-      renderHeader(d); renderTabs(); renderGrid();
+      renderHeader(d);
+      if (changed || first) { renderTabs(); renderGrid(); }
     }).catch(function () {
+      if (!first && state.data) return; // mantém os dados já exibidos se a rede cair
       $('updated').textContent = 'Não foi possível carregar os dados.';
       var b = $('banner');
       b.textContent = 'Não foi possível carregar data.json. Verifique a conexão e tente novamente.';
       b.hidden = false;
     });
+  }
+
+  function init() {
+    initTheme();
+    $('class-filter').addEventListener('change', function (e) { state.cls = e.target.value; renderGrid(); });
+    $('sort').addEventListener('change', function (e) { state.sort = e.target.value; renderGrid(); });
+    refresh(true);
+    // Atualiza sozinho enquanto o app está aberto (a coleta roda a cada 2 h no GitHub).
+    setInterval(function () { if (!document.hidden) refresh(false); }, 5 * 60 * 1000);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) refresh(false); });
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('sw.js').catch(function () {});
