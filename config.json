@@ -190,5 +190,10 @@
     "penalidade_copia": 10,
     "trava_dias": 30,
     "trava_dias_revenda": 7
+  },
+  "oportunidades": {
+    "min_net_margin": 0.0,
+    "excluir_calibracao_fraca": true,
+    "calibracao_fraca": 0.3
   }
 }

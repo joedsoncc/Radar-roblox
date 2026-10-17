@@ -36,6 +36,7 @@ SIGNAL_LABELS = {
     "criador_verificado": "Criador verificado", "favoritos_por_un": "Favoritos por unidade",
     "premio_1a_semana": "Preço da 1ª semana de revenda ÷ preço original (sinal pós-esgotar)",
     "volume_1a_semana": "Vendas na 1ª semana de revenda (sinal pós-esgotar)",
+    "estoque_grande_barato": "Estoque ≥ 1.000 e preço ≤ 250 (regra EVITAR do PR #4)",
 }
 # Sinais que existem ANTES de comprar no preço original (os que o score pode usar).
 PRE_BUY = ["faixa_preco", "estoque", "categoria", "criador_verificado", "favoritos_por_un"]
@@ -78,7 +79,10 @@ def item_features(rec):
     it = rec.get("item") or {}
     stock = rec.get("asset_stock") or it.get("total_quantity")
     fav = it.get("favorite_count")
+    price = rec.get("original_price") or it.get("price")
     return {
+        "estoque_grande_barato": None if stock is None or price is None else
+        ("sim" if stock >= 1000 and price <= 250 else "não"),
         "faixa_preco": band(rec.get("original_price") or it.get("price"), PRICE_BANDS),
         "estoque": band(stock, STOCK_BANDS),
         "categoria": it.get("category"),
