@@ -1,39 +1,39 @@
 {
- "n_backtest": 787,
+ "n_backtest": 813,
  "acertos": 59,
- "taxa_geral": 0.075,
+ "taxa_geral": 0.073,
  "sinais": {
   "faixa_preco": [
    {
     "faixa": "51 a 100",
-    "n": 70,
-    "taxa": 0.286,
+    "n": 82,
+    "taxa": 0.244,
     "margem_mediana": -0.549,
-    "lift": 3.81,
+    "lift": 3.36,
     "confiavel": true
    },
    {
     "faixa": "até 50",
-    "n": 46,
-    "taxa": 0.087,
-    "margem_mediana": -0.369,
-    "lift": 1.16,
+    "n": 48,
+    "taxa": 0.083,
+    "margem_mediana": -0.372,
+    "lift": 1.15,
     "confiavel": true
    },
    {
     "faixa": "acima de 500",
-    "n": 518,
-    "taxa": 0.054,
+    "n": 525,
+    "taxa": 0.053,
     "margem_mediana": -0.549,
-    "lift": 0.72,
+    "lift": 0.73,
     "confiavel": true
    },
    {
     "faixa": "101 a 250",
-    "n": 84,
-    "taxa": 0.048,
+    "n": 89,
+    "taxa": 0.045,
     "margem_mediana": -0.549,
-    "lift": 0.64,
+    "lift": 0.62,
     "confiavel": true
    },
    {
@@ -41,23 +41,23 @@
     "n": 69,
     "taxa": 0.043,
     "margem_mediana": -0.356,
-    "lift": 0.58,
+    "lift": 0.6,
     "confiavel": true
    }
   ],
   "estoque": [
    {
     "faixa": "2.001 a 10.000 un.",
-    "n": 55,
-    "taxa": 0.309,
-    "margem_mediana": -0.355,
-    "lift": 4.12,
+    "n": 66,
+    "taxa": 0.258,
+    "margem_mediana": -0.434,
+    "lift": 3.55,
     "confiavel": true
    },
    {
     "faixa": "até 100 un.",
-    "n": 446,
-    "taxa": 0.067,
+    "n": 457,
+    "taxa": 0.066,
     "margem_mediana": -0.549,
     "lift": 0.9,
     "confiavel": true
@@ -67,22 +67,22 @@
     "n": 92,
     "taxa": 0.065,
     "margem_mediana": -0.549,
-    "lift": 0.87,
+    "lift": 0.9,
     "confiavel": true
    },
    {
     "faixa": "acima de 10.000 un.",
-    "n": 183,
-    "taxa": 0.033,
-    "margem_mediana": -0.418,
+    "n": 186,
+    "taxa": 0.032,
+    "margem_mediana": -0.42,
     "lift": 0.44,
     "confiavel": true
    },
    {
     "faixa": "501 a 2.000 un.",
-    "n": 11,
+    "n": 12,
     "taxa": 0.0,
-    "margem_mediana": -0.49,
+    "margem_mediana": -0.5,
     "lift": 0.0,
     "confiavel": false
    }
@@ -90,48 +90,48 @@
   "categoria": [
    {
     "faixa": "front",
-    "n": 9,
-    "taxa": 0.333,
-    "margem_mediana": -0.189,
-    "lift": 4.45,
+    "n": 10,
+    "taxa": 0.3,
+    "margem_mediana": -0.369,
+    "lift": 4.13,
     "confiavel": false
    },
    {
     "faixa": "shoulder",
-    "n": 33,
-    "taxa": 0.121,
-    "margem_mediana": -0.549,
+    "n": 34,
+    "taxa": 0.118,
+    "margem_mediana": -0.534,
     "lift": 1.62,
     "confiavel": true
    },
    {
     "faixa": "back",
-    "n": 107,
-    "taxa": 0.103,
+    "n": 111,
+    "taxa": 0.099,
     "margem_mediana": -0.549,
     "lift": 1.37,
     "confiavel": true
    },
    {
     "faixa": "neck",
-    "n": 50,
-    "taxa": 0.08,
+    "n": 53,
+    "taxa": 0.075,
     "margem_mediana": -0.549,
-    "lift": 1.07,
+    "lift": 1.04,
     "confiavel": true
    },
    {
     "faixa": "hair",
-    "n": 30,
-    "taxa": 0.067,
+    "n": 31,
+    "taxa": 0.065,
     "margem_mediana": -0.549,
     "lift": 0.89,
     "confiavel": true
    },
    {
     "faixa": "hat",
-    "n": 481,
-    "taxa": 0.064,
+    "n": 497,
+    "taxa": 0.062,
     "margem_mediana": -0.549,
     "lift": 0.86,
     "confiavel": true
@@ -141,7 +141,7 @@
     "n": 70,
     "taxa": 0.057,
     "margem_mediana": -0.496,
-    "lift": 0.76,
+    "lift": 0.79,
     "confiavel": true
    },
    {
@@ -156,111 +156,111 @@
   "criador_verificado": [
    {
     "faixa": "não",
-    "n": 370,
-    "taxa": 0.108,
+    "n": 389,
+    "taxa": 0.103,
     "margem_mediana": -0.549,
-    "lift": 1.44,
+    "lift": 1.42,
     "confiavel": true
    },
    {
     "faixa": "sim",
-    "n": 417,
-    "taxa": 0.046,
-    "margem_mediana": -0.51,
-    "lift": 0.61,
+    "n": 424,
+    "taxa": 0.045,
+    "margem_mediana": -0.511,
+    "lift": 0.62,
     "confiavel": true
    }
   ],
   "favoritos_por_un": [
    {
     "faixa": "< 1 favorito/un.",
-    "n": 242,
-    "taxa": 0.095,
-    "margem_mediana": -0.504,
-    "lift": 1.27,
+    "n": 265,
+    "taxa": 0.087,
+    "margem_mediana": -0.52,
+    "lift": 1.2,
     "confiavel": true
    },
    {
     "faixa": "1 a 5 favoritos/un.",
-    "n": 172,
-    "taxa": 0.081,
+    "n": 174,
+    "taxa": 0.08,
     "margem_mediana": -0.549,
-    "lift": 1.09,
+    "lift": 1.11,
     "confiavel": true
    },
    {
     "faixa": "5+ favoritos/un.",
-    "n": 373,
+    "n": 374,
     "taxa": 0.059,
     "margem_mediana": -0.549,
-    "lift": 0.79,
+    "lift": 0.81,
     "confiavel": true
    }
   ],
   "premio_1a_semana": [
    {
     "faixa": "4x ou mais",
-    "n": 28,
-    "taxa": 0.679,
-    "margem_mediana": 1.252,
-    "lift": 9.05,
+    "n": 29,
+    "taxa": 0.655,
+    "margem_mediana": 1.251,
+    "lift": 9.03,
     "confiavel": true
    },
    {
     "faixa": "2,5x a 4x",
-    "n": 23,
-    "taxa": 0.304,
-    "margem_mediana": -0.311,
-    "lift": 4.06,
+    "n": 25,
+    "taxa": 0.28,
+    "margem_mediana": -0.356,
+    "lift": 3.86,
     "confiavel": true
    },
    {
     "faixa": "1,5x a 2,5x",
-    "n": 72,
-    "taxa": 0.194,
-    "margem_mediana": -0.212,
-    "lift": 2.59,
+    "n": 73,
+    "taxa": 0.192,
+    "margem_mediana": -0.222,
+    "lift": 2.64,
     "confiavel": true
    },
    {
     "faixa": "< 1,5x o preço",
-    "n": 447,
-    "taxa": 0.038,
+    "n": 466,
+    "taxa": 0.036,
     "margem_mediana": -0.549,
-    "lift": 0.51,
+    "lift": 0.5,
     "confiavel": true
    }
   ],
   "volume_1a_semana": [
    {
-    "faixa": "100 a 499 vendas",
-    "n": 72,
-    "taxa": 0.111,
-    "margem_mediana": -0.279,
+    "faixa": "500+ vendas",
+    "n": 121,
+    "taxa": 0.107,
+    "margem_mediana": -0.487,
     "lift": 1.48,
     "confiavel": true
    },
    {
-    "faixa": "500+ vendas",
-    "n": 118,
-    "taxa": 0.11,
-    "margem_mediana": -0.472,
-    "lift": 1.47,
+    "faixa": "100 a 499 vendas",
+    "n": 76,
+    "taxa": 0.105,
+    "margem_mediana": -0.3,
+    "lift": 1.45,
     "confiavel": true
    },
    {
     "faixa": "< 20 vendas",
-    "n": 515,
-    "taxa": 0.066,
+    "n": 531,
+    "taxa": 0.064,
     "margem_mediana": -0.549,
     "lift": 0.88,
     "confiavel": true
    },
    {
     "faixa": "20 a 99 vendas",
-    "n": 82,
-    "taxa": 0.049,
-    "margem_mediana": -0.512,
+    "n": 85,
+    "taxa": 0.047,
+    "margem_mediana": -0.517,
     "lift": 0.65,
     "confiavel": true
    }
@@ -268,43 +268,43 @@
   "estoque_grande_barato": [
    {
     "faixa": "sim",
-    "n": 137,
-    "taxa": 0.153,
-    "margem_mediana": -0.448,
-    "lift": 2.04,
+    "n": 151,
+    "taxa": 0.139,
+    "margem_mediana": -0.488,
+    "lift": 1.92,
     "confiavel": true
    },
    {
     "faixa": "não",
-    "n": 650,
-    "taxa": 0.058,
+    "n": 662,
+    "taxa": 0.057,
     "margem_mediana": -0.549,
-    "lift": 0.78,
+    "lift": 0.79,
     "confiavel": true
    }
   ],
   "estoque_muito_grande": [
    {
     "faixa": "não",
-    "n": 604,
-    "taxa": 0.088,
+    "n": 627,
+    "taxa": 0.085,
     "margem_mediana": -0.549,
-    "lift": 1.17,
+    "lift": 1.16,
     "confiavel": true
    },
    {
     "faixa": "sim",
-    "n": 183,
-    "taxa": 0.033,
-    "margem_mediana": -0.418,
+    "n": 186,
+    "taxa": 0.032,
+    "margem_mediana": -0.42,
     "lift": 0.44,
     "confiavel": true
    }
   ]
  },
- "generated_at": "2026-10-17T20:40:12Z",
- "registros": 2100,
- "sem_desfecho": 86,
+ "generated_at": "2026-10-17T20:47:42Z",
+ "registros": 2275,
+ "sem_desfecho": 130,
  "min_itens_faixa": 20,
  "alvo_margem": 0.3,
  "esgotando_agora": [
@@ -313,7 +313,7 @@
    "name": "Birthday Cake Axolu",
    "price": 0,
    "restantes": 3,
-   "vendas_por_hora": 99.0,
+   "vendas_por_hora": 84.88,
    "esgota_em_h": 0.0
   },
   {
@@ -321,15 +321,15 @@
    "name": "HUGE Hugging Halloween Cat on your Back",
    "price": 0,
    "restantes": 8,
-   "vendas_por_hora": 23.99,
-   "esgota_em_h": 0.3
+   "vendas_por_hora": 18.0,
+   "esgota_em_h": 0.4
   },
   {
    "asset_id": 121229291644581,
    "name": "Betrayers Crown",
    "price": 0,
-   "restantes": 10,
-   "vendas_por_hora": 15.0,
+   "restantes": 9,
+   "vendas_por_hora": 13.72,
    "esgota_em_h": 0.7
   },
   {
@@ -337,39 +337,55 @@
    "name": "Asta",
    "price": 0,
    "restantes": 3,
-   "vendas_por_hora": 3.0,
-   "esgota_em_h": 1.0
+   "vendas_por_hora": 2.57,
+   "esgota_em_h": 1.2
   },
   {
    "asset_id": 106355599246932,
    "name": "Gráinneog",
    "price": 0,
    "restantes": 8,
-   "vendas_por_hora": 6.0,
-   "esgota_em_h": 1.3
+   "vendas_por_hora": 5.14,
+   "esgota_em_h": 1.6
+  },
+  {
+   "asset_id": 76153937986723,
+   "name": "[PBR] Gold Horse King Axe [CODE: BHKA]",
+   "price": 0,
+   "restantes": 7,
+   "vendas_por_hora": 3.43,
+   "esgota_em_h": 2.0
+  },
+  {
+   "asset_id": 73350250089587,
+   "name": "Neon Venom Gradient Spiked Horns",
+   "price": 0,
+   "restantes": 4,
+   "vendas_por_hora": 1.71,
+   "esgota_em_h": 2.3
   },
   {
    "asset_id": 79846453984508,
    "name": "⏳ Sparkle Red Hair + Crown Valk + Clockworks",
    "price": 149,
    "restantes": 7,
-   "vendas_por_hora": 3.0,
-   "esgota_em_h": 2.3
+   "vendas_por_hora": 2.57,
+   "esgota_em_h": 2.7
   },
   {
    "asset_id": 110126764663521,
    "name": "Diego",
    "price": 0,
    "restantes": 6,
-   "vendas_por_hora": 2.0,
-   "esgota_em_h": 3.0
+   "vendas_por_hora": 1.71,
+   "esgota_em_h": 3.5
   },
   {
    "asset_id": 92059852230172,
    "name": "Fries Shoulder Pal",
    "price": 0,
-   "restantes": 301,
-   "vendas_por_hora": 74.0,
+   "restantes": 292,
+   "vendas_por_hora": 71.16,
    "esgota_em_h": 4.1
   },
   {
@@ -377,136 +393,120 @@
    "name": "Flying Squirrel Hugger",
    "price": 0,
    "restantes": 10,
-   "vendas_por_hora": 2.0,
-   "esgota_em_h": 5.0
+   "vendas_por_hora": 1.71,
+   "esgota_em_h": 5.8
   },
   {
    "asset_id": 86553542522636,
    "name": "The Shumpkin",
    "price": 0,
    "restantes": 24,
-   "vendas_por_hora": 4.0,
-   "esgota_em_h": 6.0
+   "vendas_por_hora": 3.43,
+   "esgota_em_h": 7.0
   },
   {
    "asset_id": 95651415246994,
    "name": "Cute White Angel Wings",
    "price": 0,
-   "restantes": 56,
-   "vendas_por_hora": 8.0,
-   "esgota_em_h": 7.0
+   "restantes": 55,
+   "vendas_por_hora": 7.72,
+   "esgota_em_h": 7.1
   },
   {
    "asset_id": 95006433998697,
    "name": "NIGHT DEMON 👹 | exclusive ",
    "price": 900,
-   "restantes": 126,
-   "vendas_por_hora": 17.0,
-   "esgota_em_h": 7.4
+   "restantes": 124,
+   "vendas_por_hora": 16.29,
+   "esgota_em_h": 7.6
+  },
+  {
+   "asset_id": 105612037282720,
+   "name": "Black Hair w Goggles",
+   "price": 0,
+   "restantes": 77,
+   "vendas_por_hora": 8.57,
+   "esgota_em_h": 9.0
   },
   {
    "asset_id": 90498366287453,
    "name": "Keith_crowned’s sparkle time traffic birthday cake",
    "price": 0,
    "restantes": 40,
-   "vendas_por_hora": 5.0,
-   "esgota_em_h": 8.0
+   "vendas_por_hora": 4.29,
+   "esgota_em_h": 9.3
+  },
+  {
+   "asset_id": 118306309849671,
+   "name": "[ANIMATED] Nyan Cat HP Bar ",
+   "price": 95,
+   "restantes": 182,
+   "vendas_por_hora": 15.43,
+   "esgota_em_h": 11.8
+  },
+  {
+   "asset_id": 91863676683138,
+   "name": "Black Messy Hair",
+   "price": 0,
+   "restantes": 82,
+   "vendas_por_hora": 6.86,
+   "esgota_em_h": 12.0
   },
   {
    "asset_id": 130782686627629,
    "name": "Emilia",
    "price": 0,
    "restantes": 31,
-   "vendas_por_hora": 3.0,
-   "esgota_em_h": 10.3
+   "vendas_por_hora": 2.57,
+   "esgota_em_h": 12.1
   },
   {
-   "asset_id": 105612037282720,
-   "name": "Black Hair w Goggles",
+   "asset_id": 114508257602750,
+   "name": "Blue Dress",
    "price": 0,
-   "restantes": 80,
-   "vendas_por_hora": 7.0,
-   "esgota_em_h": 11.4
+   "restantes": 34,
+   "vendas_por_hora": 2.57,
+   "esgota_em_h": 13.2
   },
   {
-   "asset_id": 118306309849671,
-   "name": "[ANIMATED] Nyan Cat HP Bar ",
-   "price": 95,
-   "restantes": 185,
-   "vendas_por_hora": 15.0,
-   "esgota_em_h": 12.3
-  },
-  {
-   "asset_id": 91863676683138,
-   "name": "Black Messy Hair",
+   "asset_id": 107037340881521,
+   "name": "♪ 〜 Free Pink Witch Cotton Candy Hair",
    "price": 0,
-   "restantes": 84,
+   "restantes": 88,
    "vendas_por_hora": 6.0,
-   "esgota_em_h": 14.0
+   "esgota_em_h": 14.7
+  },
+  {
+   "asset_id": 103264888144153,
+   "name": "Blue Valkyrie",
+   "price": 145,
+   "restantes": 76,
+   "vendas_por_hora": 4.29,
+   "esgota_em_h": 17.7
   },
   {
    "asset_id": 100309523892085,
    "name": "Armour Shoulder Left",
    "price": 0,
    "restantes": 31,
-   "vendas_por_hora": 2.0,
-   "esgota_em_h": 15.5
-  },
-  {
-   "asset_id": 114508257602750,
-   "name": "Blue Dress",
-   "price": 0,
-   "restantes": 35,
-   "vendas_por_hora": 2.0,
-   "esgota_em_h": 17.5
+   "vendas_por_hora": 1.71,
+   "esgota_em_h": 18.1
   },
   {
    "asset_id": 126938298102120,
    "name": "Christmas Aura with Snowflakes and Gingerbread",
    "price": 0,
    "restantes": 36,
-   "vendas_por_hora": 2.0,
-   "esgota_em_h": 18.0
+   "vendas_por_hora": 1.71,
+   "esgota_em_h": 21.0
   },
   {
-   "asset_id": 103264888144153,
-   "name": "Blue Valkyrie",
-   "price": 145,
-   "restantes": 77,
-   "vendas_por_hora": 4.0,
-   "esgota_em_h": 19.2
-  },
-  {
-   "asset_id": 98276569007154,
-   "name": "[⏳LIMITED] Traffic Cone+Clockwork+Hair+Antlers ",
-   "price": 199,
-   "restantes": 96,
-   "vendas_por_hora": 5.0,
-   "esgota_em_h": 19.2
-  },
-  {
-   "asset_id": 107664742122292,
-   "name": "Retro Classic Roblox Aura",
-   "price": 55,
-   "restantes": 60,
-   "vendas_por_hora": 3.0,
-   "esgota_em_h": 20.0
-  },
-  {
-   "asset_id": 70913805587976,
-   "name": "Red Valkyrie",
-   "price": 95,
-   "restantes": 70,
-   "vendas_por_hora": 3.0,
-   "esgota_em_h": 23.3
-  },
-  {
-   "asset_id": 73228227707947,
-   "name": "Green Warlord Horns",
+   "asset_id": 124865321156751,
+   "name": "Halloween Wings",
    "price": 0,
-   "restantes": 148,
-   "vendas_por_hora": 5.0,
-   "esgota_em_h": 29.6
+   "restantes": 57,
+   "vendas_por_hora": 2.57,
+   "esgota_em_h": 22.2
   }
  ],
  "curva_pos_esgote": {
@@ -514,37 +514,37 @@
    "todos": {
     "+1d": {
      "mediana": 1.0,
-     "n": 366
+     "n": 397
     },
     "+7d": {
      "mediana": 1.23,
-     "n": 259
+     "n": 283
     },
     "+30d": {
-     "mediana": 1.19,
-     "n": 301
+     "mediana": 1.17,
+     "n": 315
     }
    }
   },
   "faixa_preco": {
    "51 a 100": {
     "+1d": {
-     "mediana": 2.16,
-     "n": 104
+     "mediana": 1.86,
+     "n": 127
     },
     "+7d": {
-     "mediana": 3.3,
-     "n": 86
+     "mediana": 2.62,
+     "n": 107
     },
     "+30d": {
-     "mediana": 1.73,
-     "n": 56
+     "mediana": 1.54,
+     "n": 67
     }
    },
    "acima de 500": {
     "+1d": {
      "mediana": 0.99,
-     "n": 139
+     "n": 141
     },
     "+7d": {
      "mediana": 1.15,
@@ -558,7 +558,7 @@
    "251 a 500": {
     "+1d": {
      "mediana": 1.0,
-     "n": 40
+     "n": 41
     },
     "+7d": {
      "mediana": 1.22,
@@ -572,25 +572,25 @@
    "101 a 250": {
     "+1d": {
      "mediana": 1.0,
-     "n": 60
+     "n": 63
     },
     "+7d": {
-     "mediana": 0.97,
-     "n": 51
+     "mediana": 1.0,
+     "n": 54
     },
     "+30d": {
      "mediana": 0.99,
-     "n": 56
+     "n": 57
     }
    },
    "até 50": {
     "+30d": {
-     "mediana": 1.09,
-     "n": 45
+     "mediana": 1.08,
+     "n": 47
     },
     "+1d": {
      "mediana": 0.0,
-     "n": 23
+     "n": 25
     },
     "+7d": {
      "mediana": 1.0,
@@ -601,22 +601,22 @@
   "estoque": {
    "2.001 a 10.000 un.": {
     "+1d": {
-     "mediana": 2.0,
-     "n": 110
+     "mediana": 1.76,
+     "n": 135
     },
     "+7d": {
-     "mediana": 2.95,
-     "n": 95
+     "mediana": 2.2,
+     "n": 117
     },
     "+30d": {
-     "mediana": 1.63,
-     "n": 60
+     "mediana": 1.47,
+     "n": 71
     }
    },
    "até 100 un.": {
     "+1d": {
      "mediana": 0.0,
-     "n": 74
+     "n": 76
     },
     "+7d": {
      "mediana": 1.0,
@@ -630,15 +630,15 @@
    "acima de 10.000 un.": {
     "+1d": {
      "mediana": 1.0,
-     "n": 156
+     "n": 158
     },
     "+7d": {
      "mediana": 1.09,
      "n": 126
     },
     "+30d": {
-     "mediana": 1.14,
-     "n": 182
+     "mediana": 1.13,
+     "n": 184
     }
    },
    "101 a 500 un.": {
@@ -647,26 +647,26 @@
      "n": 12
     },
     "+1d": {
-     "mediana": 1.02,
-     "n": 16
+     "mediana": 1.04,
+     "n": 17
     },
     "+7d": {
      "mediana": 1.0,
-     "n": 9
+     "n": 10
     }
    },
    "501 a 2.000 un.": {
     "+1d": {
-     "mediana": 1.12,
-     "n": 10
+     "mediana": 1.19,
+     "n": 11
     },
     "+7d": {
-     "mediana": 1.35,
-     "n": 8
+     "mediana": 1.65,
+     "n": 9
     },
     "+30d": {
-     "mediana": 1.03,
-     "n": 7
+     "mediana": 1.02,
+     "n": 8
     }
    }
   }
