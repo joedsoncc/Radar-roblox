@@ -167,5 +167,10 @@
     "resale_time_budget_s": 420,
     "quase_esgotado_un": 100,
     "quase_esgotado_frac": 0.2
+  },
+  "oportunidades": {
+    "min_net_margin": 0.0,
+    "excluir_calibracao_fraca": true,
+    "calibracao_fraca": 0.3
   }
 }
