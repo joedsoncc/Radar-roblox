@@ -302,7 +302,7 @@
    }
   ]
  },
- "generated_at": "2026-10-17T20:55:10Z",
+ "generated_at": "2026-10-17T21:19:22Z",
  "registros": 2275,
  "sem_desfecho": 130,
  "min_itens_faixa": 20,
@@ -669,6 +669,19 @@
      "n": 8
     }
    }
+  }
+ },
+ "fator_trava": {
+  "loja": {
+   "dias": 30,
+   "fator_mediano": 1.01,
+   "n": 348
+  },
+  "revenda": {
+   "dias": 7,
+   "fator_mediano": 1.011,
+   "n": 398,
+   "acerto_30pct": 0.025
   }
  },
  "melhores": [

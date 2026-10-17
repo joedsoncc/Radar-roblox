@@ -408,11 +408,14 @@ def classify(item, cfg):
     return "OBSERVAR", [r.strip() for r in reasons if r.strip()], inval
 
 
-def analyze(current, history, now, cfg, tracks=None, lifts=None):
+def analyze(current, history, now, cfg, tracks=None, lifts=None, holds=None):
     """tracks: {"<creator_id>": histórico da loja} (radar.lojas); sem dado o peso fica neutro.
 
     lifts: resultado de radar.calibrar.load_lifts; sem calibração o peso fica neutro.
+    holds: {"loja": fator} de radar.calibrar.load_hold_factors. O valor de venda vira o preço esperado
+    no fim da trava de 30 dias (valor de hoje × fator mediano do histórico); sem dado, fator 1.
     """
+    hold = (holds or {}).get("loja") or 1.0
     tracks = tracks or {}
     items = []
     for it in current:
@@ -423,6 +426,8 @@ def analyze(current, history, now, cfg, tracks=None, lifts=None):
             ref_src = "historico_loja" if ref is not None else None
         else:
             ref, ref_src = sale_reference(it.get("rap"), it.get("resale_avg_low"))
+        if ref is not None and hold != 1.0:
+            ref = round(ref * hold, 2)  # o que deve valer quando a trava de 30 dias acabar
         cost, profit, margin = economics(it.get("price"), ref, cfg)
         vel, vel_note = velocity(it["asset_id"], history, now, cfg)
         rem = it.get("units_remaining")
@@ -449,6 +454,7 @@ def analyze(current, history, now, cfg, tracks=None, lifts=None):
             "velocity_per_hour": vel, "eta_hours": eta, "pct_sold": pct,
             "rap_consistent": rc, "velocity_note": vel_note,
             "calibracao": calibration_for(it, lifts),
+            "fator_trava": hold if ref is not None else None, "tipo": "loja",
         })
         cls, reasons, inval = classify(row, cfg)
         row["class"] = cls
@@ -456,6 +462,9 @@ def analyze(current, history, now, cfg, tracks=None, lifts=None):
         loja = store_reason(row["creator_track"], cfg)
         if loja:
             reasons.append(loja)
+        if row["fator_trava"] and hold != 1.0:
+            reasons.append(f"Lucro calculado no fim da trava de 30 dias: valor de hoje × {hold:.2f} "
+                           "(mudança mediana do preço em 30 dias nos itens já esgotados).")
         if row["price_raised_from"] is not None:
             reasons.append(f"O criador subiu o preço de {row['price_raised_from']} para {row['price']} durante a venda; "
                            "o RAP sobe junto e não indica revenda.")

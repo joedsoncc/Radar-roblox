@@ -1,4 +1,4 @@
-# Calibração do radar (2026-10-17T20:55:10Z)
+# Calibração do radar (2026-10-17T21:19:22Z)
 
 Backtest: quem comprou no preço original e vendeu depois da trava de 30 dias (mediana do gráfico 30 a 37 dias depois de esgotar), com as taxas do radar (recebe 50%, custo ×1,11). Acerto = margem líquida ≥ 30%.
 
@@ -88,6 +88,17 @@ Faixas com menos de 20 itens aparecem com ⚠ (amostra pequena, não use para de
 |---|---|---|---|---|
 | não | 627 | 8% | -55% | 1.16 |
 | sim | 186 | 3% | -42% | 0.44 |
+
+## Trava: quanto o preço muda até poder revender
+
+Mediana de preço(dia + trava) ÷ preço(dia), nos primeiros 60 dias depois de esgotar.
+
+| Compra | Trava | Fator mediano | Itens |
+|---|---|---|---|
+| Na loja | 30 dias | 1.01x | 348 |
+| Na revenda | 7 dias | 1.01x | 398 |
+
+Comprar na revenda e vender depois de 7 dias deu margem ≥ 30% em 2% dos itens (preço do gráfico = média das vendas do dia, não o menor anúncio).
 
 ## Curva depois de esgotar (preço mediano ÷ preço original)
 

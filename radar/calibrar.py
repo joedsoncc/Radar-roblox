@@ -140,7 +140,8 @@ def evaluate(rec, now, cfg):
     feats["volume_1a_semana"] = band(v1, VOLUME_BANDS) if vols else None
     out = {"asset_id": (rec.get("item") or {}).get("asset_id"), "name": (rec.get("item") or {}).get("name"),
            "original_price": orig, "features": feats, "dias_revenda": (now - start).days,
-           "curva": curve, "saiu_do_preco_de_loja": moved}
+           "curva": curve, "saiu_do_preco_de_loja": moved,
+           "fator_trava": hold_ratios(prices, start, now) if moved else {}}
     if now < start + timedelta(days=LOCK_DAYS + WINDOW_DAYS):
         out["margem"] = None  # ainda sem desfecho
         return out
@@ -154,6 +155,45 @@ def evaluate(rec, now, cfg):
     cost = orig * t["fee_multiplier"]
     out["venda_dia30"] = sell
     out["margem"] = round((sell * t["seller_share"] - cost) / cost, 4)
+    return out
+
+
+HOLDS = {"loja": 30, "revenda": 7}  # trava de até 30 dias (compra na loja) e até 7 dias (compra na revenda)
+
+
+def hold_ratios(prices, start, now, horizon=60):
+    """Por item: mediana de preço(t + trava) ÷ preço(t) para t nos primeiros `horizon` dias depois de esgotar.
+
+    preço(t + trava) = mediana dos dias t+trava a t+trava+3. Devolve {"loja": x, "revenda": y} (None sem par).
+    """
+    out = {}
+    for key, h in HOLDS.items():
+        ratios = []
+        for d, v in prices:
+            if v <= 0 or not (start <= d < start + timedelta(days=horizon)):
+                continue
+            lo, hi = d + timedelta(days=h), d + timedelta(days=h + 3)
+            if hi > now:
+                break
+            fut = [x for dd, x in prices if lo <= dd < hi]
+            if fut:
+                ratios.append(_median(fut) / v)
+        out[key] = round(_median(ratios), 3) if ratios else None
+    return out
+
+
+def hold_factors(results):
+    """Fator mediano entre itens + quanto acerta comprar na revenda e vender depois da trava de 7 dias.
+
+    Acerto na revenda = preço(t+7) × 0,5 ≥ 1,3 × preço(t) × 1,11, ou seja, fator ≥ 2,886.
+    """
+    out = {}
+    for key in HOLDS:
+        vals = [r["fator_trava"][key] for r in results if (r.get("fator_trava") or {}).get(key) is not None]
+        out[key] = {"dias": HOLDS[key], "fator_mediano": round(_median(vals), 3) if vals else None, "n": len(vals)}
+    rev = [r["fator_trava"]["revenda"] for r in results if (r.get("fator_trava") or {}).get("revenda") is not None]
+    need = (1 + TARGET) * 1.11 / 0.5
+    out["revenda"]["acerto_30pct"] = round(sum(1 for v in rev if v >= need) / len(rev), 3) if rev else None
     return out
 
 
@@ -248,7 +288,8 @@ def run(root, cfg, now):
                     "sem_desfecho": sum(1 for r in results if r.get("margem") is None),
                     "min_itens_faixa": min_n, "alvo_margem": TARGET,
                     "esgotando_agora": velocity_watch(root, now),
-                    "curva_pos_esgote": post_sellout_curve(results)})
+                    "curva_pos_esgote": post_sellout_curve(results),
+                    "fator_trava": hold_factors(results)})
     best = sorted((r for r in results if r.get("margem") is not None), key=lambda r: -r["margem"])
     summary["melhores"] = [{k: r[k] for k in ("asset_id", "name", "original_price", "venda_dia30", "margem")}
                            for r in best[:10]]
@@ -285,6 +326,21 @@ def render_md(s):
             L.append(f"| {r['faixa']}{warn} | {r['n']} | {pct(r['taxa'])} | {r['margem_mediana'] * 100:+.0f}% | "
                      f"{'—' if r['lift'] is None else r['lift']} |")
         L.append("")
+    ft = s.get("fator_trava") or {}
+    if ft:
+        L += ["## Trava: quanto o preço muda até poder revender", "",
+              "Mediana de preço(dia + trava) ÷ preço(dia), nos primeiros 60 dias depois de esgotar.", "",
+              "| Compra | Trava | Fator mediano | Itens |", "|---|---|---|---|"]
+        for key, label in (("loja", "Na loja"), ("revenda", "Na revenda")):
+            f = ft.get(key) or {}
+            fm = f.get("fator_mediano")
+            L.append(f"| {label} | {f.get('dias')} dias | {'—' if fm is None else f'{fm:.2f}x'} | {f.get('n', 0)} |")
+        acc = (ft.get("revenda") or {}).get("acerto_30pct")
+        if acc is not None:
+            L.append("")
+            L.append(f"Comprar na revenda e vender depois de 7 dias deu margem ≥ 30% em {acc:.0%} dos itens "
+                     "(preço do gráfico = média das vendas do dia, não o menor anúncio).")
+        L.append("")
     curve = s.get("curva_pos_esgote") or {}
     if curve.get("geral"):
         L += ["## Curva depois de esgotar (preço mediano ÷ preço original)", "",
@@ -312,6 +368,16 @@ def render_md(s):
         L.append("")
     L += ["> Passado não garante futuro. Lift só vale com amostra grande; um dia de coleta é ponto de partida.", ""]
     return "\n".join(L)
+
+
+def load_hold_factors(root):
+    """{"loja": fator 30 d, "revenda": fator 7 d} da última calibração; {} sem arquivo."""
+    try:
+        with open(os.path.join(root, "data", "calibracao.json"), encoding="utf-8") as f:
+            ft = json.load(f).get("fator_trava") or {}
+    except (OSError, ValueError):
+        return {}
+    return {k: v["fator_mediano"] for k, v in ft.items() if v.get("fator_mediano") is not None and v.get("n", 0) >= 20}
 
 
 def load_lifts(root):

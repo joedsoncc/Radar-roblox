@@ -93,7 +93,8 @@ class FluxoCompleto(unittest.TestCase):
     def test_sem_velocidade_nao_compra(self):
         root = tmp_root()
         res = run(root, client=FakeClient(NOW, seed=3), now=NOW, send=lambda **kw: True, topic="t")
-        self.assertFalse([i for i in res["items"] if i["class"] == "COMPRAR-AGORA"])
+        # Só itens da loja: compra na revenda (esgotado) não usa velocidade.
+        self.assertFalse([i for i in res["items"] if i["class"] == "COMPRAR-AGORA" and i.get("tipo") != "revenda"])
         self.assertEqual(res["alerts"], [])
 
     def test_prejuizo_vira_evitar(self):
