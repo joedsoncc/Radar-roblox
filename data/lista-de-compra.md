@@ -1,4 +1,4 @@
-# Lista de compra — 2026-10-18T11:12:27Z
+# Lista de compra — 2026-10-18T15:54:34Z
 
 Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429.
 
