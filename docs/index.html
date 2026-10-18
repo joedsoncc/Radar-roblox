@@ -17,11 +17,18 @@
     <div class="brand">
       <h1>Radar UGC</h1>
       <p class="updated" id="updated">Carregando…</p>
+      <p class="updated"><a id="run-link" class="run-link" href="https://github.com/joedsoncc/Radar-roblox/actions/workflows/radar.yml" target="_blank" rel="noopener noreferrer">Rodar coleta agora ↗</a></p>
     </div>
-    <button type="button" id="theme-btn" class="icon-btn" aria-label="Alternar tema claro/escuro" title="Alternar tema">
-      <span id="theme-icon" aria-hidden="true">◐</span>
-    </button>
+    <div class="topbar-btns">
+      <button type="button" id="refresh-btn" class="icon-btn" aria-label="Atualizar a lista" title="Atualizar a lista">
+        <span id="refresh-icon" aria-hidden="true">↻</span>
+      </button>
+      <button type="button" id="theme-btn" class="icon-btn" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        <span id="theme-icon" aria-hidden="true">◐</span>
+      </button>
+    </div>
   </div>
+  <p class="refresh-msg" id="refresh-msg" role="status" aria-live="polite" hidden></p>
   <nav class="views" id="views" aria-label="Visões" role="tablist">
     <button type="button" class="view-tab" id="vt-radar" role="tab" data-view="radar" aria-controls="view-radar">Radar</button>
     <button type="button" class="view-tab" id="vt-carteira" role="tab" data-view="carteira" aria-controls="view-carteira">Carteira</button>

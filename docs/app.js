@@ -77,8 +77,19 @@
   }
 
   /* Dados */
+  // Clique em "Atualizar": ?t=agora fura o cache do GitHub Pages (até 10 min) e do navegador.
+  var bust = '';
+  function src(name) { return name + bust; }
+  function ago(ms) {
+    var m = Math.round(ms / 60000);
+    if (!isFinite(m) || m < 0) return '';
+    if (m < 1) return 'agora há pouco';
+    if (m < 60) return 'há ' + m + ' min';
+    var h = Math.floor(m / 60), r = m % 60;
+    return 'há ' + h + ' h' + (r ? ' ' + r + ' min' : '');
+  }
   function load() {
-    return fetch('data.json', { cache: 'no-cache' }).then(function (r) {
+    return fetch(src('data.json'), { cache: 'no-cache' }).then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
     });
@@ -88,7 +99,7 @@
     var t = NA;
     if (d.generated_at) {
       var dt = new Date(d.generated_at);
-      if (!isNaN(dt)) t = dt.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
+      if (!isNaN(dt)) t = dt.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) + ' (' + ago(Date.now() - dt.getTime()) + ')';
     }
     $('updated').textContent = 'Última atualização: ' + t;
     var b = $('banner');
@@ -288,7 +299,7 @@
   }
 
   function loadLaunches() {
-    return fetch('launches.json', { cache: 'no-cache' })
+    return fetch(src('launches.json'), { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) { state.launches = d; renderLaunches(d); })
       .catch(function () {});
@@ -297,7 +308,7 @@
 
   /* Carteira */
   function loadCart() {
-    return fetch('carteira.json', { cache: 'no-cache' }).then(function (r) {
+    return fetch(src('carteira.json'), { cache: 'no-cache' }).then(function (r) {
       if (!r.ok) return null;
       return r.json();
     }).catch(function () { return null; });
@@ -523,10 +534,11 @@
     });
     return load().then(function (d) {
       var changed = !state.data || state.data.generated_at !== d.generated_at || state.data.run_status !== d.run_status;
-      state.data = d;
+      state.data = d; state.loadFailed = false;
       renderHeader(d);
       if (changed || first) { renderTabs(); renderGrid(); }
     }).catch(function () {
+      state.loadFailed = true;
       if (!first && state.data) return; // mantém os dados já exibidos se a rede cair
       $('updated').textContent = 'Não foi possível carregar os dados.';
       var b = $('banner');
@@ -535,8 +547,34 @@
     });
   }
 
+  // Próxima coleta agendada: radar.yml roda aos 17 min das horas pares (UTC).
+  function nextRun() {
+    var n = new Date(), d = new Date(n.getTime());
+    d.setUTCMinutes(17, 0, 0);
+    if (d.getUTCHours() % 2) d.setUTCHours(d.getUTCHours() + 1);
+    if (d <= n) d.setUTCHours(d.getUTCHours() + 2);
+    return d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  }
+  function initRefresh() {
+    var btn = $('refresh-btn'), msg = $('refresh-msg');
+    $('run-link').href = 'https://github.com/' + repoSlug() + '/actions/workflows/radar.yml';
+    btn.addEventListener('click', function () {
+      if (btn.disabled) return;
+      var before = state.data && state.data.generated_at;
+      btn.disabled = true; btn.classList.add('spin');
+      bust = '?t=' + Date.now();
+      refresh(false).then(function () {
+        if (state.loadFailed) msg.textContent = 'Sem conexão: não consegui buscar a lista.';
+        else if (state.data.generated_at !== before) msg.textContent = 'Lista atualizada com a coleta mais recente.';
+        else msg.textContent = 'Você já está vendo a coleta mais recente. A próxima automática sai por volta das ' + nextRun() + '; para não esperar, use “Rodar coleta agora” e toque em ↻ depois de alguns minutos.';
+        msg.hidden = false;
+      }).then(function () { bust = ''; btn.disabled = false; btn.classList.remove('spin'); });
+    });
+  }
+
   function init() {
     initTheme();
+    initRefresh();
     initViews();
     initForm();
     $('class-filter').addEventListener('change', function (e) { state.cls = e.target.value; renderGrid(); });
@@ -544,6 +582,8 @@
     refresh(true);
     // Atualiza sozinho enquanto o app está aberto (a coleta roda a cada 2 h no GitHub).
     setInterval(function () { if (!document.hidden) refresh(false); }, 5 * 60 * 1000);
+    // Mantém o "há X min" do topo em dia entre uma busca e outra.
+    setInterval(function () { if (!document.hidden && state.data) renderHeader(state.data); }, 60 * 1000);
     document.addEventListener('visibilitychange', function () { if (!document.hidden) refresh(false); });
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {

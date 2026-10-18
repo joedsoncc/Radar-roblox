@@ -31,6 +31,14 @@ a { color: var(--accent); }
 .topbar-row { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .brand h1 { margin: 0; font-size: 1.25rem; }
 .updated { margin: 0; font-size: .85rem; color: #cbd5e1; }
+.topbar-btns { display: flex; gap: 8px; }
+.run-link { color: #93c5fd; }
+.refresh-msg { max-width: 1200px; margin: 6px auto 0; font-size: .85rem; color: #cbd5e1; }
+.refresh-msg[hidden] { display: none; }
+.icon-btn:disabled { opacity: .6; cursor: wait; }
+.icon-btn.spin span { display: inline-block; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .icon-btn.spin span { animation: none; } }
 .icon-btn { min-width: 44px; min-height: 44px; border-radius: 10px; border: 1px solid #475569; background: #1e293b; color: #f1f5f9; font-size: 1.3rem; cursor: pointer; }
 
 .banner { max-width: 1200px; margin: 12px auto 0; padding: 12px 16px; background: var(--warn-bg); color: var(--warn-fg); border-left: 5px solid var(--warn-border); border-radius: 8px; }
