@@ -1,0 +1,132 @@
+{
+ "10441371": {
+  "items_seen": 60,
+  "median_retention": 2.608,
+  "metodo": 2,
+  "name": "Epic's UGC",
+  "pct_above_price": 0.75,
+  "sold_out": 10,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 8
+ },
+ "1070407157": {
+  "items_seen": 3,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Nova Motions",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 0
+ },
+ "1105078558": {
+  "items_seen": 52,
+  "median_retention": 1.18,
+  "metodo": 2,
+  "name": "Spadez UGC",
+  "pct_above_price": 0.571,
+  "sold_out": 7,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 7
+ },
+ "12377810": {
+  "items_seen": 22,
+  "median_retention": 40.0,
+  "metodo": 2,
+  "name": "TypeUGC",
+  "pct_above_price": 1.0,
+  "sold_out": 18,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 1
+ },
+ "12648705": {
+  "items_seen": 9,
+  "median_retention": 0.438,
+  "metodo": 2,
+  "name": "[AT] Alpine UGC",
+  "pct_above_price": 0.0,
+  "sold_out": 3,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 2
+ },
+ "14511880": {
+  "items_seen": 60,
+  "median_retention": 0.96,
+  "metodo": 2,
+  "name": "Waffle's UGC",
+  "pct_above_price": 0.333,
+  "sold_out": 30,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 3
+ },
+ "2713252": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Synoptic Interactive",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 0
+ },
+ "3186444": {
+  "items_seen": 39,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Heyop's Clothes!",
+  "pct_above_price": null,
+  "sold_out": 33,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 0
+ },
+ "32039793": {
+  "items_seen": 13,
+  "median_retention": 1.368,
+  "metodo": 2,
+  "name": "Lynn's Home",
+  "pct_above_price": 0.5,
+  "sold_out": 2,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 2
+ },
+ "34217928": {
+  "items_seen": 60,
+  "median_retention": 1.758,
+  "metodo": 2,
+  "name": "Glowz UGC",
+  "pct_above_price": 0.727,
+  "sold_out": 11,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 11
+ },
+ "3519422403": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Reveaden",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 0
+ },
+ "35790116": {
+  "items_seen": 32,
+  "median_retention": 294.5,
+  "metodo": 2,
+  "name": "ZNcreation",
+  "pct_above_price": 1.0,
+  "sold_out": 10,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 10
+ },
+ "41177539": {
+  "items_seen": 4,
+  "median_retention": 0.002,
+  "metodo": 2,
+  "name": "Olivetreeteam UGC",
+  "pct_above_price": 0.0,
+  "sold_out": 1,
+  "updated_at": "2026-10-18T02:39:39Z",
+  "with_resale": 1
+ }
+}

@@ -1,14 +1,15 @@
 {
- "generated_at": "2026-10-17T22:22:55Z",
+ "generated_at": "2026-10-18T02:39:39Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (mais vendidos da semana): 429.",
- "snapshots_count": 5,
- "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = RAP × 0,5 − preço × 1,11.",
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429.",
+ "snapshots_count": 6,
+ "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
   "max_price": 500,
   "max_remaining": 100,
   "fee_multiplier": 1.11,
-  "seller_share": 0.5
+  "seller_share": 0.5,
+  "min_net_margin": 1.0
  },
  "categories": [
   {
@@ -70,727 +71,190 @@
  ],
  "items": [
   {
-   "asset_id": 103264888144153,
-   "name": "Blue Valkyrie",
-   "creator_name": "Lynn's Home",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/103264888144153",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-64c81205ab8bcbd555509abda25c3256/150/150/Hat/Png/noFilter",
-   "price": 145,
-   "total_quantity": 3000,
-   "units_remaining": 74,
-   "pct_sold": 97.5,
-   "rap": 145.0,
-   "lowest_resale": 994,
-   "volume_7d": 378,
-   "volume_30d": 2181,
-   "last_chart_price": 145,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 145,
-   "rap_consistent": true,
-   "cost": 160.95,
-   "net_profit": -88.45,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 4.679,
-   "velocity_note": null,
-   "eta_hours": 15.8,
-   "score": 54,
-   "class": "OBSERVAR",
-   "reasons": [
-    "RAP 145.0 não cobre o custo: lucro líquido -88 (-55%). Equilíbrio exige RAP ≈ 322.",
-    "Mas está esgotando rápido (~16 h): o RAP pode subir depois, sem garantia."
-   ],
-   "invalidators": [
-    "RAP acima de 322 depois de esgotar viraria oportunidade; RAP parado perto do preço confirma o prejuízo."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 79846453984508,
-   "name": "⏳ Sparkle Red Hair + Crown Valk + Clockworks",
-   "creator_name": "Mango fango ugc",
-   "creator_verified": false,
-   "category": "hair",
-   "url": "https://www.roblox.com/catalog/79846453984508",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-0a23c0bf53d4c83afc1c26524ce72990/150/150/HairAccessory/Png/noFilter",
-   "price": 149,
-   "total_quantity": 3000,
-   "units_remaining": 4,
-   "pct_sold": 99.9,
-   "rap": 148.0,
-   "lowest_resale": 498,
-   "volume_7d": 180,
-   "volume_30d": 2623,
-   "last_chart_price": 141,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 119,
-   "rap_consistent": true,
-   "cost": 165.39,
-   "net_profit": -91.39,
-   "net_margin": -0.5526,
-   "velocity_per_hour": 1.696,
-   "velocity_note": null,
-   "eta_hours": 2.4,
-   "score": 52,
-   "class": "OBSERVAR",
-   "reasons": [
-    "RAP 148.0 não cobre o custo: lucro líquido -91 (-55%). Equilíbrio exige RAP ≈ 331.",
-    "Mas está esgotando rápido (~2 h): o RAP pode subir depois, sem garantia."
-   ],
-   "invalidators": [
-    "RAP acima de 331 depois de esgotar viraria oportunidade; RAP parado perto do preço confirma o prejuízo."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 106116338649386,
-   "name": "⏳LIMITED SPARKLE Black Hair+Fedora+Clockwork+Horns",
-   "creator_name": "Spadez UGC",
-   "creator_verified": false,
-   "category": "hair",
-   "url": "https://www.roblox.com/catalog/106116338649386",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-94fd83353950323ab6720ca566d365a6/150/150/HairAccessory/Png/noFilter",
-   "price": 165,
-   "total_quantity": 3000,
-   "units_remaining": 11,
-   "pct_sold": 99.6,
-   "rap": 164.0,
-   "lowest_resale": 194,
-   "volume_7d": 38,
-   "volume_30d": 1986,
-   "last_chart_price": 142,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 199,
-   "rap_consistent": true,
-   "cost": 183.15,
-   "net_profit": -101.15,
-   "net_margin": -0.5523,
-   "velocity_per_hour": 0.492,
-   "velocity_note": null,
-   "eta_hours": 22.4,
-   "score": 38,
-   "class": "OBSERVAR",
-   "reasons": [
-    "RAP 164.0 não cobre o custo: lucro líquido -101 (-55%). Equilíbrio exige RAP ≈ 366.",
-    "Mas está esgotando rápido (~22 h): o RAP pode subir depois, sem garantia."
-   ],
-   "invalidators": [
-    "RAP acima de 366 depois de esgotar viraria oportunidade; RAP parado perto do preço confirma o prejuízo."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 70913805587976,
-   "name": "Red Valkyrie",
-   "creator_name": "Glowz UGC",
-   "creator_verified": true,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/70913805587976",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-a8118f8555b6f741b704fcdc403b5d0c/150/150/Hat/Png/noFilter",
-   "price": 95,
-   "total_quantity": 3000,
-   "units_remaining": 64,
-   "pct_sold": 97.9,
-   "rap": 95.0,
-   "lowest_resale": 95,
-   "volume_7d": 324,
-   "volume_30d": 1035,
-   "last_chart_price": 95,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 95,
-   "rap_consistent": true,
-   "cost": 105.45,
-   "net_profit": -57.95,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 2.462,
-   "velocity_note": null,
-   "eta_hours": 26.0,
-   "score": 54,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 95.0 não cobre o custo: lucro líquido -58 (-55%). Equilíbrio exige RAP ≈ 211."
-   ],
-   "invalidators": [
-    "RAP acima de 211 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 107664742122292,
-   "name": "Retro Classic Roblox Aura",
-   "creator_name": "Sinister UGC's",
-   "creator_verified": false,
-   "category": "shoulder",
-   "url": "https://www.roblox.com/catalog/107664742122292",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-e6e08ca39aee093b2bb6729ca2f0c396/150/150/ShoulderAccessory/Png/noFilter",
-   "price": 55,
-   "total_quantity": 1000,
-   "units_remaining": 58,
-   "pct_sold": 94.2,
-   "rap": 55.0,
-   "lowest_resale": 329,
-   "volume_7d": 149,
-   "volume_30d": 539,
-   "last_chart_price": 55,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 55,
-   "rap_consistent": true,
-   "cost": 61.05,
-   "net_profit": -33.55,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 1.382,
-   "velocity_note": null,
-   "eta_hours": 42.0,
-   "score": 43,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 55.0 não cobre o custo: lucro líquido -34 (-55%). Equilíbrio exige RAP ≈ 122."
-   ],
-   "invalidators": [
-    "RAP acima de 122 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 82551142168013,
-   "name": "Limited U Pin",
-   "creator_name": "Sinister UGC's",
-   "creator_verified": false,
-   "category": "front",
-   "url": "https://www.roblox.com/catalog/82551142168013",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-94f9d14185737e3f7e4c84ca99e4fc29/150/150/FrontAccessory/Png/noFilter",
-   "price": 295,
-   "total_quantity": 700,
-   "units_remaining": 16,
-   "pct_sold": 97.7,
-   "rap": 225.0,
-   "lowest_resale": null,
-   "volume_7d": 254,
-   "volume_30d": 662,
-   "last_chart_price": 108,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 55,
-   "rap_consistent": false,
-   "cost": 327.45,
-   "net_profit": -214.95,
-   "net_margin": -0.6564,
-   "velocity_per_hour": 0.942,
-   "velocity_note": null,
-   "eta_hours": 17.0,
-   "score": 39,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP não confiável: último preço do gráfico (108) abaixo de 50% do RAP (225.0) ou gráfico antigo."
-   ],
-   "invalidators": [
-    "Vendas recentes perto do RAP tornariam o RAP confiável de novo."
-   ],
-   "data_quality": "rap_incoerente"
-  },
-  {
-   "asset_id": 100759010024872,
-   "name": "Emerald Valk",
-   "creator_name": "Lynn's Home",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/100759010024872",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-6a1d8d9c2a11709d3e0bd752619ca374/150/150/Hat/Png/noFilter",
-   "price": 95,
-   "total_quantity": 3000,
-   "units_remaining": 36,
-   "pct_sold": 98.8,
-   "rap": 95.0,
-   "lowest_resale": 95,
-   "volume_7d": 51,
-   "volume_30d": 247,
-   "last_chart_price": 95,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 95,
-   "rap_consistent": true,
-   "cost": 105.45,
-   "net_profit": -57.95,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 0.591,
-   "velocity_note": null,
-   "eta_hours": 60.9,
-   "score": 33,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 95.0 não cobre o custo: lucro líquido -58 (-55%). Equilíbrio exige RAP ≈ 211."
-   ],
-   "invalidators": [
-    "RAP acima de 211 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 105265063926801,
-   "name": "Red Squid",
-   "creator_name": "Epic's UGC",
-   "creator_verified": true,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/105265063926801",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-8a074c556af9ee1fe923f97dcd6dfe64/150/150/Hat/Png/noFilter",
-   "price": 245,
-   "total_quantity": 3000,
-   "units_remaining": 60,
-   "pct_sold": 98.0,
-   "rap": 204.0,
-   "lowest_resale": 194,
-   "volume_7d": 28,
-   "volume_30d": 309,
-   "last_chart_price": 211,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 211.5,
-   "rap_consistent": true,
-   "cost": 271.95,
-   "net_profit": -169.95,
-   "net_margin": -0.6249,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 29,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 204.0 não cobre o custo: lucro líquido -170 (-62%). Equilíbrio exige RAP ≈ 544."
-   ],
-   "invalidators": [
-    "RAP acima de 544 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 136693538924679,
-   "name": "Cauldron of Syrup & Waffles",
-   "creator_name": "Waffle's UGC",
-   "creator_verified": false,
-   "category": "waist",
-   "url": "https://www.roblox.com/catalog/136693538924679",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-2be951b63ed6635035ced63dcd7893f4/150/150/WaistAccessory/Png/noFilter",
-   "price": 99,
-   "total_quantity": 299,
-   "units_remaining": 11,
-   "pct_sold": 96.3,
-   "rap": 99.0,
-   "lowest_resale": null,
-   "volume_7d": 68,
-   "volume_30d": 286,
-   "last_chart_price": 99,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 99,
-   "rap_consistent": true,
-   "cost": 109.89,
-   "net_profit": -60.39,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 27,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 99.0 não cobre o custo: lucro líquido -60 (-55%). Equilíbrio exige RAP ≈ 220."
-   ],
-   "invalidators": [
-    "RAP acima de 220 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 85431719641039,
-   "name": "Huge Angel Halo",
-   "creator_name": "Reveaden",
+   "asset_id": 103000243102950,
+   "name": "Halloween Scythe [Animated]",
+   "creator_name": "ZNcreation",
    "creator_verified": false,
    "category": "back",
-   "url": "https://www.roblox.com/catalog/85431719641039",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-a20e10797e5ad71a51f722404416e482/150/150/BackAccessory/Png/noFilter",
-   "price": 150,
+   "url": "https://www.roblox.com/catalog/103000243102950",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-f6626b299196764a1f08e497c052ce65/150/150/BackAccessory/Png/noFilter",
+   "price": 389,
    "total_quantity": 3000,
-   "units_remaining": 80,
+   "units_remaining": 82,
    "pct_sold": 97.3,
-   "rap": 150.0,
-   "lowest_resale": 150,
-   "volume_7d": 26,
-   "volume_30d": 125,
-   "last_chart_price": 150,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 150,
+   "rap": 382.0,
+   "resale_avg_low": 846.9,
+   "resale_avg_n": 10,
+   "sale_ref": 115706.1,
+   "sale_ref_source": "historico_loja",
+   "volume_7d": 9,
+   "volume_30d": 31,
+   "last_chart_price": 389,
+   "last_chart_date": "2026-10-17",
+   "chart_median_14d": 389,
    "rap_consistent": true,
-   "cost": 166.5,
-   "net_profit": -91.5,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 0.492,
-   "velocity_note": null,
-   "eta_hours": 162.6,
-   "score": 26,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 150.0 não cobre o custo: lucro líquido -92 (-55%). Equilíbrio exige RAP ≈ 333."
-   ],
-   "invalidators": [
-    "RAP acima de 333 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 118238179983357,
-   "name": "✧ [Increasing Price] ✧ Duality Horns & Halo",
-   "creator_name": "Olivetreeteam UGC",
-   "creator_verified": false,
-   "category": "hair",
-   "url": "https://www.roblox.com/catalog/118238179983357",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-f152939ef62565d4455d32d10a92ad05/150/150/HairAccessory/Png/noFilter",
-   "price": 79,
-   "total_quantity": 299,
-   "units_remaining": 52,
-   "pct_sold": 82.6,
-   "rap": 78.0,
-   "lowest_resale": 598,
-   "volume_7d": 45,
-   "volume_30d": 136,
-   "last_chart_price": 79,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 65,
-   "rap_consistent": true,
-   "cost": 87.69,
-   "net_profit": -48.69,
-   "net_margin": -0.5553,
-   "velocity_per_hour": 0.295,
-   "velocity_note": null,
-   "eta_hours": 176.3,
-   "score": 25,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 78.0 não cobre o custo: lucro líquido -49 (-56%). Equilíbrio exige RAP ≈ 175."
-   ],
-   "invalidators": [
-    "RAP acima de 175 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 81781007088412,
-   "name": "Rainbow Dominus + Horns",
-   "creator_name": "Collin UGC",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/81781007088412",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-8494d223deb24013d3f90c721af38aa6/150/150/Hat/Png/noFilter",
-   "price": 170,
-   "total_quantity": 3000,
-   "units_remaining": 56,
-   "pct_sold": 98.1,
-   "rap": 169.0,
-   "lowest_resale": 135,
-   "volume_7d": 42,
-   "volume_30d": 255,
-   "last_chart_price": 170,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 170,
-   "rap_consistent": true,
-   "cost": 188.7,
-   "net_profit": -104.2,
-   "net_margin": -0.5522,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 24,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 169.0 não cobre o custo: lucro líquido -104 (-55%). Equilíbrio exige RAP ≈ 377."
-   ],
-   "invalidators": [
-    "RAP acima de 377 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 98276569007154,
-   "name": "[⏳LIMITED] Traffic Cone+Clockwork+Hair+Antlers ",
-   "creator_name": "Snowy'sz",
-   "creator_verified": false,
-   "category": "hair",
-   "url": "https://www.roblox.com/catalog/98276569007154",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-fd1133c6c70d73243a729a881d971041/150/150/HairAccessory/Png/noFilter",
-   "price": 199,
-   "total_quantity": 3000,
-   "units_remaining": 92,
-   "pct_sold": 96.9,
-   "rap": 199.0,
-   "lowest_resale": 497,
-   "volume_7d": 807,
-   "volume_30d": 2139,
-   "last_chart_price": 199,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 65,
-   "rap_consistent": false,
-   "cost": 220.89,
-   "net_profit": -121.39,
-   "net_margin": -0.5495,
+   "cost": 431.79,
+   "net_profit": 57421.26,
+   "net_margin": 132.9842,
    "velocity_per_hour": null,
    "velocity_note": "poucos snapshots",
    "eta_hours": null,
-   "score": 24,
-   "class": "EVITAR",
+   "score": 67,
+   "class": "OBSERVAR",
    "reasons": [
-    "RAP não confiável: último preço do gráfico (199) abaixo de 50% do RAP (199.0) ou gráfico antigo."
+    "Margem líquida +13298%.",
+    "Volume 7d 9 abaixo de 50.",
+    "Velocidade de venda não medida (poucos snapshots).",
+    "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 294.50x, 10 itens).",
+    "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
    "invalidators": [
-    "Vendas recentes perto do RAP tornariam o RAP confiável de novo."
+    "Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR."
    ],
-   "data_quality": "rap_incoerente"
-  },
-  {
-   "asset_id": 102281096304942,
-   "name": "[88/499] Dominus Erzherzog",
-   "creator_name": "[AT] Alpine UGC",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/102281096304942",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-cb70e528d7d0a511455ed70af76391d0/150/150/Hat/Png/noFilter",
-   "price": 199,
-   "total_quantity": 499,
-   "units_remaining": 88,
-   "pct_sold": 82.4,
-   "rap": 183.0,
-   "lowest_resale": 438,
-   "volume_7d": 21,
-   "volume_30d": 100,
-   "last_chart_price": 185,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 149,
-   "rap_consistent": true,
-   "cost": 220.89,
-   "net_profit": -129.39,
-   "net_margin": -0.5858,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 22,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 183.0 não cobre o custo: lucro líquido -129 (-59%). Equilíbrio exige RAP ≈ 442."
+   "data_quality": "rap_primario",
+   "creator_track": {
+    "updated_at": "2026-10-18T02:39:39Z",
+    "name": "ZNcreation",
+    "metodo": 2,
+    "items_seen": 32,
+    "sold_out": 10,
+    "with_resale": 10,
+    "median_retention": 294.5,
+    "pct_above_price": 1.0
+   },
+   "retention": 0.982,
+   "change_7d": 0.0,
+   "trend": "estável",
+   "spark": [
+    [
+     "2026-06-09",
+     300
+    ],
+    [
+     "2026-06-13",
+     400
+    ],
+    [
+     "2026-06-22",
+     200
+    ],
+    [
+     "2026-07-08",
+     200
+    ],
+    [
+     "2026-07-19",
+     229
+    ],
+    [
+     "2026-08-08",
+     250
+    ],
+    [
+     "2026-08-13",
+     250
+    ],
+    [
+     "2026-08-21",
+     398
+    ],
+    [
+     "2026-08-25",
+     300
+    ],
+    [
+     "2026-09-05",
+     200
+    ],
+    [
+     "2026-09-07",
+     389
+    ],
+    [
+     "2026-09-15",
+     330
+    ],
+    [
+     "2026-09-20",
+     300
+    ],
+    [
+     "2026-09-23",
+     389
+    ],
+    [
+     "2026-09-30",
+     250
+    ],
+    [
+     "2026-10-01",
+     389
+    ],
+    [
+     "2026-10-02",
+     389
+    ],
+    [
+     "2026-10-03",
+     300
+    ],
+    [
+     "2026-10-04",
+     368
+    ],
+    [
+     "2026-10-05",
+     389
+    ],
+    [
+     "2026-10-06",
+     389
+    ],
+    [
+     "2026-10-08",
+     389
+    ],
+    [
+     "2026-10-09",
+     389
+    ],
+    [
+     "2026-10-10",
+     389
+    ],
+    [
+     "2026-10-11",
+     389
+    ],
+    [
+     "2026-10-12",
+     389
+    ],
+    [
+     "2026-10-13",
+     389
+    ],
+    [
+     "2026-10-14",
+     389
+    ],
+    [
+     "2026-10-15",
+     389
+    ],
+    [
+     "2026-10-17",
+     389
+    ]
    ],
-   "invalidators": [
-    "RAP acima de 442 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 119406732991458,
-   "name": "Glowing Devil Horns Emissive",
-   "creator_name": "TypeUGC",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/119406732991458",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-61bdf59bbe519a8b5f33efd44ee93503/150/150/Hat/Png/noFilter",
-   "price": 500,
-   "total_quantity": 150,
-   "units_remaining": 38,
-   "pct_sold": 74.7,
-   "rap": 500.0,
-   "lowest_resale": null,
-   "volume_7d": 10,
-   "volume_30d": 59,
-   "last_chart_price": 500,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 500,
-   "rap_consistent": true,
-   "cost": 555.0,
-   "net_profit": -305.0,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 21,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 500.0 não cobre o custo: lucro líquido -305 (-55%). Equilíbrio exige RAP ≈ 1110."
-   ],
-   "invalidators": [
-    "RAP acima de 1110 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 120619293493249,
-   "name": "[EMISSIVE] Opal Valkyrie Helm",
-   "creator_name": "Nova Motions",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/120619293493249",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-79622242a71d4c3bb3b6b6fad3585669/150/150/Hat/Png/noFilter",
-   "price": 500,
-   "total_quantity": 100,
-   "units_remaining": 69,
-   "pct_sold": 31.0,
-   "rap": 500.0,
-   "lowest_resale": null,
-   "volume_7d": 14,
-   "volume_30d": 30,
-   "last_chart_price": 500,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 500.0,
-   "rap_consistent": true,
-   "cost": 555.0,
-   "net_profit": -305.0,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "vendas insuficientes para medir",
-   "eta_hours": null,
-   "score": 21,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 500.0 não cobre o custo: lucro líquido -305 (-55%). Equilíbrio exige RAP ≈ 1110."
-   ],
-   "invalidators": [
-    "RAP acima de 1110 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 92035047502147,
-   "name": "V3RMILLION PIN",
-   "creator_name": "Synoptic Interactive",
-   "creator_verified": false,
-   "category": "front",
-   "url": "https://www.roblox.com/catalog/92035047502147",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-beece497a9ef317da9ab29ceb6b853a4/150/150/FrontAccessory/Png/noFilter",
-   "price": 250,
-   "total_quantity": 100,
-   "units_remaining": 89,
-   "pct_sold": 11.0,
-   "rap": 250.0,
-   "lowest_resale": null,
-   "volume_7d": 11,
-   "volume_30d": 11,
-   "last_chart_price": 250,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 250,
-   "rap_consistent": true,
-   "cost": 277.5,
-   "net_profit": -152.5,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 21,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 250.0 não cobre o custo: lucro líquido -152 (-55%). Equilíbrio exige RAP ≈ 555."
-   ],
-   "invalidators": [
-    "RAP acima de 555 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 124033240617455,
-   "name": "Crown Spectral",
-   "creator_name": "Mimii UCG Crown’s",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/124033240617455",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-acd1e7a171662856797fe12aaf193c30/150/150/Hat/Png/noFilter",
-   "price": 350,
-   "total_quantity": 150,
-   "units_remaining": 89,
-   "pct_sold": 40.7,
-   "rap": 350.0,
-   "lowest_resale": null,
-   "volume_7d": 53,
-   "volume_30d": 53,
-   "last_chart_price": 350,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 350.0,
-   "rap_consistent": null,
-   "cost": 388.5,
-   "net_profit": -213.5,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 0.314,
-   "velocity_note": null,
-   "eta_hours": 283.4,
-   "score": 15,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 350.0 não cobre o custo: lucro líquido -214 (-55%). Equilíbrio exige RAP ≈ 777."
-   ],
-   "invalidators": [
-    "RAP acima de 777 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 138451385145650,
-   "name": "Black Caution Bucket Hat",
-   "creator_name": "Leon's Imaginary",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/138451385145650",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-da31c7877b470e3d2448f99224045830/150/150/Hat/Png/noFilter",
-   "price": 250,
-   "total_quantity": 100,
-   "units_remaining": 94,
-   "pct_sold": 6.0,
-   "rap": 250.0,
-   "lowest_resale": null,
-   "volume_7d": 5,
-   "volume_30d": 5,
-   "last_chart_price": 250,
-   "last_chart_date": "2026-10-16",
-   "chart_median_14d": 250,
-   "rap_consistent": null,
-   "cost": 277.5,
-   "net_profit": -152.5,
-   "net_margin": -0.5495,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 10,
-   "class": "EVITAR",
-   "reasons": [
-    "RAP 250.0 não cobre o custo: lucro líquido -152 (-55%). Equilíbrio exige RAP ≈ 555."
-   ],
-   "invalidators": [
-    "RAP acima de 555 com vendas consistentes."
-   ],
-   "data_quality": "ok"
-  },
-  {
-   "asset_id": 130883412919351,
-   "name": "Large Glowing Rainbow Horns",
-   "creator_name": "UGC.Studios",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/130883412919351",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-8c3bc85b2b4c1f5f6c2cb544e4e5d963/150/150/Hat/Png/noFilter",
-   "price": 500,
-   "total_quantity": 99,
-   "units_remaining": 96,
-   "pct_sold": 3.0,
-   "rap": 905.0,
-   "lowest_resale": null,
-   "volume_7d": 2,
-   "volume_30d": 2,
-   "last_chart_price": 750,
-   "last_chart_date": "2026-10-11",
-   "chart_median_14d": 750,
-   "rap_consistent": null,
-   "cost": 555.0,
-   "net_profit": -102.5,
-   "net_margin": -0.1847,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 9,
-   "class": "EVITAR",
-   "reasons": [
-    "Liquidez baixa: só 2 vendas em 7 dias; difícil revender."
-   ],
-   "invalidators": [
-    "Volume 7d acima de 5 mudaria a avaliação."
-   ],
-   "data_quality": "ok"
+   "tipo": "loja",
+   "fator_trava": 1.01,
+   "rap_primary": true,
+   "copy_risk": null,
+   "price_raised_from": null,
+   "break_even": 864,
+   "hold_days": 30
   }
- ]
+ ],
+ "descartados": 50
 }
