@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'radar-ugc-v7';
+const CACHE_VERSION = 'radar-ugc-v8';
 const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'charts.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-192.png', 'icons/maskable-512.png'];
 
@@ -14,10 +14,12 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
   if (url.pathname.endsWith('/data.json') || url.pathname.endsWith('/carteira.json') || url.pathname.endsWith('/launches.json')) {
+    // Guarda sem a query (?t=... do botão Atualizar) para não acumular cópias.
+    const key = url.origin + url.pathname;
     e.respondWith(fetch(req).then((res) => {
-      if (res.ok) { const copy = res.clone(); caches.open(CACHE_VERSION).then((c) => c.put(req, copy)); }
+      if (res.ok) { const copy = res.clone(); caches.open(CACHE_VERSION).then((c) => c.put(key, copy)); }
       return res;
-    }).catch(() => caches.match(req)));
+    }).catch(() => caches.match(key)));
     return;
   }
   // App shell: stale-while-revalidate (responde do cache e atualiza em segundo plano).
