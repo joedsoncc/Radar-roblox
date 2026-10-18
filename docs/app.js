@@ -43,10 +43,19 @@
     }
     return FALLBACK_REPO;
   }
+  /* Issue em texto livre (sem formulário): o app do GitHub ignora formulários e campos pré-preenchidos,
+     então o ID vai também no título e o robô lê o que vier (radar/cadastro.py, parse_free). */
   function issueUrl(o) {
-    var q = [['template', 'carteira.yml'], ['title', '[carteira] ' + (o.nome || o.item)], ['acao', o.acao || 'Adicionar'],
-      ['item', o.item], ['preco_pago', o.preco == null ? '' : String(o.preco)], ['quantidade', String(o.qtd || 1)]];
-    if (o.data) q.push(['comprado_em', o.data]);
+    var acao = o.acao || 'Adicionar';
+    var id = (/(?:catalog|library)\/(\d+)/.exec(o.item || '') || [])[1] || o.item;
+    var nome = o.nome && String(o.nome) !== String(id) ? o.nome + ' · ' : '';
+    var linhas = [acao, 'Item: ' + o.item];
+    if (acao === 'Adicionar') {
+      if (o.preco != null) linhas.push('Preço pago: ' + o.preco);
+      linhas.push('Quantidade: ' + (o.qtd || 1));
+      if (o.data) linhas.push('Comprado em: ' + o.data);
+    }
+    var q = [['title', '[carteira] ' + (acao === 'Remover' ? 'Remover ' : '') + nome + id], ['body', linhas.join('\n')]];
     return 'https://github.com/' + repoSlug() + '/issues/new?' + q.map(function (p) {
       return encodeURIComponent(p[0]) + '=' + encodeURIComponent(p[1]);
     }).join('&');
@@ -397,6 +406,12 @@
     var cu = catalogUrl(i);
     if (cu) {
       var act = el('div', 'card-actions');
+      if (tracking) {
+        var ib = el('button', 'btn primary', 'Informar preço');
+        ib.type = 'button';
+        ib.addEventListener('click', function () { openBuy(i); });
+        act.appendChild(ib);
+      }
       act.appendChild(linkBtn('Remover', issueUrl({ acao: 'Remover', item: cu, nome: i.name, preco: null, qtd: 1 }), 'danger'));
       c.appendChild(act);
     }
@@ -450,7 +465,7 @@
   function openBuy(i) {
     var f = $('add-form');
     setView('carteira', true);
-    f.hidden = false;
+    $('af-more').open = true;
     $('af-error').hidden = true;
     $('af-item').value = catalogUrl(i);
     $('af-price').value = isNum(i.price) ? String(i.price) : '';
@@ -472,15 +487,7 @@
 
   function initForm() {
     var f = $('add-form'), err = $('af-error');
-    function open(show) {
-      f.hidden = !show;
-      if (show) {
-        if (!$('af-date').value) $('af-date').value = todayLocal();
-        $('af-item').focus();
-      }
-    }
-    $('cart-add').addEventListener('click', function () { open(f.hidden); });
-    $('af-cancel').addEventListener('click', function () { open(false); });
+    if (!$('af-date').value) $('af-date').value = todayLocal();
     $('af-item').addEventListener('input', function () {
       var id = parseItem(this.value), i = id ? knownItem(id) : null;
       showItemHint(i);
@@ -492,11 +499,11 @@
       if (!id) { err.textContent = 'Informe o link do catálogo (roblox.com/catalog/…) ou apenas o número do item.'; err.hidden = false; return; }
       var pv = $('af-price').value.trim(), price = null;
       if (pv !== '') {
-        price = Number(pv.replace(',', '.'));
-        if (!isFinite(price) || price < 0) { err.textContent = 'Preço pago inválido.'; err.hidden = false; return; }
+        price = Number(pv);
+        if (!/^\d+$/.test(pv) || !isFinite(price)) { err.textContent = 'Preço pago: use um número inteiro de Robux (ex.: 120).'; err.hidden = false; return; }
       }
       var q = parseInt($('af-qty').value, 10);
-      if (!isFinite(q) || q < 1) { err.textContent = 'A quantidade precisa ser 1 ou mais.'; err.hidden = false; return; }
+      if (!isFinite(q) || q < 1 || q > 100) { err.textContent = 'A quantidade precisa ser de 1 a 100.'; err.hidden = false; return; }
       err.hidden = true;
       var known = knownItem(id);
       var href = issueUrl({ acao: 'Adicionar', item: 'https://www.roblox.com/catalog/' + id, nome: (known && known.name) || id, preco: price, qtd: q, data: $('af-date').value });

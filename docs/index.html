@@ -82,33 +82,30 @@
 
 <main id="view-carteira" role="tabpanel" aria-labelledby="vt-carteira" hidden>
   <section id="cart-summary" class="cart-summary" aria-label="Resumo da carteira" hidden></section>
-  <div class="cart-actions">
-    <button type="button" class="btn primary" id="cart-add">Cadastrar item</button>
-    <p class="count" id="cart-count" aria-live="polite"></p>
-  </div>
-  <form id="add-form" class="add-form" hidden novalidate>
-    <h2>Cadastrar item</h2>
-    <label class="field"><span>Link do catálogo ou ID do item</span>
-      <input type="text" id="af-item" inputmode="url" autocomplete="off" placeholder="cole o link do item no Roblox ou o número"></label>
+  <form id="add-form" class="add-form" novalidate>
+    <h2>Adicionar item à carteira</h2>
+    <label class="field"><span>Cole o link do item no Roblox</span>
+      <input type="text" id="af-item" inputmode="url" autocomplete="off" placeholder="https://www.roblox.com/catalog/123…"></label>
     <p class="form-found" id="af-found" aria-live="polite" hidden></p>
-    <label class="field"><span>Preço pago por unidade (opcional)</span>
-      <input type="number" id="af-price" min="0" step="any" inputmode="decimal" placeholder="vazio = só acompanhar"></label>
-    <p class="form-hint">Pelo botão “Comprei” o preço de loja já vem preenchido; corrija se pagou outro valor. Cada compra vira um lote com o próprio preço.</p>
-    <label class="field"><span>Quantidade</span>
-      <input type="number" id="af-qty" min="1" step="1" value="1" inputmode="numeric"></label>
-    <label class="field"><span>Data da compra</span>
-      <input type="date" id="af-date"></label>
-    <p class="form-hint">O GitHub vai pedir para você confirmar o envio da issue; depois disso o robô adiciona o item em instantes.</p>
+    <details id="af-more" class="af-more">
+      <summary>Preço pago e quantidade (opcional)</summary>
+      <label class="field"><span>Preço pago por unidade</span>
+        <input type="number" id="af-price" min="0" step="1" inputmode="numeric" placeholder="vazio = só acompanhar"></label>
+      <label class="field"><span>Quantidade</span>
+        <input type="number" id="af-qty" min="1" step="1" value="1" inputmode="numeric"></label>
+      <label class="field"><span>Data da compra</span>
+        <input type="date" id="af-date"></label>
+      <p class="form-hint">Pode salvar só o link agora e informar o preço depois: é só salvar o mesmo link de novo com o preço.</p>
+    </details>
     <p class="form-error" id="af-error" role="alert" hidden></p>
-    <div class="form-btns">
-      <button type="submit" class="btn primary">Abrir no GitHub</button>
-      <button type="button" class="btn" id="af-cancel">Cancelar</button>
-    </div>
+    <button type="submit" class="btn primary">Salvar</button>
+    <p class="form-hint">Abre o GitHub com tudo pronto: toque em <b>Create</b> (ou <b>Submit new issue</b>). Em poucos minutos o item aparece aqui embaixo.</p>
   </form>
+  <p class="count" id="cart-count" aria-live="polite"></p>
   <section id="cart-grid" class="grid cart-grid" aria-live="polite"></section>
   <div id="cart-empty" class="empty" hidden>
     <p>Sua carteira está vazia.</p>
-    <p>Cadastre um item que você comprou (informe o preço pago) ou que só quer acompanhar (deixe o preço em branco). Também dá para tocar em “Comprei” em qualquer card do Radar ou nos lançamentos.</p>
+    <p>Cole o link de um item acima e toque em Salvar. Também dá para tocar em “Comprei” em qualquer card do Radar ou nos lançamentos.</p>
   </div>
 </main>
 

@@ -41,6 +41,7 @@ jobs:
         env:
           # O corpo da issue é texto não confiável: vai só por variável de ambiente, nunca dentro de `run:`.
           ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: python radar.py cadastrar --mensagem "$RUNNER_TEMP/resposta.md"
 
       - name: Atualizar a carteira
