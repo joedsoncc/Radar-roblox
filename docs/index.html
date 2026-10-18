@@ -8,7 +8,11 @@
 <meta name="theme-color" content="#0f172a">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png" type="image/png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Radar UGC">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,6 +24,7 @@
       <p class="updated"><a id="run-link" class="run-link" href="https://github.com/joedsoncc/Radar-roblox/actions/workflows/radar.yml" target="_blank" rel="noopener noreferrer">Rodar coleta agora ↗</a></p>
     </div>
     <div class="topbar-btns">
+      <button type="button" id="install-btn" class="icon-btn install-btn" hidden>Instalar app</button>
       <button type="button" id="refresh-btn" class="icon-btn" aria-label="Atualizar a lista" title="Atualizar a lista">
         <span id="refresh-icon" aria-hidden="true">↻</span>
       </button>
@@ -29,6 +34,7 @@
     </div>
   </div>
   <p class="refresh-msg" id="refresh-msg" role="status" aria-live="polite" hidden></p>
+  <p class="refresh-msg" id="install-msg" role="status" aria-live="polite" hidden></p>
   <nav class="views" id="views" aria-label="Visões" role="tablist">
     <button type="button" class="view-tab" id="vt-radar" role="tab" data-view="radar" aria-controls="view-radar">Radar</button>
     <button type="button" class="view-tab" id="vt-carteira" role="tab" data-view="carteira" aria-controls="view-carteira">Carteira</button>

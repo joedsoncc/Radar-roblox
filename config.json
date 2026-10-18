@@ -140,7 +140,7 @@
   },
   "alertas": {
     "ativo": true,
-    "min_net_margin": 0.5,
+    "min_net_margin": 1.0,
     "min_volume_7d": 100,
     "max_remaining": 100,
     "require_rap_consistent": true,
@@ -191,7 +191,7 @@
     "trava_dias_revenda": 7
   },
   "oportunidades": {
-    "min_net_margin": 0.0,
+    "min_net_margin": 1.0,
     "excluir_calibracao_fraca": true,
     "calibracao_fraca": 0.3
   },

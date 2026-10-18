@@ -1,9 +1,10 @@
-"""Só o que pode dar lucro vai para o site, a lista de compra e os alertas (decisão do Jhow, 17/10).
+"""Só o que pode dar lucro alto vai para o site, a lista de compra e os alertas (decisão do Jhow, 18/10).
 
-Entra: COMPRAR-AGORA ou OBSERVAR com margem líquida projetada > 0 (config oportunidades.min_net_margin).
+Entra: COMPRAR-AGORA ou OBSERVAR com lucro líquido projetado acima de 100% do valor gasto
+(config oportunidades.min_net_margin = 1.0). Lucro% = (valor de venda × 0,5 − preço × 1,11) / (preço × 1,11).
 Fica de fora (só em data/descartados.md): EVITAR, sem estimativa de lucro (sem RAP, RAP de venda
 primária sem histórico da loja) e, se ligado, itens cuja faixa foi fraca no backtest (calibração).
-Exemplo: preço 100, valor de venda 260 -> lucro +19 (+17%) entra como OBSERVAR; valor 200 -> -11, fica fora.
+Exemplo: preço 100 (custo 111): valor de venda 450 -> lucro +114 (+103%) entra; valor 400 -> +89 (+80%) fica fora.
 """
 import os
 
@@ -17,7 +18,7 @@ def why_out(item, cfg):
     if m is None:
         return "sem estimativa de lucro"
     if m <= o.get("min_net_margin", 0.0):
-        return f"margem projetada {m:+.0%}"
+        return f"lucro projetado {m:+.0%} (precisa passar de {o.get('min_net_margin', 0.0):+.0%})"
     cal = item.get("calibracao")
     if o.get("excluir_calibracao_fraca", True) and cal and cal["score"] <= o.get("calibracao_fraca", 0.3):
         return "itens parecidos foram mal no backtest"
@@ -37,7 +38,7 @@ def split(items, cfg):
 
 def descartados_md(out, generated_at):
     lines = [f"# Itens descartados ({generated_at})", "",
-             "Não aparecem no site nem na lista de compra porque não mostram lucro projetado.", "",
+             "Não aparecem no site, na lista de compra nem nos alertas porque o lucro projetado não passa do corte.", "",
              "| Item | Classe | Preço | Lucro líq. | Motivo |", "|---|---|---|---|---|"]
     for i in out:
         m = i.get("net_margin")

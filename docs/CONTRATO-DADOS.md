@@ -9,7 +9,7 @@ Gerado por `radar.py` a cada execução. O site só lê este arquivo (nada de ch
   "status_note": "texto curto em PT-BR explicando falhas (ex.: API de histórico exigiu login)",
   "snapshots_count": 14,
   "disclaimer": "Não é recomendação financeira...",
-  "config": {"max_price": 500, "max_remaining": 100, "fee_multiplier": 1.11, "seller_share": 0.5},
+  "config": {"max_price": 500, "max_remaining": 100, "fee_multiplier": 1.11, "seller_share": 0.5, "min_net_margin": 1.0},
   "categories": [
     {"key": "hat", "label": "Chapéu/Coroa", "asset_type_ids": [8]}
   ],
@@ -66,8 +66,10 @@ Histórico da loja e tendência (campos novos):
 - `spark`: até 30 pares `[data, preço médio do dia]` do gráfico de revenda, do mais antigo ao mais novo (lista vazia sem gráfico).
 - O score ganhou o peso `historico_loja` (config `score_pesos`); sem dado da loja vale 0,5 (neutro). `reasons` pode trazer uma frase sobre loja com histórico forte ou fraco.
 
-Anúncios: `lowest_resale` é o menor anúncio do catálogo; `resale_avg_low` é a média dos `resale_avg_n` anúncios mais baratos (até 10; `resale_avg_n` = 1 quando só havia o menor anúncio do catálogo, 0 sem anúncio). `sale_ref` é o valor de venda usado no lucro (menor entre `rap` e `resale_avg_low`) e `sale_ref_source` diz de onde veio. Quando o item ainda está à venda e o RAP está a até 15% do preço de loja (`rap_primary: true`, as vendas da loja formam o RAP), `sale_ref` = preço × `creator_track.median_retention` (`historico_loja`), ou `null` sem histórico da loja.
+Anúncios: o menor anúncio sozinho (`lowest_resale`) não vai para o site; `resale_avg_low` é a média dos `resale_avg_n` anúncios mais baratos (até 10; `resale_avg_n` = 1 quando só havia o menor anúncio do catálogo, 0 sem anúncio). `sale_ref` é o valor de venda usado no lucro (menor entre `rap` e `resale_avg_low`) e `sale_ref_source` diz de onde veio. Quando o item ainda está à venda e o RAP está a até 15% do preço de loja (`rap_primary: true`, as vendas da loja formam o RAP), `sale_ref` = preço × `creator_track.median_retention` (`historico_loja`), ou `null` sem histórico da loja.
 
 Campos de risco (pesquisa de 2026-10-17): `rap_primary` (bool); `copy_risk` (termo de item clássico achado no nome, ou `null`); `price_raised_from` (menor preço de loja visto antes, se o criador subiu o preço; senão `null`); `break_even` (preço de venda que só empata: custo ÷ 0,5); `hold_days` (trava de revenda no pior caso, 30).
 
 Regras: qualquer campo numérico pode ser `null` quando a API falhou ou ainda não há snapshots suficientes. O site deve mostrar "—" e nunca inventar valor.
+
+Corte de lucro: `items` só traz itens com `net_margin` acima de `config.min_net_margin` (1,0 = lucro líquido acima de 100% do valor gasto, preço × 1,11). O app aplica o mesmo corte ao exibir.

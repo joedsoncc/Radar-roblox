@@ -61,7 +61,7 @@ class Series(unittest.TestCase):
 
 
 class FluxoCompleto(unittest.TestCase):
-    def _two_runs(self, root, sends, rap_mult=4, **fake_kw):
+    def _two_runs(self, root, sends, rap_mult=6, **fake_kw):
         c1 = FakeClient(NOW - timedelta(hours=2), seed=1, n=20, **fake_kw)
         for it in c1.items:
             it["assetType"] = 8
@@ -80,7 +80,7 @@ class FluxoCompleto(unittest.TestCase):
         root, sends = tmp_root(), []
         res = self._two_runs(root, sends)
         buy = [i for i in res["items"] if i["class"] == "COMPRAR-AGORA"]
-        self.assertTrue(buy, "com RAP 4x, volume alto e velocidade medida deve haver COMPRAR-AGORA")
+        self.assertTrue(buy, "com RAP 6x, volume alto e velocidade medida deve haver COMPRAR-AGORA")
         self.assertEqual(len(sends), CFG["alertas"]["max_alerts_per_day"])
         self.assertIn("Não é recomendação financeira", sends[0]["message"])
         self.assertTrue(sends[0]["click"].startswith("https://www.roblox.com/catalog/"))
@@ -205,10 +205,10 @@ class FaseDeVenda(unittest.TestCase):
         self.assertEqual(it["data_quality"], "rap_primario")
 
     def test_projecao_pela_loja(self):
-        track = {"with_resale": 6, "median_retention": 4.0, "pct_above_price": 0.8}
+        track = {"with_resale": 6, "median_retention": 5.0, "pct_above_price": 0.8}
         it = analyze.analyze([_row()], _hist(), NOW, CFG, tracks={"9": track})[0]
         self.assertEqual(it["sale_ref_source"], "historico_loja")
-        self.assertEqual(it["sale_ref"], 800)  # 200 × 4,0
+        self.assertEqual(it["sale_ref"], 1000)  # 200 × 5,0 -> lucro +125%
         self.assertEqual(it["class"], "COMPRAR-AGORA")
         self.assertTrue(analyze.alert_eligible(it, CFG))
 
