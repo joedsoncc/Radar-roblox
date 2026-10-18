@@ -229,6 +229,16 @@
   "updated_at": "2026-10-18T06:52:28Z",
   "with_resale": 0
  },
+ "937580992": {
+  "items_seen": 32,
+  "median_retention": 3.558,
+  "metodo": 2,
+  "name": "Fit-Frenzy",
+  "pct_above_price": 1.0,
+  "sold_out": 10,
+  "updated_at": "2026-10-18T17:21:02Z",
+  "with_resale": 10
+ },
  "9642123": {
   "items_seen": 60,
   "median_retention": null,
