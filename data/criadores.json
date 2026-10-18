@@ -109,6 +109,16 @@
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 0
  },
+ "35488897": {
+  "items_seen": 55,
+  "median_retention": 2.047,
+  "metodo": 2,
+  "name": "1of1ugc",
+  "pct_above_price": 0.833,
+  "sold_out": 14,
+  "updated_at": "2026-10-18T06:52:28Z",
+  "with_resale": 6
+ },
  "35700806": {
   "items_seen": 60,
   "median_retention": 1.502,
@@ -188,5 +198,25 @@
   "sold_out": 6,
   "updated_at": "2026-10-18T04:38:52Z",
   "with_resale": 1
+ },
+ "788265080": {
+  "items_seen": 5,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "TOP STYLEE",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-18T06:52:28Z",
+  "with_resale": 0
+ },
+ "9642123": {
+  "items_seen": 60,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Collin UGC",
+  "pct_above_price": null,
+  "sold_out": 13,
+  "updated_at": "2026-10-18T06:52:28Z",
+  "with_resale": 0
  }
 }
