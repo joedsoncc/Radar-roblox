@@ -50,6 +50,59 @@ def parse_body(body):
     return sections
 
 
+LINHAS_LIVRES = {  # "Chave: valor" no texto livre (link do site sem formulário, app do GitHub)
+    "preco_pago": ("preco",),
+    "quantidade": ("quantidade", "qtd"),
+    "comprado_em": ("comprado", "data"),
+    "nota": ("nota",),
+}
+
+
+def parse_free(title, body):
+    """Texto livre: o app do GitHub abre a issue sem o formulário, então lemos o que der.
+
+    Item = primeiro link do catálogo no corpo ou no título; senão um número de 6+ dígitos
+    (IDs do Roblox são longos; preço e quantidade não chegam lá). Ação = Remover só se o
+    texto começar com "remover"; o resto é Adicionar. Preço/quantidade/data vêm de linhas
+    "Chave: valor"; o que faltar fica vazio (só acompanhar / 1 / hoje).
+    """
+    title = re.sub(r"^\s*\[carteira\]\s*", "", title or "", flags=re.I)
+    body = (body or "").replace("\r\n", "\n").replace("\r", "\n")
+    fields = {k: "" for k in CAMPOS}
+    for line in body.split("\n"):
+        if ":" not in line or re.search(r"https?://", line.split(":", 1)[0]):
+            continue
+        chave, valor = (x.strip() for x in line.split(":", 1))
+        chave = _plain(chave)
+        k = next((k for k, pre in LINHAS_LIVRES.items() if any(chave.startswith(p) for p in pre)), None)
+        if k and not fields[k]:
+            fields[k] = valor
+    item = ""
+    for texto in (body, title):
+        m = re.search(r"\S*roblox\.com/\S*?(?:catalog|library)/\d+\S*", texto, re.I)
+        if m:
+            item = m.group(0)
+            break
+    if not item:
+        for texto in (body, title):
+            m = re.search(r"(?<![\d/])(\d{6,19})(?!\d)", texto)
+            if m:
+                item = m.group(1)
+                break
+    fields["item"] = item
+    primeira = _plain(body.strip().split("\n", 1)[0] if body.strip() else title)
+    fields["acao"] = "remover" if primeira.startswith("remover") or _plain(title).startswith("remover") else "adicionar"
+    return fields
+
+
+def read_request(title, body):
+    """Usa as seções do formulário quando existem; senão, o texto livre."""
+    fields = parse_body(body)
+    if fields.get("acao") is None and fields.get("item") is None:
+        return parse_free(title, body)
+    return fields
+
+
 def extract_asset_id(text):
     text = (text or "").strip()
     m = re.search(r"/(?:catalog|library)/(\d+)", text)
@@ -58,7 +111,7 @@ def extract_asset_id(text):
     elif re.fullmatch(r"\d+", text):
         aid = int(text)
     else:
-        raise CadastroError("Não entendi o campo **Item**: cole o link do catálogo "
+        raise CadastroError("Não achei o item: cole o link do catálogo "
                             "(`https://www.roblox.com/catalog/123456789/Nome`) ou só o número do ID.")
     if aid <= 0 or aid >= 2 ** 63:
         raise CadastroError("O ID do item é inválido.")
@@ -123,8 +176,19 @@ def apply(root, req):
         data["itens"] = keep
         carteira.save_carteira(root, data)
         return f"Removido da carteira: item `{aid}` ({n} lote{'s' if n != 1 else ''})."
-    data["itens"].append({"asset_id": aid, "preco_pago": req["preco_pago"], "quantidade": req["quantidade"],
-                          "comprado_em": req["comprado_em"], "nota": req["nota"]})
+    lote = {"asset_id": aid, "preco_pago": req["preco_pago"], "quantidade": req["quantidade"],
+            "comprado_em": req["comprado_em"], "nota": req["nota"]}
+    # Item que estava só sendo acompanhado (sem preço) e agora ganhou preço: o lote é substituído,
+    # assim dá para salvar só o link primeiro e informar o preço depois.
+    vazio = next((n for n, e in enumerate(data["itens"]) if isinstance(e, dict)
+                  and carteira._int(e.get("asset_id")) == aid and e.get("preco_pago") is None), None)
+    if req["preco_pago"] is not None and vazio is not None:
+        data["itens"][vazio] = lote
+    elif req["preco_pago"] is None and any(isinstance(e, dict) and carteira._int(e.get("asset_id")) == aid
+                                           for e in data["itens"]):
+        raise CadastroError(f"O item `{aid}` já está na carteira. Para informar o preço pago, mande de novo com o preço.")
+    else:
+        data["itens"].append(lote)
     carteira.save_carteira(root, data)
     if req["preco_pago"] is None:
         quando = "Só acompanhando (sem preço pago, fica fora dos totais)"
@@ -133,12 +197,12 @@ def apply(root, req):
     return f"Adicionado à carteira: item `{aid}` — {quando}, data {req['comprado_em']}."
 
 
-def cadastrar(root, body, now=None):
+def cadastrar(root, body, now=None, title=""):
     """Devolve (ok, mensagem, asset_id|None). Nunca levanta por erro do usuário."""
     try:
-        req = validate(parse_body(body), now)
+        req = validate(read_request(title, body), now)
         return True, apply(root, req), req["asset_id"]
     except CadastroError as e:
-        return False, f"Não consegui cadastrar: {e}\n\nNada foi alterado. Abra uma nova issue com o formulário corrigido.", None
+        return False, f"Não consegui cadastrar: {e}\n\nNada foi alterado. Abra uma nova issue com o link do item (ex.: `https://www.roblox.com/catalog/123456789`).", None
     except ValueError as e:  # carteira.json ilegível
         return False, f"Não consegui cadastrar: {e}", None

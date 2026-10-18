@@ -175,3 +175,6 @@ text.c-reflabel.c-paid { fill: var(--c-paid); } text.c-reflabel.c-be { fill: var
 .c-rap { fill: var(--c-rap); stroke: var(--surface); stroke-width: 1.5; }
 .c-cross { stroke: var(--muted); stroke-width: 1; }
 .c-curs { fill: var(--surface); stroke: var(--c-line); stroke-width: 2; }
+.af-more { display: grid; gap: 10px; }
+.af-more summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; color: var(--muted); font-weight: 600; }
+.af-more[open] { display: grid; gap: 10px; }

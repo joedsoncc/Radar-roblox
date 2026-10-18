@@ -230,6 +230,57 @@ class CorpoDaIssue(unittest.TestCase):
         self.assertEqual(self.texto(root), antes)
 
 
+
+class TextoLivre(unittest.TestCase):
+    """Issue aberta sem o formulário (link do site ou app do GitHub)."""
+
+    def test_so_o_link(self):
+        root = tmp_root()
+        write_carteira(root, [])
+        ok, msg, aid = cadastro.cadastrar(root, "https://www.roblox.com/pt/catalog/90254996174236/8-Bit-Crown", NOW,
+                                          title="[carteira] 8-Bit Crown")
+        self.assertTrue(ok, msg)
+        self.assertEqual(aid, 90254996174236)
+        lote = read_json(root, "carteira.json")["itens"][0]
+        self.assertIsNone(lote["preco_pago"])
+        self.assertEqual(lote["quantidade"], 1)
+
+    def test_corpo_do_site(self):
+        corpo_site = ("Adicionar\nItem: https://www.roblox.com/catalog/5551234\nPreço pago: 120\n"
+                      "Quantidade: 2\nComprado em: 2026-10-01")
+        f = cadastro.read_request("[carteira] Coroa · 5551234", corpo_site)
+        v = cadastro.validate(f, NOW)
+        self.assertEqual((v["acao"], v["asset_id"], v["preco_pago"], v["quantidade"], v["comprado_em"]),
+                         ("adicionar", 5551234, 120, 2, "2026-10-01"))
+
+    def test_id_so_no_titulo(self):
+        v = cadastro.validate(cadastro.read_request("[carteira] Coroa · 5551234", "Comprei"), NOW)
+        self.assertEqual(v["asset_id"], 5551234)
+
+    def test_remover(self):
+        v = cadastro.validate(cadastro.read_request("[carteira] Remover Coroa · 5551234",
+                                                    "Remover\nItem: https://www.roblox.com/catalog/5551234"), NOW)
+        self.assertEqual(v["acao"], "remover")
+
+    def test_sem_item_erro(self):
+        root = tmp_root()
+        write_carteira(root, [])
+        ok, msg, _ = cadastro.cadastrar(root, "Comprei", NOW, title="[carteira] Blue Valkyrie")
+        self.assertFalse(ok)
+        self.assertIn("link", msg)
+
+    def test_preco_depois_substitui_acompanhamento(self):
+        root = tmp_root()
+        write_carteira(root, [])
+        self.assertTrue(cadastro.cadastrar(root, "https://www.roblox.com/catalog/5551234", NOW)[0])
+        ok, msg, _ = cadastro.cadastrar(root, "https://www.roblox.com/catalog/5551234", NOW)
+        self.assertFalse(ok)  # repetir só o link não duplica
+        ok, _, _ = cadastro.cadastrar(root, "Item: https://www.roblox.com/catalog/5551234\nPreço pago: 90", NOW)
+        self.assertTrue(ok)
+        itens = read_json(root, "carteira.json")["itens"]
+        self.assertEqual([(i["asset_id"], i["preco_pago"]) for i in itens], [(5551234, 90)])
+
+
 class Lojas(unittest.TestCase):
     def items(self, pairs):
         return [{"price": p, "lowest_resale": l, "units_remaining": r} for p, l, r in pairs]

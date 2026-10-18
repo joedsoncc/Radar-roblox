@@ -127,12 +127,12 @@ def main(argv=None):
 
 
 def cadastrar(msg_path):
-    """Cadastro por issue. O corpo vem de ISSUE_BODY (variável de ambiente, nunca da linha de comando).
+    """Cadastro por issue. O corpo vem de ISSUE_BODY e o título de ISSUE_TITLE (variáveis de ambiente, nunca da linha de comando).
 
     Sempre sai com 0; o resultado vai para o arquivo de mensagem e para `ok=true|false` em GITHUB_OUTPUT.
     """
     from radar import cadastro
-    ok, msg, aid = cadastro.cadastrar(HERE, os.environ.get("ISSUE_BODY", ""))
+    ok, msg, aid = cadastro.cadastrar(HERE, os.environ.get("ISSUE_BODY", ""), title=os.environ.get("ISSUE_TITLE", ""))
     with open(msg_path, "w", encoding="utf-8") as f:
         f.write(msg + "\n")
     print(msg)
