@@ -115,8 +115,17 @@
     if (d.disclaimer) $('disclaimer').textContent = d.disclaimer;
   }
 
+  /* Corte de lucro do config.json (lucro líquido acima de 100% do valor gasto); vale também para dados antigos em cache. */
+  function shownItems() {
+    var cfg = state.data.config || {};
+    var cut = isNum(cfg.min_net_margin) ? cfg.min_net_margin : 1;
+    return (state.data.items || []).filter(function (i) {
+      return isNum(i.net_margin) && i.net_margin > cut && i['class'] !== 'EVITAR';
+    });
+  }
+
   function renderTabs() {
-    var d = state.data, items = d.items || [];
+    var d = state.data, items = shownItems();
     var tabs = $('tabs');
     tabs.textContent = '';
     var cats = [{ key: 'all', label: 'Todas' }].concat(d.categories || []);
@@ -133,6 +142,12 @@
     });
   }
 
+  /* Só a média dos anúncios mais baratos (até 10); o menor anúncio sozinho nunca aparece. */
+  function avgStat(dl, i) {
+    var n = isNum(i.resale_avg_n) && i.resale_avg_n > 0 ? i.resale_avg_n : 10;
+    stat(dl, 'Média dos ' + n + ' menores anúncios',
+      isNum(i.resale_avg_low) ? robux(i.resale_avg_low) : ('resale_avg_n' in i ? 'sem anúncios' : 'na próxima coleta'));
+  }
   function stat(dl, label, value) {
     var d = el('div');
     d.appendChild(el('dt', null, label));
@@ -212,9 +227,7 @@
     var dl = el('dl', 'stats');
     stat(dl, 'Preço', robux(i.price));
     stat(dl, 'RAP', robux(i.rap));
-    if (isNum(i.resale_avg_low)) stat(dl, 'Média ' + i.resale_avg_n + ' menores anúncios', robux(i.resale_avg_low));
-    else if ('resale_avg_n' in i) stat(dl, 'Média dos anúncios', robux(null));
-    else stat(dl, 'Menor revenda', robux(i.lowest_resale)); // dados antigos
+    avgStat(dl, i);
     stat(dl, 'Lucro líquido', robux(i.net_profit));
     stat(dl, 'Margem', margin(i.net_margin));
     stat(dl, 'ETA p/ esgotar', eta(i.eta_hours));
@@ -262,7 +275,7 @@
   }
 
   function renderGrid() {
-    var items = (state.data.items || []).filter(function (i) {
+    var items = shownItems().filter(function (i) {
       return (state.cat === 'all' || i.category === state.cat) && (!state.cls || i['class'] === state.cls);
     });
     items = sorted(items);
@@ -362,9 +375,7 @@
     stat(dl, 'Preço de loja', robux(i.original_price));
     stat(dl, 'Preço médio pago', tracking ? NA : robux(i.avg_paid));
     stat(dl, 'RAP', robux(i.rap));
-    if (isNum(i.resale_avg_low)) stat(dl, 'Média ' + i.resale_avg_n + ' menores anúncios', robux(i.resale_avg_low));
-    else if ('resale_avg_n' in i) stat(dl, 'Média dos anúncios', robux(null));
-    else stat(dl, 'Menor revenda', robux(i.lowest_resale)); // dados antigos
+    avgStat(dl, i);
     stat(dl, 'Restantes', stockTxt);
     stat(dl, 'Quantidade', isNum(i.quantity) ? num(i.quantity) : NA);
     stat(dl, 'Valor hoje', robux(i.value_now));
@@ -404,7 +415,7 @@
     if (!items.length) return;
     var t = d.totals || {};
     sum.appendChild(sumBox('Custo total', robux(t.cost)));
-    sum.appendChild(sumBox('Valor hoje (menor entre RAP e média dos anúncios)', robux(t.value_now)));
+    sum.appendChild(sumBox('Valor hoje (RAP ou média dos 10 menores anúncios, o mais baixo)', robux(t.value_now)));
     sum.appendChild(sumBox('Lucro/prejuízo', signed(t.pnl, robux), sgnClass(t.pnl)));
     sum.appendChild(sumBox('Lucro/prejuízo %', sgnPct(t.pnl_pct), sgnClass(t.pnl_pct)));
     items.forEach(function (i) { grid.appendChild(cartCard(i)); });
@@ -572,8 +583,46 @@
     });
   }
 
+  /* Instalar como app. Chrome/Android: usa o aviso de instalação do navegador quando ele aparece.
+     Sem esse aviso (outro navegador, link aberto dentro de outro app, iPhone) mostra o passo manual. */
+  function initInstall() {
+    var btn = $('install-btn'), msg = $('install-msg'), prompt = null;
+    var standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+    if (standalone) return;
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    var inApp = /FBAN|FBAV|Instagram|Line\/|Discord|GitHub|; wv\)|WhatsApp|Telegram/i.test(ua);
+    function manual() {
+      if (ios) return 'No iPhone: abra no Safari, toque em Compartilhar (□↑) e em “Adicionar à Tela de Início”.';
+      if (inApp) return 'Você abriu o site dentro de outro app. Toque em ⋮ → “Abrir no Chrome” e depois em “Instalar app”.';
+      return 'No Chrome: toque em ⋮ (canto de cima) → “Instalar app” ou “Adicionar à tela inicial”. Se não aparecer, o app já pode estar instalado: procure “Radar UGC” na lista de apps.';
+    }
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      prompt = e;
+      btn.hidden = false;
+    });
+    window.addEventListener('appinstalled', function () {
+      prompt = null; btn.hidden = true;
+      msg.textContent = 'App instalado. Abra pelo ícone “Radar UGC”.'; msg.hidden = false;
+    });
+    btn.addEventListener('click', function () {
+      if (prompt) {
+        var p = prompt; prompt = null;
+        p.prompt();
+        p.userChoice.then(function (r) { if (r.outcome !== 'accepted') { prompt = null; msg.textContent = manual(); msg.hidden = false; } });
+        return;
+      }
+      msg.textContent = manual();
+      msg.hidden = !msg.hidden;
+    });
+    // Se o Chrome não oferecer a instalação em alguns segundos, o botão mostra o passo manual.
+    setTimeout(function () { btn.hidden = false; }, ios || inApp ? 0 : 3000);
+  }
+
   function init() {
     initTheme();
+    initInstall();
     initRefresh();
     initViews();
     initForm();

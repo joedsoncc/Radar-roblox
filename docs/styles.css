@@ -35,6 +35,8 @@ a { color: var(--accent); }
 .run-link { color: #93c5fd; }
 .refresh-msg { max-width: 1200px; margin: 6px auto 0; font-size: .85rem; color: #cbd5e1; }
 .refresh-msg[hidden] { display: none; }
+.install-btn { font-size: .85rem; font-weight: 700; padding: 0 10px; white-space: nowrap; }
+.install-btn[hidden] { display: none; }
 .icon-btn:disabled { opacity: .6; cursor: wait; }
 .icon-btn.spin span { display: inline-block; animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }

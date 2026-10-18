@@ -7,7 +7,7 @@ from .notify import DISCLAIMER
 
 PUBLIC_FIELDS = [
     "asset_id", "name", "creator_name", "creator_verified", "category", "url", "thumbnail",
-    "price", "total_quantity", "units_remaining", "pct_sold", "rap", "lowest_resale",
+    "price", "total_quantity", "units_remaining", "pct_sold", "rap",
     "resale_avg_low", "resale_avg_n", "sale_ref", "sale_ref_source",
     "volume_7d", "volume_30d", "last_chart_price", "last_chart_date", "chart_median_14d", "rap_consistent",
     "cost", "net_profit", "net_margin", "velocity_per_hour", "velocity_note", "eta_hours", "score", "class",
@@ -25,10 +25,11 @@ def build_payload(items, cfg, generated_at, run_status, status_note, snapshots_c
         "run_status": run_status,
         "status_note": status_note,
         "snapshots_count": snapshots_count,
-        "disclaimer": DISCLAIMER + (" Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = menor entre RAP"
-                       " e média dos 10 anúncios mais baratos."),
+        "disclaimer": DISCLAIMER + (" Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP"
+                       " e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte."),
         "config": {"max_price": p["max_price"], "max_remaining": p["max_remaining"],
-                   "fee_multiplier": t["fee_multiplier"], "seller_share": t["seller_share"]},
+                   "fee_multiplier": t["fee_multiplier"], "seller_share": t["seller_share"],
+                   "min_net_margin": cfg.get("oportunidades", {}).get("min_net_margin", 0.0)},
         "categories": [{"key": c["key"], "label": c["label"], "asset_type_ids": c["asset_type_ids"]}
                        for c in cfg["categorias"]],
         "items": [{k: it.get(k) for k in PUBLIC_FIELDS} for it in items],
@@ -52,7 +53,7 @@ def buy_list_md(payload):
              f"Status da coleta: **{payload['run_status']}**. {payload['status_note'] or ''}".strip(), "",
              f"> {payload['disclaimer']}", ""]
     if not payload["items"]:
-        lines += ["**Nenhuma oportunidade agora.** Itens sem lucro projetado ficam em `data/descartados.md`.", ""]
+        lines += ["**Nenhuma oportunidade agora.** Itens abaixo do corte de lucro ficam em `data/descartados.md`.", ""]
         return "\n".join(lines)
     for cat in payload["categories"]:
         rows = [i for i in payload["items"] if i["category"] == cat["key"]]

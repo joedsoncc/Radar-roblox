@@ -148,7 +148,7 @@ def compute_item(aid, lots, detail, summary, history, thumb, now, cfg):
         "original_price": original, "avg_paid": avg_paid,
         "units_remaining": detail.get("units_remaining"), "total_quantity": detail.get("total_quantity"),
         "is_off_sale": detail.get("is_off_sale") if detail else None,
-        "rap": rap, "lowest_resale": detail.get("lowest_resale"), "volume_7d": summary.get("volume_7d"),
+        "rap": rap, "volume_7d": summary.get("volume_7d"),
         "resale_avg_low": avg_low, "resale_avg_n": avg_n, "sale_ref": ref, "sale_ref_source": ref_src,
         "value_now": value_now, "cost_total": cost_total, "pnl": pnl, "pnl_pct": pnl_pct,
         "breakeven_rap": _r(avg_paid / share, 2) if avg_paid is not None else None,

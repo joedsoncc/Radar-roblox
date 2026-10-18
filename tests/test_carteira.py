@@ -305,7 +305,7 @@ class RunCompleto(unittest.TestCase):
         self.assertEqual([i["asset_id"] for i in cart["items"]], [1003, 1008])
         a, b = cart["items"]
         for k in ("name", "creator_name", "category", "url", "thumbnail", "lots", "quantity", "original_price",
-                  "avg_paid", "units_remaining", "total_quantity", "is_off_sale", "rap", "lowest_resale",
+                  "avg_paid", "units_remaining", "total_quantity", "is_off_sale", "rap",
                   "volume_7d", "value_now", "cost_total", "pnl", "pnl_pct", "breakeven_rap", "retention",
                   "change_7d", "change_30d", "trend", "days_held", "series"):
             self.assertIn(k, a)

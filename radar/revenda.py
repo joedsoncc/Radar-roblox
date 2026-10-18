@@ -59,7 +59,7 @@ def classify(row, cfg):
         return "EVITAR", [f"Liquidez baixa: {v7} vendas em 7 dias."]
     if m <= ev["max_net_margin"]:
         return "EVITAR", [f"Comprar a {row['price']} e vender por {row['sale_ref']:.0f} depois de 7 dias dá {m:+.0%}."]
-    base = (f"Compra na revenda a {row['price']} (menor anúncio); venda esperada {row['sale_ref']:.0f} "
+    base = (f"Compra na revenda a {row['price']} (anúncio à venda agora); venda esperada {row['sale_ref']:.0f} "
             f"depois da trava de 7 dias: lucro {row['net_profit']:+.0f} ({m:+.0%}).")
     if m >= ca["min_net_margin"] and v7 is not None and v7 >= ca["min_volume_7d"] and rc is True:
         return "COMPRAR-AGORA", [base, f"Liquidez: {v7} vendas em 7 dias."]

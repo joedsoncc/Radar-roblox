@@ -3,6 +3,7 @@
   "short_name": "Radar UGC",
   "description": "Radar de UGC Limiteds do Roblox",
   "lang": "pt-BR",
+  "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

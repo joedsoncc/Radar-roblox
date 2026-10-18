@@ -25,6 +25,8 @@ lucro líquido  = valor de venda × 0,5 − preço × 1,11
 ```
 Exemplo: preço 100, RAP 260, média dos anúncios 300 → vale 260, recebe 130, custo 111, lucro **+19 (+17%)**. Se os 10 anúncios mais baratos forem de 100, 105, 110 … até 150 (média ≈ 118) → vale 118, recebe 59, **prejuízo de 52**.
 
+**Só aparecem itens com lucro líquido projetado acima de 100% do valor gasto** (site, lista de compra e alertas; a carteira mostra tudo). Lucro% = (valor de venda × 0,5 − preço × 1,11) ÷ (preço × 1,11). Ex.: preço 100 (gasto 111): venda 450 → +103% entra; venda 400 → +80% fica fora. O corte fica em `oportunidades.min_net_margin` no `config.json` (1.0 = 100%); os de fora vão para `data/descartados.md`. O site nunca mostra o menor anúncio sozinho, só a média dos 10 mais baratos.
+
 A média usa os 10 anúncios mais baratos para que um único anúncio barato não distorça a conta. Com menos de 10 anúncios, usa a média dos que existem e mostra "média de N" (o número muda em `coleta.anuncios_media` no `config.json`). Se a lista de anúncios pedir login, o radar usa o menor anúncio do catálogo ("média de 1") e avisa na nota da coleta. O card, a lista de compra, o score, o alerta do ntfy e o "valor hoje" da carteira usam esse valor de venda.
 
 ### Classes (mude os números em `config.json`)
@@ -71,7 +73,7 @@ Para cada criador dos itens do radar, o programa olha os outros limiteds dele no
 4. **App ntfy**: instale o **ntfy** no celular (Play Store / App Store). Toque em **+** e assine um tópico com nome longo e aleatório, por exemplo `radar-ugc-k7Qp2vX9mLr4TzW8`. Quem souber o nome consegue ler, então não use nada óbvio.
 5. **Segredo `NTFY_TOPIC`**: *Settings → Secrets and variables → Actions → New repository secret*. Nome `NTFY_TOPIC`, valor = só o nome do tópico (sem `https://ntfy.sh/`). Nunca coloque o tópico no código.
 6. **Primeira execução**: aba *Actions → Radar UGC → Run workflow*. Depois roda sozinho a cada 2 h.
-7. **Instalar o site como app**: abra o site no celular. Android/Chrome: menu ⋮ → *Instalar app*. iPhone/Safari: Compartilhar → *Adicionar à Tela de Início*. O app serve para consulta; **o alerta vem do ntfy** (o site instalado não avisa com o app fechado).
+7. **Instalar o site como app**: abra o site no Chrome do celular e toque em **Instalar app** no topo (se o botão só mostrar instruções: menu ⋮ → *Instalar app*; se abriu o link dentro de outro app, primeiro ⋮ → *Abrir no Chrome*). iPhone/Safari: Compartilhar → *Adicionar à Tela de Início*. O app serve para consulta; **o alerta vem do ntfy** (o site instalado não avisa com o app fechado).
 
 ## Avisos importantes
 
