@@ -219,6 +219,16 @@
   "updated_at": "2026-10-18T04:38:52Z",
   "with_resale": 1
  },
+ "743697214": {
+  "items_seen": 44,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Resell UGC",
+  "pct_above_price": null,
+  "sold_out": 2,
+  "updated_at": "2026-10-18T18:40:03Z",
+  "with_resale": 0
+ },
  "788265080": {
   "items_seen": 5,
   "median_retention": null,
