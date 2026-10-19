@@ -1,4 +1,14 @@
 {
+ "1013896234": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "The Keep RP",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-19T23:44:59Z",
+  "with_resale": 0
+ },
  "10441371": {
   "items_seen": 60,
   "median_retention": 2.608,
@@ -78,6 +88,16 @@
   "sold_out": 5,
   "updated_at": "2026-10-18T15:54:34Z",
   "with_resale": 2
+ },
+ "214730562": {
+  "items_seen": 28,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Astrox UGC",
+  "pct_above_price": null,
+  "sold_out": 1,
+  "updated_at": "2026-10-19T23:44:59Z",
+  "with_resale": 0
  },
  "2713252": {
   "items_seen": 1,
@@ -168,6 +188,16 @@
   "sold_out": 10,
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 10
+ },
+ "35995577": {
+  "items_seen": 60,
+  "median_retention": 2.263,
+  "metodo": 2,
+  "name": "Luck UGC",
+  "pct_above_price": 0.765,
+  "sold_out": 17,
+  "updated_at": "2026-10-19T23:44:59Z",
+  "with_resale": 17
  },
  "370302186": {
   "items_seen": 60,
