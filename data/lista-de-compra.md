@@ -1,6 +1,6 @@
-# Lista de compra — 2026-10-19T13:24:09Z
+# Lista de compra — 2026-10-19T19:58:28Z
 
-Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429.
+Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429.
 
 > Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.
 
@@ -32,7 +32,7 @@ Nenhuma oportunidade nesta categoria.
 
 | Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
 |---|---|---|---|---|---|---|---|---|---|
-| OBSERVAR | [Halloween Scythe [Animated]](https://www.roblox.com/catalog/103000243102950) | 389 | 79/3000 | 384 | 775 (de 10) | +57421 (+13298%) | — | Margem líquida +13298%. Volume 7d 9 abaixo de 50. Vendas pararam ou estão lentas demais (vendas insuficientes para medir). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 294.50x, 10 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
+| OBSERVAR | [Halloween Scythe [Animated]](https://www.roblox.com/catalog/103000243102950) | 389 | 79/3000 | 384 | 775 (de 10) | +57421 (+13298%) | — | Margem líquida +13298%. Volume 7d 9 abaixo de 50. Vendas pararam ou estão lentas demais (sem vendas no último intervalo). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 294.50x, 10 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
 
 ## Cintura/Squid (0)
 

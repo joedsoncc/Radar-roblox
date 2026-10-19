@@ -29,6 +29,16 @@
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 7
  },
+ "121551003": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "S4TYURN",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-19T19:58:28Z",
+  "with_resale": 0
+ },
  "12377810": {
   "items_seen": 22,
   "median_retention": 40.0,
