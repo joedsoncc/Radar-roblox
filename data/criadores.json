@@ -89,6 +89,16 @@
   "updated_at": "2026-10-18T15:54:34Z",
   "with_resale": 2
  },
+ "17260696": {
+  "items_seen": 32,
+  "median_retention": 0.196,
+  "metodo": 2,
+  "name": "LOS GIGA PANAS",
+  "pct_above_price": 0.0,
+  "sold_out": 23,
+  "updated_at": "2026-10-20T21:40:09Z",
+  "with_resale": 3
+ },
  "214730562": {
   "items_seen": 28,
   "median_retention": null,
@@ -287,6 +297,16 @@
   "pct_above_price": null,
   "sold_out": 0,
   "updated_at": "2026-10-18T06:52:28Z",
+  "with_resale": 0
+ },
+ "844829245": {
+  "items_seen": 4,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "8x5",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-20T21:40:09Z",
   "with_resale": 0
  },
  "937580992": {
