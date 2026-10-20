@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-19T23:44:59Z",
+ "generated_at": "2026-10-20T04:55:47Z",
  "status_note": "",
  "totals": {
   "cost": 778,
@@ -37,7 +37,7 @@
    "total_quantity": 3000,
    "is_off_sale": false,
    "rap": 384.0,
-   "volume_7d": 9,
+   "volume_7d": 8,
    "resale_avg_low": 774.9,
    "resale_avg_n": 10,
    "sale_ref": 384.0,
@@ -49,9 +49,9 @@
    "breakeven_rap": 778,
    "retention": 0.9871,
    "change_7d": 0.0,
-   "change_30d": 0.1788,
+   "change_30d": 0.2967,
    "trend": "estável",
-   "days_held": 1,
+   "days_held": 2,
    "series": {
     "chart": [
      [
@@ -243,6 +243,11 @@
       "2026-10-18",
       389,
       2
+     ],
+     [
+      "2026-10-19",
+      389,
+      1
      ]
     ],
     "tracked": [
@@ -320,6 +325,12 @@
      ],
      [
       "2026-10-19T23:44:59Z",
+      384.0,
+      774.9,
+      79
+     ],
+     [
+      "2026-10-20T04:55:47Z",
       384.0,
       774.9,
       79
