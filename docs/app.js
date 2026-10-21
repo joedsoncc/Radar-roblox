@@ -399,6 +399,10 @@
     dl.lastChild.lastChild.className = 'trend ' + tr.cls;
     stat(dl, 'Variação 7d / 30d', sgnPct(i.change_7d) + ' / ' + sgnPct(i.change_30d));
     stat(dl, 'Dias com o item', isNum(i.days_held) ? num(i.days_held) : NA);
+    if (i.janela_venda && i.janela_venda.texto) {
+      stat(dl, 'Janela de venda', i.janela_venda.texto);
+      if (i.janela_venda.status === 'agora') dl.lastChild.lastChild.className = 'pos';
+    }
     c.appendChild(dl);
 
     c.appendChild(window.RadarCharts ? RadarCharts.itemChart(i) : el('p', 'chart-empty', 'Ainda sem histórico de vendas'));

@@ -56,6 +56,7 @@ Uma linha por execução para cada item da carteira (mesmo que esteja fora dos f
       "change_30d": -0.10,         // últimos 30 dias × 30 dias anteriores
       "trend": "subindo | estável | caindo | sem dados",
       "days_held": 0,
+      "janela_venda": {"status": "agora", "esgotou_em": "2026-09-21", "dias_desde_esgote": 30, "texto": "Na janela de venda: ..."},
       "series": {
         "chart":   [["2026-10-01", 180, 12]],            // data, preço médio do dia, volume (até 180 dias, da revenda)
         "tracked": [["2026-10-17T06:00:00Z", 195, 210, 50]] // ts, RAP, média dos menores anúncios, restantes (nossas coletas)
@@ -67,6 +68,8 @@ Uma linha por execução para cada item da carteira (mesmo que esteja fora dos f
 
 `trend`: `subindo` se change_7d ≥ +5%, `caindo` se ≤ −5%, senão `estável`; `sem dados` com menos de 3 dias de venda.
 Qualquer número pode ser `null`; o site mostra "—".
+
+`janela_venda` (ou `null` sem histórico): `status` = `a_venda` | `sem_data` (já estava esgotado na 1ª coleta) | `antes` | `agora` | `passou`. A melhor janela é do dia 15 ao 60 depois de esgotar (config `padrao.janela_venda_inicio/fim`); a data do esgote é a 1ª coleta nossa com 0 restantes.
 
 ## Histórico das lojas (criadores): `data/criadores.json`
 

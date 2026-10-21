@@ -70,6 +70,8 @@ Anúncios: o menor anúncio sozinho (`lowest_resale`) não vai para o site; `res
 
 Campos de risco (pesquisa de 2026-10-17): `rap_primary` (bool); `copy_risk` (termo de item clássico achado no nome, ou `null`); `price_raised_from` (menor preço de loja visto antes, se o criador subiu o preço; senão `null`); `break_even` (preço de venda que só empata: custo ÷ 0,5); `hold_days` (trava de revenda no pior caso, 30).
 
+Padrão dos mais revendidos (análise de 2026-10-21): `formato_mais_vendidos` (bool: estoque de 1.001 a 3.000 e preço de loja até 95, config `padrao`); `dias_para_esgotar_tudo` (estoque total ÷ vendas por dia no ritmo atual, ou `null` sem velocidade). O score ganhou os pesos `favoritos` (favoritos ÷ 1.000, até 1) e `ritmo_esgote` (até 90 dias = 1; até 180 = 0,5; mais lento = 0,1; parado = 0; sem medida = 0,5). O peso `oferta` agora dá 1 ao formato dos mais revendidos e 0 a estoque total até 100. `reasons` pode trazer "Formato dos mais revendidos" ou "Estoque minúsculo".
+
 Regras: qualquer campo numérico pode ser `null` quando a API falhou ou ainda não há snapshots suficientes. O site deve mostrar "—" e nunca inventar valor.
 
 Corte de lucro: `items` só traz itens com `net_margin` acima de `config.min_net_margin` (1,0 = lucro líquido acima de 100% do valor gasto, preço × 1,11). O app aplica o mesmo corte ao exibir.
