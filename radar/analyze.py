@@ -276,6 +276,86 @@ def calibration_reason(cal):
     return None
 
 
+PADRAO = {"formato_estoque_min": 1001, "formato_estoque_max": 3000, "formato_preco_max": 95,
+          "estoque_minusculo": 100, "favoritos_bom": 1000, "ritmo_bom_dias": 90, "ritmo_lento_dias": 180}
+
+
+def _padrao(cfg):
+    return {**PADRAO, **cfg.get("padrao", {})}
+
+
+def best_seller_format(item, cfg):
+    """Formato dos UGC mais revendidos (análise de 21/10 sobre a coleta ampla de 17/10):
+    estoque de 1.001 a 3.000 e preço de loja até 95. 48 dos 50 mais revendidos eram assim."""
+    p = _padrao(cfg)
+    total, price = item.get("total_quantity"), item.get("price")
+    return (total is not None and price is not None and price > 0
+            and p["formato_estoque_min"] <= total <= p["formato_estoque_max"] and price <= p["formato_preco_max"])
+
+
+def supply_score(item, cfg):
+    """0 a 1 pelo estoque total. Formato dos mais revendidos = 1; estoque minúsculo (até 100) quase
+    não revende = 0; acima de 10.000 = 0 (backtest: 2% com margem ≥ 30%)."""
+    p = _padrao(cfg)
+    total = item.get("total_quantity")
+    if total is None:
+        return 0.3
+    if total > cfg.get("risco", {}).get("estoque_grande", 10000) or total <= p["estoque_minusculo"]:
+        return 0.0
+    if best_seller_format(item, cfg):
+        return 1.0
+    if total > 2000:
+        return 0.8  # backtest: 2.001 a 10.000 un. = 26% de acerto
+    return 0.5
+
+
+def favorites_score(item, cfg):
+    """0 a 1: favoritos ÷ 1.000. Os mais revendidos tinham mediana de 1.158 (o resto do formato, 816)."""
+    fav = item.get("favorite_count")
+    if fav is None:
+        return 0.3
+    return round(min(fav / _padrao(cfg)["favoritos_bom"], 1.0), 3)
+
+
+def sellout_days(item):
+    """Dias para vender o estoque TOTAL no ritmo atual (velocidade entre snapshots). None sem medida."""
+    vel, total = item.get("velocity_per_hour"), item.get("total_quantity")
+    if not vel or not total:
+        return None
+    return round(total / (vel * 24), 1)
+
+
+def sellout_pace_score(item, cfg):
+    """0 a 1 pelo ritmo de esgote: os mais revendidos levaram ~87 dias para vender 3.000 (o resto, ~133).
+    Até 90 dias = 1; até 180 = 0,5; mais lento = 0,1; vendas paradas = 0; sem medida = 0,5 (neutro)."""
+    p = _padrao(cfg)
+    if item.get("velocity_per_hour") is None:
+        return 0.5
+    days = sellout_days(item)
+    if days is None:
+        return 0.0
+    if days <= p["ritmo_bom_dias"]:
+        return 1.0
+    if days <= p["ritmo_lento_dias"]:
+        return 0.5
+    return 0.1
+
+
+def pattern_reason(item, cfg):
+    """Frase curta quando o item tem (ou foge muito de) o padrão dos mais revendidos."""
+    p = _padrao(cfg)
+    total = item.get("total_quantity")
+    if best_seller_format(item, cfg):
+        fav = item.get("favorite_count")
+        txt = (f"Formato dos mais revendidos: {total} un. a {item['price']} Robux")
+        if fav is not None and fav >= p["favoritos_bom"]:
+            txt += f", com {fav} favoritos"
+        return txt + "."
+    if total is not None and total <= p["estoque_minusculo"]:
+        return f"Estoque minúsculo ({total} un.): itens assim quase não têm revenda."
+    return None
+
+
 def score(item, cfg):
     w = cfg["score_pesos"]
     m = item["net_margin"]
@@ -301,18 +381,11 @@ def score(item, cfg):
     s_store = store_score(item.get("creator_track"), cfg)
     cal = item.get("calibracao")
     s_cal = cal["score"] if cal else 0.5
-    total_q = item.get("total_quantity")
-    if total_q is None:
-        s_supply = 0.3
-    elif total_q > 10000:
-        s_supply = 0.0  # backtest: 2% com margem ≥ 30%
-    elif total_q > 2000:
-        s_supply = 1.0  # backtest: 41%
-    else:
-        s_supply = 0.6
     total = (w["margem"] * s_margin + w["liquidez"] * s_liq + w["consistencia"] * s_cons
              + w["velocidade"] * s_vel + w["criador"] * s_creator + w.get("historico_loja", 0) * s_store
-             + w.get("oferta", 0) * s_supply + w.get("calibracao", 0) * s_cal)
+             + w.get("oferta", 0) * supply_score(item, cfg) + w.get("calibracao", 0) * s_cal
+             + w.get("favoritos", 0) * favorites_score(item, cfg)
+             + w.get("ritmo_esgote", 0) * sellout_pace_score(item, cfg))
     if item.get("copy_risk"):
         total -= cfg.get("risco", {}).get("penalidade_copia", 10)
     return max(0, int(round(total)))
@@ -473,6 +546,11 @@ def analyze(current, history, now, cfg, tracks=None, lifts=None, holds=None):
         cal_txt = calibration_reason(row["calibracao"])
         if cal_txt:
             reasons.append(cal_txt)
+        pat_txt = pattern_reason(row, cfg)
+        if pat_txt:
+            reasons.append(pat_txt)
+        row["formato_mais_vendidos"] = best_seller_format(row, cfg)
+        row["dias_para_esgotar_tudo"] = sellout_days(row)
         row["invalidators"] = inval
         row["score"] = score(row, cfg)
         if row.get("rap") is None:

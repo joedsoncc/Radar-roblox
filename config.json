@@ -129,14 +129,16 @@
     "min_chart_points": 3
   },
   "score_pesos": {
-    "margem": 30,
+    "margem": 25,
     "liquidez": 15,
     "consistencia": 5,
     "velocidade": 15,
     "criador": 0,
     "historico_loja": 15,
     "oferta": 10,
-    "calibracao": 10
+    "calibracao": 5,
+    "favoritos": 5,
+    "ritmo_esgote": 5
   },
   "alertas": {
     "ativo": true,
@@ -199,5 +201,16 @@
     "ativo": true,
     "max_itens": 30,
     "max_pages_per_query": 3
+  },
+  "padrao": {
+    "formato_estoque_min": 1001,
+    "formato_estoque_max": 3000,
+    "formato_preco_max": 95,
+    "estoque_minusculo": 100,
+    "favoritos_bom": 1000,
+    "ritmo_bom_dias": 90,
+    "ritmo_lento_dias": 180,
+    "janela_venda_inicio": 15,
+    "janela_venda_fim": 60
   }
 }

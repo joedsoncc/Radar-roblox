@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'radar-ugc-v9';
+const CACHE_VERSION = 'radar-ugc-v10';
 const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'charts.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-192.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png'];
 

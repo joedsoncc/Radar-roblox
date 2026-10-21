@@ -6,7 +6,7 @@ Nada é inventado: sem RAP (API pediu login, falha) os campos de valor ficam nul
 import json
 import logging
 import os
-from datetime import date
+from datetime import date, datetime
 
 from . import collect
 from .analyze import sale_reference, trend_for, window_change
@@ -101,6 +101,46 @@ def _r(x, nd=2):
     return int(x) if x == int(x) else x
 
 
+def _ts(s):
+    try:
+        return datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def sell_window(history, now, cfg):
+    """Janela de venda: os mais revendidos têm o preço mais alto de 15 a 60 dias depois de esgotar
+    (análise de 21/10 sobre a coleta ampla de 17/10). A data do esgote é a 1ª coleta nossa com 0 restantes.
+
+    Devolve {"status", "esgotou_em", "dias_desde_esgote", "texto"} ou None sem histórico.
+    status: a_venda | sem_data (já estava esgotado na 1ª coleta) | antes | agora | passou.
+    """
+    p = cfg.get("padrao", {})
+    start, end = p.get("janela_venda_inicio", 15), p.get("janela_venda_fim", 60)
+    rows = [(_ts(r.get("ts")), r.get("units_remaining")) for r in history]
+    rows = sorted((t, u) for t, u in rows if t is not None and isinstance(u, (int, float)))
+    if not rows:
+        return None
+    out = {"status": None, "esgotou_em": None, "dias_desde_esgote": None}
+    first_zero = next((i for i, (_, u) in enumerate(rows) if u == 0), None)
+    if first_zero is None or rows[-1][1] > 0:
+        return dict(out, status="a_venda", texto="Ainda à venda na loja.")
+    if first_zero == 0:
+        return dict(out, status="sem_data",
+                    texto="Já estava esgotado na primeira coleta: sem a data do esgote.")
+    when = rows[first_zero][0]
+    days = max((now - when).days, 0)
+    out.update(esgotou_em=when.date().isoformat(), dias_desde_esgote=days)
+    if days < start:
+        return dict(out, status="antes", texto=f"Esgotou há {days} dias. Melhor janela de venda: "
+                                                f"dia {start} a {end} (faltam {start - days} dias).")
+    if days <= end:
+        return dict(out, status="agora", texto=f"Na janela de venda: esgotou há {days} dias "
+                                                f"(melhor entre o dia {start} e o {end}).")
+    return dict(out, status="passou", texto=f"Passou da janela: esgotou há {days} dias. "
+                                             f"Depois do dia {end} o preço costuma cair.")
+
+
 def compute_item(aid, lots, detail, summary, history, thumb, now, cfg):
     """Monta o item do docs/carteira.json. detail/summary podem ser None (campos viram null)."""
     share = cfg["taxas"]["seller_share"]
@@ -155,6 +195,7 @@ def compute_item(aid, lots, detail, summary, history, thumb, now, cfg):
         "retention": round(rap / original, 4) if rap and original else None,
         "change_7d": ch7, "change_30d": window_change(chart, now, 30),
         "trend": trend_for(chart, ch7, now), "days_held": days_held,
+        "janela_venda": sell_window(history, now, cfg),
         "series": {"chart": chart, "tracked": tracked},
     }
 
