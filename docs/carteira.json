@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-21T13:51:02Z",
+ "generated_at": "2026-10-21T18:41:04Z",
  "status_note": "",
  "totals": {
   "cost": 778,
@@ -33,7 +33,7 @@
    "quantity": 2,
    "original_price": 389,
    "avg_paid": 389,
-   "units_remaining": 79,
+   "units_remaining": 78,
    "total_quantity": 3000,
    "is_off_sale": false,
    "rap": 384.0,
@@ -370,6 +370,12 @@
       384.0,
       939.4,
       79
+     ],
+     [
+      "2026-10-21T18:41:04Z",
+      384.0,
+      939.4,
+      78
      ]
     ]
    }
