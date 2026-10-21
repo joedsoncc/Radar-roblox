@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-20T21:40:09Z",
+ "generated_at": "2026-10-21T00:39:15Z",
  "status_note": "",
  "totals": {
   "cost": 778,
@@ -37,7 +37,7 @@
    "total_quantity": 3000,
    "is_off_sale": false,
    "rap": 384.0,
-   "volume_7d": 8,
+   "volume_7d": 7,
    "resale_avg_low": 774.9,
    "resale_avg_n": 10,
    "sale_ref": 384.0,
@@ -51,7 +51,7 @@
    "change_7d": 0.0,
    "change_30d": 0.2967,
    "trend": "estável",
-   "days_held": 2,
+   "days_held": 3,
    "series": {
     "chart": [
      [
@@ -349,6 +349,12 @@
      ],
      [
       "2026-10-20T21:40:09Z",
+      384.0,
+      774.9,
+      79
+     ],
+     [
+      "2026-10-21T00:39:15Z",
       384.0,
       774.9,
       79
