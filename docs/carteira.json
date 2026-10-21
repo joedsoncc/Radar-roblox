@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-21T07:42:34Z",
+ "generated_at": "2026-10-21T13:51:02Z",
  "status_note": "",
  "totals": {
   "cost": 778,
@@ -38,7 +38,7 @@
    "is_off_sale": false,
    "rap": 384.0,
    "volume_7d": 7,
-   "resale_avg_low": 774.9,
+   "resale_avg_low": 939.4,
    "resale_avg_n": 10,
    "sale_ref": 384.0,
    "sale_ref_source": "rap",
@@ -363,6 +363,12 @@
       "2026-10-21T07:42:34Z",
       384.0,
       774.9,
+      79
+     ],
+     [
+      "2026-10-21T13:51:02Z",
+      384.0,
+      939.4,
       79
      ]
     ]

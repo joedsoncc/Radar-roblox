@@ -109,6 +109,16 @@
   "updated_at": "2026-10-19T23:44:59Z",
   "with_resale": 0
  },
+ "259636409": {
+  "items_seen": 16,
+  "median_retention": 11.8,
+  "metodo": 2,
+  "name": "The Trending UGC",
+  "pct_above_price": 1.0,
+  "sold_out": 3,
+  "updated_at": "2026-10-21T13:51:02Z",
+  "with_resale": 3
+ },
  "2713252": {
   "items_seen": 1,
   "median_retention": null,
