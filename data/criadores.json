@@ -368,5 +368,15 @@
   "sold_out": 13,
   "updated_at": "2026-10-18T06:52:28Z",
   "with_resale": 0
+ },
+ "982613282": {
+  "items_seen": 43,
+  "median_retention": 1.886,
+  "metodo": 2,
+  "name": "Sinister UGC's Plus",
+  "pct_above_price": 0.571,
+  "sold_out": 13,
+  "updated_at": "2026-10-22T11:58:05Z",
+  "with_resale": 7
  }
 }
