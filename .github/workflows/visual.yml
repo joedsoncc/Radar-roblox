@@ -1,0 +1,55 @@
+name: Visual dos mais revendidos
+
+# Baixa miniaturas e descrições dos UGC da coleta ampla e compara a aparência
+# dos 50 mais revendidos com o resto. Só análise: não mexe no radar nem manda alerta.
+on:
+  workflow_dispatch:
+  push:   # roda sozinho quando o código da análise muda (inclusive na branch do PR)
+    paths:
+      - ".github/workflows/visual.yml"
+      - "radar/visual.py"
+
+permissions:
+  contents: write
+
+jobs:
+  visual:
+    concurrency:
+      group: visual-${{ github.ref_name }}
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pillow (cores e silhueta das miniaturas)
+        run: pip install pillow==12.0.0
+
+      - name: Testes (dados falsos, sem internet)
+        run: python -m unittest discover -s tests -q
+
+      - name: Miniaturas, descrições e comparação
+        run: python radar.py visual
+
+      - name: Salvar
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/visual
+          git diff --cached --quiet && exit 0
+          git commit -q -m "visual: miniaturas $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4; do
+            if git pull -q --rebase origin "${GITHUB_REF_NAME}"; then
+              git push -q origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            else
+              git rebase --abort || true
+            fi
+            sleep $((2 ** i))
+          done
+          exit 1
