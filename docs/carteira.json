@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-22T17:14:14Z",
+ "generated_at": "2026-10-22T21:39:54Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -417,6 +417,12 @@
       385.0,
       907.4,
       76
+     ],
+     [
+      "2026-10-22T21:39:54Z",
+      385.0,
+      907.4,
+      76
      ]
     ]
    }
@@ -439,7 +445,7 @@
    "quantity": 1,
    "original_price": 65,
    "avg_paid": 59,
-   "units_remaining": 94,
+   "units_remaining": 93,
    "total_quantity": 500,
    "is_off_sale": false,
    "rap": 65.0,
@@ -921,6 +927,12 @@
       65.0,
       648.2,
       94
+     ],
+     [
+      "2026-10-22T21:39:54Z",
+      65.0,
+      648.2,
+      93
      ]
     ]
    }

@@ -59,6 +59,16 @@
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 1
  },
+ "12448166": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "IPVisualsTV",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-22T21:39:54Z",
+  "with_resale": 0
+ },
  "12648705": {
   "items_seen": 9,
   "median_retention": 0.438,
@@ -178,6 +188,16 @@
   "sold_out": 11,
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 11
+ },
+ "34383602": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "nzlk",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-22T21:39:54Z",
+  "with_resale": 0
  },
  "3519422403": {
   "items_seen": 1,
