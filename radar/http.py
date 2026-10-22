@@ -53,11 +53,15 @@ class Client:
     def get_json(self, url):
         return self._send(url)
 
+    def get_bytes(self, url):
+        """Arquivo cru (ex.: PNG da miniatura), com o mesmo limite de taxa e repetição."""
+        return self._send(url, raw=True)
+
     def post_json(self, url, data):
         """POST em endpoints públicos que pedem token CSRF (obtido sem login no 1º 403)."""
         return self._send(url, data=data, csrf=True)
 
-    def _send(self, url, data=None, csrf=False):
+    def _send(self, url, data=None, csrf=False, raw=False):
         attempt = 0
         csrf_retry = False
         while True:
@@ -65,8 +69,8 @@ class Client:
             self.calls += 1
             try:
                 with self._open(self._request(url, data, csrf), timeout=self.timeout_s) as r:
-                    raw = r.read()
-                    return json.loads(raw.decode() or "null")
+                    body = r.read()
+                    return body if raw else json.loads(body.decode() or "null")
             except urllib.error.HTTPError as e:
                 status = e.code
                 token = e.headers.get("x-csrf-token") if e.headers else None

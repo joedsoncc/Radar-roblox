@@ -12,6 +12,7 @@ Uso:
   python radar.py send --outbox launch_outbox.json
   python radar.py notice "texto"      # aviso de falha do workflow pelo ntfy
   python radar.py amplo               # uma rodada da coleta ampla (calibração); aceita --fake --root
+  python radar.py visual              # aparência dos mais revendidos (miniaturas, cores); --sem-coleta só analisa
   python radar.py calibrar            # backtest: quais sinais previram margem >= 30% (data/calibracao.md)
 """
 import argparse
@@ -48,6 +49,9 @@ def main(argv=None):
     am.add_argument("--root", default=HERE)
     cb = sub.add_parser("calibrar")
     cb.add_argument("--root", default=HERE)
+    vs = sub.add_parser("visual")
+    vs.add_argument("--root", default=HERE)
+    vs.add_argument("--sem-coleta", action="store_true", help="não acessa a internet; usa o que já está em data/visual")
     nt = sub.add_parser("notice")
     nt.add_argument("text")
     args = ap.parse_args(argv)
@@ -75,6 +79,17 @@ def main(argv=None):
     if args.cmd == "calibrar":
         from radar import calibrar
         calibrar.run(args.root, load_config(args.root), datetime.now(timezone.utc).replace(microsecond=0))
+        return 0
+
+    if args.cmd == "visual":
+        from radar import visual
+        from radar.http import Client
+        col = load_config(args.root)["coleta"]
+        client = None if args.sem_coleta else Client(col["request_delay_s"], col["max_retries"], col["timeout_s"])
+        res = visual.run(args.root, client)
+        print(f"visual: {res['itens']} itens; erros: {len(res['erros'])}")
+        if res["erros"]:
+            print(f"::warning title=Visual::{'; '.join(res['erros'][:10])}")
         return 0
 
     client = None
