@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-22T02:57:32Z",
+ "generated_at": "2026-10-22T04:54:23Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -38,7 +38,7 @@
    "is_off_sale": false,
    "rap": 385.0,
    "volume_7d": 9,
-   "resale_avg_low": 939.4,
+   "resale_avg_low": 774.9,
    "resale_avg_n": 10,
    "sale_ref": 385.0,
    "sale_ref_source": "rap",
@@ -399,6 +399,12 @@
       385.0,
       939.4,
       76
+     ],
+     [
+      "2026-10-22T04:54:23Z",
+      385.0,
+      774.9,
+      76
      ]
     ]
    }
@@ -421,7 +427,7 @@
    "quantity": 1,
    "original_price": 65,
    "avg_paid": 59,
-   "units_remaining": 96,
+   "units_remaining": 95,
    "total_quantity": 500,
    "is_off_sale": false,
    "rap": 65.0,
@@ -885,6 +891,12 @@
       65.0,
       648.2,
       96
+     ],
+     [
+      "2026-10-22T04:54:23Z",
+      65.0,
+      648.2,
+      95
      ]
     ]
    }

@@ -89,6 +89,16 @@
   "updated_at": "2026-10-18T15:54:34Z",
   "with_resale": 2
  },
+ "14768857": {
+  "items_seen": 10,
+  "median_retention": 4.271,
+  "metodo": 2,
+  "name": "Something Simulators",
+  "pct_above_price": 1.0,
+  "sold_out": 7,
+  "updated_at": "2026-10-22T04:54:23Z",
+  "with_resale": 7
+ },
  "17260696": {
   "items_seen": 32,
   "median_retention": 0.196,
@@ -278,6 +288,16 @@
   "sold_out": 0,
   "updated_at": "2026-10-21T07:42:34Z",
   "with_resale": 0
+ },
+ "640958110": {
+  "items_seen": 4,
+  "median_retention": 1.821,
+  "metodo": 2,
+  "name": "Kimby UGC",
+  "pct_above_price": 1.0,
+  "sold_out": 1,
+  "updated_at": "2026-10-22T04:54:23Z",
+  "with_resale": 1
  },
  "675798403": {
   "items_seen": 2,
