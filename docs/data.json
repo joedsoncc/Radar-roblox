@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-23T23:11:09Z",
+ "generated_at": "2026-10-24T04:41:30Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
- "snapshots_count": 36,
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429.",
+ "snapshots_count": 37,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
   "max_price": 500,
@@ -87,10 +87,10 @@
    "resale_avg_n": 10,
    "sale_ref": 115706.1,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 10,
-   "volume_30d": 36,
-   "last_chart_price": 389,
-   "last_chart_date": "2026-10-22",
+   "volume_7d": 8,
+   "volume_30d": 37,
+   "last_chart_price": 380,
+   "last_chart_date": "2026-10-23",
    "chart_median_14d": 389,
    "rap_consistent": true,
    "cost": 431.79,
@@ -103,7 +103,7 @@
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +13298%.",
-    "Volume 7d 10 abaixo de 50.",
+    "Volume 7d 8 abaixo de 50.",
     "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 294.50x, 10 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
@@ -126,10 +126,6 @@
    "change_7d": 0.0,
    "trend": "estável",
    "spark": [
-    [
-     "2026-07-19",
-     229
-    ],
     [
      "2026-08-08",
      250
@@ -245,6 +241,10 @@
     [
      "2026-10-22",
      389
+    ],
+    [
+     "2026-10-23",
+     380
     ]
    ],
    "tipo": "loja",
@@ -265,31 +265,31 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-c7fce7cb2e1c0a324291a8d9517a41cc/150/150/HairAccessory/Png/noFilter",
    "price": 65,
    "total_quantity": 500,
-   "units_remaining": 91,
-   "pct_sold": 81.8,
+   "units_remaining": 90,
+   "pct_sold": 82.0,
    "rap": 65.0,
    "resale_avg_low": 648.2,
    "resale_avg_n": 10,
    "sale_ref": 774.67,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 22,
+   "volume_7d": 20,
    "volume_30d": 171,
    "last_chart_price": 65,
-   "last_chart_date": "2026-10-22",
+   "last_chart_date": "2026-10-23",
    "chart_median_14d": 65.0,
    "rap_consistent": true,
    "cost": 72.15,
    "net_profit": 315.18,
    "net_margin": 4.3684,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 56,
+   "velocity_per_hour": 0.095,
+   "velocity_note": null,
+   "eta_hours": 947.4,
+   "score": 57,
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +437%.",
-    "Volume 7d 22 abaixo de 50.",
-    "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
+    "Volume 7d 20 abaixo de 50.",
+    "Esgota devagar (~39.5 d).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 11.80x, 3 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
@@ -311,10 +311,6 @@
    "change_7d": 0.0,
    "trend": "estável",
    "spark": [
-    [
-     "2026-09-20",
-     65
-    ],
     [
      "2026-09-21",
      65
@@ -429,6 +425,10 @@
     ],
     [
      "2026-10-22",
+     65
+    ],
+    [
+     "2026-10-23",
      65
     ]
    ],
