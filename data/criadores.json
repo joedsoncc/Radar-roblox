@@ -79,6 +79,16 @@
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 2
  },
+ "13191072": {
+  "items_seen": 7,
+  "median_retention": 0.506,
+  "metodo": 2,
+  "name": "Marcos's Ugc's",
+  "pct_above_price": 0.0,
+  "sold_out": 2,
+  "updated_at": "2026-10-24T11:07:03Z",
+  "with_resale": 2
+ },
  "14511880": {
   "items_seen": 60,
   "median_retention": 0.96,
@@ -359,6 +369,16 @@
   "updated_at": "2026-10-18T06:52:28Z",
   "with_resale": 0
  },
+ "823647416": {
+  "items_seen": 8,
+  "median_retention": 95.0,
+  "metodo": 2,
+  "name": "HouseDominus",
+  "pct_above_price": 1.0,
+  "sold_out": 1,
+  "updated_at": "2026-10-24T11:07:03Z",
+  "with_resale": 1
+ },
  "844829245": {
   "items_seen": 4,
   "median_retention": null,
@@ -368,6 +388,16 @@
   "sold_out": 0,
   "updated_at": "2026-10-20T21:40:09Z",
   "with_resale": 0
+ },
+ "935271721": {
+  "items_seen": 60,
+  "median_retention": 1.456,
+  "metodo": 2,
+  "name": "bucket",
+  "pct_above_price": 1.0,
+  "sold_out": 4,
+  "updated_at": "2026-10-24T11:07:03Z",
+  "with_resale": 4
  },
  "937580992": {
   "items_seen": 32,
