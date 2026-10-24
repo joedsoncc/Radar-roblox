@@ -129,6 +129,26 @@
   "updated_at": "2026-10-22T04:54:23Z",
   "with_resale": 7
  },
+ "15757277": {
+  "items_seen": 7,
+  "median_retention": 1.579,
+  "metodo": 2,
+  "name": "M22 UGC's",
+  "pct_above_price": 0.667,
+  "sold_out": 3,
+  "updated_at": "2026-10-24T22:31:17Z",
+  "with_resale": 3
+ },
+ "15760707": {
+  "items_seen": 21,
+  "median_retention": 1.993,
+  "metodo": 2,
+  "name": "Yat_ziry makes me happy everyday:) day",
+  "pct_above_price": 0.636,
+  "sold_out": 13,
+  "updated_at": "2026-10-24T22:31:17Z",
+  "with_resale": 11
+ },
  "17260696": {
   "items_seen": 32,
   "median_retention": 0.196,
