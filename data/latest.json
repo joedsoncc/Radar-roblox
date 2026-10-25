@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-25T04:47:13Z",
+ "generated_at": "2026-10-25T11:37:15Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; revenda: catálogo 429.",
- "snapshots_count": 35,
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429.",
+ "snapshots_count": 34,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
   "max_price": 500,
@@ -113,14 +113,14 @@
    ],
    "data_quality": "rap_primario",
    "creator_track": {
-    "updated_at": "2026-10-25T04:47:13Z",
-    "name": "ZNcreation",
-    "metodo": 2,
     "items_seen": 32,
-    "sold_out": 10,
-    "with_resale": 9,
     "median_retention": 280.0,
-    "pct_above_price": 1.0
+    "metodo": 2,
+    "name": "ZNcreation",
+    "pct_above_price": 1.0,
+    "sold_out": 10,
+    "updated_at": "2026-10-25T04:47:13Z",
+    "with_resale": 9
    },
    "retention": 0.961,
    "change_7d": -0.0077,
@@ -265,8 +265,8 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-c7fce7cb2e1c0a324291a8d9517a41cc/150/150/HairAccessory/Png/noFilter",
    "price": 65,
    "total_quantity": 500,
-   "units_remaining": 90,
-   "pct_sold": 82.0,
+   "units_remaining": 87,
+   "pct_sold": 82.6,
    "rap": 65.0,
    "resale_avg_low": 648.2,
    "resale_avg_n": 10,
@@ -281,15 +281,15 @@
    "cost": 72.15,
    "net_profit": 315.18,
    "net_margin": 4.3684,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 56,
+   "velocity_per_hour": 0.153,
+   "velocity_note": null,
+   "eta_hours": 568.6,
+   "score": 59,
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +437%.",
     "Volume 7d 18 abaixo de 50.",
-    "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
+    "Esgota devagar (~23.7 d).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 11.80x, 3 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
@@ -441,5 +441,5 @@
    "hold_days": 30
   }
  ],
- "descartados": 34
+ "descartados": 61
 }

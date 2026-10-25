@@ -209,6 +209,16 @@
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 2
  },
+ "32829728": {
+  "items_seen": 20,
+  "median_retention": 2.15,
+  "metodo": 2,
+  "name": "NRV UGC",
+  "pct_above_price": 0.571,
+  "sold_out": 13,
+  "updated_at": "2026-10-25T11:37:15Z",
+  "with_resale": 7
+ },
  "33137717": {
   "items_seen": 60,
   "median_retention": 1.0,
@@ -221,12 +231,12 @@
  },
  "34217928": {
   "items_seen": 60,
-  "median_retention": 1.758,
+  "median_retention": 1.579,
   "metodo": 2,
   "name": "Glowz UGC",
-  "pct_above_price": 0.727,
-  "sold_out": 11,
-  "updated_at": "2026-10-18T02:39:39Z",
+  "pct_above_price": 0.545,
+  "sold_out": 12,
+  "updated_at": "2026-10-25T11:37:15Z",
   "with_resale": 11
  },
  "34383602": {
@@ -246,17 +256,27 @@
   "name": "Reveaden",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-18T02:39:39Z",
+  "updated_at": "2026-10-25T11:37:15Z",
   "with_resale": 0
  },
+ "35462895": {
+  "items_seen": 60,
+  "median_retention": 1.185,
+  "metodo": 2,
+  "name": "MFSC Ugc",
+  "pct_above_price": 0.7,
+  "sold_out": 12,
+  "updated_at": "2026-10-25T11:37:15Z",
+  "with_resale": 10
+ },
  "35488897": {
-  "items_seen": 55,
-  "median_retention": 2.047,
+  "items_seen": 58,
+  "median_retention": 1.784,
   "metodo": 2,
   "name": "1of1ugc",
   "pct_above_price": 0.833,
   "sold_out": 14,
-  "updated_at": "2026-10-18T06:52:28Z",
+  "updated_at": "2026-10-25T11:37:15Z",
   "with_resale": 6
  },
  "35700806": {
@@ -400,13 +420,13 @@
   "with_resale": 0
  },
  "788265080": {
-  "items_seen": 5,
+  "items_seen": 4,
   "median_retention": null,
   "metodo": 2,
   "name": "TOP STYLEE",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-18T06:52:28Z",
+  "updated_at": "2026-10-25T11:37:15Z",
   "with_resale": 0
  },
  "823647416": {
@@ -456,7 +476,7 @@
   "name": "Collin UGC",
   "pct_above_price": null,
   "sold_out": 13,
-  "updated_at": "2026-10-18T06:52:28Z",
+  "updated_at": "2026-10-25T11:37:15Z",
   "with_resale": 0
  },
  "982613282": {
