@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-24T22:31:17Z",
+ "generated_at": "2026-10-25T04:47:13Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
- "snapshots_count": 36,
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; revenda: catálogo 429.",
+ "snapshots_count": 35,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
   "max_price": 500,
@@ -85,27 +85,27 @@
    "rap": 374.0,
    "resale_avg_low": 1869.4,
    "resale_avg_n": 10,
-   "sale_ref": 115706.1,
+   "sale_ref": 110009.2,
    "sale_ref_source": "historico_loja",
    "volume_7d": 8,
-   "volume_30d": 37,
-   "last_chart_price": 380,
-   "last_chart_date": "2026-10-23",
+   "volume_30d": 39,
+   "last_chart_price": 325,
+   "last_chart_date": "2026-10-24",
    "chart_median_14d": 389,
    "rap_consistent": true,
    "cost": 431.79,
-   "net_profit": 57421.26,
-   "net_margin": 132.9842,
+   "net_profit": 54572.81,
+   "net_margin": 126.3874,
    "velocity_per_hour": 0.0,
    "velocity_note": "sem vendas no último intervalo",
    "eta_hours": null,
    "score": 63,
    "class": "OBSERVAR",
    "reasons": [
-    "Margem líquida +13298%.",
+    "Margem líquida +12639%.",
     "Volume 7d 8 abaixo de 50.",
     "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
-    "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 294.50x, 10 itens).",
+    "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 280.00x, 9 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
    "invalidators": [
@@ -113,23 +113,19 @@
    ],
    "data_quality": "rap_primario",
    "creator_track": {
-    "items_seen": 32,
-    "median_retention": 294.5,
-    "metodo": 2,
+    "updated_at": "2026-10-25T04:47:13Z",
     "name": "ZNcreation",
-    "pct_above_price": 1.0,
+    "metodo": 2,
+    "items_seen": 32,
     "sold_out": 10,
-    "updated_at": "2026-10-18T02:39:39Z",
-    "with_resale": 10
+    "with_resale": 9,
+    "median_retention": 280.0,
+    "pct_above_price": 1.0
    },
    "retention": 0.961,
-   "change_7d": 0.0,
+   "change_7d": -0.0077,
    "trend": "estável",
    "spark": [
-    [
-     "2026-08-08",
-     250
-    ],
     [
      "2026-08-13",
      250
@@ -245,6 +241,10 @@
     [
      "2026-10-23",
      380
+    ],
+    [
+     "2026-10-24",
+     325
     ]
    ],
    "tipo": "loja",
@@ -272,11 +272,11 @@
    "resale_avg_n": 10,
    "sale_ref": 774.67,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 20,
-   "volume_30d": 171,
+   "volume_7d": 18,
+   "volume_30d": 168,
    "last_chart_price": 65,
    "last_chart_date": "2026-10-23",
-   "chart_median_14d": 65.0,
+   "chart_median_14d": 65,
    "rap_consistent": true,
    "cost": 72.15,
    "net_profit": 315.18,
@@ -288,7 +288,7 @@
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +437%.",
-    "Volume 7d 20 abaixo de 50.",
+    "Volume 7d 18 abaixo de 50.",
     "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 11.80x, 3 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
@@ -441,5 +441,5 @@
    "hold_days": 30
   }
  ],
- "descartados": 59
+ "descartados": 34
 }
