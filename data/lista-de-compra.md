@@ -1,6 +1,6 @@
-# Lista de compra — 2026-10-25T11:37:15Z
+# Lista de compra — 2026-10-25T16:27:31Z
 
-Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429.
+Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429; detalhes do catálogo: 429.
 
 > Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.
 
@@ -12,7 +12,7 @@ Nenhuma oportunidade nesta categoria.
 
 | Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
 |---|---|---|---|---|---|---|---|---|---|
-| OBSERVAR | [Dark Blue Galaxy Scene Hair](https://www.roblox.com/catalog/126665096715208) | 65 | 87/500 | 65 | 648 (de 10) | +315 (+437%) | ~23.7 d | Margem líquida +437%. Volume 7d 18 abaixo de 50. Esgota devagar (~23.7 d). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 11.80x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
+| OBSERVAR | [Dark Blue Galaxy Scene Hair](https://www.roblox.com/catalog/126665096715208) | 65 | 86/500 | 65 | 648 (de 10) | +315 (+437%) | ~19.4 d | Margem líquida +437%. Volume 7d 18 abaixo de 50. Esgota devagar (~19.4 d). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 11.80x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
 
 ## Rosto (0)
 
@@ -30,11 +30,9 @@ Nenhuma oportunidade nesta categoria.
 
 Nenhuma oportunidade nesta categoria.
 
-## Costas/Asas/Pet (1)
+## Costas/Asas/Pet (0)
 
-| Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
-|---|---|---|---|---|---|---|---|---|---|
-| OBSERVAR | [Halloween Scythe [Animated]](https://www.roblox.com/catalog/103000243102950) | 389 | 76/3000 | 374 | 1869 (de 10) | +54573 (+12639%) | — | Margem líquida +12639%. Volume 7d 8 abaixo de 50. Vendas pararam ou estão lentas demais (sem vendas no último intervalo). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 280.00x, 9 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
+Nenhuma oportunidade nesta categoria.
 
 ## Cintura/Squid (0)
 

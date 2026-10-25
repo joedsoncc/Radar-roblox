@@ -110,14 +110,14 @@
   "with_resale": 3
  },
  "146524767": {
-  "items_seen": 13,
-  "median_retention": 1.214,
+  "items_seen": 15,
+  "median_retention": 1.419,
   "metodo": 2,
   "name": "EAO Clothing",
-  "pct_above_price": 0.5,
+  "pct_above_price": 0.667,
   "sold_out": 5,
-  "updated_at": "2026-10-18T15:54:34Z",
-  "with_resale": 2
+  "updated_at": "2026-10-25T16:27:31Z",
+  "with_resale": 3
  },
  "14768857": {
   "items_seen": 10,
@@ -221,12 +221,12 @@
  },
  "33137717": {
   "items_seen": 60,
-  "median_retention": 1.0,
+  "median_retention": 1.523,
   "metodo": 2,
   "name": "The Coolest Moon Gang",
-  "pct_above_price": 0.471,
+  "pct_above_price": 0.647,
   "sold_out": 30,
-  "updated_at": "2026-10-18T15:54:34Z",
+  "updated_at": "2026-10-25T16:27:31Z",
   "with_resale": 17
  },
  "34217928": {
