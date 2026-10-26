@@ -349,6 +349,16 @@
   "updated_at": "2026-10-25T04:47:13Z",
   "with_resale": 10
  },
+ "521263333": {
+  "items_seen": 8,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "RBX x Prax",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-26T07:51:01Z",
+  "with_resale": 0
+ },
  "568550388": {
   "items_seen": 60,
   "median_retention": 1.0,
