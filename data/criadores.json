@@ -29,6 +29,16 @@
   "updated_at": "2026-10-24T15:59:50Z",
   "with_resale": 0
  },
+ "1054448950": {
+  "items_seen": 18,
+  "median_retention": 126.474,
+  "metodo": 2,
+  "name": "Sparkz UGC",
+  "pct_above_price": 1.0,
+  "sold_out": 4,
+  "updated_at": "2026-10-26T21:02:38Z",
+  "with_resale": 4
+ },
  "1070407157": {
   "items_seen": 3,
   "median_retention": null,
@@ -56,7 +66,7 @@
   "name": "S4TYURN",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-19T19:58:28Z",
+  "updated_at": "2026-10-26T21:02:38Z",
   "with_resale": 0
  },
  "12377810": {
