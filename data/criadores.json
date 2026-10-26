@@ -101,12 +101,12 @@
  },
  "14511880": {
   "items_seen": 60,
-  "median_retention": 0.96,
+  "median_retention": 1.15,
   "metodo": 2,
   "name": "Waffle's UGC",
-  "pct_above_price": 0.333,
-  "sold_out": 30,
-  "updated_at": "2026-10-18T02:39:39Z",
+  "pct_above_price": 0.667,
+  "sold_out": 28,
+  "updated_at": "2026-10-26T15:14:12Z",
   "with_resale": 3
  },
  "146524767": {
@@ -468,6 +468,16 @@
   "sold_out": 0,
   "updated_at": "2026-10-20T21:40:09Z",
   "with_resale": 0
+ },
+ "899761216": {
+  "items_seen": 22,
+  "median_retention": 4.095,
+  "metodo": 2,
+  "name": "TrippyLabs",
+  "pct_above_price": 1.0,
+  "sold_out": 4,
+  "updated_at": "2026-10-26T15:14:12Z",
+  "with_resale": 4
  },
  "935271721": {
   "items_seen": 60,

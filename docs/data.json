@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-26T07:51:01Z",
+ "generated_at": "2026-10-26T15:14:12Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
  "snapshots_count": 32,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
@@ -96,15 +96,15 @@
    "cost": 72.15,
    "net_profit": 315.18,
    "net_margin": 4.3684,
-   "velocity_per_hour": 0.198,
-   "velocity_note": null,
-   "eta_hours": 419.2,
-   "score": 59,
+   "velocity_per_hour": 0.0,
+   "velocity_note": "sem vendas no último intervalo",
+   "eta_hours": null,
+   "score": 56,
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +437%.",
     "Volume 7d 23 abaixo de 50.",
-    "Esgota devagar (~17.5 d).",
+    "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 11.80x, 3 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
@@ -256,5 +256,5 @@
    "hold_days": 30
   }
  ],
- "descartados": 60
+ "descartados": 61
 }
