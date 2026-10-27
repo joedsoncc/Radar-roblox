@@ -49,6 +49,16 @@
   "updated_at": "2026-10-25T04:47:13Z",
   "with_resale": 0
  },
+ "109916308": {
+  "items_seen": 11,
+  "median_retention": 1.539,
+  "metodo": 2,
+  "name": "/untamable",
+  "pct_above_price": 1.0,
+  "sold_out": 3,
+  "updated_at": "2026-10-27T07:55:53Z",
+  "with_resale": 3
+ },
  "1105078558": {
   "items_seen": 52,
   "median_retention": 1.18,
@@ -58,6 +68,16 @@
   "sold_out": 7,
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 7
+ },
+ "1210845085": {
+  "items_seen": 3,
+  "median_retention": 31.042,
+  "metodo": 2,
+  "name": "JauntyArtStudioUGC",
+  "pct_above_price": 1.0,
+  "sold_out": 1,
+  "updated_at": "2026-10-27T07:55:53Z",
+  "with_resale": 1
  },
  "121551003": {
   "items_seen": 1,
@@ -397,6 +417,16 @@
   "pct_above_price": null,
   "sold_out": 6,
   "updated_at": "2026-10-25T04:47:13Z",
+  "with_resale": 0
+ },
+ "596740472": {
+  "items_seen": 5,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Cheap UGC Limiteds!",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-27T07:55:53Z",
   "with_resale": 0
  },
  "612503664": {
