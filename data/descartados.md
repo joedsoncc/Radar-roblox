@@ -1,4 +1,4 @@
-# Itens descartados (2026-10-27T07:55:53Z)
+# Itens descartados (2026-10-27T14:34:31Z)
 
 Não aparecem no site, na lista de compra nem nos alertas porque o lucro projetado não passa do corte.
 
@@ -7,68 +7,69 @@ Não aparecem no site, na lista de compra nem nos alertas porque o lucro projeta
 | [Black Crown of Ozymandias [RED]](https://www.roblox.com/catalog/114126595463927) | OBSERVAR | 299 | +86% | lucro projetado +86% (precisa passar de +100%) |
 | [Crimson Dominus](https://www.roblox.com/catalog/117646930298113) | OBSERVAR | 299 | -31% | lucro projetado -31% (precisa passar de +100%) |
 | [[LIMITED] Jetro Shoulder Pal](https://www.roblox.com/catalog/113897959709029) | OBSERVAR | 300 | — | sem estimativa de lucro |
+| [ARCANGEL V1🪽](https://www.roblox.com/catalog/85423285830552) | OBSERVAR | 500 | — | sem estimativa de lucro |
 | [Huge Angel Halo](https://www.roblox.com/catalog/85431719641039) | OBSERVAR | 150 | — | sem estimativa de lucro |
 | [Royal Golden Star Crown](https://www.roblox.com/catalog/124849386382365) | OBSERVAR | 95 | — | sem estimativa de lucro |
-| [ARCANGEL V1🪽](https://www.roblox.com/catalog/85423285830552) | OBSERVAR | 500 | — | sem estimativa de lucro |
 | [Rainbow Dominus + Horns](https://www.roblox.com/catalog/81781007088412) | OBSERVAR | 170 | — | sem estimativa de lucro |
 | [[77/499] Dominus Erzherzog](https://www.roblox.com/catalog/102281096304942) | OBSERVAR | 199 | — | sem estimativa de lucro |
 | [💎⚡ [GLOWS] Crimson Red Lightning Dragon Bandana ⚡](https://www.roblox.com/catalog/90800652595729) | OBSERVAR | 500 | — | sem estimativa de lucro |
+| [Sky Pink Neon Fedora](https://www.roblox.com/catalog/103746416824449) | OBSERVAR | 500 | — | sem estimativa de lucro |
 | [[ANIMATED] Pink Starry Heart Aura](https://www.roblox.com/catalog/128470223340691) | EVITAR | 295 | -46% | EVITAR |
 | [👁️ ANIMATED Red Black Hair + Crown + Hat + Horns](https://www.roblox.com/catalog/71424286269597) | EVITAR | 99 | -9% | EVITAR |
 | [Red and Black Cape](https://www.roblox.com/catalog/79750279455412) | EVITAR | 140 | -34% | EVITAR |
 | [Pink and White Chain Horns](https://www.roblox.com/catalog/124240557339607) | EVITAR | 190 | -34% | EVITAR |
 | [Long Pink Beachy Mermaid Hair](https://www.roblox.com/catalog/14931784658) | EVITAR | 70 | +94% | EVITAR |
 | [NRV Orange Horns](https://www.roblox.com/catalog/79773457512100) | EVITAR | 500 | -2% | EVITAR |
+| [Red Cape](https://www.roblox.com/catalog/115304616344871) | EVITAR | 140 | -34% | EVITAR |
 | [Void Queen of The Night](https://www.roblox.com/catalog/120993846155365) | EVITAR | 215 | -30% | EVITAR |
-| [Halloween Dominus Infernum](https://www.roblox.com/catalog/111608715869016) | EVITAR | 449 | -56% | EVITAR |
-| [ [Animated] Halloween Bat Aura](https://www.roblox.com/catalog/99629421657353) | EVITAR | 344 | -62% | EVITAR |
-| [[🎃HALLOWEEN] Orange Hair+Crown+Clockwork+Horns](https://www.roblox.com/catalog/91039087796915) | EVITAR | 299 | — | EVITAR |
+| [Halloween Valkyrie](https://www.roblox.com/catalog/113382274385283) | EVITAR | 199 | -28% | EVITAR |
+| [Halloween Dominus Infernum](https://www.roblox.com/catalog/111608715869016) | EVITAR | 497 | -60% | EVITAR |
+| [ [Animated] Halloween Bat Aura](https://www.roblox.com/catalog/99629421657353) | EVITAR | 347 | -59% | EVITAR |
 | [Halloween Bat Chain](https://www.roblox.com/catalog/79173988868636) | EVITAR | 499 | -91% | EVITAR |
 | [Count Vlad. Waffula Lil Waffle](https://www.roblox.com/catalog/116144128713849) | EVITAR | 99 | -48% | EVITAR |
-| [Roblox Innovation Awards 24 Sparkle Buddy](https://www.roblox.com/catalog/136613436441070) | EVITAR | 200 | -65% | EVITAR |
-| [Goldrow](https://www.roblox.com/catalog/3581868178) | EVITAR | 220 | -59% | EVITAR |
-| [[EMISSIVE] Eldritch Soul Lantern](https://www.roblox.com/catalog/79327777774379) | EVITAR | 350 | -35% | EVITAR |
-| [[EMISSIVE]⚫Atomic Horns of the Singularity](https://www.roblox.com/catalog/96432462543443) | EVITAR | 500 | -35% | EVITAR |
-| [Sugar Shades](https://www.roblox.com/catalog/3798251754) | EVITAR | 170 | -51% | EVITAR |
-| [Catrina Dia de Muertos Mask](https://www.roblox.com/catalog/2528067691) | EVITAR | 170 | -54% | EVITAR |
-| [Eggraging Shark of the Sea](https://www.roblox.com/catalog/4786869155) | EVITAR | 185 | -56% | EVITAR |
-| [Tallaheggsee, Zombie Slayer](https://www.roblox.com/catalog/3016590511) | EVITAR | 186 | -62% | EVITAR |
-| [Eggmunition](https://www.roblox.com/catalog/4771632715) | EVITAR | 187 | -60% | EVITAR |
-| [Despacitegg](https://www.roblox.com/catalog/4773588762) | EVITAR | 190 | -58% | EVITAR |
-| [Tiny Tank Egg](https://www.roblox.com/catalog/4786877411) | EVITAR | 190 | -57% | EVITAR |
+| [Goldrow](https://www.roblox.com/catalog/3581868178) | EVITAR | 180 | -51% | EVITAR |
+| [Roblox Innovation Awards 24 Sparkle Buddy](https://www.roblox.com/catalog/136613436441070) | EVITAR | 200 | -64% | EVITAR |
+| [[🎃HALLOWEEN] Orange Hair+Crown+Clockwork+Horns](https://www.roblox.com/catalog/91039087796915) | EVITAR | 299 | — | EVITAR |
+| [Catrina Dia de Muertos Mask](https://www.roblox.com/catalog/2528067691) | EVITAR | 165 | -53% | EVITAR |
+| [Eggmunition](https://www.roblox.com/catalog/4771632715) | EVITAR | 172 | -54% | EVITAR |
+| [Frosting Flyers](https://www.roblox.com/catalog/3798239844) | EVITAR | 173 | -52% | EVITAR |
+| [Cake Topper](https://www.roblox.com/catalog/3798248888) | EVITAR | 175 | -55% | EVITAR |
+| [Despacitegg](https://www.roblox.com/catalog/4773588762) | EVITAR | 180 | -56% | EVITAR |
+| [Sugar Shades](https://www.roblox.com/catalog/3798251754) | EVITAR | 185 | -56% | EVITAR |
+| [Teapot Egg](https://www.roblox.com/catalog/1556235379) | EVITAR | 185 | -55% | EVITAR |
+| [Saber Boss Egg](https://www.roblox.com/catalog/4773591735) | EVITAR | 188 | -54% | EVITAR |
+| [Tiny Tank Egg](https://www.roblox.com/catalog/4786877411) | EVITAR | 190 | -59% | EVITAR |
+| [Tallaheggsee, Zombie Slayer](https://www.roblox.com/catalog/3016590511) | EVITAR | 190 | -58% | EVITAR |
+| [Inkwell Egg](https://www.roblox.com/catalog/1556204905) | EVITAR | 190 | -55% | EVITAR |
 | [Deteggctive W. Wolf](https://www.roblox.com/catalog/4771629993) | EVITAR | 190 | -59% | EVITAR |
-| [Teapot Egg](https://www.roblox.com/catalog/1556235379) | EVITAR | 199 | -59% | EVITAR |
-| [Saber Boss Egg](https://www.roblox.com/catalog/4773591735) | EVITAR | 200 | -55% | EVITAR |
-| [Frosting Flyers](https://www.roblox.com/catalog/3798239844) | EVITAR | 200 | -59% | EVITAR |
-| [Egg of Hidden Treasures](https://www.roblox.com/catalog/4771699155) | EVITAR | 200 | -57% | EVITAR |
-| [Party Unicorn Floatie](https://www.roblox.com/catalog/3798231832) | EVITAR | 200 | -61% | EVITAR |
-| [Roblox Innovation Awards 24 Ribbon Wings](https://www.roblox.com/catalog/123375593579461) | EVITAR | 200 | -61% | EVITAR |
+| [Eggraging Shark of the Sea](https://www.roblox.com/catalog/4786869155) | EVITAR | 199 | -58% | EVITAR |
+| [Brainfreeze Egg](https://www.roblox.com/catalog/4773579034) | EVITAR | 200 | -55% | EVITAR |
+| [Roblox Innovation Awards 24 Ribbon Wings](https://www.roblox.com/catalog/123375593579461) | EVITAR | 200 | -59% | EVITAR |
+| [Fried Chicken Egg](https://www.roblox.com/catalog/4786883113) | EVITAR | 200 | -54% | EVITAR |
+| [Party Unicorn Floatie](https://www.roblox.com/catalog/3798231832) | EVITAR | 205 | -62% | EVITAR |
 | [Catrin Dia de Muertos Mask](https://www.roblox.com/catalog/2528066922) | EVITAR | 210 | -60% | EVITAR |
-| [Epic Egg](https://www.roblox.com/catalog/4773569689) | EVITAR | 220 | -47% | EVITAR |
-| [Brainfreeze Egg](https://www.roblox.com/catalog/4773579034) | EVITAR | 220 | -58% | EVITAR |
-| [Fried Chicken Egg](https://www.roblox.com/catalog/4786883113) | EVITAR | 230 | -59% | EVITAR |
-| [Cake Topper](https://www.roblox.com/catalog/3798248888) | EVITAR | 240 | -62% | EVITAR |
-| [Inkwell Egg](https://www.roblox.com/catalog/1556204905) | EVITAR | 248 | -64% | EVITAR |
+| [Egg of Hidden Treasures](https://www.roblox.com/catalog/4771699155) | EVITAR | 210 | -63% | EVITAR |
+| [Epic Egg](https://www.roblox.com/catalog/4773569689) | EVITAR | 215 | -57% | EVITAR |
 | [Gucci GG Marmont Bag](https://www.roblox.com/catalog/6803403781) | EVITAR | 300 | -61% | EVITAR |
-| [Party Fedora](https://www.roblox.com/catalog/3798243238) | EVITAR | 438 | -60% | EVITAR |
-| [Rocket Eggscape](https://www.roblox.com/catalog/3016210752) | EVITAR | 185 | -56% | EVITAR |
-| [Spider Antlers](https://www.roblox.com/catalog/2470988022) | EVITAR | 215 | -61% | EVITAR |
+| [Party Fedora](https://www.roblox.com/catalog/3798243238) | EVITAR | 420 | -62% | EVITAR |
+| [Rocket Eggscape](https://www.roblox.com/catalog/3016210752) | EVITAR | 170 | -52% | EVITAR |
+| [Spider Antlers](https://www.roblox.com/catalog/2470988022) | EVITAR | 205 | -62% | EVITAR |
 | [Inferno Fallen Northstar Halberd](https://www.roblox.com/catalog/112299006969316) | EVITAR | 500 | +6% | EVITAR |
 | [Red Squid](https://www.roblox.com/catalog/105265063926801) | EVITAR | 245 | -65% | EVITAR |
-| [Orange Squid](https://www.roblox.com/catalog/100407753967575) | EVITAR | 95 | -54% | EVITAR |
-| [[⌛💀] Y2k Skeleton Spiked Streetwear Hat - Gray](https://www.roblox.com/catalog/86527647092237) | EVITAR | 95 | -46% | EVITAR |
+| [Eggcient Woolly Mammoth](https://www.roblox.com/catalog/3016722037) | EVITAR | 199 | -57% | EVITAR |
+| [[⌛💀] Y2k Skeleton Spiked Streetwear Hat - Gray](https://www.roblox.com/catalog/86527647092237) | EVITAR | 95 | -47% | EVITAR |
+| [[EMISSIVE]⚫Atomic Horns of the Singularity](https://www.roblox.com/catalog/96432462543443) | EVITAR | 500 | -35% | EVITAR |
 | [ 8-Bit Royal Crown [ANIMATED + LIMITED U]](https://www.roblox.com/catalog/80425706661577) | EVITAR | 499 | -79% | EVITAR |
 | [Dominus Empyreus](https://www.roblox.com/catalog/125901066037714) | EVITAR | 395 | — | EVITAR |
-| [Halloween Valkyrie](https://www.roblox.com/catalog/113382274385283) | EVITAR | 199 | -28% | EVITAR |
+| [[EMISSIVE] Eldritch Soul Lantern](https://www.roblox.com/catalog/79327777774379) | EVITAR | 350 | -35% | EVITAR |
+| [Radiant Angel Wings](https://www.roblox.com/catalog/17371124320) | EVITAR | 140 | -40% | EVITAR |
 | [Glowing Devil Horns Emissive](https://www.roblox.com/catalog/119406732991458) | EVITAR | 500 | — | EVITAR |
-| [Radiant Angel Wings](https://www.roblox.com/catalog/17371124320) | EVITAR | 140 | -37% | EVITAR |
 | [Animated Emissive Stars Aura](https://www.roblox.com/catalog/126937093578716) | EVITAR | 300 | -55% | EVITAR |
 | [[✨] Classic Roblox 20th Anniversary Opal Pin ✨](https://www.roblox.com/catalog/83074840231916) | EVITAR | 150 | -62% | EVITAR |
-| [Galactic Starfall Dominus](https://www.roblox.com/catalog/74253472995243) | EVITAR | 199 | -46% | EVITAR |
+| [Galactic Starfall Dominus](https://www.roblox.com/catalog/74253472995243) | EVITAR | 199 | -47% | EVITAR |
 | [V3RMILLION PIN](https://www.roblox.com/catalog/92035047502147) | EVITAR | 250 | — | EVITAR |
 | [S4TYURNS “FALLEN CROWN”](https://www.roblox.com/catalog/139107045407047) | EVITAR | 250 | — | EVITAR |
 | [Black Caution Bucket Hat](https://www.roblox.com/catalog/138451385145650) | EVITAR | 250 | — | EVITAR |
 | [Large Glowing Rainbow Horns](https://www.roblox.com/catalog/130883412919351) | EVITAR | 500 | -18% | EVITAR |
 | [[EMISSIVE] Opal Valkyrie Helm](https://www.roblox.com/catalog/120619293493249) | EVITAR | 500 | — | EVITAR |
 | [[ 🌟 Glowing 🌟 ] Emissive White Fedora](https://www.roblox.com/catalog/127494517158420) | EVITAR | 500 | — | EVITAR |
-| [Red and Black Valk](https://www.roblox.com/catalog/87186957672191) | EVITAR | 500 | — | EVITAR |
