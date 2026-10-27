@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T21:02:38Z",
+ "generated_at": "2026-10-27T01:30:05Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -51,7 +51,7 @@
    "change_7d": -0.0154,
    "change_30d": 0.1788,
    "trend": "estável",
-   "days_held": 8,
+   "days_held": 9,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -546,6 +546,12 @@
       374.0,
       1869.4,
       76
+     ],
+     [
+      "2026-10-27T01:30:05Z",
+      374.0,
+      1869.4,
+      76
      ]
     ]
    }
@@ -572,7 +578,7 @@
    "total_quantity": 500,
    "is_off_sale": false,
    "rap": 65.0,
-   "volume_7d": 23,
+   "volume_7d": 22,
    "resale_avg_low": 574.2,
    "resale_avg_n": 10,
    "sale_ref": 65.0,
@@ -586,7 +592,7 @@
    "change_7d": 0.0,
    "change_30d": 0.0,
    "trend": "estável",
-   "days_held": 5,
+   "days_held": 6,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -1039,6 +1045,11 @@
       "2026-10-25",
       65,
       5
+     ],
+     [
+      "2026-10-26",
+      65,
+      3
      ]
     ],
     "tracked": [
@@ -1176,6 +1187,12 @@
      ],
      [
       "2026-10-26T21:02:38Z",
+      65.0,
+      574.2,
+      82
+     ],
+     [
+      "2026-10-27T01:30:05Z",
       65.0,
       574.2,
       82

@@ -170,13 +170,13 @@
   "with_resale": 3
  },
  "214730562": {
-  "items_seen": 28,
+  "items_seen": 27,
   "median_retention": null,
   "metodo": 2,
   "name": "Astrox UGC",
   "pct_above_price": null,
   "sold_out": 1,
-  "updated_at": "2026-10-19T23:44:59Z",
+  "updated_at": "2026-10-27T01:30:05Z",
   "with_resale": 0
  },
  "259636409": {
@@ -228,6 +228,16 @@
   "sold_out": 13,
   "updated_at": "2026-10-25T11:37:15Z",
   "with_resale": 7
+ },
+ "331": {
+  "items_seen": 60,
+  "median_retention": 2.326,
+  "metodo": 2,
+  "name": "Kings",
+  "pct_above_price": 0.929,
+  "sold_out": 43,
+  "updated_at": "2026-10-27T01:30:05Z",
+  "with_resale": 42
  },
  "33137717": {
   "items_seen": 60,
@@ -437,6 +447,16 @@
   "pct_above_price": null,
   "sold_out": 2,
   "updated_at": "2026-10-18T18:40:03Z",
+  "with_resale": 0
+ },
+ "743911162": {
+  "items_seen": 11,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Valora UGC",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-27T01:30:05Z",
   "with_resale": 0
  },
  "788265080": {
