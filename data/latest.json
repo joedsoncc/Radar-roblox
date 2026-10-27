@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-27T14:34:31Z",
+ "generated_at": "2026-10-27T20:43:52Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429; detalhes do catálogo: 429.",
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
  "snapshots_count": 32,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
@@ -83,7 +83,7 @@
    "units_remaining": 82,
    "pct_sold": 83.6,
    "rap": 65.0,
-   "resale_avg_low": 574.2,
+   "resale_avg_low": 569.6,
    "resale_avg_n": 10,
    "sale_ref": 774.67,
    "sale_ref_source": "historico_loja",
@@ -254,7 +254,193 @@
    "price_raised_from": null,
    "break_even": 144,
    "hold_days": 30
+  },
+  {
+   "asset_id": 125411013324026,
+   "name": "Blue Clockwork Headphones",
+   "creator_name": "Sparkz UGC",
+   "creator_verified": false,
+   "category": "hat",
+   "url": "https://www.roblox.com/catalog/125411013324026",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-5d3e48e07e37fd3c7a1153653cca2f27/150/150/Hat/Png/noFilter",
+   "price": 95,
+   "total_quantity": 1500,
+   "units_remaining": 92,
+   "pct_sold": 93.9,
+   "rap": 95.0,
+   "resale_avg_low": 859.8,
+   "resale_avg_n": 10,
+   "sale_ref": 12135.18,
+   "sale_ref_source": "historico_loja",
+   "volume_7d": 26,
+   "volume_30d": 446,
+   "last_chart_price": 95,
+   "last_chart_date": "2026-10-26",
+   "chart_median_14d": 95,
+   "rap_consistent": true,
+   "cost": 105.45,
+   "net_profit": 5962.14,
+   "net_margin": 56.54,
+   "velocity_per_hour": 0.211,
+   "velocity_note": null,
+   "eta_hours": 436.0,
+   "score": 54,
+   "class": "OBSERVAR",
+   "reasons": [
+    "Margem líquida +5654%.",
+    "Volume 7d 26 abaixo de 50.",
+    "Esgota devagar (~18.2 d).",
+    "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 126.47x, 4 itens).",
+    "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados).",
+    "Formato dos mais revendidos: 1500 un. a 95 Robux."
+   ],
+   "invalidators": [
+    "Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR."
+   ],
+   "data_quality": "rap_primario",
+   "creator_track": {
+    "items_seen": 18,
+    "median_retention": 126.474,
+    "metodo": 2,
+    "name": "Sparkz UGC",
+    "pct_above_price": 1.0,
+    "sold_out": 4,
+    "updated_at": "2026-10-26T21:02:38Z",
+    "with_resale": 4
+   },
+   "retention": 1.0,
+   "change_7d": 0.0,
+   "trend": "estável",
+   "spark": [
+    [
+     "2026-09-27",
+     95
+    ],
+    [
+     "2026-09-28",
+     95
+    ],
+    [
+     "2026-09-29",
+     95
+    ],
+    [
+     "2026-09-30",
+     95
+    ],
+    [
+     "2026-10-01",
+     95
+    ],
+    [
+     "2026-10-02",
+     95
+    ],
+    [
+     "2026-10-03",
+     95
+    ],
+    [
+     "2026-10-04",
+     95
+    ],
+    [
+     "2026-10-05",
+     95
+    ],
+    [
+     "2026-10-06",
+     95
+    ],
+    [
+     "2026-10-07",
+     95
+    ],
+    [
+     "2026-10-08",
+     95
+    ],
+    [
+     "2026-10-09",
+     95
+    ],
+    [
+     "2026-10-10",
+     95
+    ],
+    [
+     "2026-10-11",
+     109
+    ],
+    [
+     "2026-10-12",
+     95
+    ],
+    [
+     "2026-10-13",
+     95
+    ],
+    [
+     "2026-10-14",
+     95
+    ],
+    [
+     "2026-10-15",
+     95
+    ],
+    [
+     "2026-10-16",
+     95
+    ],
+    [
+     "2026-10-17",
+     95
+    ],
+    [
+     "2026-10-18",
+     95
+    ],
+    [
+     "2026-10-19",
+     95
+    ],
+    [
+     "2026-10-20",
+     95
+    ],
+    [
+     "2026-10-21",
+     95
+    ],
+    [
+     "2026-10-22",
+     95
+    ],
+    [
+     "2026-10-23",
+     95
+    ],
+    [
+     "2026-10-24",
+     95
+    ],
+    [
+     "2026-10-25",
+     95
+    ],
+    [
+     "2026-10-26",
+     95
+    ]
+   ],
+   "tipo": "loja",
+   "fator_trava": 1.01,
+   "rap_primary": true,
+   "copy_risk": "clockwork",
+   "price_raised_from": null,
+   "break_even": 211,
+   "hold_days": 30
   }
  ],
- "descartados": 69
+ "descartados": 70
 }

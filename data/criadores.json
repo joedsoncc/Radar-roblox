@@ -69,6 +69,16 @@
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 7
  },
+ "12034553": {
+  "items_seen": 51,
+  "median_retention": 0.349,
+  "metodo": 2,
+  "name": "Classic Limiteds",
+  "pct_above_price": 0.0,
+  "sold_out": 6,
+  "updated_at": "2026-10-27T20:43:52Z",
+  "with_resale": 2
+ },
  "1210845085": {
   "items_seen": 3,
   "median_retention": 31.042,
