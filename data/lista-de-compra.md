@@ -1,4 +1,4 @@
-# Lista de compra — 2026-10-28T16:40:38Z
+# Lista de compra — 2026-10-28T22:38:48Z
 
 Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429.
 
@@ -8,13 +8,13 @@ Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros er
 
 | Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
 |---|---|---|---|---|---|---|---|---|---|
-| OBSERVAR | [Blue Clockwork Headphones](https://www.roblox.com/catalog/125411013324026) | 95 | 88/1500 | 95 | 860 (de 10) | +5962 (+5654%) | ~18.2 d | Margem líquida +5654%. Volume 7d 27 abaixo de 50. Esgota devagar (~18.2 d). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 126.47x, 4 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). Formato dos mais revendidos: 1500 un. a 95 Robux. | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
+| OBSERVAR | [Blue Clockwork Headphones](https://www.roblox.com/catalog/125411013324026) | 95 | 87/1500 | 95 | 860 (de 10) | +5962 (+5654%) | ~19.2 d | Margem líquida +5654%. Volume 7d 27 abaixo de 50. Esgota devagar (~19.2 d). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 126.47x, 4 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). Formato dos mais revendidos: 1500 un. a 95 Robux. | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
 
 ## Cabelo (1)
 
 | Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
 |---|---|---|---|---|---|---|---|---|---|
-| OBSERVAR | [Dark Blue Galaxy Scene Hair](https://www.roblox.com/catalog/126665096715208) | 65 | 81/500 | 65 | 560 (de 10) | +332 (+460%) | — | Margem líquida +460%. Volume 7d 14 abaixo de 50. Vendas pararam ou estão lentas demais (sem vendas no último intervalo). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 12.31x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
+| OBSERVAR | [Dark Blue Galaxy Scene Hair](https://www.roblox.com/catalog/126665096715208) | 65 | 80/500 | 65 | 560 (de 10) | +332 (+460%) | ~35.5 d | Margem líquida +460%. Volume 7d 14 abaixo de 50. Esgota devagar (~35.5 d). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 12.31x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
 
 ## Rosto (0)
 
@@ -38,6 +38,8 @@ Nenhuma oportunidade nesta categoria.
 |---|---|---|---|---|---|---|---|---|---|
 | OBSERVAR | [Halloween Scythe [Animated]](https://www.roblox.com/catalog/103000243102950) | 389 | 74/3000 | 376 | 904 (de 10) | +54573 (+12639%) | — | Margem líquida +12639%. Volume 7d 6 abaixo de 50. Vendas pararam ou estão lentas demais (sem vendas no último intervalo). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 280.00x, 9 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
 
-## Cintura/Squid (0)
+## Cintura/Squid (1)
 
-Nenhuma oportunidade nesta categoria.
+| Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
+|---|---|---|---|---|---|---|---|---|---|
+| OBSERVAR | [Blue Sparkle Time Dual Karambits](https://www.roblox.com/catalog/110250126954387) | 65 | 95/1500 | 65 | 1002 (de 10) | +159 (+220%) | — | Margem líquida +220%. Velocidade de venda não medida (poucos snapshots). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 7.04x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). Histórico parecido favorável: não: 10% deram margem ≥ 30% (389 itens). Formato dos mais revendidos: 1500 un. a 65 Robux. | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
