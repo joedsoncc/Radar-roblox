@@ -339,6 +339,16 @@
   "updated_at": "2026-10-18T04:38:52Z",
   "with_resale": 4
  },
+ "35734904": {
+  "items_seen": 60,
+  "median_retention": 3.684,
+  "metodo": 2,
+  "name": "Catnip UGC",
+  "pct_above_price": 1.0,
+  "sold_out": 9,
+  "updated_at": "2026-10-28T08:37:39Z",
+  "with_resale": 6
+ },
  "35790116": {
   "items_seen": 32,
   "median_retention": 280.0,
@@ -361,12 +371,12 @@
  },
  "370302186": {
   "items_seen": 60,
-  "median_retention": 2.079,
+  "median_retention": 2.675,
   "metodo": 2,
   "name": "Snowy'sz",
-  "pct_above_price": 0.5,
+  "pct_above_price": 1.0,
   "sold_out": 2,
-  "updated_at": "2026-10-18T04:38:52Z",
+  "updated_at": "2026-10-28T08:37:39Z",
   "with_resale": 2
  },
  "409990394": {
