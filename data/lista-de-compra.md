@@ -1,4 +1,4 @@
-# Lista de compra — 2026-10-28T08:37:39Z
+# Lista de compra — 2026-10-28T16:40:38Z
 
 Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429.
 
@@ -8,13 +8,13 @@ Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros er
 
 | Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
 |---|---|---|---|---|---|---|---|---|---|
-| OBSERVAR | [Blue Clockwork Headphones](https://www.roblox.com/catalog/125411013324026) | 95 | 89/1500 | 95 | 860 (de 10) | +5962 (+5654%) | ~14.7 d | Margem líquida +5654%. Volume 7d 27 abaixo de 50. Esgota devagar (~14.7 d). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 126.47x, 4 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). Formato dos mais revendidos: 1500 un. a 95 Robux. | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
+| OBSERVAR | [Blue Clockwork Headphones](https://www.roblox.com/catalog/125411013324026) | 95 | 88/1500 | 95 | 860 (de 10) | +5962 (+5654%) | ~18.2 d | Margem líquida +5654%. Volume 7d 27 abaixo de 50. Esgota devagar (~18.2 d). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 126.47x, 4 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). Formato dos mais revendidos: 1500 un. a 95 Robux. | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
 
 ## Cabelo (1)
 
 | Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
 |---|---|---|---|---|---|---|---|---|---|
-| OBSERVAR | [Dark Blue Galaxy Scene Hair](https://www.roblox.com/catalog/126665096715208) | 65 | 81/500 | 65 | 560 (de 10) | +315 (+437%) | — | Margem líquida +437%. Volume 7d 14 abaixo de 50. Vendas pararam ou estão lentas demais (vendas insuficientes para medir). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 11.80x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
+| OBSERVAR | [Dark Blue Galaxy Scene Hair](https://www.roblox.com/catalog/126665096715208) | 65 | 81/500 | 65 | 560 (de 10) | +332 (+460%) | — | Margem líquida +460%. Volume 7d 14 abaixo de 50. Vendas pararam ou estão lentas demais (sem vendas no último intervalo). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 12.31x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
 
 ## Rosto (0)
 
