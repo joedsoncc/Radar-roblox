@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-27T20:43:52Z",
+ "generated_at": "2026-10-28T01:25:43Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -37,8 +37,8 @@
    "total_quantity": 3000,
    "is_off_sale": false,
    "rap": 376.0,
-   "volume_7d": 7,
-   "resale_avg_low": 1869.4,
+   "volume_7d": 6,
+   "resale_avg_low": 904.4,
    "resale_avg_n": 10,
    "sale_ref": 376.0,
    "sale_ref_source": "rap",
@@ -48,10 +48,10 @@
    "pnl_pct": -0.5167,
    "breakeven_rap": 778,
    "retention": 0.9666,
-   "change_7d": -0.0154,
+   "change_7d": -0.0116,
    "change_30d": 0.1788,
    "trend": "estável",
-   "days_held": 9,
+   "days_held": 10,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -273,6 +273,11 @@
      [
       "2026-10-24",
       325,
+      2
+     ],
+     [
+      "2026-10-27",
+      389,
       2
      ]
     ],
@@ -570,6 +575,12 @@
       376.0,
       1869.4,
       74
+     ],
+     [
+      "2026-10-28T01:25:43Z",
+      376.0,
+      904.4,
+      74
      ]
     ]
    }
@@ -596,8 +607,8 @@
    "total_quantity": 500,
    "is_off_sale": false,
    "rap": 65.0,
-   "volume_7d": 22,
-   "resale_avg_low": 569.6,
+   "volume_7d": 14,
+   "resale_avg_low": 559.6,
    "resale_avg_n": 10,
    "sale_ref": 65.0,
    "sale_ref_source": "rap",
@@ -610,7 +621,7 @@
    "change_7d": 0.0,
    "change_30d": 0.0,
    "trend": "estável",
-   "days_held": 6,
+   "days_held": 7,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -1231,6 +1242,12 @@
       "2026-10-27T20:43:52Z",
       65.0,
       569.6,
+      82
+     ],
+     [
+      "2026-10-28T01:25:43Z",
+      65.0,
+      559.6,
       82
      ]
     ]
