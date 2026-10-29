@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-29T05:53:13Z",
+ "generated_at": "2026-10-29T13:07:55Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
  "snapshots_count": 30,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
@@ -71,56 +71,240 @@
  ],
  "items": [
   {
-   "asset_id": 110250126954387,
-   "name": "Blue Sparkle Time Dual Karambits",
-   "creator_name": ".L3NXQ",
+   "asset_id": 103000243102950,
+   "name": "Halloween Scythe [Animated]",
+   "creator_name": "ZNcreation",
    "creator_verified": false,
-   "category": "waist",
-   "url": "https://www.roblox.com/catalog/110250126954387",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-890d1fc697534c10ade2eb6fcbadd923/150/150/WaistAccessory/Png/noFilter",
-   "price": 65,
-   "total_quantity": 1500,
-   "units_remaining": 90,
-   "pct_sold": 94.0,
-   "rap": 65.0,
-   "resale_avg_low": 1002.4,
+   "category": "back",
+   "url": "https://www.roblox.com/catalog/103000243102950",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-f6626b299196764a1f08e497c052ce65/150/150/BackAccessory/Png/noFilter",
+   "price": 389,
+   "total_quantity": 3000,
+   "units_remaining": 74,
+   "pct_sold": 97.5,
+   "rap": 374.0,
+   "resale_avg_low": 1869.4,
    "resale_avg_n": 10,
-   "sale_ref": 461.91,
+   "sale_ref": 110009.2,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 117,
-   "volume_30d": 736,
-   "last_chart_price": 65,
-   "last_chart_date": "2026-10-28",
-   "chart_median_14d": 65,
+   "volume_7d": 5,
+   "volume_30d": 41,
+   "last_chart_price": 389,
+   "last_chart_date": "2026-10-27",
+   "chart_median_14d": 389.0,
    "rap_consistent": true,
-   "cost": 72.15,
-   "net_profit": 158.81,
-   "net_margin": 2.2011,
-   "velocity_per_hour": 0.691,
-   "velocity_note": null,
-   "eta_hours": 130.2,
-   "score": 67,
+   "cost": 431.79,
+   "net_profit": 54572.81,
+   "net_margin": 126.3874,
+   "velocity_per_hour": 0.0,
+   "velocity_note": "sem vendas no último intervalo",
+   "eta_hours": null,
+   "score": 62,
    "class": "OBSERVAR",
    "reasons": [
-    "Margem líquida +220%.",
-    "Esgota devagar (~5.4 d).",
-    "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 7.04x, 3 itens).",
-    "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados).",
-    "Histórico parecido favorável: não: 10% deram margem ≥ 30% (389 itens).",
-    "Formato dos mais revendidos: 1500 un. a 65 Robux."
+    "Margem líquida +12639%.",
+    "Volume 7d 5 abaixo de 50.",
+    "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
+    "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 280.00x, 9 itens).",
+    "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
    "invalidators": [
     "Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR."
    ],
    "data_quality": "rap_primario",
    "creator_track": {
-    "items_seen": 60,
-    "median_retention": 7.036,
+    "items_seen": 32,
+    "median_retention": 280.0,
     "metodo": 2,
-    "name": ".L3NXQ",
+    "name": "ZNcreation",
+    "pct_above_price": 1.0,
+    "sold_out": 10,
+    "updated_at": "2026-10-25T04:47:13Z",
+    "with_resale": 9
+   },
+   "retention": 0.961,
+   "change_7d": -0.0231,
+   "trend": "estável",
+   "spark": [
+    [
+     "2026-08-21",
+     398
+    ],
+    [
+     "2026-08-25",
+     300
+    ],
+    [
+     "2026-09-05",
+     200
+    ],
+    [
+     "2026-09-07",
+     389
+    ],
+    [
+     "2026-09-15",
+     330
+    ],
+    [
+     "2026-09-20",
+     300
+    ],
+    [
+     "2026-09-23",
+     389
+    ],
+    [
+     "2026-09-30",
+     250
+    ],
+    [
+     "2026-10-01",
+     389
+    ],
+    [
+     "2026-10-02",
+     389
+    ],
+    [
+     "2026-10-03",
+     300
+    ],
+    [
+     "2026-10-04",
+     368
+    ],
+    [
+     "2026-10-05",
+     389
+    ],
+    [
+     "2026-10-06",
+     389
+    ],
+    [
+     "2026-10-08",
+     389
+    ],
+    [
+     "2026-10-09",
+     389
+    ],
+    [
+     "2026-10-10",
+     389
+    ],
+    [
+     "2026-10-11",
+     389
+    ],
+    [
+     "2026-10-12",
+     389
+    ],
+    [
+     "2026-10-13",
+     389
+    ],
+    [
+     "2026-10-14",
+     389
+    ],
+    [
+     "2026-10-15",
+     389
+    ],
+    [
+     "2026-10-17",
+     389
+    ],
+    [
+     "2026-10-18",
+     389
+    ],
+    [
+     "2026-10-19",
+     389
+    ],
+    [
+     "2026-10-21",
+     386
+    ],
+    [
+     "2026-10-22",
+     389
+    ],
+    [
+     "2026-10-23",
+     380
+    ],
+    [
+     "2026-10-24",
+     325
+    ],
+    [
+     "2026-10-27",
+     389
+    ]
+   ],
+   "tipo": "loja",
+   "fator_trava": 1.01,
+   "rap_primary": true,
+   "copy_risk": null,
+   "price_raised_from": null,
+   "break_even": 864,
+   "hold_days": 30
+  },
+  {
+   "asset_id": 126665096715208,
+   "name": "Dark Blue Galaxy Scene Hair",
+   "creator_name": "The Trending UGC",
+   "creator_verified": false,
+   "category": "hair",
+   "url": "https://www.roblox.com/catalog/126665096715208",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-c7fce7cb2e1c0a324291a8d9517a41cc/150/150/HairAccessory/Png/noFilter",
+   "price": 65,
+   "total_quantity": 500,
+   "units_remaining": 79,
+   "pct_sold": 84.2,
+   "rap": 65.0,
+   "resale_avg_low": 548.0,
+   "resale_avg_n": 10,
+   "sale_ref": 808.02,
+   "sale_ref_source": "historico_loja",
+   "volume_7d": 13,
+   "volume_30d": 173,
+   "last_chart_price": 65,
+   "last_chart_date": "2026-10-28",
+   "chart_median_14d": 65.0,
+   "rap_consistent": true,
+   "cost": 72.15,
+   "net_profit": 331.86,
+   "net_margin": 4.5996,
+   "velocity_per_hour": 0.098,
+   "velocity_note": null,
+   "eta_hours": 806.1,
+   "score": 56,
+   "class": "OBSERVAR",
+   "reasons": [
+    "Margem líquida +460%.",
+    "Volume 7d 13 abaixo de 50.",
+    "Esgota devagar (~33.6 d).",
+    "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 12.31x, 3 itens).",
+    "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
+   ],
+   "invalidators": [
+    "Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR."
+   ],
+   "data_quality": "rap_primario",
+   "creator_track": {
+    "items_seen": 16,
+    "median_retention": 12.308,
+    "metodo": 2,
+    "name": "The Trending UGC",
     "pct_above_price": 1.0,
     "sold_out": 3,
-    "updated_at": "2026-10-28T22:38:48Z",
+    "updated_at": "2026-10-28T16:40:38Z",
     "with_resale": 3
    },
    "retention": 1.0,
@@ -128,7 +312,19 @@
    "trend": "estável",
    "spark": [
     [
-     "2026-09-29",
+     "2026-09-25",
+     65
+    ],
+    [
+     "2026-09-26",
+     65
+    ],
+    [
+     "2026-09-27",
+     65
+    ],
+    [
+     "2026-09-28",
      65
     ],
     [
@@ -208,16 +404,12 @@
      65
     ],
     [
-     "2026-10-19",
-     65
-    ],
-    [
      "2026-10-20",
      65
     ],
     [
      "2026-10-21",
-     70
+     65
     ],
     [
      "2026-10-22",
@@ -225,10 +417,6 @@
     ],
     [
      "2026-10-23",
-     65
-    ],
-    [
-     "2026-10-24",
      65
     ],
     [
@@ -240,10 +428,6 @@
      65
     ],
     [
-     "2026-10-27",
-     65
-    ],
-    [
      "2026-10-28",
      65
     ]
@@ -251,7 +435,7 @@
    "tipo": "loja",
    "fator_trava": 1.01,
    "rap_primary": true,
-   "copy_risk": "sparkle time",
+   "copy_risk": null,
    "price_raised_from": null,
    "break_even": 144,
    "hold_days": 30
@@ -282,15 +466,15 @@
    "cost": 105.45,
    "net_profit": 5962.14,
    "net_margin": 56.54,
-   "velocity_per_hour": 0.376,
-   "velocity_note": null,
-   "eta_hours": 215.4,
-   "score": 56,
+   "velocity_per_hour": 0.0,
+   "velocity_note": "sem vendas no último intervalo",
+   "eta_hours": null,
+   "score": 52,
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +5654%.",
     "Volume 7d 28 abaixo de 50.",
-    "Esgota devagar (~9.0 d).",
+    "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 126.47x, 4 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados).",
     "Formato dos mais revendidos: 1500 un. a 95 Robux."
@@ -443,5 +627,5 @@
    "hold_days": 30
   }
  ],
- "descartados": 63
+ "descartados": 75
 }

@@ -170,14 +170,14 @@
   "with_resale": 3
  },
  "14768857": {
-  "items_seen": 10,
-  "median_retention": 4.271,
+  "items_seen": 9,
+  "median_retention": 4.129,
   "metodo": 2,
   "name": "Something Simulators",
   "pct_above_price": 1.0,
-  "sold_out": 7,
-  "updated_at": "2026-10-22T04:54:23Z",
-  "with_resale": 7
+  "sold_out": 6,
+  "updated_at": "2026-10-29T13:07:55Z",
+  "with_resale": 5
  },
  "15757277": {
   "items_seen": 7,
@@ -228,6 +228,16 @@
   "sold_out": 3,
   "updated_at": "2026-10-28T16:40:38Z",
   "with_resale": 3
+ },
+ "2664667": {
+  "items_seen": 2,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "LimeLight Studio",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-29T13:07:55Z",
+  "with_resale": 0
  },
  "2713252": {
   "items_seen": 1,
@@ -488,6 +498,16 @@
   "sold_out": 0,
   "updated_at": "2026-10-21T07:42:34Z",
   "with_resale": 0
+ },
+ "627873145": {
+  "items_seen": 59,
+  "median_retention": 0.546,
+  "metodo": 2,
+  "name": "Devil’s UGC",
+  "pct_above_price": 0.333,
+  "sold_out": 5,
+  "updated_at": "2026-10-29T13:07:55Z",
+  "with_resale": 3
  },
  "640958110": {
   "items_seen": 4,

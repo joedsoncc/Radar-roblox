@@ -30,3 +30,4 @@
 {"ts": "2026-10-28T16:40:38Z", "price": 65, "units_remaining": 81, "total_quantity": 500, "rap": 65.0, "lowest_resale": 299, "resale_avg_low": 559.6, "volume_7d": 14, "is_off_sale": false}
 {"ts": "2026-10-28T22:38:48Z", "price": 65, "units_remaining": 80, "total_quantity": 500, "rap": 65.0, "lowest_resale": 299, "resale_avg_low": 559.6, "volume_7d": 14, "is_off_sale": false}
 {"ts": "2026-10-29T05:53:13Z", "price": 65, "units_remaining": 80, "total_quantity": 500, "rap": 65.0, "lowest_resale": 298, "resale_avg_low": 550.5, "volume_7d": 13, "is_off_sale": false}
+{"ts": "2026-10-29T13:07:55Z", "price": 65, "units_remaining": 79, "total_quantity": 500, "rap": 65.0, "lowest_resale": 286, "resale_avg_low": 548.0, "volume_7d": 13, "is_off_sale": false}
