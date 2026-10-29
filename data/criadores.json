@@ -249,6 +249,16 @@
   "updated_at": "2026-10-25T04:47:13Z",
   "with_resale": 0
  },
+ "293703": {
+  "items_seen": 60,
+  "median_retention": 2.305,
+  "metodo": 2,
+  "name": "Supreme",
+  "pct_above_price": 1.0,
+  "sold_out": 4,
+  "updated_at": "2026-10-29T19:40:23Z",
+  "with_resale": 3
+ },
  "3186444": {
   "items_seen": 39,
   "median_retention": null,
