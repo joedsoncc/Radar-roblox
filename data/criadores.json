@@ -289,6 +289,16 @@
   "updated_at": "2026-10-25T16:27:31Z",
   "with_resale": 17
  },
+ "34207904": {
+  "items_seen": 2,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "scrugc",
+  "pct_above_price": null,
+  "sold_out": 1,
+  "updated_at": "2026-10-29T05:53:13Z",
+  "with_resale": 0
+ },
  "34217928": {
   "items_seen": 60,
   "median_retention": 1.579,
@@ -368,6 +378,16 @@
   "sold_out": 10,
   "updated_at": "2026-10-25T04:47:13Z",
   "with_resale": 9
+ },
+ "35910707": {
+  "items_seen": 3,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Drip Embassy",
+  "pct_above_price": null,
+  "sold_out": 1,
+  "updated_at": "2026-10-29T05:53:13Z",
+  "with_resale": 0
  },
  "35995577": {
   "items_seen": 60,
@@ -471,12 +491,12 @@
  },
  "640958110": {
   "items_seen": 4,
-  "median_retention": 1.821,
+  "median_retention": 3.053,
   "metodo": 2,
   "name": "Kimby UGC",
   "pct_above_price": 1.0,
   "sold_out": 1,
-  "updated_at": "2026-10-22T04:54:23Z",
+  "updated_at": "2026-10-29T05:53:13Z",
   "with_resale": 1
  },
  "675798403": {
