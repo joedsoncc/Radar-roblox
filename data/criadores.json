@@ -49,6 +49,16 @@
   "updated_at": "2026-10-25T04:47:13Z",
   "with_resale": 0
  },
+ "10954724": {
+  "items_seen": 19,
+  "median_retention": 3.684,
+  "metodo": 2,
+  "name": "moonsniper",
+  "pct_above_price": 0.8,
+  "sold_out": 5,
+  "updated_at": "2026-10-30T05:53:58Z",
+  "with_resale": 5
+ },
  "109916308": {
   "items_seen": 11,
   "median_retention": 1.539,

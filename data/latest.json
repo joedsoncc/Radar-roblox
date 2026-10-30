@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-29T23:57:36Z",
+ "generated_at": "2026-10-30T05:53:58Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429; detalhes do catálogo: 429.",
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
  "snapshots_count": 30,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
@@ -80,26 +80,26 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-890d1fc697534c10ade2eb6fcbadd923/150/150/WaistAccessory/Png/noFilter",
    "price": 65,
    "total_quantity": 1500,
-   "units_remaining": 64,
-   "pct_sold": 95.7,
-   "rap": 71.0,
+   "units_remaining": 55,
+   "pct_sold": 96.3,
+   "rap": 67.0,
    "resale_avg_low": 1002.4,
    "resale_avg_n": 10,
    "sale_ref": 461.91,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 117,
-   "volume_30d": 736,
-   "last_chart_price": 65,
-   "last_chart_date": "2026-10-28",
+   "volume_7d": 131,
+   "volume_30d": 742,
+   "last_chart_price": 80,
+   "last_chart_date": "2026-10-29",
    "chart_median_14d": 65,
    "rap_consistent": true,
    "cost": 72.15,
    "net_profit": 158.81,
    "net_margin": 2.2011,
-   "velocity_per_hour": 1.439,
+   "velocity_per_hour": 1.61,
    "velocity_note": null,
-   "eta_hours": 44.5,
-   "score": 74,
+   "eta_hours": 34.2,
+   "score": 75,
    "class": "OBSERVAR",
    "reasons": [
     "Cumpre os critérios de compra, mas o nome lembra um item clássico (sparkle time): a Roblox remove cópias e reembolsa só o preço pago.",
@@ -122,14 +122,10 @@
     "updated_at": "2026-10-28T22:38:48Z",
     "with_resale": 3
    },
-   "retention": 1.092,
+   "retention": 1.031,
    "change_7d": 0.0,
    "trend": "estável",
    "spark": [
-    [
-     "2026-09-29",
-     65
-    ],
     [
      "2026-09-30",
      65
@@ -245,6 +241,10 @@
     [
      "2026-10-28",
      65
+    ],
+    [
+     "2026-10-29",
+     80
     ]
    ],
    "tipo": "loja",
@@ -265,31 +265,31 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-c7fce7cb2e1c0a324291a8d9517a41cc/150/150/HairAccessory/Png/noFilter",
    "price": 65,
    "total_quantity": 500,
-   "units_remaining": 79,
-   "pct_sold": 84.2,
+   "units_remaining": 77,
+   "pct_sold": 84.6,
    "rap": 65.0,
    "resale_avg_low": 558.0,
    "resale_avg_n": 10,
    "sale_ref": 808.02,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 13,
-   "volume_30d": 173,
+   "volume_7d": 11,
+   "volume_30d": 171,
    "last_chart_price": 65,
-   "last_chart_date": "2026-10-28",
+   "last_chart_date": "2026-10-29",
    "chart_median_14d": 65.0,
    "rap_consistent": true,
    "cost": 72.15,
    "net_profit": 331.86,
    "net_margin": 4.5996,
-   "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
-   "eta_hours": null,
-   "score": 55,
+   "velocity_per_hour": 0.119,
+   "velocity_note": null,
+   "eta_hours": 647.1,
+   "score": 58,
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +460%.",
-    "Volume 7d 13 abaixo de 50.",
-    "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
+    "Volume 7d 11 abaixo de 50.",
+    "Esgota devagar (~27.0 d).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 12.31x, 3 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
@@ -311,10 +311,6 @@
    "change_7d": 0.0,
    "trend": "estável",
    "spark": [
-    [
-     "2026-09-25",
-     65
-    ],
     [
      "2026-09-26",
      65
@@ -430,6 +426,10 @@
     [
      "2026-10-28",
      65
+    ],
+    [
+     "2026-10-29",
+     65
     ]
    ],
    "tipo": "loja",
@@ -439,193 +439,7 @@
    "price_raised_from": null,
    "break_even": 144,
    "hold_days": 30
-  },
-  {
-   "asset_id": 125411013324026,
-   "name": "Blue Clockwork Headphones",
-   "creator_name": "Sparkz UGC",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/125411013324026",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-5d3e48e07e37fd3c7a1153653cca2f27/150/150/Hat/Png/noFilter",
-   "price": 95,
-   "total_quantity": 1500,
-   "units_remaining": 79,
-   "pct_sold": 94.7,
-   "rap": 95.0,
-   "resale_avg_low": 859.8,
-   "resale_avg_n": 10,
-   "sale_ref": 12135.18,
-   "sale_ref_source": "historico_loja",
-   "volume_7d": 28,
-   "volume_30d": 436,
-   "last_chart_price": 95,
-   "last_chart_date": "2026-10-28",
-   "chart_median_14d": 95,
-   "rap_consistent": true,
-   "cost": 105.45,
-   "net_profit": 5962.14,
-   "net_margin": 56.54,
-   "velocity_per_hour": 0.111,
-   "velocity_note": null,
-   "eta_hours": 711.7,
-   "score": 54,
-   "class": "OBSERVAR",
-   "reasons": [
-    "Margem líquida +5654%.",
-    "Volume 7d 28 abaixo de 50.",
-    "Esgota devagar (~29.7 d).",
-    "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 126.47x, 4 itens).",
-    "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados).",
-    "Formato dos mais revendidos: 1500 un. a 95 Robux."
-   ],
-   "invalidators": [
-    "Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR."
-   ],
-   "data_quality": "rap_primario",
-   "creator_track": {
-    "items_seen": 18,
-    "median_retention": 126.474,
-    "metodo": 2,
-    "name": "Sparkz UGC",
-    "pct_above_price": 1.0,
-    "sold_out": 4,
-    "updated_at": "2026-10-26T21:02:38Z",
-    "with_resale": 4
-   },
-   "retention": 1.0,
-   "change_7d": 0.0,
-   "trend": "estável",
-   "spark": [
-    [
-     "2026-09-29",
-     95
-    ],
-    [
-     "2026-09-30",
-     95
-    ],
-    [
-     "2026-10-01",
-     95
-    ],
-    [
-     "2026-10-02",
-     95
-    ],
-    [
-     "2026-10-03",
-     95
-    ],
-    [
-     "2026-10-04",
-     95
-    ],
-    [
-     "2026-10-05",
-     95
-    ],
-    [
-     "2026-10-06",
-     95
-    ],
-    [
-     "2026-10-07",
-     95
-    ],
-    [
-     "2026-10-08",
-     95
-    ],
-    [
-     "2026-10-09",
-     95
-    ],
-    [
-     "2026-10-10",
-     95
-    ],
-    [
-     "2026-10-11",
-     109
-    ],
-    [
-     "2026-10-12",
-     95
-    ],
-    [
-     "2026-10-13",
-     95
-    ],
-    [
-     "2026-10-14",
-     95
-    ],
-    [
-     "2026-10-15",
-     95
-    ],
-    [
-     "2026-10-16",
-     95
-    ],
-    [
-     "2026-10-17",
-     95
-    ],
-    [
-     "2026-10-18",
-     95
-    ],
-    [
-     "2026-10-19",
-     95
-    ],
-    [
-     "2026-10-20",
-     95
-    ],
-    [
-     "2026-10-21",
-     95
-    ],
-    [
-     "2026-10-22",
-     95
-    ],
-    [
-     "2026-10-23",
-     95
-    ],
-    [
-     "2026-10-24",
-     95
-    ],
-    [
-     "2026-10-25",
-     95
-    ],
-    [
-     "2026-10-26",
-     95
-    ],
-    [
-     "2026-10-27",
-     95
-    ],
-    [
-     "2026-10-28",
-     95
-    ]
-   ],
-   "tipo": "loja",
-   "fator_trava": 1.01,
-   "rap_primary": true,
-   "copy_risk": "clockwork",
-   "price_raised_from": null,
-   "break_even": 211,
-   "hold_days": 30
   }
  ],
- "descartados": 71
+ "descartados": 70
 }
