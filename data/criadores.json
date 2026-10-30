@@ -110,13 +110,13 @@
   "with_resale": 1
  },
  "12448166": {
-  "items_seen": 1,
+  "items_seen": 2,
   "median_retention": null,
   "metodo": 2,
   "name": "IPVisualsTV",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-22T21:39:54Z",
+  "updated_at": "2026-10-29T23:57:36Z",
   "with_resale": 0
  },
  "12648705": {
@@ -648,6 +648,16 @@
   "sold_out": 10,
   "updated_at": "2026-10-18T17:21:02Z",
   "with_resale": 10
+ },
+ "953199792": {
+  "items_seen": 60,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Pirate Limiteds",
+  "pct_above_price": null,
+  "sold_out": 1,
+  "updated_at": "2026-10-29T23:57:36Z",
+  "with_resale": 0
  },
  "9642123": {
   "items_seen": 60,
