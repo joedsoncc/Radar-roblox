@@ -79,6 +79,16 @@
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 7
  },
+ "114590675": {
+  "items_seen": 49,
+  "median_retention": 3.081,
+  "metodo": 2,
+  "name": "Blox UGC Store",
+  "pct_above_price": 0.75,
+  "sold_out": 8,
+  "updated_at": "2026-10-30T13:00:22Z",
+  "with_resale": 4
+ },
  "12034553": {
   "items_seen": 51,
   "median_retention": 0.349,
