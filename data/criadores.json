@@ -249,6 +249,16 @@
   "updated_at": "2026-10-27T01:30:05Z",
   "with_resale": 0
  },
+ "226783611": {
+  "items_seen": 60,
+  "median_retention": 0.689,
+  "metodo": 2,
+  "name": "CosmicUGCs",
+  "pct_above_price": 0.375,
+  "sold_out": 8,
+  "updated_at": "2026-10-31T18:35:50Z",
+  "with_resale": 8
+ },
  "259636409": {
   "items_seen": 16,
   "median_retention": 12.308,
@@ -679,6 +689,16 @@
   "updated_at": "2026-10-26T15:14:12Z",
   "with_resale": 4
  },
+ "90171293": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "DarkBrace",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-31T18:35:50Z",
+  "with_resale": 0
+ },
  "935271721": {
   "items_seen": 60,
   "median_retention": 1.456,
@@ -721,12 +741,12 @@
  },
  "982613282": {
   "items_seen": 43,
-  "median_retention": 1.886,
+  "median_retention": 1.581,
   "metodo": 2,
   "name": "Sinister UGC's Plus",
-  "pct_above_price": 0.571,
-  "sold_out": 13,
-  "updated_at": "2026-10-22T11:58:05Z",
-  "with_resale": 7
+  "pct_above_price": 0.6,
+  "sold_out": 15,
+  "updated_at": "2026-10-31T18:35:50Z",
+  "with_resale": 10
  }
 }
