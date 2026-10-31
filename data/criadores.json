@@ -229,6 +229,16 @@
   "updated_at": "2026-10-28T01:25:43Z",
   "with_resale": 3
  },
+ "1831759806": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Martinzilloxd",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-31T05:49:55Z",
+  "with_resale": 0
+ },
  "214730562": {
   "items_seen": 27,
   "median_retention": null,
@@ -348,6 +358,16 @@
   "sold_out": 12,
   "updated_at": "2026-10-25T11:37:15Z",
   "with_resale": 11
+ },
+ "34347349": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Zegarden",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-31T05:49:55Z",
+  "with_resale": 0
  },
  "34383602": {
   "items_seen": 1,
@@ -517,6 +537,16 @@
   "pct_above_price": null,
   "sold_out": 0,
   "updated_at": "2026-10-27T07:55:53Z",
+  "with_resale": 0
+ },
+ "607850693": {
+  "items_seen": 3,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "re.q",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-10-31T05:49:55Z",
   "with_resale": 0
  },
  "612503664": {
