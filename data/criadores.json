@@ -239,6 +239,16 @@
   "updated_at": "2026-10-31T05:49:55Z",
   "with_resale": 0
  },
+ "205327335": {
+  "items_seen": 17,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Nexi's UGC'S",
+  "pct_above_price": null,
+  "sold_out": 9,
+  "updated_at": "2026-10-31T23:25:37Z",
+  "with_resale": 0
+ },
  "214730562": {
   "items_seen": 27,
   "median_retention": null,
@@ -599,6 +609,16 @@
   "updated_at": "2026-10-19T13:24:09Z",
   "with_resale": 1
  },
+ "707199142": {
+  "items_seen": 43,
+  "median_retention": 0.078,
+  "metodo": 2,
+  "name": "Noiré UGC",
+  "pct_above_price": 0.2,
+  "sold_out": 6,
+  "updated_at": "2026-10-31T23:25:37Z",
+  "with_resale": 5
+ },
  "724147": {
   "items_seen": 60,
   "median_retention": 3.158,
@@ -658,6 +678,16 @@
   "sold_out": 1,
   "updated_at": "2026-10-31T12:39:06Z",
   "with_resale": 1
+ },
+ "828639563": {
+  "items_seen": 12,
+  "median_retention": 3.041,
+  "metodo": 2,
+  "name": "pxh",
+  "pct_above_price": 1.0,
+  "sold_out": 3,
+  "updated_at": "2026-10-31T23:25:37Z",
+  "with_resale": 3
  },
  "8424134": {
   "items_seen": 1,
