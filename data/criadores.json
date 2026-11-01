@@ -11,13 +11,13 @@
  },
  "10441371": {
   "items_seen": 60,
-  "median_retention": 2.105,
+  "median_retention": 1.935,
   "metodo": 2,
   "name": "Epic's UGC",
-  "pct_above_price": 0.7,
-  "sold_out": 11,
-  "updated_at": "2026-10-25T04:47:13Z",
-  "with_resale": 10
+  "pct_above_price": 0.667,
+  "sold_out": 12,
+  "updated_at": "2026-11-01T06:12:53Z",
+  "with_resale": 12
  },
  "1046434750": {
   "items_seen": 2,
@@ -46,7 +46,7 @@
   "name": "Nova Motions",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-25T04:47:13Z",
+  "updated_at": "2026-11-01T06:12:53Z",
   "with_resale": 0
  },
  "10954724": {
@@ -141,12 +141,12 @@
  },
  "12648705": {
   "items_seen": 9,
-  "median_retention": 0.375,
+  "median_retention": 0.999,
   "metodo": 2,
   "name": "[AT] Alpine UGC",
-  "pct_above_price": 0.0,
-  "sold_out": 3,
-  "updated_at": "2026-10-25T04:47:13Z",
+  "pct_above_price": 0.5,
+  "sold_out": 4,
+  "updated_at": "2026-11-01T06:12:53Z",
   "with_resale": 2
  },
  "13191072": {
@@ -296,7 +296,7 @@
   "name": "Synoptic Interactive",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-25T04:47:13Z",
+  "updated_at": "2026-11-01T06:12:53Z",
   "with_resale": 0
  },
  "293703": {
@@ -310,13 +310,13 @@
   "with_resale": 3
  },
  "3186444": {
-  "items_seen": 39,
+  "items_seen": 40,
   "median_retention": null,
   "metodo": 2,
   "name": "Heyop's Clothes!",
   "pct_above_price": null,
-  "sold_out": 33,
-  "updated_at": "2026-10-25T04:47:13Z",
+  "sold_out": 34,
+  "updated_at": "2026-11-01T06:12:53Z",
   "with_resale": 0
  },
  "32039793": {
@@ -328,6 +328,16 @@
   "sold_out": 2,
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 2
+ },
+ "32702646": {
+  "items_seen": 6,
+  "median_retention": 2.373,
+  "metodo": 2,
+  "name": "Galaxy Clothing (GC)",
+  "pct_above_price": 1.0,
+  "sold_out": 1,
+  "updated_at": "2026-11-01T06:12:53Z",
+  "with_resale": 1
  },
  "32829728": {
   "items_seen": 20,
@@ -500,24 +510,24 @@
   "with_resale": 0
  },
  "41177539": {
-  "items_seen": 4,
-  "median_retention": 0.002,
+  "items_seen": 7,
+  "median_retention": 0.01,
   "metodo": 2,
   "name": "Olivetreeteam UGC",
   "pct_above_price": 0.0,
   "sold_out": 1,
-  "updated_at": "2026-10-25T04:47:13Z",
+  "updated_at": "2026-11-01T06:12:53Z",
   "with_resale": 1
  },
  "419105767": {
-  "items_seen": 53,
-  "median_retention": 3.916,
+  "items_seen": 30,
+  "median_retention": 4.204,
   "metodo": 2,
   "name": "psychotic ᅠ",
-  "pct_above_price": 0.8,
-  "sold_out": 11,
-  "updated_at": "2026-10-25T04:47:13Z",
-  "with_resale": 10
+  "pct_above_price": 1.0,
+  "sold_out": 1,
+  "updated_at": "2026-11-01T06:12:53Z",
+  "with_resale": 1
  },
  "521263333": {
   "items_seen": 8,
@@ -546,7 +556,7 @@
   "name": "Leon's Imaginary",
   "pct_above_price": null,
   "sold_out": 6,
-  "updated_at": "2026-10-25T04:47:13Z",
+  "updated_at": "2026-11-01T06:12:53Z",
   "with_resale": 0
  },
  "596740472": {
@@ -621,13 +631,13 @@
  },
  "724147": {
   "items_seen": 60,
-  "median_retention": 3.158,
+  "median_retention": 5.063,
   "metodo": 2,
   "name": "UGC.Studios",
   "pct_above_price": 1.0,
-  "sold_out": 5,
-  "updated_at": "2026-10-25T04:47:13Z",
-  "with_resale": 1
+  "sold_out": 7,
+  "updated_at": "2026-11-01T06:12:53Z",
+  "with_resale": 2
  },
  "743697214": {
   "items_seen": 44,
