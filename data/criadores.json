@@ -126,7 +126,7 @@
   "name": "TypeUGC",
   "pct_above_price": 1.0,
   "sold_out": 19,
-  "updated_at": "2026-10-25T04:47:13Z",
+  "updated_at": "2026-11-01T23:38:50Z",
   "with_resale": 1
  },
  "12448166": {
@@ -461,13 +461,13 @@
  },
  "35790116": {
   "items_seen": 32,
-  "median_retention": 280.0,
+  "median_retention": 294.5,
   "metodo": 2,
   "name": "ZNcreation",
   "pct_above_price": 1.0,
   "sold_out": 10,
-  "updated_at": "2026-10-25T04:47:13Z",
-  "with_resale": 9
+  "updated_at": "2026-11-01T23:38:50Z",
+  "with_resale": 10
  },
  "35910707": {
   "items_seen": 3,
@@ -506,7 +506,7 @@
   "name": "Mimii UCG Crown’s",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-25T04:47:13Z",
+  "updated_at": "2026-11-01T23:38:50Z",
   "with_resale": 0
  },
  "41177539": {
@@ -541,13 +541,13 @@
  },
  "568550388": {
   "items_seen": 60,
-  "median_retention": 1.0,
+  "median_retention": 1.727,
   "metodo": 2,
   "name": "Sinister UGC's",
-  "pct_above_price": 0.462,
-  "sold_out": 19,
-  "updated_at": "2026-10-25T04:47:13Z",
-  "with_resale": 13
+  "pct_above_price": 0.562,
+  "sold_out": 21,
+  "updated_at": "2026-11-01T23:38:50Z",
+  "with_resale": 16
  },
  "57366289": {
   "items_seen": 12,
@@ -678,6 +678,16 @@
   "sold_out": 0,
   "updated_at": "2026-11-01T13:31:55Z",
   "with_resale": 0
+ },
+ "798077482": {
+  "items_seen": 60,
+  "median_retention": 5.221,
+  "metodo": 2,
+  "name": "Digital Collectibles",
+  "pct_above_price": 0.667,
+  "sold_out": 3,
+  "updated_at": "2026-11-01T23:38:50Z",
+  "with_resale": 3
  },
  "823647416": {
   "items_seen": 8,
