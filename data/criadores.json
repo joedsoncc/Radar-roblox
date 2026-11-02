@@ -31,12 +31,12 @@
  },
  "1054448950": {
   "items_seen": 18,
-  "median_retention": 126.474,
+  "median_retention": 126.526,
   "metodo": 2,
   "name": "Sparkz UGC",
   "pct_above_price": 1.0,
   "sold_out": 4,
-  "updated_at": "2026-10-26T21:02:38Z",
+  "updated_at": "2026-11-02T23:35:23Z",
   "with_resale": 4
  },
  "1070407157": {
@@ -440,14 +440,14 @@
   "with_resale": 10
  },
  "35488897": {
-  "items_seen": 58,
-  "median_retention": 1.784,
+  "items_seen": 54,
+  "median_retention": 2.108,
   "metodo": 2,
   "name": "1of1ugc",
-  "pct_above_price": 0.833,
+  "pct_above_price": 0.857,
   "sold_out": 14,
-  "updated_at": "2026-10-25T11:37:15Z",
-  "with_resale": 6
+  "updated_at": "2026-11-02T23:35:23Z",
+  "with_resale": 7
  },
  "35700806": {
   "items_seen": 60,
