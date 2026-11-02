@@ -329,6 +329,16 @@
   "updated_at": "2026-10-18T02:39:39Z",
   "with_resale": 2
  },
+ "32548392": {
+  "items_seen": 23,
+  "median_retention": 8.582,
+  "metodo": 2,
+  "name": "YipStudio",
+  "pct_above_price": 1.0,
+  "sold_out": 12,
+  "updated_at": "2026-11-02T06:13:28Z",
+  "with_resale": 8
+ },
  "32702646": {
   "items_seen": 6,
   "median_retention": 2.373,
