@@ -171,12 +171,12 @@
  },
  "14511880": {
   "items_seen": 60,
-  "median_retention": 1.15,
+  "median_retention": 1.47,
   "metodo": 2,
   "name": "Waffle's UGC",
   "pct_above_price": 0.667,
-  "sold_out": 28,
-  "updated_at": "2026-10-26T15:14:12Z",
+  "sold_out": 21,
+  "updated_at": "2026-11-02T16:09:33Z",
   "with_resale": 3
  },
  "146524767": {
@@ -540,13 +540,13 @@
   "with_resale": 1
  },
  "521263333": {
-  "items_seen": 8,
+  "items_seen": 9,
   "median_retention": null,
   "metodo": 2,
   "name": "RBX x Prax",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-26T07:51:01Z",
+  "updated_at": "2026-11-02T16:09:33Z",
   "with_resale": 0
  },
  "568550388": {
@@ -741,12 +741,12 @@
  },
  "899761216": {
   "items_seen": 22,
-  "median_retention": 4.095,
+  "median_retention": 3.822,
   "metodo": 2,
   "name": "TrippyLabs",
   "pct_above_price": 1.0,
   "sold_out": 4,
-  "updated_at": "2026-10-26T15:14:12Z",
+  "updated_at": "2026-11-02T16:09:33Z",
   "with_resale": 4
  },
  "90171293": {
