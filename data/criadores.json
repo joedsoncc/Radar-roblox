@@ -116,7 +116,7 @@
   "name": "S4TYURN",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-26T21:02:38Z",
+  "updated_at": "2026-11-03T06:53:11Z",
   "with_resale": 0
  },
  "12377810": {
@@ -250,13 +250,13 @@
   "with_resale": 0
  },
  "214730562": {
-  "items_seen": 27,
+  "items_seen": 28,
   "median_retention": null,
   "metodo": 2,
   "name": "Astrox UGC",
   "pct_above_price": null,
   "sold_out": 1,
-  "updated_at": "2026-10-27T01:30:05Z",
+  "updated_at": "2026-11-03T06:53:11Z",
   "with_resale": 0
  },
  "226783611": {
@@ -361,13 +361,13 @@
  },
  "331": {
   "items_seen": 60,
-  "median_retention": 2.326,
+  "median_retention": 2.396,
   "metodo": 2,
   "name": "Kings",
-  "pct_above_price": 0.929,
-  "sold_out": 43,
-  "updated_at": "2026-10-27T01:30:05Z",
-  "with_resale": 42
+  "pct_above_price": 0.93,
+  "sold_out": 44,
+  "updated_at": "2026-11-03T06:53:11Z",
+  "with_resale": 43
  },
  "33137717": {
   "items_seen": 60,
@@ -418,6 +418,16 @@
   "sold_out": 0,
   "updated_at": "2026-10-22T21:39:54Z",
   "with_resale": 0
+ },
+ "34864442": {
+  "items_seen": 60,
+  "median_retention": 2.0,
+  "metodo": 2,
+  "name": "Aeteris Sanctuary | UGC Shop",
+  "pct_above_price": 0.846,
+  "sold_out": 40,
+  "updated_at": "2026-11-03T06:53:11Z",
+  "with_resale": 13
  },
  "3519422403": {
   "items_seen": 1,
