@@ -210,23 +210,23 @@
   "with_resale": 3
  },
  "15760707": {
-  "items_seen": 21,
-  "median_retention": 1.993,
+  "items_seen": 23,
+  "median_retention": 1.08,
   "metodo": 2,
   "name": "Yat_ziry makes me happy everyday:) day",
-  "pct_above_price": 0.636,
-  "sold_out": 13,
-  "updated_at": "2026-10-24T22:31:17Z",
-  "with_resale": 11
+  "pct_above_price": 0.571,
+  "sold_out": 16,
+  "updated_at": "2026-11-04T06:30:38Z",
+  "with_resale": 14
  },
  "17260696": {
-  "items_seen": 34,
-  "median_retention": 0.15,
+  "items_seen": 33,
+  "median_retention": 0.14,
   "metodo": 2,
   "name": "LOS GIGA PANAS",
   "pct_above_price": 0.0,
   "sold_out": 24,
-  "updated_at": "2026-10-28T01:25:43Z",
+  "updated_at": "2026-11-04T06:30:38Z",
   "with_resale": 3
  },
  "1831759806": {
@@ -297,6 +297,16 @@
   "pct_above_price": null,
   "sold_out": 0,
   "updated_at": "2026-11-01T06:12:53Z",
+  "with_resale": 0
+ },
+ "2831461649": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "LOCOXSMAX",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-04T06:30:38Z",
   "with_resale": 0
  },
  "293703": {
