@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-05T06:53:07Z",
+ "generated_at": "2026-11-05T16:29:47Z",
  "status_note": "",
  "totals": {
   "cost": 837,
-  "value_now": 405.5,
-  "pnl": -431.5,
-  "pnl_pct": -0.5155,
+  "value_now": 404.5,
+  "pnl": -432.5,
+  "pnl_pct": -0.5167,
   "items_counted": 2
  },
  "items": [
@@ -36,18 +36,18 @@
    "units_remaining": 70,
    "total_quantity": 3000,
    "is_off_sale": false,
-   "rap": 373.0,
+   "rap": 372.0,
    "volume_7d": 5,
-   "resale_avg_low": 1865.7,
+   "resale_avg_low": 11829.7,
    "resale_avg_n": 10,
-   "sale_ref": 373.0,
+   "sale_ref": 372.0,
    "sale_ref_source": "rap",
-   "value_now": 373,
+   "value_now": 372,
    "cost_total": 778,
-   "pnl": -405,
-   "pnl_pct": -0.5206,
+   "pnl": -406,
+   "pnl_pct": -0.5219,
    "breakeven_rap": 778,
-   "retention": 0.9589,
+   "retention": 0.9563,
    "change_7d": 0.0658,
    "change_30d": 0.0,
    "trend": "subindo",
@@ -770,6 +770,12 @@
       373.0,
       1865.7,
       70
+     ],
+     [
+      "2026-11-05T16:29:47Z",
+      372.0,
+      11829.7,
+      70
      ]
     ]
    }
@@ -792,7 +798,7 @@
    "quantity": 1,
    "original_price": 65,
    "avg_paid": 59,
-   "units_remaining": 43,
+   "units_remaining": 42,
    "total_quantity": 500,
    "is_off_sale": false,
    "rap": 65.0,
@@ -1652,6 +1658,12 @@
       65.0,
       647.5,
       43
+     ],
+     [
+      "2026-11-05T16:29:47Z",
+      65.0,
+      647.5,
+      42
      ]
     ]
    }
