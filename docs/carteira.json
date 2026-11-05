@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T23:43:02Z",
+ "generated_at": "2026-11-05T06:53:07Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -37,7 +37,7 @@
    "total_quantity": 3000,
    "is_off_sale": false,
    "rap": 373.0,
-   "volume_7d": 6,
+   "volume_7d": 5,
    "resale_avg_low": 1865.7,
    "resale_avg_n": 10,
    "sale_ref": 373.0,
@@ -48,10 +48,10 @@
    "pnl_pct": -0.5206,
    "breakeven_rap": 778,
    "retention": 0.9589,
-   "change_7d": 0.0117,
-   "change_30d": 0.0277,
-   "trend": "estável",
-   "days_held": 17,
+   "change_7d": 0.0658,
+   "change_30d": 0.0,
+   "trend": "subindo",
+   "days_held": 18,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -764,6 +764,12 @@
       373.0,
       1865.7,
       70
+     ],
+     [
+      "2026-11-05T06:53:07Z",
+      373.0,
+      1865.7,
+      70
      ]
     ]
    }
@@ -790,7 +796,7 @@
    "total_quantity": 500,
    "is_off_sale": false,
    "rap": 65.0,
-   "volume_7d": 34,
+   "volume_7d": 36,
    "resale_avg_low": 647.5,
    "resale_avg_n": 10,
    "sale_ref": 65.0,
@@ -804,7 +810,7 @@
    "change_7d": 0.0,
    "change_30d": 0.0,
    "trend": "estável",
-   "days_held": 14,
+   "days_held": 15,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -1297,6 +1303,11 @@
       "2026-11-03",
       65,
       8
+     ],
+     [
+      "2026-11-04",
+      65,
+      3
      ]
     ],
     "tracked": [
@@ -1632,6 +1643,12 @@
      ],
      [
       "2026-11-04T23:43:02Z",
+      65.0,
+      647.5,
+      43
+     ],
+     [
+      "2026-11-05T06:53:07Z",
       65.0,
       647.5,
       43

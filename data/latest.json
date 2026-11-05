@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-04T23:43:02Z",
+ "generated_at": "2026-11-05T06:53:07Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
  "snapshots_count": 25,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
@@ -80,30 +80,30 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-7bdb33ceb9c22fd7a0aa1356c9a83045/150/150/Hat/Png/noFilter",
    "price": 200,
    "total_quantity": 3000,
-   "units_remaining": 19,
-   "pct_sold": 99.4,
-   "rap": 200.0,
-   "resale_avg_low": 236.6,
+   "units_remaining": 11,
+   "pct_sold": 99.6,
+   "rap": 198.0,
+   "resale_avg_low": 248.4,
    "resale_avg_n": 10,
    "sale_ref": 1054.64,
    "sale_ref_source": "historico_loja",
    "volume_7d": 188,
-   "volume_30d": 542,
-   "last_chart_price": 198,
-   "last_chart_date": "2026-11-03",
+   "volume_30d": 563,
+   "last_chart_price": 200,
+   "last_chart_date": "2026-11-04",
    "chart_median_14d": 198,
    "rap_consistent": true,
    "cost": 222.0,
    "net_profit": 305.32,
    "net_margin": 1.3753,
-   "velocity_per_hour": 1.453,
+   "velocity_per_hour": 1.653,
    "velocity_note": null,
-   "eta_hours": 13.1,
+   "eta_hours": 6.7,
    "score": 93,
    "class": "COMPRAR-AGORA",
    "reasons": [
     "Margem líquida +138% (lucro ≈ 305 Robux, base: Projeção pela loja (1055 = preço × 5.22)) com RAP coerente com o gráfico.",
-    "Liquidez: 188 vendas em 7 dias. Esgota em ~13 h.",
+    "Liquidez: 188 vendas em 7 dias. Esgota em ~7 h.",
     "Loja com bom histórico: 67% dos limiteds dela revendem acima do preço (mediana 5.22x, 3 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
@@ -123,14 +123,10 @@
     "updated_at": "2026-11-01T23:38:50Z",
     "with_resale": 3
    },
-   "retention": 1.0,
-   "change_7d": 0.0421,
+   "retention": 0.99,
+   "change_7d": 0.0102,
    "trend": "estável",
    "spark": [
-    [
-     "2026-10-05",
-     464
-    ],
     [
      "2026-10-06",
      483
@@ -246,6 +242,10 @@
     [
      "2026-11-03",
      198
+    ],
+    [
+     "2026-11-04",
+     200
     ]
    ],
    "tipo": "loja",
@@ -266,26 +266,26 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-5d3e48e07e37fd3c7a1153653cca2f27/150/150/Hat/Png/noFilter",
    "price": 95,
    "total_quantity": 1500,
-   "units_remaining": 7,
-   "pct_sold": 99.5,
+   "units_remaining": 4,
+   "pct_sold": 99.7,
    "rap": 95.0,
    "resale_avg_low": 233.1,
    "resale_avg_n": 10,
    "sale_ref": 12140.17,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 73,
-   "volume_30d": 424,
+   "volume_7d": 74,
+   "volume_30d": 415,
    "last_chart_price": 95,
-   "last_chart_date": "2026-11-03",
+   "last_chart_date": "2026-11-04",
    "chart_median_14d": 95,
    "rap_consistent": true,
    "cost": 105.45,
    "net_profit": 5964.64,
    "net_margin": 56.5637,
-   "velocity_per_hour": 0.349,
+   "velocity_per_hour": 0.275,
    "velocity_note": null,
-   "eta_hours": 20.1,
-   "score": 73,
+   "eta_hours": 14.5,
+   "score": 71,
    "class": "OBSERVAR",
    "reasons": [
     "Cumpre os critérios de compra, mas o nome lembra um item clássico (clockwork): a Roblox remove cópias e reembolsa só o preço pago.",
@@ -311,10 +311,6 @@
    "change_7d": 0.0,
    "trend": "estável",
    "spark": [
-    [
-     "2026-10-05",
-     95
-    ],
     [
      "2026-10-06",
      95
@@ -430,6 +426,10 @@
     [
      "2026-11-03",
      95
+    ],
+    [
+     "2026-11-04",
+     95
     ]
    ],
    "tipo": "loja",
@@ -441,5 +441,5 @@
    "hold_days": 30
   }
  ],
- "descartados": 57
+ "descartados": 55
 }
