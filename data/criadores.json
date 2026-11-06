@@ -61,12 +61,12 @@
  },
  "10954724": {
   "items_seen": 19,
-  "median_retention": 3.684,
+  "median_retention": 4.105,
   "metodo": 2,
   "name": "moonsniper",
-  "pct_above_price": 0.8,
+  "pct_above_price": 1.0,
   "sold_out": 5,
-  "updated_at": "2026-10-30T05:53:58Z",
+  "updated_at": "2026-11-06T06:53:40Z",
   "with_resale": 5
  },
  "109916308": {
@@ -201,13 +201,13 @@
  },
  "14768857": {
   "items_seen": 9,
-  "median_retention": 4.129,
+  "median_retention": 4.2,
   "metodo": 2,
   "name": "Something Simulators",
   "pct_above_price": 1.0,
   "sold_out": 6,
-  "updated_at": "2026-10-29T13:07:55Z",
-  "with_resale": 5
+  "updated_at": "2026-11-06T06:53:40Z",
+  "with_resale": 6
  },
  "15757277": {
   "items_seen": 7,
@@ -391,12 +391,12 @@
  },
  "33137717": {
   "items_seen": 60,
-  "median_retention": 1.523,
+  "median_retention": 1.538,
   "metodo": 2,
   "name": "The Coolest Moon Gang",
-  "pct_above_price": 0.647,
+  "pct_above_price": 0.588,
   "sold_out": 30,
-  "updated_at": "2026-10-25T16:27:31Z",
+  "updated_at": "2026-11-06T06:53:40Z",
   "with_resale": 17
  },
  "34207904": {
@@ -516,7 +516,7 @@
   "name": "Drip Embassy",
   "pct_above_price": null,
   "sold_out": 1,
-  "updated_at": "2026-10-29T05:53:13Z",
+  "updated_at": "2026-11-06T06:53:40Z",
   "with_resale": 0
  },
  "35995577": {
@@ -831,13 +831,13 @@
  },
  "953199792": {
   "items_seen": 60,
-  "median_retention": null,
+  "median_retention": 22.547,
   "metodo": 2,
   "name": "Pirate Limiteds",
-  "pct_above_price": null,
-  "sold_out": 1,
-  "updated_at": "2026-10-29T23:57:36Z",
-  "with_resale": 0
+  "pct_above_price": 1.0,
+  "sold_out": 2,
+  "updated_at": "2026-11-06T06:53:40Z",
+  "with_resale": 1
  },
  "9642123": {
   "items_seen": 60,
@@ -848,6 +848,16 @@
   "sold_out": 15,
   "updated_at": "2026-11-01T13:31:55Z",
   "with_resale": 0
+ },
+ "981612471": {
+  "items_seen": 32,
+  "median_retention": 0.639,
+  "metodo": 2,
+  "name": "FLLProduction",
+  "pct_above_price": 0.333,
+  "sold_out": 3,
+  "updated_at": "2026-11-06T06:53:40Z",
+  "with_resale": 3
  },
  "982613282": {
   "items_seen": 43,
