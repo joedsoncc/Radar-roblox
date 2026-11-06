@@ -459,6 +459,16 @@
   "updated_at": "2026-11-01T13:31:55Z",
   "with_resale": 0
  },
+ "35351122": {
+  "items_seen": 9,
+  "median_retention": 0.799,
+  "metodo": 2,
+  "name": "XGT UGC's",
+  "pct_above_price": 0.0,
+  "sold_out": 3,
+  "updated_at": "2026-11-06T21:31:59Z",
+  "with_resale": 1
+ },
  "35462895": {
   "items_seen": 60,
   "median_retention": 1.185,
