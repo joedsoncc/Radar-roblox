@@ -229,6 +229,16 @@
   "updated_at": "2026-11-04T06:30:38Z",
   "with_resale": 14
  },
+ "17082830": {
+  "items_seen": 6,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "CEO Productions",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-07T08:50:20Z",
+  "with_resale": 0
+ },
  "17260696": {
   "items_seen": 33,
   "median_retention": 0.14,
@@ -246,7 +256,7 @@
   "name": "Martinzilloxd",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-31T05:49:55Z",
+  "updated_at": "2026-11-07T08:50:20Z",
   "with_resale": 0
  },
  "205327335": {
@@ -648,6 +658,16 @@
   "sold_out": 6,
   "updated_at": "2026-11-05T16:29:47Z",
   "with_resale": 4
+ },
+ "6364071": {
+  "items_seen": 60,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "bloxoria",
+  "pct_above_price": null,
+  "sold_out": 41,
+  "updated_at": "2026-11-07T08:50:20Z",
+  "with_resale": 0
  },
  "640958110": {
   "items_seen": 4,
