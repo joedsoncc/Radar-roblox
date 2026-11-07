@@ -836,7 +836,7 @@
   "name": "DarkBrace",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-10-31T18:35:50Z",
+  "updated_at": "2026-11-07T21:54:35Z",
   "with_resale": 0
  },
  "935271721": {
@@ -900,13 +900,13 @@
   "with_resale": 3
  },
  "982613282": {
-  "items_seen": 43,
-  "median_retention": 1.581,
+  "items_seen": 44,
+  "median_retention": 1.358,
   "metodo": 2,
   "name": "Sinister UGC's Plus",
-  "pct_above_price": 0.6,
+  "pct_above_price": 0.545,
   "sold_out": 15,
-  "updated_at": "2026-10-31T18:35:50Z",
-  "with_resale": 10
+  "updated_at": "2026-11-07T21:54:35Z",
+  "with_resale": 11
  }
 }
