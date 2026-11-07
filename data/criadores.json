@@ -179,6 +179,16 @@
   "updated_at": "2026-10-28T22:38:48Z",
   "with_resale": 3
  },
+ "141147181": {
+  "items_seen": 16,
+  "median_retention": 0.923,
+  "metodo": 2,
+  "name": "Prime UGC 2",
+  "pct_above_price": 0.4,
+  "sold_out": 5,
+  "updated_at": "2026-11-07T16:28:36Z",
+  "with_resale": 5
+ },
  "14511880": {
   "items_seen": 60,
   "median_retention": 1.47,
@@ -766,7 +776,7 @@
   "name": "HouseDominus",
   "pct_above_price": 1.0,
   "sold_out": 1,
-  "updated_at": "2026-10-31T12:39:06Z",
+  "updated_at": "2026-11-07T16:28:36Z",
   "with_resale": 1
  },
  "828639563": {
