@@ -159,6 +159,16 @@
   "updated_at": "2026-11-01T06:12:53Z",
   "with_resale": 2
  },
+ "127637803": {
+  "items_seen": 3,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Lumbo",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-08T22:10:33Z",
+  "with_resale": 0
+ },
  "13191072": {
   "items_seen": 7,
   "median_retention": 0.506,
