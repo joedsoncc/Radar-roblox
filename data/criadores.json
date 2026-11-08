@@ -11,13 +11,13 @@
  },
  "10441371": {
   "items_seen": 60,
-  "median_retention": 1.935,
+  "median_retention": 2.063,
   "metodo": 2,
   "name": "Epic's UGC",
-  "pct_above_price": 0.667,
-  "sold_out": 12,
-  "updated_at": "2026-11-01T06:12:53Z",
-  "with_resale": 12
+  "pct_above_price": 0.727,
+  "sold_out": 11,
+  "updated_at": "2026-11-08T09:03:27Z",
+  "with_resale": 11
  },
  "1046434750": {
   "items_seen": 2,
@@ -356,7 +356,7 @@
   "name": "Heyop's Clothes!",
   "pct_above_price": null,
   "sold_out": 34,
-  "updated_at": "2026-11-01T06:12:53Z",
+  "updated_at": "2026-11-08T09:03:27Z",
   "with_resale": 0
  },
  "32039793": {
@@ -386,7 +386,7 @@
   "name": "Galaxy Clothing (GC)",
   "pct_above_price": 1.0,
   "sold_out": 1,
-  "updated_at": "2026-11-01T06:12:53Z",
+  "updated_at": "2026-11-08T09:03:27Z",
   "with_resale": 1
  },
  "32829728": {
@@ -590,14 +590,14 @@
   "with_resale": 1
  },
  "419105767": {
-  "items_seen": 30,
-  "median_retention": 4.204,
+  "items_seen": 55,
+  "median_retention": 3.411,
   "metodo": 2,
   "name": "psychotic ᅠ",
-  "pct_above_price": 1.0,
-  "sold_out": 1,
-  "updated_at": "2026-11-01T06:12:53Z",
-  "with_resale": 1
+  "pct_above_price": 0.889,
+  "sold_out": 12,
+  "updated_at": "2026-11-08T09:03:27Z",
+  "with_resale": 9
  },
  "521263333": {
   "items_seen": 9,
@@ -625,8 +625,8 @@
   "metodo": 2,
   "name": "Leon's Imaginary",
   "pct_above_price": null,
-  "sold_out": 6,
-  "updated_at": "2026-11-01T06:12:53Z",
+  "sold_out": 7,
+  "updated_at": "2026-11-08T09:03:27Z",
   "with_resale": 0
  },
  "596740472": {
@@ -711,12 +711,12 @@
  },
  "724147": {
   "items_seen": 60,
-  "median_retention": 5.063,
+  "median_retention": 3.258,
   "metodo": 2,
   "name": "UGC.Studios",
   "pct_above_price": 1.0,
   "sold_out": 7,
-  "updated_at": "2026-11-01T06:12:53Z",
+  "updated_at": "2026-11-08T09:03:27Z",
   "with_resale": 2
  },
  "743697214": {
