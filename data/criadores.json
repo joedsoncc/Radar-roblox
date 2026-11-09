@@ -249,6 +249,16 @@
   "updated_at": "2026-11-04T06:30:38Z",
   "with_resale": 14
  },
+ "160269483": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Limited Crowns UGC",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-09T09:52:28Z",
+  "with_resale": 0
+ },
  "17082830": {
   "items_seen": 6,
   "median_retention": null,
@@ -551,12 +561,12 @@
  },
  "35790116": {
   "items_seen": 32,
-  "median_retention": 294.5,
+  "median_retention": 343.5,
   "metodo": 2,
   "name": "ZNcreation",
   "pct_above_price": 1.0,
   "sold_out": 10,
-  "updated_at": "2026-11-01T23:38:50Z",
+  "updated_at": "2026-11-09T09:52:28Z",
   "with_resale": 10
  },
  "35910707": {
@@ -596,7 +606,7 @@
   "name": "Mimii UCG Crown’s",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-01T23:38:50Z",
+  "updated_at": "2026-11-09T09:52:28Z",
   "with_resale": 0
  },
  "41177539": {
