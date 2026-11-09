@@ -136,7 +136,7 @@
   "name": "TypeUGC",
   "pct_above_price": 1.0,
   "sold_out": 19,
-  "updated_at": "2026-11-01T23:38:50Z",
+  "updated_at": "2026-11-09T01:45:01Z",
   "with_resale": 1
  },
  "12448166": {
@@ -519,6 +519,16 @@
   "updated_at": "2026-11-02T23:35:23Z",
   "with_resale": 7
  },
+ "35510408": {
+  "items_seen": 29,
+  "median_retention": 3.918,
+  "metodo": 2,
+  "name": "MOD [LIMITEDS]",
+  "pct_above_price": 0.7,
+  "sold_out": 10,
+  "updated_at": "2026-11-09T01:45:01Z",
+  "with_resale": 10
+ },
  "35700806": {
   "items_seen": 60,
   "median_retention": 1.273,
@@ -621,13 +631,13 @@
  },
  "568550388": {
   "items_seen": 60,
-  "median_retention": 1.727,
+  "median_retention": 1.773,
   "metodo": 2,
   "name": "Sinister UGC's",
-  "pct_above_price": 0.562,
-  "sold_out": 21,
-  "updated_at": "2026-11-01T23:38:50Z",
-  "with_resale": 16
+  "pct_above_price": 0.588,
+  "sold_out": 22,
+  "updated_at": "2026-11-09T01:45:01Z",
+  "with_resale": 17
  },
  "57366289": {
   "items_seen": 12,
