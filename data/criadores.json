@@ -116,7 +116,7 @@
   "name": "JauntyArtStudioUGC",
   "pct_above_price": 1.0,
   "sold_out": 1,
-  "updated_at": "2026-11-03T16:18:39Z",
+  "updated_at": "2026-11-10T20:50:50Z",
   "with_resale": 1
  },
  "121551003": {
@@ -431,13 +431,13 @@
  },
  "331": {
   "items_seen": 60,
-  "median_retention": 2.396,
+  "median_retention": 2.339,
   "metodo": 2,
   "name": "Kings",
-  "pct_above_price": 0.93,
+  "pct_above_price": 0.952,
   "sold_out": 44,
-  "updated_at": "2026-11-03T06:53:11Z",
-  "with_resale": 43
+  "updated_at": "2026-11-10T20:50:50Z",
+  "with_resale": 42
  },
  "33137717": {
   "items_seen": 60,
@@ -670,13 +670,13 @@
   "with_resale": 0
  },
  "596740472": {
-  "items_seen": 5,
+  "items_seen": 6,
   "median_retention": null,
   "metodo": 2,
   "name": "Cheap UGC Limiteds!",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-03T16:18:39Z",
+  "updated_at": "2026-11-10T20:50:50Z",
   "with_resale": 0
  },
  "607850693": {
@@ -871,12 +871,12 @@
  },
  "899761216": {
   "items_seen": 22,
-  "median_retention": 3.822,
+  "median_retention": 3.827,
   "metodo": 2,
   "name": "TrippyLabs",
   "pct_above_price": 1.0,
   "sold_out": 4,
-  "updated_at": "2026-11-02T16:09:33Z",
+  "updated_at": "2026-11-10T20:50:50Z",
   "with_resale": 4
  },
  "90171293": {
