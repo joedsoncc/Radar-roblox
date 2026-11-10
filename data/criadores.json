@@ -201,13 +201,13 @@
  },
  "14511880": {
   "items_seen": 60,
-  "median_retention": 1.47,
+  "median_retention": 1.826,
   "metodo": 2,
   "name": "Waffle's UGC",
-  "pct_above_price": 0.667,
-  "sold_out": 21,
-  "updated_at": "2026-11-02T16:09:33Z",
-  "with_resale": 3
+  "pct_above_price": 0.5,
+  "sold_out": 16,
+  "updated_at": "2026-11-10T04:08:52Z",
+  "with_resale": 2
  },
  "146524767": {
   "items_seen": 15,
@@ -419,6 +419,16 @@
   "updated_at": "2026-10-25T11:37:15Z",
   "with_resale": 7
  },
+ "32973479": {
+  "items_seen": 8,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Temsharo",
+  "pct_above_price": null,
+  "sold_out": 7,
+  "updated_at": "2026-11-10T04:08:52Z",
+  "with_resale": 0
+ },
  "331": {
   "items_seen": 60,
   "median_retention": 2.396,
@@ -511,13 +521,13 @@
  },
  "35462895": {
   "items_seen": 60,
-  "median_retention": 1.185,
+  "median_retention": 1.386,
   "metodo": 2,
   "name": "MFSC Ugc",
-  "pct_above_price": 0.7,
-  "sold_out": 12,
-  "updated_at": "2026-10-25T11:37:15Z",
-  "with_resale": 10
+  "pct_above_price": 0.545,
+  "sold_out": 11,
+  "updated_at": "2026-11-10T04:08:52Z",
+  "with_resale": 11
  },
  "35488897": {
   "items_seen": 54,
@@ -591,13 +601,13 @@
  },
  "370302186": {
   "items_seen": 60,
-  "median_retention": 2.675,
+  "median_retention": 2.645,
   "metodo": 2,
   "name": "Snowy'sz",
   "pct_above_price": 1.0,
-  "sold_out": 2,
-  "updated_at": "2026-10-28T08:37:39Z",
-  "with_resale": 2
+  "sold_out": 4,
+  "updated_at": "2026-11-10T04:08:52Z",
+  "with_resale": 4
  },
  "409990394": {
   "items_seen": 1,
@@ -788,6 +798,16 @@
   "sold_out": 0,
   "updated_at": "2026-11-08T16:42:29Z",
   "with_resale": 0
+ },
+ "79198172": {
+  "items_seen": 10,
+  "median_retention": 3.0,
+  "metodo": 2,
+  "name": "Sinister UGC's Deluxe",
+  "pct_above_price": 1.0,
+  "sold_out": 5,
+  "updated_at": "2026-11-10T04:08:52Z",
+  "with_resale": 5
  },
  "798077482": {
   "items_seen": 60,
