@@ -170,14 +170,14 @@
   "with_resale": 0
  },
  "13191072": {
-  "items_seen": 7,
-  "median_retention": 0.506,
+  "items_seen": 11,
+  "median_retention": 0.382,
   "metodo": 2,
   "name": "Marcos's Ugc's",
   "pct_above_price": 0.0,
-  "sold_out": 2,
-  "updated_at": "2026-10-24T11:07:03Z",
-  "with_resale": 2
+  "sold_out": 3,
+  "updated_at": "2026-11-11T01:57:26Z",
+  "with_resale": 3
  },
  "13629291": {
   "items_seen": 60,
@@ -258,6 +258,16 @@
   "sold_out": 0,
   "updated_at": "2026-11-09T09:52:28Z",
   "with_resale": 0
+ },
+ "16771483": {
+  "items_seen": 33,
+  "median_retention": 1.579,
+  "metodo": 2,
+  "name": "Judgmental",
+  "pct_above_price": 1.0,
+  "sold_out": 2,
+  "updated_at": "2026-11-11T01:57:26Z",
+  "with_resale": 1
  },
  "17082830": {
   "items_seen": 6,
