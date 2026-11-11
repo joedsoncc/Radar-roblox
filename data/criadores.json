@@ -181,12 +181,12 @@
  },
  "13629291": {
   "items_seen": 60,
-  "median_retention": 7.036,
+  "median_retention": 6.64,
   "metodo": 2,
   "name": ".L3NXQ",
   "pct_above_price": 1.0,
   "sold_out": 3,
-  "updated_at": "2026-10-28T22:38:48Z",
+  "updated_at": "2026-11-11T17:55:06Z",
   "with_resale": 3
  },
  "141147181": {
@@ -790,14 +790,14 @@
   "with_resale": 0
  },
  "7551014": {
-  "items_seen": 10,
-  "median_retention": null,
+  "items_seen": 13,
+  "median_retention": 7.3,
   "metodo": 2,
   "name": "ExesTiX",
-  "pct_above_price": null,
-  "sold_out": 2,
-  "updated_at": "2026-10-28T22:38:48Z",
-  "with_resale": 0
+  "pct_above_price": 1.0,
+  "sold_out": 4,
+  "updated_at": "2026-11-11T17:55:06Z",
+  "with_resale": 2
  },
  "788265080": {
   "items_seen": 5,
@@ -869,15 +869,25 @@
   "updated_at": "2026-10-20T21:40:09Z",
   "with_resale": 0
  },
+ "848452356": {
+  "items_seen": 6,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "04K",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-11T17:55:06Z",
+  "with_resale": 0
+ },
  "884640878": {
   "items_seen": 49,
-  "median_retention": 2.084,
+  "median_retention": 9.795,
   "metodo": 2,
   "name": "Starlight Highway",
   "pct_above_price": 1.0,
-  "sold_out": 3,
-  "updated_at": "2026-11-04T16:21:43Z",
-  "with_resale": 1
+  "sold_out": 5,
+  "updated_at": "2026-11-11T17:55:06Z",
+  "with_resale": 2
  },
  "899761216": {
   "items_seen": 22,
