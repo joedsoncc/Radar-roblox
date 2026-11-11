@@ -1,8 +1,8 @@
 name: Carteira (cadastro por issue)
 
+# Desativado em 2026-11-11: o Jhow desistiu do app. So roda se alguem clicar em "Run workflow".
 on:
-  issues:
-    types: [opened]
+  workflow_dispatch: {}
 
 permissions:
   contents: write

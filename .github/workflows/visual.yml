@@ -2,12 +2,9 @@ name: Visual dos mais revendidos
 
 # Baixa miniaturas e descrições dos UGC da coleta ampla e compara a aparência
 # dos 50 mais revendidos com o resto. Só análise: não mexe no radar nem manda alerta.
+# Desativado em 2026-11-11: o Jhow desistiu do app. So roda se alguem clicar em "Run workflow".
 on:
   workflow_dispatch:
-  push:   # roda sozinho quando o código da análise muda (inclusive na branch do PR)
-    paths:
-      - ".github/workflows/visual.yml"
-      - "radar/visual.py"
 
 permissions:
   contents: write

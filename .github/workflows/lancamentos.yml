@@ -1,8 +1,7 @@
 name: Lançamentos Roblox
 
+# Desativado em 2026-11-11: o Jhow desistiu do app. So roda se alguem clicar em "Run workflow".
 on:
-  schedule:
-    - cron: "*/10 * * * *"   # a cada 10 min (o GitHub pode atrasar alguns minutos)
   workflow_dispatch: {}
 
 permissions:
