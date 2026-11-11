@@ -280,14 +280,14 @@
   "with_resale": 0
  },
  "17260696": {
-  "items_seen": 33,
-  "median_retention": 0.14,
+  "items_seen": 34,
+  "median_retention": 0.349,
   "metodo": 2,
   "name": "LOS GIGA PANAS",
-  "pct_above_price": 0.0,
-  "sold_out": 24,
-  "updated_at": "2026-11-04T06:30:38Z",
-  "with_resale": 3
+  "pct_above_price": 0.2,
+  "sold_out": 26,
+  "updated_at": "2026-11-11T09:29:17Z",
+  "with_resale": 5
  },
  "1831759806": {
   "items_seen": 1,
@@ -366,7 +366,7 @@
   "name": "LOCOXSMAX",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-04T06:30:38Z",
+  "updated_at": "2026-11-11T09:29:17Z",
   "with_resale": 0
  },
  "293703": {
