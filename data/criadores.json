@@ -509,6 +509,16 @@
   "updated_at": "2026-11-03T06:53:11Z",
   "with_resale": 13
  },
+ "34992609": {
+  "items_seen": 5,
+  "median_retention": 0.633,
+  "metodo": 2,
+  "name": "Eclipsed Realm",
+  "pct_above_price": 0.0,
+  "sold_out": 3,
+  "updated_at": "2026-11-12T09:53:22Z",
+  "with_resale": 1
+ },
  "3519422403": {
   "items_seen": 1,
   "median_retention": null,
