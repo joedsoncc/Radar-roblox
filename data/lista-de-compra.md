@@ -1,6 +1,6 @@
-# Lista de compra — 2026-11-12T09:53:22Z
+# Lista de compra — 2026-11-12T18:21:33Z
 
-Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.
+Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429.
 
 > Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.
 
@@ -12,7 +12,7 @@ Nenhuma oportunidade nesta categoria.
 
 | Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
 |---|---|---|---|---|---|---|---|---|---|
-| COMPRAR-AGORA | [Frutiger Aero Scene Hair](https://www.roblox.com/catalog/108976045413580) | 65 | 42/500 | 65 | — | +146 (+202%) | ~15 h | Margem líquida +202% (lucro ≈ 146 Robux, base: Projeção pela loja (436 = preço × 6.64)) com RAP coerente com o gráfico. Liquidez: 181 vendas em 7 dias. Esgota em ~15 h. Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 6.64x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | RAP ou média dos anúncios cair abaixo de 188 (margem < 30%). Último preço do gráfico cair abaixo de metade do RAP. Venda parar (estoque sem mudar entre snapshots) ou trava de 30 dias impedir a revenda a tempo. |
+| COMPRAR-AGORA | [Frutiger Aero Scene Hair](https://www.roblox.com/catalog/108976045413580) | 65 | 16/500 | 65 | 500 (de 1) | +146 (+202%) | ~5 h | Margem líquida +202% (lucro ≈ 146 Robux, base: Projeção pela loja (436 = preço × 6.64)) com RAP coerente com o gráfico. Liquidez: 181 vendas em 7 dias. Esgota em ~5 h. Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 6.64x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | RAP ou média dos anúncios cair abaixo de 188 (margem < 30%). Último preço do gráfico cair abaixo de metade do RAP. Venda parar (estoque sem mudar entre snapshots) ou trava de 30 dias impedir a revenda a tempo. |
 
 ## Rosto (0)
 
@@ -38,4 +38,4 @@ Nenhuma oportunidade nesta categoria.
 
 | Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
 |---|---|---|---|---|---|---|---|---|---|
-| OBSERVAR | [White Sparkle Time Dual Karambits](https://www.roblox.com/catalog/81678145371798) | 65 | 58/1500 | 65 | 1138 (de 10) | +146 (+202%) | ~26 h | Cumpre os critérios de compra, mas o nome lembra um item clássico (sparkle time): a Roblox remove cópias e reembolsa só o preço pago. Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 6.64x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). Histórico parecido favorável: não: 10% deram margem ≥ 30% (389 itens). Formato dos mais revendidos: 1500 un. a 65 Robux. | Confirmar que o item é original (malha e textura próprias) o promoveria. |
+| OBSERVAR | [White Sparkle Time Dual Karambits](https://www.roblox.com/catalog/81678145371798) | 65 | 36/1500 | 65 | 1132 (de 10) | +146 (+202%) | ~18 h | Cumpre os critérios de compra, mas o nome lembra um item clássico (sparkle time): a Roblox remove cópias e reembolsa só o preço pago. Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 6.64x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). Histórico parecido favorável: não: 10% deram margem ≥ 30% (389 itens). Formato dos mais revendidos: 1500 un. a 65 Robux. | Confirmar que o item é original (malha e textura próprias) o promoveria. |

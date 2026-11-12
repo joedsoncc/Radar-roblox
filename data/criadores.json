@@ -466,7 +466,7 @@
   "name": "scrugc",
   "pct_above_price": null,
   "sold_out": 1,
-  "updated_at": "2026-11-05T16:29:47Z",
+  "updated_at": "2026-11-12T18:21:33Z",
   "with_resale": 0
  },
  "34217928": {
@@ -731,12 +731,12 @@
  },
  "627873145": {
   "items_seen": 59,
-  "median_retention": 1.737,
+  "median_retention": 1.506,
   "metodo": 2,
   "name": "Devil’s UGC",
   "pct_above_price": 0.75,
   "sold_out": 6,
-  "updated_at": "2026-11-05T16:29:47Z",
+  "updated_at": "2026-11-12T18:21:33Z",
   "with_resale": 4
  },
  "6364071": {
