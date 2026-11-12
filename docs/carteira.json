@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T17:55:06Z",
+ "generated_at": "2026-11-12T00:46:55Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -37,7 +37,7 @@
    "total_quantity": 3000,
    "is_off_sale": false,
    "rap": 372.0,
-   "volume_7d": 1,
+   "volume_7d": 0,
    "resale_avg_low": 13001.89,
    "resale_avg_n": 9,
    "sale_ref": 372.0,
@@ -48,10 +48,10 @@
    "pnl_pct": -0.5219,
    "breakeven_rap": 778,
    "retention": 0.9563,
-   "change_7d": -0.0746,
+   "change_7d": null,
    "change_30d": 0.0,
-   "trend": "caindo",
-   "days_held": 24,
+   "trend": "sem dados",
+   "days_held": 25,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -902,6 +902,12 @@
       372.0,
       13001.89,
       70
+     ],
+     [
+      "2026-11-12T00:46:55Z",
+      372.0,
+      13001.89,
+      70
      ]
     ]
    }
@@ -928,8 +934,8 @@
    "total_quantity": 500,
    "is_off_sale": false,
    "rap": 67.0,
-   "volume_7d": 45,
-   "resale_avg_low": 124.4,
+   "volume_7d": 43,
+   "resale_avg_low": 134.5,
    "resale_avg_n": 10,
    "sale_ref": 67.0,
    "sale_ref_source": "rap",
@@ -942,12 +948,12 @@
    "change_7d": 0.0,
    "change_30d": 0.0,
    "trend": "estável",
-   "days_held": 21,
+   "days_held": 22,
    "janela_venda": {
     "status": "antes",
     "esgotou_em": "2026-11-07",
-    "dias_desde_esgote": 3,
-    "texto": "Esgotou há 3 dias. Melhor janela de venda: dia 15 a 60 (faltam 12 dias)."
+    "dias_desde_esgote": 4,
+    "texto": "Esgotou há 4 dias. Melhor janela de venda: dia 15 a 60 (faltam 11 dias)."
    },
    "series": {
     "chart": [
@@ -1935,6 +1941,12 @@
       "2026-11-11T17:55:06Z",
       67.0,
       124.4,
+      0
+     ],
+     [
+      "2026-11-12T00:46:55Z",
+      67.0,
+      134.5,
       0
      ]
     ]
