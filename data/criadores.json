@@ -36,7 +36,7 @@
   "name": "Vertex_Code",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-05T23:40:11Z",
+  "updated_at": "2026-11-13T01:07:56Z",
   "with_resale": 0
  },
  "1054448950": {
@@ -789,6 +789,16 @@
   "updated_at": "2026-11-08T09:03:27Z",
   "with_resale": 2
  },
+ "737978191": {
+  "items_seen": 2,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "More What's Cooking UGC",
+  "pct_above_price": null,
+  "sold_out": 1,
+  "updated_at": "2026-11-13T01:07:56Z",
+  "with_resale": 0
+ },
  "743697214": {
   "items_seen": 44,
   "median_retention": null,
@@ -848,6 +858,16 @@
   "sold_out": 3,
   "updated_at": "2026-11-01T23:38:50Z",
   "with_resale": 3
+ },
+ "822949563": {
+  "items_seen": 5,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Frostized",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-13T01:07:56Z",
+  "with_resale": 0
  },
  "823647416": {
   "items_seen": 8,
@@ -951,13 +971,13 @@
  },
  "938173656": {
   "items_seen": 50,
-  "median_retention": 0.054,
+  "median_retention": 0.051,
   "metodo": 2,
   "name": "R&S UGCS",
   "pct_above_price": 0.0,
-  "sold_out": 8,
-  "updated_at": "2026-11-05T23:40:11Z",
-  "with_resale": 8
+  "sold_out": 6,
+  "updated_at": "2026-11-13T01:07:56Z",
+  "with_resale": 6
  },
  "953199792": {
   "items_seen": 60,
