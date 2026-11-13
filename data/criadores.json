@@ -61,13 +61,13 @@
  },
  "10954724": {
   "items_seen": 19,
-  "median_retention": 4.105,
+  "median_retention": 4.3,
   "metodo": 2,
   "name": "moonsniper",
   "pct_above_price": 1.0,
   "sold_out": 5,
-  "updated_at": "2026-11-06T06:53:40Z",
-  "with_resale": 5
+  "updated_at": "2026-11-13T09:35:40Z",
+  "with_resale": 4
  },
  "109916308": {
   "items_seen": 11,
@@ -221,12 +221,12 @@
  },
  "14768857": {
   "items_seen": 9,
-  "median_retention": 4.2,
+  "median_retention": 3.214,
   "metodo": 2,
   "name": "Something Simulators",
   "pct_above_price": 1.0,
   "sold_out": 6,
-  "updated_at": "2026-11-06T06:53:40Z",
+  "updated_at": "2026-11-13T09:35:40Z",
   "with_resale": 6
  },
  "15757277": {
@@ -268,6 +268,16 @@
   "sold_out": 2,
   "updated_at": "2026-11-11T01:57:26Z",
   "with_resale": 1
+ },
+ "16898640": {
+  "items_seen": 60,
+  "median_retention": 6.053,
+  "metodo": 2,
+  "name": "Prince Accessories",
+  "pct_above_price": 1.0,
+  "sold_out": 34,
+  "updated_at": "2026-11-13T09:35:40Z",
+  "with_resale": 3
  },
  "17082830": {
   "items_seen": 6,
@@ -606,7 +616,7 @@
   "name": "Drip Embassy",
   "pct_above_price": null,
   "sold_out": 1,
-  "updated_at": "2026-11-06T06:53:40Z",
+  "updated_at": "2026-11-13T09:35:40Z",
   "with_resale": 0
  },
  "35995577": {
@@ -658,6 +668,16 @@
   "sold_out": 12,
   "updated_at": "2026-11-08T09:03:27Z",
   "with_resale": 9
+ },
+ "445594778": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "-The Last Summer-",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-13T09:35:40Z",
+  "with_resale": 0
  },
  "5094460": {
   "items_seen": 57,
@@ -981,13 +1001,13 @@
  },
  "953199792": {
   "items_seen": 60,
-  "median_retention": 22.547,
+  "median_retention": 6.289,
   "metodo": 2,
   "name": "Pirate Limiteds",
   "pct_above_price": 1.0,
-  "sold_out": 2,
-  "updated_at": "2026-11-06T06:53:40Z",
-  "with_resale": 1
+  "sold_out": 3,
+  "updated_at": "2026-11-13T09:35:40Z",
+  "with_resale": 2
  },
  "9642123": {
   "items_seen": 60,
@@ -1000,14 +1020,14 @@
   "with_resale": 0
  },
  "981612471": {
-  "items_seen": 32,
-  "median_retention": 0.639,
+  "items_seen": 37,
+  "median_retention": 2.155,
   "metodo": 2,
   "name": "FLLProduction",
-  "pct_above_price": 0.333,
-  "sold_out": 3,
-  "updated_at": "2026-11-06T06:53:40Z",
-  "with_resale": 3
+  "pct_above_price": 0.75,
+  "sold_out": 4,
+  "updated_at": "2026-11-13T09:35:40Z",
+  "with_resale": 4
  },
  "982613282": {
   "items_seen": 44,
