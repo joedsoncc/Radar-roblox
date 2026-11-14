@@ -579,6 +579,16 @@
   "updated_at": "2026-11-09T01:45:01Z",
   "with_resale": 10
  },
+ "35641832": {
+  "items_seen": 60,
+  "median_retention": 2.098,
+  "metodo": 2,
+  "name": "Outglow UGC",
+  "pct_above_price": 0.692,
+  "sold_out": 26,
+  "updated_at": "2026-11-14T15:08:02Z",
+  "with_resale": 26
+ },
  "35700806": {
   "items_seen": 60,
   "median_retention": 1.273,
