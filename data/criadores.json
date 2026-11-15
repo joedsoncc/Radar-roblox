@@ -660,13 +660,13 @@
   "with_resale": 0
  },
  "41177539": {
-  "items_seen": 7,
+  "items_seen": 8,
   "median_retention": 0.01,
   "metodo": 2,
   "name": "Olivetreeteam UGC",
   "pct_above_price": 0.0,
   "sold_out": 1,
-  "updated_at": "2026-11-08T16:42:29Z",
+  "updated_at": "2026-11-15T17:13:37Z",
   "with_resale": 1
  },
  "419105767": {
@@ -860,13 +860,13 @@
   "with_resale": 2
  },
  "788265080": {
-  "items_seen": 5,
+  "items_seen": 6,
   "median_retention": null,
   "metodo": 2,
   "name": "TOP STYLEE",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-08T16:42:29Z",
+  "updated_at": "2026-11-15T17:13:37Z",
   "with_resale": 0
  },
  "79198172": {
@@ -1025,8 +1025,8 @@
   "metodo": 2,
   "name": "Collin UGC",
   "pct_above_price": null,
-  "sold_out": 15,
-  "updated_at": "2026-11-08T16:42:29Z",
+  "sold_out": 14,
+  "updated_at": "2026-11-15T17:13:37Z",
   "with_resale": 0
  },
  "981612471": {
