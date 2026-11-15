@@ -880,14 +880,14 @@
   "with_resale": 5
  },
  "798077482": {
-  "items_seen": 60,
-  "median_retention": 5.221,
+  "items_seen": 59,
+  "median_retention": 4.35,
   "metodo": 2,
   "name": "Digital Collectibles",
-  "pct_above_price": 0.667,
-  "sold_out": 3,
-  "updated_at": "2026-11-01T23:38:50Z",
-  "with_resale": 3
+  "pct_above_price": 1.0,
+  "sold_out": 4,
+  "updated_at": "2026-11-15T22:52:22Z",
+  "with_resale": 4
  },
  "822949563": {
   "items_seen": 5,
