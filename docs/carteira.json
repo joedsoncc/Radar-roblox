@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-15T01:57:09Z",
+ "generated_at": "2026-11-15T09:30:15Z",
  "status_note": "",
  "totals": {
   "cost": 837,
-  "value_now": 404.6,
-  "pnl": -432.4,
-  "pnl_pct": -0.5166,
+  "value_now": 405,
+  "pnl": -432,
+  "pnl_pct": -0.5161,
   "items_counted": 2
  },
  "items": [
@@ -38,8 +38,8 @@
    "is_off_sale": false,
    "rap": 372.0,
    "volume_7d": 0,
-   "resale_avg_low": 395,
-   "resale_avg_n": 1,
+   "resale_avg_low": 13001.89,
+   "resale_avg_n": 9,
    "sale_ref": 372.0,
    "sale_ref_source": "rap",
    "value_now": 372,
@@ -968,6 +968,12 @@
       372.0,
       null,
       70
+     ],
+     [
+      "2026-11-15T09:30:15Z",
+      372.0,
+      13001.89,
+      70
      ]
     ]
    }
@@ -994,15 +1000,15 @@
    "total_quantity": 500,
    "is_off_sale": false,
    "rap": 66.0,
-   "volume_7d": 8,
-   "resale_avg_low": 65.2,
+   "volume_7d": 11,
+   "resale_avg_low": 79.2,
    "resale_avg_n": 10,
-   "sale_ref": 65.2,
-   "sale_ref_source": "anuncios",
-   "value_now": 32.6,
+   "sale_ref": 66.0,
+   "sale_ref_source": "rap",
+   "value_now": 33,
    "cost_total": 59,
-   "pnl": -26.4,
-   "pnl_pct": -0.4475,
+   "pnl": -26,
+   "pnl_pct": -0.4407,
    "breakeven_rap": 118,
    "retention": 1.0154,
    "change_7d": 0.0,
@@ -1534,6 +1540,11 @@
      ],
      [
       "2026-11-13",
+      65,
+      3
+     ],
+     [
+      "2026-11-14",
       65,
       3
      ]
@@ -2077,6 +2088,12 @@
       "2026-11-15T01:57:09Z",
       66.0,
       65.2,
+      0
+     ],
+     [
+      "2026-11-15T09:30:15Z",
+      66.0,
+      79.2,
       0
      ]
     ]
