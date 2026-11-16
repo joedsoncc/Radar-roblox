@@ -136,7 +136,7 @@
   "name": "TypeUGC",
   "pct_above_price": 1.0,
   "sold_out": 19,
-  "updated_at": "2026-11-09T01:45:01Z",
+  "updated_at": "2026-11-16T06:36:56Z",
   "with_resale": 1
  },
  "12448166": {
@@ -287,6 +287,16 @@
   "pct_above_price": null,
   "sold_out": 0,
   "updated_at": "2026-11-07T08:50:20Z",
+  "with_resale": 0
+ },
+ "17164504": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "/aesthetical",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-16T06:36:56Z",
   "with_resale": 0
  },
  "17260696": {
@@ -509,6 +519,16 @@
   "updated_at": "2026-11-08T01:27:54Z",
   "with_resale": 0
  },
+ "34718691": {
+  "items_seen": 60,
+  "median_retention": 7.895,
+  "metodo": 2,
+  "name": "venari.",
+  "pct_above_price": 0.905,
+  "sold_out": 22,
+  "updated_at": "2026-11-16T06:36:56Z",
+  "with_resale": 21
+ },
  "34864442": {
   "items_seen": 60,
   "median_retention": 2.0,
@@ -711,13 +731,13 @@
  },
  "568550388": {
   "items_seen": 60,
-  "median_retention": 1.773,
+  "median_retention": 1.0,
   "metodo": 2,
   "name": "Sinister UGC's",
-  "pct_above_price": 0.588,
-  "sold_out": 22,
-  "updated_at": "2026-11-09T01:45:01Z",
-  "with_resale": 17
+  "pct_above_price": 0.357,
+  "sold_out": 18,
+  "updated_at": "2026-11-16T06:36:56Z",
+  "with_resale": 14
  },
  "57366289": {
   "items_seen": 14,
