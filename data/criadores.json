@@ -126,7 +126,7 @@
   "name": "S4TYURN",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-10T12:42:04Z",
+  "updated_at": "2026-11-17T13:31:20Z",
   "with_resale": 0
  },
  "12377810": {
@@ -336,7 +336,7 @@
   "name": "Astrox UGC",
   "pct_above_price": null,
   "sold_out": 1,
-  "updated_at": "2026-11-10T12:42:04Z",
+  "updated_at": "2026-11-17T13:31:20Z",
   "with_resale": 0
  },
  "226783611": {
@@ -376,7 +376,7 @@
   "name": "Synoptic Interactive",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-08T16:42:29Z",
+  "updated_at": "2026-11-17T13:31:20Z",
   "with_resale": 0
  },
  "2831461649": {
@@ -556,7 +556,7 @@
   "name": "Reveaden",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-08T16:42:29Z",
+  "updated_at": "2026-11-17T13:31:20Z",
   "with_resale": 0
  },
  "35351122": {
@@ -591,12 +591,12 @@
  },
  "35510408": {
   "items_seen": 29,
-  "median_retention": 3.918,
+  "median_retention": 3.529,
   "metodo": 2,
   "name": "MOD [LIMITEDS]",
   "pct_above_price": 0.7,
   "sold_out": 10,
-  "updated_at": "2026-11-09T01:45:01Z",
+  "updated_at": "2026-11-17T13:31:20Z",
   "with_resale": 10
  },
  "35641832": {
@@ -631,12 +631,12 @@
  },
  "35790116": {
   "items_seen": 32,
-  "median_retention": 343.5,
+  "median_retention": 358.5,
   "metodo": 2,
   "name": "ZNcreation",
   "pct_above_price": 1.0,
   "sold_out": 10,
-  "updated_at": "2026-11-09T09:52:28Z",
+  "updated_at": "2026-11-17T13:31:20Z",
   "with_resale": 10
  },
  "35910707": {
@@ -676,7 +676,7 @@
   "name": "Mimii UCG Crown’s",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-09T09:52:28Z",
+  "updated_at": "2026-11-17T13:31:20Z",
   "with_resale": 0
  },
  "41177539": {
@@ -901,12 +901,12 @@
  },
  "79198172": {
   "items_seen": 10,
-  "median_retention": 3.0,
+  "median_retention": 4.267,
   "metodo": 2,
   "name": "Sinister UGC's Deluxe",
   "pct_above_price": 1.0,
   "sold_out": 5,
-  "updated_at": "2026-11-10T04:08:52Z",
+  "updated_at": "2026-11-17T13:31:20Z",
   "with_resale": 5
  },
  "798077482": {
