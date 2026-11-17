@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T13:31:20Z",
+ "generated_at": "2026-11-17T22:26:22Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -1005,6 +1005,12 @@
       372.0,
       13001.89,
       70
+     ],
+     [
+      "2026-11-17T22:26:22Z",
+      372.0,
+      13001.89,
+      70
      ]
     ]
    }
@@ -1049,8 +1055,8 @@
    "janela_venda": {
     "status": "antes",
     "esgotou_em": "2026-11-07",
-    "dias_desde_esgote": 9,
-    "texto": "Esgotou há 9 dias. Melhor janela de venda: dia 15 a 60 (faltam 6 dias)."
+    "dias_desde_esgote": 10,
+    "texto": "Esgotou há 10 dias. Melhor janela de venda: dia 15 a 60 (faltam 5 dias)."
    },
    "series": {
     "chart": [
@@ -2169,6 +2175,12 @@
      ],
      [
       "2026-11-17T13:31:20Z",
+      65.0,
+      158.7,
+      0
+     ],
+     [
+      "2026-11-17T22:26:22Z",
       65.0,
       158.7,
       0
