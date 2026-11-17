@@ -256,7 +256,7 @@
   "name": "Limited Crowns UGC",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-09T09:52:28Z",
+  "updated_at": "2026-11-17T02:57:16Z",
   "with_resale": 0
  },
  "16771483": {
@@ -341,13 +341,13 @@
  },
  "226783611": {
   "items_seen": 60,
-  "median_retention": 0.689,
+  "median_retention": 3.062,
   "metodo": 2,
   "name": "CosmicUGCs",
-  "pct_above_price": 0.375,
-  "sold_out": 8,
-  "updated_at": "2026-10-31T18:35:50Z",
-  "with_resale": 8
+  "pct_above_price": 0.727,
+  "sold_out": 11,
+  "updated_at": "2026-11-17T02:57:16Z",
+  "with_resale": 11
  },
  "259636409": {
   "items_seen": 16,
@@ -709,6 +709,16 @@
   "updated_at": "2026-11-13T09:35:40Z",
   "with_resale": 0
  },
+ "476232654": {
+  "items_seen": 7,
+  "median_retention": 0.52,
+  "metodo": 2,
+  "name": "Tenshi\" UGC",
+  "pct_above_price": 0.0,
+  "sold_out": 1,
+  "updated_at": "2026-11-17T02:57:16Z",
+  "with_resale": 1
+ },
  "5094460": {
   "items_seen": 57,
   "median_retention": 0.744,
@@ -720,13 +730,13 @@
   "with_resale": 10
  },
  "521263333": {
-  "items_seen": 11,
+  "items_seen": 15,
   "median_retention": null,
   "metodo": 2,
   "name": "RBX x Prax",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-09T20:47:46Z",
+  "updated_at": "2026-11-17T02:57:16Z",
   "with_resale": 0
  },
  "568550388": {
@@ -820,14 +830,14 @@
   "with_resale": 1
  },
  "707199142": {
-  "items_seen": 43,
-  "median_retention": 0.078,
+  "items_seen": 58,
+  "median_retention": 0.792,
   "metodo": 2,
   "name": "Noiré UGC",
-  "pct_above_price": 0.2,
-  "sold_out": 6,
-  "updated_at": "2026-10-31T23:25:37Z",
-  "with_resale": 5
+  "pct_above_price": 0.429,
+  "sold_out": 7,
+  "updated_at": "2026-11-17T02:57:16Z",
+  "with_resale": 7
  },
  "724147": {
   "items_seen": 60,

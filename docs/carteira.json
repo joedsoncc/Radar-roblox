@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-16T18:37:01Z",
+ "generated_at": "2026-11-17T02:57:16Z",
  "status_note": "",
  "totals": {
   "cost": 837,
-  "value_now": 405,
-  "pnl": -432,
-  "pnl_pct": -0.5161,
+  "value_now": 404.5,
+  "pnl": -432.5,
+  "pnl_pct": -0.5167,
   "items_counted": 2
  },
  "items": [
@@ -38,8 +38,8 @@
    "is_off_sale": false,
    "rap": 372.0,
    "volume_7d": 0,
-   "resale_avg_low": 395,
-   "resale_avg_n": 1,
+   "resale_avg_low": 13001.89,
+   "resale_avg_n": 9,
    "sale_ref": 372.0,
    "sale_ref_source": "rap",
    "value_now": 372,
@@ -49,9 +49,9 @@
    "breakeven_rap": 778,
    "retention": 0.9563,
    "change_7d": null,
-   "change_30d": 0.0,
+   "change_30d": -0.0039,
    "trend": "sem dados",
-   "days_held": 29,
+   "days_held": 30,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -993,6 +993,12 @@
       372.0,
       null,
       70
+     ],
+     [
+      "2026-11-17T02:57:16Z",
+      372.0,
+      13001.89,
+      70
      ]
     ]
    }
@@ -1018,27 +1024,27 @@
    "units_remaining": 0,
    "total_quantity": 500,
    "is_off_sale": false,
-   "rap": 66.0,
+   "rap": 65.0,
    "volume_7d": 16,
-   "resale_avg_low": 137.2,
+   "resale_avg_low": 158.7,
    "resale_avg_n": 10,
-   "sale_ref": 66.0,
+   "sale_ref": 65.0,
    "sale_ref_source": "rap",
-   "value_now": 33,
+   "value_now": 32.5,
    "cost_total": 59,
-   "pnl": -26,
-   "pnl_pct": -0.4407,
+   "pnl": -26.5,
+   "pnl_pct": -0.4492,
    "breakeven_rap": 118,
-   "retention": 1.0154,
+   "retention": 1.0,
    "change_7d": 0.0,
    "change_30d": 0.0,
    "trend": "estável",
-   "days_held": 26,
+   "days_held": 27,
    "janela_venda": {
     "status": "antes",
     "esgotou_em": "2026-11-07",
-    "dias_desde_esgote": 8,
-    "texto": "Esgotou há 8 dias. Melhor janela de venda: dia 15 a 60 (faltam 7 dias)."
+    "dias_desde_esgote": 9,
+    "texto": "Esgotou há 9 dias. Melhor janela de venda: dia 15 a 60 (faltam 6 dias)."
    },
    "series": {
     "chart": [
@@ -1571,6 +1577,11 @@
       "2026-11-15",
       65,
       5
+     ],
+     [
+      "2026-11-16",
+      65,
+      2
      ]
     ],
     "tracked": [
@@ -2142,6 +2153,12 @@
       "2026-11-16T18:37:01Z",
       66.0,
       137.2,
+      0
+     ],
+     [
+      "2026-11-17T02:57:16Z",
+      65.0,
+      158.7,
       0
      ]
     ]
