@@ -170,14 +170,14 @@
   "with_resale": 0
  },
  "13191072": {
-  "items_seen": 11,
-  "median_retention": 0.382,
+  "items_seen": 15,
+  "median_retention": 0.346,
   "metodo": 2,
   "name": "Marcos's Ugc's",
   "pct_above_price": 0.0,
-  "sold_out": 3,
-  "updated_at": "2026-11-11T01:57:26Z",
-  "with_resale": 3
+  "sold_out": 6,
+  "updated_at": "2026-11-18T07:34:42Z",
+  "with_resale": 4
  },
  "13629291": {
   "items_seen": 60,
