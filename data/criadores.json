@@ -386,7 +386,7 @@
   "name": "LOCOXSMAX",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-11T09:29:17Z",
+  "updated_at": "2026-11-18T17:17:58Z",
   "with_resale": 0
  },
  "293703": {
@@ -478,6 +478,16 @@
   "sold_out": 30,
   "updated_at": "2026-11-06T06:53:40Z",
   "with_resale": 17
+ },
+ "33992016": {
+  "items_seen": 60,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Maple's Tree",
+  "pct_above_price": null,
+  "sold_out": 7,
+  "updated_at": "2026-11-18T17:17:58Z",
+  "with_resale": 0
  },
  "34207904": {
   "items_seen": 2,
