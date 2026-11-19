@@ -201,13 +201,13 @@
  },
  "14511880": {
   "items_seen": 60,
-  "median_retention": 1.826,
+  "median_retention": 2.515,
   "metodo": 2,
   "name": "Waffle's UGC",
-  "pct_above_price": 0.5,
-  "sold_out": 16,
-  "updated_at": "2026-11-10T04:08:52Z",
-  "with_resale": 2
+  "pct_above_price": 1.0,
+  "sold_out": 17,
+  "updated_at": "2026-11-19T10:25:08Z",
+  "with_resale": 3
  },
  "146524767": {
   "items_seen": 15,
@@ -556,7 +556,7 @@
   "name": "Eclipsed Realm",
   "pct_above_price": 0.0,
   "sold_out": 3,
-  "updated_at": "2026-11-12T09:53:22Z",
+  "updated_at": "2026-11-19T10:25:08Z",
   "with_resale": 1
  },
  "3519422403": {
@@ -658,6 +658,16 @@
   "sold_out": 1,
   "updated_at": "2026-11-13T09:35:40Z",
   "with_resale": 0
+ },
+ "35968318": {
+  "items_seen": 60,
+  "median_retention": 3.158,
+  "metodo": 2,
+  "name": "777LIMS.",
+  "pct_above_price": 1.0,
+  "sold_out": 10,
+  "updated_at": "2026-11-19T10:25:08Z",
+  "with_resale": 10
  },
  "35995577": {
   "items_seen": 60,
@@ -1000,13 +1010,13 @@
   "with_resale": 2
  },
  "899761216": {
-  "items_seen": 22,
-  "median_retention": 3.827,
+  "items_seen": 23,
+  "median_retention": 3.752,
   "metodo": 2,
   "name": "TrippyLabs",
   "pct_above_price": 1.0,
   "sold_out": 4,
-  "updated_at": "2026-11-10T20:50:50Z",
+  "updated_at": "2026-11-19T10:25:08Z",
   "with_resale": 4
  },
  "90171293": {
