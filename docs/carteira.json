@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T17:17:58Z",
+ "generated_at": "2026-11-19T00:26:15Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -38,8 +38,8 @@
    "is_off_sale": false,
    "rap": 372.0,
    "volume_7d": 0,
-   "resale_avg_low": 395,
-   "resale_avg_n": 1,
+   "resale_avg_low": 13001.89,
+   "resale_avg_n": 9,
    "sale_ref": 372.0,
    "sale_ref_source": "rap",
    "value_now": 372,
@@ -51,7 +51,7 @@
    "change_7d": null,
    "change_30d": -0.0077,
    "trend": "sem dados",
-   "days_held": 31,
+   "days_held": 32,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -60,11 +60,6 @@
    },
    "series": {
     "chart": [
-     [
-      "2026-05-22",
-      140,
-      1
-     ],
      [
       "2026-05-29",
       150,
@@ -1023,6 +1018,12 @@
       372.0,
       null,
       70
+     ],
+     [
+      "2026-11-19T00:26:15Z",
+      372.0,
+      13001.89,
+      70
      ]
     ]
    }
@@ -1063,12 +1064,12 @@
    "change_7d": 0.0,
    "change_30d": 0.0,
    "trend": "estável",
-   "days_held": 28,
+   "days_held": 29,
    "janela_venda": {
     "status": "antes",
     "esgotou_em": "2026-11-07",
-    "dias_desde_esgote": 10,
-    "texto": "Esgotou há 10 dias. Melhor janela de venda: dia 15 a 60 (faltam 5 dias)."
+    "dias_desde_esgote": 11,
+    "texto": "Esgotou há 11 dias. Melhor janela de venda: dia 15 a 60 (faltam 4 dias)."
    },
    "series": {
     "chart": [
@@ -2205,6 +2206,12 @@
      ],
      [
       "2026-11-18T17:17:58Z",
+      65.0,
+      182.2,
+      0
+     ],
+     [
+      "2026-11-19T00:26:15Z",
       65.0,
       182.2,
       0
