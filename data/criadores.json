@@ -36,7 +36,7 @@
   "name": "Vertex_Code",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-13T01:07:56Z",
+  "updated_at": "2026-11-20T03:22:23Z",
   "with_resale": 0
  },
  "1054448950": {
@@ -1009,6 +1009,16 @@
   "updated_at": "2026-11-11T17:55:06Z",
   "with_resale": 0
  },
+ "8738835": {
+  "items_seen": 17,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Lehyx UGC",
+  "pct_above_price": null,
+  "sold_out": 13,
+  "updated_at": "2026-11-20T03:22:23Z",
+  "with_resale": 0
+ },
  "884640878": {
   "items_seen": 49,
   "median_retention": 9.795,
@@ -1060,13 +1070,13 @@
   "with_resale": 10
  },
  "938173656": {
-  "items_seen": 50,
-  "median_retention": 0.051,
+  "items_seen": 59,
+  "median_retention": 0.048,
   "metodo": 2,
   "name": "R&S UGCS",
   "pct_above_price": 0.0,
   "sold_out": 6,
-  "updated_at": "2026-11-13T01:07:56Z",
+  "updated_at": "2026-11-20T03:22:23Z",
   "with_resale": 6
  },
  "953199792": {
