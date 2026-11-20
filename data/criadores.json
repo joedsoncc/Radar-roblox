@@ -61,13 +61,13 @@
  },
  "10954724": {
   "items_seen": 19,
-  "median_retention": 4.3,
+  "median_retention": 3.895,
   "metodo": 2,
   "name": "moonsniper",
   "pct_above_price": 1.0,
   "sold_out": 5,
-  "updated_at": "2026-11-13T09:35:40Z",
-  "with_resale": 4
+  "updated_at": "2026-11-20T12:58:33Z",
+  "with_resale": 5
  },
  "109916308": {
   "items_seen": 11,
@@ -191,12 +191,12 @@
  },
  "141147181": {
   "items_seen": 16,
-  "median_retention": 0.923,
+  "median_retention": 1.0,
   "metodo": 2,
   "name": "Prime UGC 2",
   "pct_above_price": 0.4,
-  "sold_out": 5,
-  "updated_at": "2026-11-07T16:28:36Z",
+  "sold_out": 6,
+  "updated_at": "2026-11-20T12:58:33Z",
   "with_resale": 5
  },
  "14511880": {
@@ -220,14 +220,14 @@
   "with_resale": 4
  },
  "14768857": {
-  "items_seen": 9,
-  "median_retention": 3.214,
+  "items_seen": 10,
+  "median_retention": 2.857,
   "metodo": 2,
   "name": "Something Simulators",
   "pct_above_price": 1.0,
-  "sold_out": 6,
-  "updated_at": "2026-11-13T09:35:40Z",
-  "with_resale": 6
+  "sold_out": 7,
+  "updated_at": "2026-11-20T12:58:33Z",
+  "with_resale": 7
  },
  "15757277": {
   "items_seen": 7,
@@ -276,7 +276,7 @@
   "name": "Prince Accessories",
   "pct_above_price": 1.0,
   "sold_out": 34,
-  "updated_at": "2026-11-13T09:35:40Z",
+  "updated_at": "2026-11-20T12:58:33Z",
   "with_resale": 3
  },
  "17082830": {
@@ -569,6 +569,16 @@
   "updated_at": "2026-11-17T13:31:20Z",
   "with_resale": 0
  },
+ "35252406": {
+  "items_seen": 8,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Yoman's UGC",
+  "pct_above_price": null,
+  "sold_out": 5,
+  "updated_at": "2026-11-20T12:58:33Z",
+  "with_resale": 0
+ },
  "35351122": {
   "items_seen": 9,
   "median_retention": 0.799,
@@ -656,7 +666,7 @@
   "name": "Drip Embassy",
   "pct_above_price": null,
   "sold_out": 1,
-  "updated_at": "2026-11-13T09:35:40Z",
+  "updated_at": "2026-11-20T12:58:33Z",
   "with_resale": 0
  },
  "35968318": {
@@ -726,7 +736,7 @@
   "name": "-The Last Summer-",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-13T09:35:40Z",
+  "updated_at": "2026-11-20T12:58:33Z",
   "with_resale": 0
  },
  "476232654": {
@@ -950,13 +960,13 @@
   "with_resale": 4
  },
  "822949563": {
-  "items_seen": 5,
+  "items_seen": 6,
   "median_retention": null,
   "metodo": 2,
   "name": "Frostized",
   "pct_above_price": null,
-  "sold_out": 0,
-  "updated_at": "2026-11-13T01:07:56Z",
+  "sold_out": 1,
+  "updated_at": "2026-11-20T12:58:33Z",
   "with_resale": 0
  },
  "823647416": {

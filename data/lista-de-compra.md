@@ -1,7 +1,41 @@
-# Lista de compra — 2026-11-20T03:22:23Z
+# Lista de compra — 2026-11-20T12:58:33Z
 
-Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.
+Status da coleta: **partial**. Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429.
 
 > Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.
 
-**Nenhuma oportunidade agora.** Itens abaixo do corte de lucro ficam em `data/descartados.md`.
+## Chapéu/Coroa (1)
+
+| Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
+|---|---|---|---|---|---|---|---|---|---|
+| OBSERVAR | [Headphones](https://www.roblox.com/catalog/138848648617195) | 95 | 76/1250 | 95 | 95 (de 10) | +273 (+259%) | ~12.9 d | Margem líquida +259%. Volume 7d 30 abaixo de 50. Esgota devagar (~12.9 d). Loja com bom histórico: 90% dos limiteds dela revendem acima do preço (mediana 7.89x, 21 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). Formato dos mais revendidos: 1250 un. a 95 Robux. | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
+
+## Cabelo (0)
+
+Nenhuma oportunidade nesta categoria.
+
+## Rosto (1)
+
+| Classe | Item | Preço | Restantes | RAP | Média anúncios | Lucro líq. | ETA | Motivo | O que invalidaria |
+|---|---|---|---|---|---|---|---|---|---|
+| OBSERVAR | [✅ Blue](https://www.roblox.com/catalog/15227720131) | 95 | 52/1000 | 95 | 99 (de 1) | +185 (+175%) | — | Margem líquida +175%. Volume 7d 6 abaixo de 50. Vendas pararam ou estão lentas demais (sem vendas no último intervalo). Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 6.05x, 3 itens). Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados). | Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR. |
+
+## Pescoço (0)
+
+Nenhuma oportunidade nesta categoria.
+
+## Ombro (0)
+
+Nenhuma oportunidade nesta categoria.
+
+## Frente (0)
+
+Nenhuma oportunidade nesta categoria.
+
+## Costas/Asas/Pet (0)
+
+Nenhuma oportunidade nesta categoria.
+
+## Cintura/Squid (0)
+
+Nenhuma oportunidade nesta categoria.
