@@ -520,14 +520,14 @@
   "with_resale": 0
  },
  "34383602": {
-  "items_seen": 1,
-  "median_retention": null,
+  "items_seen": 9,
+  "median_retention": 0.0,
   "metodo": 2,
   "name": "nzlk",
-  "pct_above_price": null,
-  "sold_out": 0,
-  "updated_at": "2026-11-08T01:27:54Z",
-  "with_resale": 0
+  "pct_above_price": 0.0,
+  "sold_out": 3,
+  "updated_at": "2026-11-21T03:14:44Z",
+  "with_resale": 2
  },
  "34718691": {
   "items_seen": 60,
