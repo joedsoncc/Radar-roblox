@@ -621,13 +621,13 @@
  },
  "35641832": {
   "items_seen": 60,
-  "median_retention": 2.098,
+  "median_retention": 2.174,
   "metodo": 2,
   "name": "Outglow UGC",
-  "pct_above_price": 0.692,
-  "sold_out": 26,
-  "updated_at": "2026-11-14T15:08:02Z",
-  "with_resale": 26
+  "pct_above_price": 0.704,
+  "sold_out": 27,
+  "updated_at": "2026-11-22T17:52:04Z",
+  "with_resale": 27
  },
  "35700806": {
   "items_seen": 60,
@@ -930,13 +930,13 @@
   "with_resale": 2
  },
  "788265080": {
-  "items_seen": 6,
+  "items_seen": 7,
   "median_retention": null,
   "metodo": 2,
   "name": "TOP STYLEE",
   "pct_above_price": null,
-  "sold_out": 0,
-  "updated_at": "2026-11-15T17:13:37Z",
+  "sold_out": 2,
+  "updated_at": "2026-11-22T17:52:04Z",
   "with_resale": 0
  },
  "79198172": {
@@ -1106,7 +1106,7 @@
   "name": "Collin UGC",
   "pct_above_price": null,
   "sold_out": 14,
-  "updated_at": "2026-11-15T17:13:37Z",
+  "updated_at": "2026-11-22T17:52:04Z",
   "with_resale": 0
  },
  "981612471": {
