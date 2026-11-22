@@ -316,7 +316,7 @@
   "name": "Martinzilloxd",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-15T01:57:09Z",
+  "updated_at": "2026-11-22T02:16:10Z",
   "with_resale": 0
  },
  "205327335": {
@@ -970,13 +970,13 @@
   "with_resale": 0
  },
  "823647416": {
-  "items_seen": 8,
+  "items_seen": 10,
   "median_retention": 95.0,
   "metodo": 2,
   "name": "HouseDominus",
   "pct_above_price": 1.0,
   "sold_out": 1,
-  "updated_at": "2026-11-14T20:45:08Z",
+  "updated_at": "2026-11-22T02:16:10Z",
   "with_resale": 1
  },
  "828639563": {
@@ -1056,7 +1056,7 @@
   "name": "DarkBrace",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-15T01:57:09Z",
+  "updated_at": "2026-11-22T02:16:10Z",
   "with_resale": 0
  },
  "935271721": {
@@ -1120,13 +1120,13 @@
   "with_resale": 4
  },
  "982613282": {
-  "items_seen": 47,
-  "median_retention": 1.476,
+  "items_seen": 50,
+  "median_retention": 1.579,
   "metodo": 2,
   "name": "Sinister UGC's Plus",
   "pct_above_price": 0.545,
   "sold_out": 16,
-  "updated_at": "2026-11-15T01:57:09Z",
+  "updated_at": "2026-11-22T02:16:10Z",
   "with_resale": 11
  }
 }
