@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-22T17:52:04Z",
+ "generated_at": "2026-11-22T23:38:09Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429; revenda: catálogo 429.",
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
  "snapshots_count": 20,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
@@ -80,8 +80,8 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-47cfab1990933088015e544d425a94df/150/150/Hat/Png/noFilter",
    "price": 95,
    "total_quantity": 1250,
-   "units_remaining": 92,
-   "pct_sold": 92.6,
+   "units_remaining": 91,
+   "pct_sold": 92.7,
    "rap": 95.0,
    "resale_avg_low": 95.0,
    "resale_avg_n": 10,
@@ -96,15 +96,15 @@
    "cost": 105.45,
    "net_profit": 273.31,
    "net_margin": 2.5918,
-   "velocity_per_hour": 0.385,
+   "velocity_per_hour": 0.328,
    "velocity_note": null,
-   "eta_hours": 239.0,
+   "eta_hours": 277.4,
    "score": 65,
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +259%.",
     "Volume 7d 19 abaixo de 50.",
-    "Esgota devagar (~10.0 d).",
+    "Esgota devagar (~11.6 d).",
     "Loja com bom histórico: 90% dos limiteds dela revendem acima do preço (mediana 7.89x, 21 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados).",
     "Formato dos mais revendidos: 1250 un. a 95 Robux."
@@ -282,15 +282,15 @@
    "cost": 105.45,
    "net_profit": 184.94,
    "net_margin": 1.7538,
-   "velocity_per_hour": 0.094,
-   "velocity_note": null,
-   "eta_hours": 500.0,
-   "score": 56,
+   "velocity_per_hour": 0.0,
+   "velocity_note": "sem vendas no último intervalo",
+   "eta_hours": null,
+   "score": 55,
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +175%.",
     "Volume 7d 6 abaixo de 50.",
-    "Esgota devagar (~20.8 d).",
+    "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 6.05x, 3 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
@@ -442,5 +442,5 @@
    "hold_days": 30
   }
  ],
- "descartados": 39
+ "descartados": 55
 }
