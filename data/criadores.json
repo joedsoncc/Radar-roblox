@@ -136,7 +136,7 @@
   "name": "TypeUGC",
   "pct_above_price": 1.0,
   "sold_out": 19,
-  "updated_at": "2026-11-16T06:36:56Z",
+  "updated_at": "2026-11-23T07:44:34Z",
   "with_resale": 1
  },
  "12448166": {
@@ -296,7 +296,7 @@
   "name": "/aesthetical",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-16T06:36:56Z",
+  "updated_at": "2026-11-23T07:44:34Z",
   "with_resale": 0
  },
  "17260696": {
@@ -308,6 +308,16 @@
   "sold_out": 26,
   "updated_at": "2026-11-19T00:26:15Z",
   "with_resale": 5
+ },
+ "17379243": {
+  "items_seen": 2,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Horantem’s Zone",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-23T07:44:34Z",
+  "with_resale": 0
  },
  "1831759806": {
   "items_seen": 1,
@@ -439,6 +449,16 @@
   "updated_at": "2026-11-02T06:13:28Z",
   "with_resale": 8
  },
+ "3260209623": {
+  "items_seen": 9,
+  "median_retention": 3.0,
+  "metodo": 2,
+  "name": "WondieRB",
+  "pct_above_price": 0.857,
+  "sold_out": 7,
+  "updated_at": "2026-11-23T07:44:34Z",
+  "with_resale": 7
+ },
  "32702646": {
   "items_seen": 6,
   "median_retention": 2.373,
@@ -541,12 +561,12 @@
  },
  "34718691": {
   "items_seen": 60,
-  "median_retention": 7.895,
+  "median_retention": 6.316,
   "metodo": 2,
   "name": "venari.",
   "pct_above_price": 0.905,
   "sold_out": 22,
-  "updated_at": "2026-11-16T06:36:56Z",
+  "updated_at": "2026-11-23T07:44:34Z",
   "with_resale": 21
  },
  "34864442": {
@@ -791,12 +811,12 @@
  },
  "568550388": {
   "items_seen": 60,
-  "median_retention": 1.0,
+  "median_retention": 0.825,
   "metodo": 2,
   "name": "Sinister UGC's",
-  "pct_above_price": 0.357,
+  "pct_above_price": 0.286,
   "sold_out": 18,
-  "updated_at": "2026-11-16T06:36:56Z",
+  "updated_at": "2026-11-23T07:44:34Z",
   "with_resale": 14
  },
  "57366289": {
