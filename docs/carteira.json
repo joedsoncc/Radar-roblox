@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T20:16:35Z",
+ "generated_at": "2026-11-24T04:51:19Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -51,7 +51,7 @@
    "change_7d": null,
    "change_30d": 0.0,
    "trend": "sem dados",
-   "days_held": 36,
+   "days_held": 37,
    "janela_venda": {
     "status": "a_venda",
     "esgotou_em": null,
@@ -1108,6 +1108,12 @@
       372.0,
       2141.71,
       70
+     ],
+     [
+      "2026-11-24T04:51:19Z",
+      372.0,
+      2141.71,
+      70
      ]
     ]
    }
@@ -1135,7 +1141,7 @@
    "is_off_sale": false,
    "rap": 72.0,
    "volume_7d": 4,
-   "resale_avg_low": 207.6,
+   "resale_avg_low": 207.0,
    "resale_avg_n": 10,
    "sale_ref": 72.0,
    "sale_ref_source": "rap",
@@ -1148,12 +1154,12 @@
    "change_7d": 0.0154,
    "change_30d": 0.0,
    "trend": "estável",
-   "days_held": 33,
+   "days_held": 34,
    "janela_venda": {
     "status": "agora",
     "esgotou_em": "2026-11-07",
-    "dias_desde_esgote": 15,
-    "texto": "Na janela de venda: esgotou há 15 dias (melhor entre o dia 15 e o 60)."
+    "dias_desde_esgote": 16,
+    "texto": "Na janela de venda: esgotou há 16 dias (melhor entre o dia 15 e o 60)."
    },
    "series": {
     "chart": [
@@ -2402,6 +2408,12 @@
       "2026-11-23T20:16:35Z",
       72.0,
       207.6,
+      0
+     ],
+     [
+      "2026-11-24T04:51:19Z",
+      72.0,
+      207.0,
       0
      ]
     ]
