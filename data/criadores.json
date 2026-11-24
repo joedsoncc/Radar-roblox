@@ -91,13 +91,23 @@
  },
  "114590675": {
   "items_seen": 49,
-  "median_retention": 3.081,
+  "median_retention": 4.211,
   "metodo": 2,
   "name": "Blox UGC Store",
-  "pct_above_price": 0.75,
-  "sold_out": 8,
-  "updated_at": "2026-10-30T13:00:22Z",
-  "with_resale": 4
+  "pct_above_price": 0.6,
+  "sold_out": 9,
+  "updated_at": "2026-11-24T17:51:14Z",
+  "with_resale": 5
+ },
+ "11544182": {
+  "items_seen": 36,
+  "median_retention": 3.421,
+  "metodo": 2,
+  "name": "Hastyy UGC",
+  "pct_above_price": 0.947,
+  "sold_out": 20,
+  "updated_at": "2026-11-24T17:51:14Z",
+  "with_resale": 19
  },
  "12034553": {
   "items_seen": 51,
@@ -126,7 +136,7 @@
   "name": "S4TYURN",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-17T13:31:20Z",
+  "updated_at": "2026-11-24T17:51:14Z",
   "with_resale": 0
  },
  "12377810": {
@@ -346,7 +356,7 @@
   "name": "Astrox UGC",
   "pct_above_price": null,
   "sold_out": 1,
-  "updated_at": "2026-11-17T13:31:20Z",
+  "updated_at": "2026-11-24T17:51:14Z",
   "with_resale": 0
  },
  "226783611": {
@@ -386,7 +396,7 @@
   "name": "Synoptic Interactive",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-17T13:31:20Z",
+  "updated_at": "2026-11-24T17:51:14Z",
   "with_resale": 0
  },
  "2831461649": {
@@ -508,6 +518,16 @@
   "sold_out": 31,
   "updated_at": "2026-11-23T20:16:35Z",
   "with_resale": 17
+ },
+ "33787370": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "Mírame ୨୧",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-24T17:51:14Z",
+  "with_resale": 0
  },
  "33992016": {
   "items_seen": 60,
@@ -641,12 +661,12 @@
  },
  "35510408": {
   "items_seen": 29,
-  "median_retention": 3.529,
+  "median_retention": 3.66,
   "metodo": 2,
   "name": "MOD [LIMITEDS]",
   "pct_above_price": 0.7,
   "sold_out": 10,
-  "updated_at": "2026-11-17T13:31:20Z",
+  "updated_at": "2026-11-24T17:51:14Z",
   "with_resale": 10
  },
  "35641832": {
@@ -680,14 +700,14 @@
   "with_resale": 6
  },
  "35790116": {
-  "items_seen": 32,
-  "median_retention": 358.5,
+  "items_seen": 30,
+  "median_retention": 350.0,
   "metodo": 2,
   "name": "ZNcreation",
   "pct_above_price": 1.0,
-  "sold_out": 10,
-  "updated_at": "2026-11-17T13:31:20Z",
-  "with_resale": 10
+  "sold_out": 9,
+  "updated_at": "2026-11-24T17:51:14Z",
+  "with_resale": 9
  },
  "35910707": {
   "items_seen": 3,
@@ -736,7 +756,7 @@
   "name": "Mimii UCG Crown’s",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-17T13:31:20Z",
+  "updated_at": "2026-11-24T17:51:14Z",
   "with_resale": 0
  },
  "41177539": {
@@ -971,12 +991,12 @@
  },
  "79198172": {
   "items_seen": 10,
-  "median_retention": 4.267,
+  "median_retention": 3.987,
   "metodo": 2,
   "name": "Sinister UGC's Deluxe",
   "pct_above_price": 1.0,
   "sold_out": 5,
-  "updated_at": "2026-11-17T13:31:20Z",
+  "updated_at": "2026-11-24T17:51:14Z",
   "with_resale": 5
  },
  "798077482": {
