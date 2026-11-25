@@ -681,13 +681,13 @@
  },
  "35700806": {
   "items_seen": 60,
-  "median_retention": 1.273,
+  "median_retention": 1.368,
   "metodo": 2,
   "name": "What's Cooking UGC",
   "pct_above_price": 0.5,
-  "sold_out": 4,
-  "updated_at": "2026-11-03T16:18:39Z",
-  "with_resale": 4
+  "sold_out": 2,
+  "updated_at": "2026-11-25T02:32:19Z",
+  "with_resale": 2
  },
  "35734904": {
   "items_seen": 60,
