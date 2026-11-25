@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T02:32:19Z",
+ "generated_at": "2026-11-25T14:28:21Z",
  "status_note": "",
  "totals": {
   "cost": 837,
@@ -1126,6 +1126,12 @@
       372.0,
       2141.71,
       70
+     ],
+     [
+      "2026-11-25T14:28:21Z",
+      372.0,
+      2141.71,
+      70
      ]
     ]
    }
@@ -1153,8 +1159,8 @@
    "is_off_sale": false,
    "rap": 72.0,
    "volume_7d": 3,
-   "resale_avg_low": 199.5,
-   "resale_avg_n": 10,
+   "resale_avg_low": 142,
+   "resale_avg_n": 1,
    "sale_ref": 72.0,
    "sale_ref_source": "rap",
    "value_now": 36,
@@ -2438,6 +2444,12 @@
       "2026-11-25T02:32:19Z",
       72.0,
       199.5,
+      0
+     ],
+     [
+      "2026-11-25T14:28:21Z",
+      72.0,
+      null,
       0
      ]
     ]
