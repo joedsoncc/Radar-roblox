@@ -9,6 +9,16 @@
   "updated_at": "2026-10-19T23:44:59Z",
   "with_resale": 0
  },
+ "10312714": {
+  "items_seen": 60,
+  "median_retention": 1.9,
+  "metodo": 2,
+  "name": "KARNAGE UGC",
+  "pct_above_price": 0.722,
+  "sold_out": 19,
+  "updated_at": "2026-11-26T00:25:08Z",
+  "with_resale": 18
+ },
  "10441371": {
   "items_seen": 60,
   "median_retention": 1.765,
@@ -406,7 +416,7 @@
   "name": "LOCOXSMAX",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-18T17:17:58Z",
+  "updated_at": "2026-11-26T00:25:08Z",
   "with_resale": 0
  },
  "293703": {
@@ -535,8 +545,8 @@
   "metodo": 2,
   "name": "Maple's Tree",
   "pct_above_price": null,
-  "sold_out": 7,
-  "updated_at": "2026-11-18T17:17:58Z",
+  "sold_out": 4,
+  "updated_at": "2026-11-26T00:25:08Z",
   "with_resale": 0
  },
  "34207904": {
