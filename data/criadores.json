@@ -136,7 +136,7 @@
   "name": "JauntyArtStudioUGC",
   "pct_above_price": 1.0,
   "sold_out": 1,
-  "updated_at": "2026-11-19T00:26:15Z",
+  "updated_at": "2026-11-26T10:57:58Z",
   "with_resale": 1
  },
  "121551003": {
@@ -170,14 +170,14 @@
   "with_resale": 0
  },
  "12648705": {
-  "items_seen": 9,
-  "median_retention": 0.999,
+  "items_seen": 10,
+  "median_retention": 0.205,
   "metodo": 2,
   "name": "[AT] Alpine UGC",
-  "pct_above_price": 0.5,
-  "sold_out": 4,
-  "updated_at": "2026-11-01T06:12:53Z",
-  "with_resale": 2
+  "pct_above_price": 0.0,
+  "sold_out": 6,
+  "updated_at": "2026-11-26T10:57:58Z",
+  "with_resale": 4
  },
  "127637803": {
   "items_seen": 3,
@@ -226,17 +226,17 @@
   "name": "Waffle's UGC",
   "pct_above_price": 1.0,
   "sold_out": 17,
-  "updated_at": "2026-11-19T10:25:08Z",
+  "updated_at": "2026-11-26T10:57:58Z",
   "with_resale": 3
  },
  "146524767": {
-  "items_seen": 15,
-  "median_retention": 1.562,
+  "items_seen": 16,
+  "median_retention": 3.993,
   "metodo": 2,
   "name": "EAO Clothing",
-  "pct_above_price": 0.75,
-  "sold_out": 6,
-  "updated_at": "2026-11-01T18:57:47Z",
+  "pct_above_price": 1.0,
+  "sold_out": 7,
+  "updated_at": "2026-11-26T10:57:58Z",
   "with_resale": 4
  },
  "14768857": {
@@ -509,15 +509,25 @@
   "updated_at": "2026-11-10T04:08:52Z",
   "with_resale": 0
  },
+ "33018615": {
+  "items_seen": 60,
+  "median_retention": 2.172,
+  "metodo": 2,
+  "name": "Divine Messenger",
+  "pct_above_price": 0.78,
+  "sold_out": 47,
+  "updated_at": "2026-11-26T10:57:58Z",
+  "with_resale": 41
+ },
  "331": {
   "items_seen": 60,
-  "median_retention": 2.398,
+  "median_retention": 2.225,
   "metodo": 2,
   "name": "Kings",
-  "pct_above_price": 0.951,
-  "sold_out": 43,
-  "updated_at": "2026-11-19T00:26:15Z",
-  "with_resale": 41
+  "pct_above_price": 0.923,
+  "sold_out": 42,
+  "updated_at": "2026-11-26T10:57:58Z",
+  "with_resale": 39
  },
  "33137717": {
   "items_seen": 60,
@@ -616,7 +626,7 @@
   "name": "Eclipsed Realm",
   "pct_above_price": 0.0,
   "sold_out": 3,
-  "updated_at": "2026-11-19T10:25:08Z",
+  "updated_at": "2026-11-26T10:57:58Z",
   "with_resale": 1
  },
  "3519422403": {
@@ -678,6 +688,16 @@
   "sold_out": 10,
   "updated_at": "2026-11-24T17:51:14Z",
   "with_resale": 10
+ },
+ "35519508": {
+  "items_seen": 9,
+  "median_retention": 9.631,
+  "metodo": 2,
+  "name": "BearsPinks’",
+  "pct_above_price": 1.0,
+  "sold_out": 2,
+  "updated_at": "2026-11-26T10:57:58Z",
+  "with_resale": 1
  },
  "35641832": {
   "items_seen": 60,
@@ -1100,13 +1120,13 @@
   "with_resale": 2
  },
  "899761216": {
-  "items_seen": 23,
-  "median_retention": 3.752,
+  "items_seen": 27,
+  "median_retention": 4.627,
   "metodo": 2,
   "name": "TrippyLabs",
   "pct_above_price": 1.0,
   "sold_out": 4,
-  "updated_at": "2026-11-19T10:25:08Z",
+  "updated_at": "2026-11-26T10:57:58Z",
   "with_resale": 4
  },
  "90171293": {
