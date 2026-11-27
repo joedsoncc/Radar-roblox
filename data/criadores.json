@@ -19,6 +19,16 @@
   "updated_at": "2026-11-26T00:25:08Z",
   "with_resale": 18
  },
+ "103154152": {
+  "items_seen": 45,
+  "median_retention": 4.152,
+  "metodo": 2,
+  "name": "Kurpl40's UGC",
+  "pct_above_price": 0.667,
+  "sold_out": 3,
+  "updated_at": "2026-11-27T16:43:44Z",
+  "with_resale": 3
+ },
  "10441371": {
   "items_seen": 60,
   "median_retention": 1.765,
@@ -76,7 +86,7 @@
   "name": "moonsniper",
   "pct_above_price": 1.0,
   "sold_out": 5,
-  "updated_at": "2026-11-20T12:58:33Z",
+  "updated_at": "2026-11-27T16:43:44Z",
   "with_resale": 5
  },
  "109916308": {
@@ -241,12 +251,12 @@
  },
  "14768857": {
   "items_seen": 10,
-  "median_retention": 2.857,
+  "median_retention": 3.557,
   "metodo": 2,
   "name": "Something Simulators",
   "pct_above_price": 1.0,
   "sold_out": 7,
-  "updated_at": "2026-11-20T12:58:33Z",
+  "updated_at": "2026-11-27T16:43:44Z",
   "with_resale": 7
  },
  "15757277": {
@@ -306,7 +316,7 @@
   "name": "Prince Accessories",
   "pct_above_price": 1.0,
   "sold_out": 34,
-  "updated_at": "2026-11-20T12:58:33Z",
+  "updated_at": "2026-11-27T16:43:44Z",
   "with_resale": 3
  },
  "17082830": {
@@ -836,7 +846,7 @@
   "name": "-The Last Summer-",
   "pct_above_price": null,
   "sold_out": 0,
-  "updated_at": "2026-11-20T12:58:33Z",
+  "updated_at": "2026-11-27T16:43:44Z",
   "with_resale": 0
  },
  "476232654": {
@@ -1070,13 +1080,13 @@
   "with_resale": 6
  },
  "822949563": {
-  "items_seen": 6,
+  "items_seen": 5,
   "median_retention": null,
   "metodo": 2,
   "name": "Frostized",
   "pct_above_price": null,
-  "sold_out": 1,
-  "updated_at": "2026-11-20T12:58:33Z",
+  "sold_out": 0,
+  "updated_at": "2026-11-27T16:43:44Z",
   "with_resale": 0
  },
  "823647416": {
