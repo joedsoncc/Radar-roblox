@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-26T21:37:47Z",
+ "generated_at": "2026-11-27T04:17:25Z",
  "run_status": "partial",
- "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (atualizados recentemente): 429; catálogo (favoritos da semana): 429; detalhes do catálogo: 429; revenda: catálogo 429.",
+ "status_note": "Coleta parcial: 0 falhas no histórico; outros erros: catálogo (favoritos da semana): 429; catálogo (mais vendidos da semana): 429; detalhes do catálogo: 429.",
  "snapshots_count": 19,
  "disclaimer": "Não é recomendação financeira. Preços de itens virtuais variam muito. Lucro líquido = valor de venda × 0,5 − preço × 1,11; valor de venda = o mais baixo entre RAP e média dos 10 anúncios mais baratos. Só entram itens com lucro acima do corte.",
  "config": {
@@ -71,192 +71,6 @@
  ],
  "items": [
   {
-   "asset_id": 113583309871794,
-   "name": "Crown",
-   "creator_name": "venari.",
-   "creator_verified": false,
-   "category": "hat",
-   "url": "https://www.roblox.com/catalog/113583309871794",
-   "thumbnail": "https://tr.rbxcdn.com/180DAY-47cfab1990933088015e544d425a94df/150/150/Hat/Png/noFilter",
-   "price": 95,
-   "total_quantity": 1250,
-   "units_remaining": 65,
-   "pct_sold": 94.8,
-   "rap": 95.0,
-   "resale_avg_low": 95.0,
-   "resale_avg_n": 10,
-   "sale_ref": 606.02,
-   "sale_ref_source": "historico_loja",
-   "volume_7d": 37,
-   "volume_30d": 95,
-   "last_chart_price": 95,
-   "last_chart_date": "2026-11-25",
-   "chart_median_14d": 95,
-   "rap_consistent": true,
-   "cost": 105.45,
-   "net_profit": 197.56,
-   "net_margin": 1.8735,
-   "velocity_per_hour": 0.283,
-   "velocity_note": null,
-   "eta_hours": 229.7,
-   "score": 64,
-   "class": "OBSERVAR",
-   "reasons": [
-    "Margem líquida +187%.",
-    "Volume 7d 37 abaixo de 50.",
-    "Esgota devagar (~9.6 d).",
-    "Loja com bom histórico: 90% dos limiteds dela revendem acima do preço (mediana 6.32x, 21 itens).",
-    "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados).",
-    "Formato dos mais revendidos: 1250 un. a 95 Robux."
-   ],
-   "invalidators": [
-    "Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR."
-   ],
-   "data_quality": "rap_primario",
-   "creator_track": {
-    "items_seen": 60,
-    "median_retention": 6.316,
-    "metodo": 2,
-    "name": "venari.",
-    "pct_above_price": 0.905,
-    "sold_out": 22,
-    "updated_at": "2026-11-23T07:44:34Z",
-    "with_resale": 21
-   },
-   "retention": 1.0,
-   "change_7d": 0.0,
-   "trend": "estável",
-   "spark": [
-    [
-     "2026-10-23",
-     95
-    ],
-    [
-     "2026-10-24",
-     95
-    ],
-    [
-     "2026-10-26",
-     95
-    ],
-    [
-     "2026-10-27",
-     95
-    ],
-    [
-     "2026-10-28",
-     95
-    ],
-    [
-     "2026-10-29",
-     95
-    ],
-    [
-     "2026-10-31",
-     95
-    ],
-    [
-     "2026-11-01",
-     95
-    ],
-    [
-     "2026-11-02",
-     95
-    ],
-    [
-     "2026-11-03",
-     95
-    ],
-    [
-     "2026-11-05",
-     95
-    ],
-    [
-     "2026-11-06",
-     95
-    ],
-    [
-     "2026-11-07",
-     95
-    ],
-    [
-     "2026-11-08",
-     95
-    ],
-    [
-     "2026-11-09",
-     95
-    ],
-    [
-     "2026-11-11",
-     95
-    ],
-    [
-     "2026-11-12",
-     95
-    ],
-    [
-     "2026-11-13",
-     95
-    ],
-    [
-     "2026-11-14",
-     95
-    ],
-    [
-     "2026-11-15",
-     95
-    ],
-    [
-     "2026-11-16",
-     95
-    ],
-    [
-     "2026-11-17",
-     95
-    ],
-    [
-     "2026-11-18",
-     95
-    ],
-    [
-     "2026-11-19",
-     95
-    ],
-    [
-     "2026-11-20",
-     95
-    ],
-    [
-     "2026-11-21",
-     95
-    ],
-    [
-     "2026-11-22",
-     95
-    ],
-    [
-     "2026-11-23",
-     95
-    ],
-    [
-     "2026-11-24",
-     95
-    ],
-    [
-     "2026-11-25",
-     95
-    ]
-   ],
-   "tipo": "loja",
-   "fator_trava": 1.01,
-   "rap_primary": true,
-   "copy_risk": null,
-   "price_raised_from": null,
-   "break_even": 211,
-   "hold_days": 30
-  },
-  {
    "asset_id": 138848648617195,
    "name": "Headphones",
    "creator_name": "venari.",
@@ -266,31 +80,31 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-2bb520dd48664e72fb0af9956de1431c/150/150/Hat/Png/noFilter",
    "price": 95,
    "total_quantity": 1250,
-   "units_remaining": 52,
-   "pct_sold": 95.8,
+   "units_remaining": 48,
+   "pct_sold": 96.2,
    "rap": 95.0,
    "resale_avg_low": 95.0,
    "resale_avg_n": 10,
    "sale_ref": 606.02,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 25,
-   "volume_30d": 168,
+   "volume_7d": 23,
+   "volume_30d": 167,
    "last_chart_price": 95,
-   "last_chart_date": "2026-11-25",
+   "last_chart_date": "2026-11-26",
    "chart_median_14d": 95,
    "rap_consistent": true,
    "cost": 105.45,
    "net_profit": 197.56,
    "net_margin": 1.8735,
-   "velocity_per_hour": 0.188,
+   "velocity_per_hour": 0.346,
    "velocity_note": null,
-   "eta_hours": 276.6,
-   "score": 62,
+   "eta_hours": 138.7,
+   "score": 67,
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +187%.",
-    "Volume 7d 25 abaixo de 50.",
-    "Esgota devagar (~11.5 d).",
+    "Volume 7d 23 abaixo de 50.",
+    "Esgota devagar (~5.8 d).",
     "Loja com bom histórico: 90% dos limiteds dela revendem acima do preço (mediana 6.32x, 21 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados).",
     "Formato dos mais revendidos: 1250 un. a 95 Robux."
@@ -313,10 +127,6 @@
    "change_7d": 0.0,
    "trend": "estável",
    "spark": [
-    [
-     "2026-10-27",
-     95
-    ],
     [
      "2026-10-28",
      95
@@ -432,6 +242,382 @@
     [
      "2026-11-25",
      95
+    ],
+    [
+     "2026-11-26",
+     95
+    ]
+   ],
+   "tipo": "loja",
+   "fator_trava": 1.01,
+   "rap_primary": true,
+   "copy_risk": null,
+   "price_raised_from": null,
+   "break_even": 211,
+   "hold_days": 30
+  },
+  {
+   "asset_id": 113583309871794,
+   "name": "Crown",
+   "creator_name": "venari.",
+   "creator_verified": false,
+   "category": "hat",
+   "url": "https://www.roblox.com/catalog/113583309871794",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-47cfab1990933088015e544d425a94df/150/150/Hat/Png/noFilter",
+   "price": 95,
+   "total_quantity": 1250,
+   "units_remaining": 65,
+   "pct_sold": 94.8,
+   "rap": 95.0,
+   "resale_avg_low": 95.0,
+   "resale_avg_n": 10,
+   "sale_ref": 606.02,
+   "sale_ref_source": "historico_loja",
+   "volume_7d": 39,
+   "volume_30d": 100,
+   "last_chart_price": 95,
+   "last_chart_date": "2026-11-26",
+   "chart_median_14d": 95,
+   "rap_consistent": true,
+   "cost": 105.45,
+   "net_profit": 197.56,
+   "net_margin": 1.8735,
+   "velocity_per_hour": 0.0,
+   "velocity_note": "sem vendas no último intervalo",
+   "eta_hours": null,
+   "score": 63,
+   "class": "OBSERVAR",
+   "reasons": [
+    "Margem líquida +187%.",
+    "Volume 7d 39 abaixo de 50.",
+    "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
+    "Loja com bom histórico: 90% dos limiteds dela revendem acima do preço (mediana 6.32x, 21 itens).",
+    "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados).",
+    "Formato dos mais revendidos: 1250 un. a 95 Robux."
+   ],
+   "invalidators": [
+    "Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR."
+   ],
+   "data_quality": "rap_primario",
+   "creator_track": {
+    "items_seen": 60,
+    "median_retention": 6.316,
+    "metodo": 2,
+    "name": "venari.",
+    "pct_above_price": 0.905,
+    "sold_out": 22,
+    "updated_at": "2026-11-23T07:44:34Z",
+    "with_resale": 21
+   },
+   "retention": 1.0,
+   "change_7d": 0.0,
+   "trend": "estável",
+   "spark": [
+    [
+     "2026-10-24",
+     95
+    ],
+    [
+     "2026-10-26",
+     95
+    ],
+    [
+     "2026-10-27",
+     95
+    ],
+    [
+     "2026-10-28",
+     95
+    ],
+    [
+     "2026-10-29",
+     95
+    ],
+    [
+     "2026-10-31",
+     95
+    ],
+    [
+     "2026-11-01",
+     95
+    ],
+    [
+     "2026-11-02",
+     95
+    ],
+    [
+     "2026-11-03",
+     95
+    ],
+    [
+     "2026-11-05",
+     95
+    ],
+    [
+     "2026-11-06",
+     95
+    ],
+    [
+     "2026-11-07",
+     95
+    ],
+    [
+     "2026-11-08",
+     95
+    ],
+    [
+     "2026-11-09",
+     95
+    ],
+    [
+     "2026-11-11",
+     95
+    ],
+    [
+     "2026-11-12",
+     95
+    ],
+    [
+     "2026-11-13",
+     95
+    ],
+    [
+     "2026-11-14",
+     95
+    ],
+    [
+     "2026-11-15",
+     95
+    ],
+    [
+     "2026-11-16",
+     95
+    ],
+    [
+     "2026-11-17",
+     95
+    ],
+    [
+     "2026-11-18",
+     95
+    ],
+    [
+     "2026-11-19",
+     95
+    ],
+    [
+     "2026-11-20",
+     95
+    ],
+    [
+     "2026-11-21",
+     95
+    ],
+    [
+     "2026-11-22",
+     95
+    ],
+    [
+     "2026-11-23",
+     95
+    ],
+    [
+     "2026-11-24",
+     95
+    ],
+    [
+     "2026-11-25",
+     95
+    ],
+    [
+     "2026-11-26",
+     95
+    ]
+   ],
+   "tipo": "loja",
+   "fator_trava": 1.01,
+   "rap_primary": true,
+   "copy_risk": null,
+   "price_raised_from": null,
+   "break_even": 211,
+   "hold_days": 30
+  },
+  {
+   "asset_id": 15207371614,
+   "name": "✅ Black Shades",
+   "creator_name": "Prince Accessories",
+   "creator_verified": true,
+   "category": "face",
+   "url": "https://www.roblox.com/catalog/15207371614",
+   "thumbnail": "https://tr.rbxcdn.com/180DAY-c5859b2a56fee748d0ae392c26022148/150/150/FaceAccessory/Png/noFilter",
+   "price": 95,
+   "total_quantity": 2500,
+   "units_remaining": 91,
+   "pct_sold": 96.4,
+   "rap": 95.0,
+   "resale_avg_low": 324.5,
+   "resale_avg_n": 6,
+   "sale_ref": 580.78,
+   "sale_ref_source": "historico_loja",
+   "volume_7d": 10,
+   "volume_30d": 31,
+   "last_chart_price": 95,
+   "last_chart_date": "2026-11-26",
+   "chart_median_14d": 95.0,
+   "rap_consistent": true,
+   "cost": 105.45,
+   "net_profit": 184.94,
+   "net_margin": 1.7538,
+   "velocity_per_hour": null,
+   "velocity_note": "poucos snapshots",
+   "eta_hours": null,
+   "score": 62,
+   "class": "OBSERVAR",
+   "reasons": [
+    "Margem líquida +175%.",
+    "Volume 7d 10 abaixo de 50.",
+    "Velocidade de venda não medida (poucos snapshots).",
+    "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 6.05x, 3 itens).",
+    "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados).",
+    "Formato dos mais revendidos: 2500 un. a 95 Robux."
+   ],
+   "invalidators": [
+    "Cumprir todos os critérios de compra o promoveria; RAP caindo o rebaixaria para EVITAR."
+   ],
+   "data_quality": "rap_primario",
+   "creator_track": {
+    "items_seen": 60,
+    "median_retention": 6.053,
+    "metodo": 2,
+    "name": "Prince Accessories",
+    "pct_above_price": 1.0,
+    "sold_out": 34,
+    "updated_at": "2026-11-20T12:58:33Z",
+    "with_resale": 3
+   },
+   "retention": 1.0,
+   "change_7d": 0.0,
+   "trend": "estável",
+   "spark": [
+    [
+     "2026-09-26",
+     95
+    ],
+    [
+     "2026-09-27",
+     95
+    ],
+    [
+     "2026-09-30",
+     95
+    ],
+    [
+     "2026-10-01",
+     95
+    ],
+    [
+     "2026-10-03",
+     95
+    ],
+    [
+     "2026-10-05",
+     95
+    ],
+    [
+     "2026-10-07",
+     95
+    ],
+    [
+     "2026-10-15",
+     95
+    ],
+    [
+     "2026-10-19",
+     95
+    ],
+    [
+     "2026-10-21",
+     95
+    ],
+    [
+     "2026-10-23",
+     95
+    ],
+    [
+     "2026-10-25",
+     95
+    ],
+    [
+     "2026-10-28",
+     95
+    ],
+    [
+     "2026-11-01",
+     95
+    ],
+    [
+     "2026-11-02",
+     95
+    ],
+    [
+     "2026-11-04",
+     95
+    ],
+    [
+     "2026-11-06",
+     95
+    ],
+    [
+     "2026-11-08",
+     95
+    ],
+    [
+     "2026-11-09",
+     95
+    ],
+    [
+     "2026-11-11",
+     95
+    ],
+    [
+     "2026-11-12",
+     95
+    ],
+    [
+     "2026-11-13",
+     95
+    ],
+    [
+     "2026-11-14",
+     95
+    ],
+    [
+     "2026-11-15",
+     95
+    ],
+    [
+     "2026-11-17",
+     95
+    ],
+    [
+     "2026-11-21",
+     95
+    ],
+    [
+     "2026-11-23",
+     95
+    ],
+    [
+     "2026-11-24",
+     95
+    ],
+    [
+     "2026-11-25",
+     95
+    ],
+    [
+     "2026-11-26",
+     95
     ]
    ],
    "tipo": "loja",
@@ -452,31 +638,31 @@
    "thumbnail": "https://tr.rbxcdn.com/180DAY-0b32aad121c3b86983e99e012bc79252/150/150/FaceAccessory/Png/noFilter",
    "price": 95,
    "total_quantity": 1000,
-   "units_remaining": 42,
-   "pct_sold": 95.8,
+   "units_remaining": 41,
+   "pct_sold": 95.9,
    "rap": 95.0,
    "resale_avg_low": 1091.0,
    "resale_avg_n": 7,
    "sale_ref": 580.78,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 10,
+   "volume_7d": 11,
    "volume_30d": 27,
    "last_chart_price": 95,
-   "last_chart_date": "2026-11-25",
+   "last_chart_date": "2026-11-26",
    "chart_median_14d": 95.0,
    "rap_consistent": true,
    "cost": 105.45,
    "net_profit": 184.94,
    "net_margin": 1.7538,
    "velocity_per_hour": 0.0,
-   "velocity_note": "sem vendas no último intervalo",
+   "velocity_note": "vendas insuficientes para medir",
    "eta_hours": null,
    "score": 55,
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +175%.",
-    "Volume 7d 10 abaixo de 50.",
-    "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
+    "Volume 7d 11 abaixo de 50.",
+    "Vendas pararam ou estão lentas demais (vendas insuficientes para medir).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 6.05x, 3 itens).",
     "Lucro calculado no fim da trava de 30 dias: valor de hoje × 1.01 (mudança mediana do preço em 30 dias nos itens já esgotados)."
    ],
@@ -498,10 +684,6 @@
    "change_7d": 0.0,
    "trend": "estável",
    "spark": [
-    [
-     "2026-09-25",
-     95
-    ],
     [
      "2026-09-26",
      95
@@ -617,6 +799,10 @@
     [
      "2026-11-25",
      95
+    ],
+    [
+     "2026-11-26",
+     95
     ]
    ],
    "tipo": "loja",
@@ -644,11 +830,11 @@
    "resale_avg_n": 10,
    "sale_ref": 560.79,
    "sale_ref_source": "historico_loja",
-   "volume_7d": 6,
-   "volume_30d": 9,
-   "last_chart_price": 117,
-   "last_chart_date": "2026-11-24",
-   "chart_median_14d": 117,
+   "volume_7d": 7,
+   "volume_30d": 10,
+   "last_chart_price": 120,
+   "last_chart_date": "2026-11-26",
+   "chart_median_14d": 118.5,
    "rap_consistent": null,
    "cost": 133.2,
    "net_profit": 147.19,
@@ -660,7 +846,7 @@
    "class": "OBSERVAR",
    "reasons": [
     "Margem líquida +110%.",
-    "Volume 7d 6 abaixo de 50.",
+    "Volume 7d 7 abaixo de 50.",
     "Gráfico insuficiente para conferir o RAP (poucos dias com venda).",
     "Vendas pararam ou estão lentas demais (sem vendas no último intervalo).",
     "Loja com bom histórico: 100% dos limiteds dela revendem acima do preço (mediana 4.63x, 4 itens).",
@@ -684,10 +870,6 @@
    "change_7d": null,
    "trend": "sem dados",
    "spark": [
-    [
-     "2026-08-07",
-     120
-    ],
     [
      "2026-08-08",
      120
@@ -803,6 +985,10 @@
     [
      "2026-11-24",
      117
+    ],
+    [
+     "2026-11-26",
+     120
     ]
    ],
    "tipo": "loja",
@@ -814,5 +1000,5 @@
    "hold_days": 30
   }
  ],
- "descartados": 82
+ "descartados": 84
 }
