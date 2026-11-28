@@ -641,13 +641,13 @@
  },
  "34864442": {
   "items_seen": 60,
-  "median_retention": 2.0,
+  "median_retention": 1.792,
   "metodo": 2,
   "name": "Aeteris Sanctuary | UGC Shop",
-  "pct_above_price": 0.846,
-  "sold_out": 40,
-  "updated_at": "2026-11-03T06:53:11Z",
-  "with_resale": 13
+  "pct_above_price": 0.8,
+  "sold_out": 37,
+  "updated_at": "2026-11-28T10:31:14Z",
+  "with_resale": 10
  },
  "34981559": {
   "items_seen": 11,
@@ -985,8 +985,8 @@
   "metodo": 2,
   "name": "bloxoria",
   "pct_above_price": null,
-  "sold_out": 41,
-  "updated_at": "2026-11-07T08:50:20Z",
+  "sold_out": 38,
+  "updated_at": "2026-11-28T10:31:14Z",
   "with_resale": 0
  },
  "640958110": {
