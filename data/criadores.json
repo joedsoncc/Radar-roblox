@@ -229,6 +229,16 @@
   "updated_at": "2026-11-20T12:58:33Z",
   "with_resale": 5
  },
+ "141698320": {
+  "items_seen": 1,
+  "median_retention": null,
+  "metodo": 2,
+  "name": "awesomeness UGC",
+  "pct_above_price": null,
+  "sold_out": 0,
+  "updated_at": "2026-11-28T01:28:14Z",
+  "with_resale": 0
+ },
  "14511880": {
   "items_seen": 60,
   "median_retention": 2.515,
@@ -801,13 +811,13 @@
  },
  "370302186": {
   "items_seen": 60,
-  "median_retention": 2.323,
+  "median_retention": 2.406,
   "metodo": 2,
   "name": "Snowy'sz",
-  "pct_above_price": 0.75,
-  "sold_out": 4,
-  "updated_at": "2026-11-20T21:51:05Z",
-  "with_resale": 4
+  "pct_above_price": 0.833,
+  "sold_out": 6,
+  "updated_at": "2026-11-28T01:28:14Z",
+  "with_resale": 6
  },
  "409990394": {
   "items_seen": 1,
@@ -848,6 +858,16 @@
   "sold_out": 0,
   "updated_at": "2026-11-27T16:43:44Z",
   "with_resale": 0
+ },
+ "458607355": {
+  "items_seen": 60,
+  "median_retention": 0.169,
+  "metodo": 2,
+  "name": "Prime UGC!",
+  "pct_above_price": 0.0,
+  "sold_out": 1,
+  "updated_at": "2026-11-28T01:28:14Z",
+  "with_resale": 1
  },
  "476232654": {
   "items_seen": 8,
